@@ -5795,7 +5795,6 @@ ul.static-page-menu li.active a {
 .login-box-wrapper .modal-title {
     line-height: 1;
     margin: 0;
-    text-transform: lowercase;
     font-weight: 700;
 }
 
