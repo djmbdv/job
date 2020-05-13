@@ -1,7 +1,7 @@
 <?php
 	require_once 'constants/connection.php';
 ?>
-<form name="frm" class="form-employer" action="app/create-account.php" method="POST" data-toggle="validator" role="form" >
+<form name="frm" class="form-employer" action="app/create-account.php" method="POST" role="form" >
 <div class="login-box-wrapper">
 							
 <div class="modal-header">
@@ -17,14 +17,7 @@
 			<input class="form-control" placeholder="Ingresa tu Nombre de Empresa" name="company" required type="text"> 
 		</div>												
 	</div>
-	<div class="col-sm-12 col-md-12">
-		<div class="form-group has-feedback">
-		<label for="inputTwitter" class="control-label">Twitter</label>
-		<input type="text" pattern="^[_A-z0-9]{1,}$" class="form-control" id="inputTwitter" placeholder="1000hz" required />
-			<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-		<div class="help-block with-errors"></div>
-		</div>										
-	</div>
+
 
 	<div class="col-sm-12 col-md-12">
 		<div class="form-group"> 
@@ -47,7 +40,9 @@
 	<div class="col-sm-12 col-md-12">
 		<div class="form-group has-feedback"> 
 			<label>Correo Electrónico</label>
-			<input class="form-control" type="email" role="register" placeholder="Ingresa tu Correo Electrónico" name="email" required> 
+			<input class="form-control" type="email" role="register" gly="email-gly" placeholder="Ingresa tu Correo Electrónico" name="email" required> 
+			<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+			<div class="help-block with-errors"></div>
 		</div>											
 	</div>
 												
@@ -77,9 +72,17 @@
 <script type="text/javascript">
 	$("input[type='email'][role='register']").change(e => {
 		console.log($(e.srcElement).val());
-/*	  	.done(function( data ) {
-	    alert( "Data Loaded: " + data );
-	  	});*/
+		var email = $(e.srcElement).val();
+		$.post("constants/check_email.php",{ "email" : email},(data)=>{
+			if(data == 1 ){
+				console.log("valid email!");
+			}else {
+				$(e.srcElement).parent(".form-group")
+				.addClass("has-error")
+				.find(".glyphicon").removeClass("glyphicon-ok").addClass("glyphicon-remove");
+				console.log(data);
+			}
+		} );
 	}).change();
 	$(".form-employer").submit((e)=>{
 		e.preventDefault();

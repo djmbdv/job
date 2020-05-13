@@ -117,7 +117,7 @@
 					<div  class="nav-mini-wrapper">
 						<ul  class="nav-mini sign-in">
 						<?php
-						if ($user_online == true) {
+						if (isset($user_online ) && $user_online == true) {
 						print '
 						    <li><a  href="logout.php">Cerrar Sesión</a></li>
 							<li><a  href="'.$myrole.'">Perfil</a></li>';
