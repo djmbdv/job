@@ -59,7 +59,7 @@
 			<input class="form-control" placeholder="Repite tu contraseña" name="confirmpassword" required type="password" required> 
 		</div>											
 	</div>								
-	<input type="hidden" name="acctype" value="102">																			
+	<input type="hidden" name="acctype" value="102">						
 </div>
 
 </div> <!-- MODAL BODY -->
@@ -70,20 +70,33 @@
 </div>
 </form>
 <script type="text/javascript">
-	$("input[type='email'][role='register']").change(e => {
-		console.log($(e.srcElement).val());
+	$("input[type='email'][role='register']").keyup(e => {
+		//console.log($(e.srcElement).val());
 		var email = $(e.srcElement).val();
+		if(!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))){
+			$(e.srcElement).parent(".form-group")
+				.removeClass("has-success").addClass("has-error")
+				.find(".glyphicon").removeClass("glyphicon-ok").addClass("glyphicon-remove");
+			$(e.srcElement).parent(".form-group").find(".help-block").html( $("<p></p>").text("Email no valido."));
+			return;
+		}
 		$.post("constants/check_email.php",{ "email" : email},(data)=>{
-			if(data == 1 ){
-				console.log("valid email!");
+			if(data == 1  ){
+				//console.log("valid email!");
+				$(e.srcElement).parent(".form-group")
+				.removeClass("has-error").addClass("has-success")
+				.find(".glyphicon").removeClass("glyphicon-remove").addClass("glyphicon-ok");
+				$(e.srcElement).parent(".form-group").find(".help-block").html( $("<p></p>").text(""));
+				console.log(data);
 			}else {
 				$(e.srcElement).parent(".form-group")
-				.addClass("has-error")
+				.removeClass("has-success").addClass("has-error")
 				.find(".glyphicon").removeClass("glyphicon-ok").addClass("glyphicon-remove");
-				console.log(data);
+				$(e.srcElement).parent(".form-group").find(".help-block").html( $("<p></p>").text("Email ya registrado."));
+				//console.log(data);
 			}
 		} );
-	}).change();
+	});
 	$(".form-employer").submit((e)=>{
 		e.preventDefault();
 		alert("submit");

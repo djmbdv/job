@@ -5896,3 +5896,9 @@ ul.static-page-menu li.active a {
 }
 
 @media (max-width: 479px) {}
+
+/*    @djmbdv added        */
+
+.has-feedback label~.form-control-feedback {
+    top: 28px;
+}
