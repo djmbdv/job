@@ -1,5 +1,5 @@
 <?php 
-include 'headerPrincipal.php'; 
+include '../headerPrincipal.php'; 
 ?>
 
   <style>

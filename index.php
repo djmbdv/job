@@ -1,7 +1,6 @@
 <?php 
 include 'headerPrincipal.php'; 
 require 'constants/db_config.php';
-
 ?>
 
   <style>

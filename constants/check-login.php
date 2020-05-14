@@ -6,4 +6,3 @@
 	}else{
 		$user_online = false;
 	}
-?>

@@ -116,7 +116,6 @@
 	$("input[name='password']").keyup(valide);
 	$("input[name='confirmpassword']").keyup(valideMatch);
 	$("input[type='email'][role='register']").keyup(e => {
-		//console.log($(e.srcElement).val());
 		var email = $(e.srcElement).val();
 		if(!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))){
 			$(e.srcElement).parent(".form-group")
@@ -144,7 +143,7 @@
 	});
 	$(".form-employer").submit((e)=>{
 		e.preventDefault();
-		alert("submit");
-
+		var data = $(e.srcElement).serializeArray();
+		$.post('app/create-account.php', data, result =>{ alert(result)});
 	});
 </script>
