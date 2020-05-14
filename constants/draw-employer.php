@@ -144,6 +144,12 @@
 	$(".form-employer").submit((e)=>{
 		e.preventDefault();
 		var data = $(e.srcElement).serializeArray();
-		$.post('app/create-account.php', data, result =>{ alert(result)});
+		$.post('app/create-account.php', data, result =>{
+			switch(result){
+				case 1: alert("Cuenta registrada exitosamente. Ingrese a su correo para confimar el registro.");
+				break;
+				default: alert(result);
+			};	
+		}
 	});
 </script>

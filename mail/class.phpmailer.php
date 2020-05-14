@@ -2141,7 +2141,7 @@ class PHPMailer
                 break;
             default:
                 // Catches case 'plain': and case '':
-                $result .= $this->textLine('Content-Rubro: ' . $this->ContentType . '; charset=' . $this->CharSet);
+                $result .= $this->textLine('Content-Type: ' . $this->ContentType . '; charset=' . $this->CharSet);
                 $ismultipart = false;
                 break;
         }
@@ -2420,7 +2420,7 @@ class PHPMailer
             $encoding = $this->Encoding;
         }
         $result .= $this->textLine('--' . $boundary);
-        $result .= sprintf('Content-Rubro: %s; charset=%s', $contentType, $charSet);
+        $result .= sprintf('Content-Type: %s; charset=%s', $contentType, $charSet);
         $result .= $this->LE;
         // RFC1341 part 5 says 7bit is assumed if not specified
         if ($encoding != '7bit') {
@@ -2598,14 +2598,14 @@ class PHPMailer
                 //Only include a filename property if we have one
                 if (!empty($name)) {
                     $mime[] = sprintf(
-                        'Content-Rubro: %s; name="%s"%s',
+                        'Content-Type: %s; name="%s"%s',
                         $type,
                         $this->encodeHeader($this->secureHeader($name)),
                         $this->LE
                     );
                 } else {
                     $mime[] = sprintf(
-                        'Content-Rubro: %s%s',
+                        'Content-Type: %s%s',
                         $type,
                         $this->LE
                     );
