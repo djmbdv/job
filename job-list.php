@@ -16,16 +16,15 @@ if (isset($_GET['search']) && $_GET['search'] == "✓") {
 
 if (isset($_GET['page'])) {
 $page = $_GET['page'];
-if ($page=="" || $page=="1")
-{
+if ($page=="" || $page=="1"){
 	$page1 = 0;
 	$page = 1;
 }else{
-$page1 = ($page*16)-16;
+	$page1 = ($page*16)-16;
 }					
 }else{
-$page1 = 0;
-$page = 1;	
+	$page1 = 0;
+	$page = 1;	
 }
 
 if (isset($_GET['country']) && ($_GET['category']) ){
