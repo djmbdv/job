@@ -5,7 +5,7 @@ require 'constants/connection.php';
 
 global $conn;
 global $actual_link;
-
+$closingdate = "";
 if (isset($_GET['jobid'])) {
 
 	$jobid = $_GET['jobid'];
