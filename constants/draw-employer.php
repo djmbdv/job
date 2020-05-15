@@ -1,7 +1,7 @@
 <?php
 	require_once 'constants/connection.php';
 ?>
-<form name="frm" class="form-employer" action="app/create-account.php" method="POST" role="form" >
+<form name="frm" class="form-employer" action="app/create-account.php" method="POST" role="form" error="0">
 <div class="login-box-wrapper">
 							
 <div class="modal-header">
@@ -74,6 +74,25 @@
 </div>
 </form>
 <script type="text/javascript">
+	function getError(){
+		return parseInt($("form").attr("error"));
+	}
+	function setError( i){
+		$("form").attr("error",i);
+	}
+	function updateError(){
+		setError(0);
+		var errores = 0;
+		$("form").find("input").each(function(){
+			var i = Number.isNaN(parseInt($(this).attr("error")))?0:parseInt($(this).attr("error"));
+		//	alert(i);
+			setError(getError() + i);
+		});
+	//	alert(errores);
+		return errores;
+	}
+
+
 	function valide(e){
 		var value =  $(e.srcElement).val();
 		console.log(value);
@@ -85,12 +104,14 @@
 				.removeClass("has-success").addClass("has-error")
 				.find(".glyphicon").removeClass("glyphicon-ok").addClass("glyphicon-remove");
 			$(e.srcElement).parent(".form-group").find(".help-block").html( $("<p></p>").text(errorMsj));
+			$(e.srcElement).attr("error",1);
 			return false;
 		}
 		$(e.srcElement).parent(".form-group")
 				.removeClass("has-error").addClass("has-success")
 				.find(".glyphicon").removeClass("glyphicon-remove").addClass("glyphicon-ok");
 			$(e.srcElement).parent(".form-group").find(".help-block").html( $("<p></p>").text(""));
+			$(e.srcElement).attr("error",0);
 		return true;
 	}
 
@@ -105,12 +126,14 @@
 				.removeClass("has-success").addClass("has-error")
 				.find(".glyphicon").removeClass("glyphicon-ok").addClass("glyphicon-remove");
 			$(e.srcElement).parent(".form-group").find(".help-block").html( $("<p></p>").text(errorMsj));
+			$(e.srcElement).attr("error",1);
 			return false;
 		}
 		$(e.srcElement).parent(".form-group")
 				.removeClass("has-error").addClass("has-success")
 				.find(".glyphicon").removeClass("glyphicon-remove").addClass("glyphicon-ok");
 			$(e.srcElement).parent(".form-group").find(".help-block").html( $("<p></p>").text(""));
+			$(e.srcElement).attr("error",0);
 		return true;
 	}
 	$("input[name='password']").keyup(valide);
@@ -131,18 +154,24 @@
 				.removeClass("has-error").addClass("has-success")
 				.find(".glyphicon").removeClass("glyphicon-remove").addClass("glyphicon-ok");
 				$(e.srcElement).parent(".form-group").find(".help-block").html( $("<p></p>").text(""));
-				console.log(data);
+				$(e.srcElement).attr("error",0);
 			}else {
 				$(e.srcElement).parent(".form-group")
 				.removeClass("has-success").addClass("has-error")
 				.find(".glyphicon").removeClass("glyphicon-ok").addClass("glyphicon-remove");
 				$(e.srcElement).parent(".form-group").find(".help-block").html( $("<p></p>").text("Email ya registrado."));
-				//console.log(data);
+				$(e.srcElement).attr("error",1);
 			}
 		} );
 	});
 	$(".form-employer").submit((e)=>{
 		e.preventDefault();
+		updateError();
+		var errors =getError();
+		if(errors > 0){
+			alert("Error en los campos del formulario");
+			return;
+		}
 		var data = $(e.srcElement).serializeArray();
 		$.post('app/create-account.php', data, result =>{
 			switch(result){
