@@ -150,6 +150,6 @@
 				break;
 				default: alert(result);
 			};	
-		}
+		});
 	});
 </script>
