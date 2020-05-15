@@ -1,93 +1,73 @@
-<!doctype html>
-<html lang="es_ES">
-<?php 
-require 'constants/settings.php'; 
+<?php
 
-require 'constants/db_config.php'; 
+require 'constants/settings.php'; 
+require 'constants/connection.php'; 
+
+global $conn;
+global $actual_link;
 
 if (isset($_GET['jobid'])) {
 
-$jobid = $_GET['jobid'];
+	$jobid = $_GET['jobid'];
 
-try {
-    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-	
-    $stmt = $conn->prepare("SELECT * FROM tbl_jobs WHERE job_id = :jobid");
-	$stmt->bindParam(':jobid', $jobid);
-    $stmt->execute();
-    $result = $stmt->fetchAll();
-	$rec = count($result);
-	if ($rec == "0") {
-	header("location:./");	
-	}else{
-
-    foreach($result as $row)
-    {
-	$jobtitle = $row['title'];
-	$jobcity = $row['city'];
-	$jobcountry = $row['country'];
-	$jobcategory = $row['category'];
-	$jobtype = $row['type'];
-	$experience = $row['experience'];
-	$jobdescription = $row['description'];
-	$jobrespo = $row['responsibility'];
-	$jobreq = $row['requirements'];
-	$closingdate = $row['closing_date'];
-	$opendate = $row['date_posted'];
-	$compid = $row['company'];
-	if ($jobtype == "Freelance") {
-	$sta = '<span class="label label-success">Freelance</span>';
-											  
+	try {
+	    $stmt = $conn->prepare("SELECT * FROM tbl_jobs WHERE job_id = :jobid");
+		$stmt->bindParam(':jobid', $jobid);
+	    $stmt->execute();
+	    $result = $stmt->fetchAll();
+		$rec = count($result);
+		if ($rec == "0") {
+			header("location:./");	
+		}else{
+		    foreach($result as $row){
+				$jobtitle = $row['title'];
+				$jobcity = $row['city'];
+				$jobcountry = $row['country'];
+				$jobcategory = $row['category'];
+				$jobtype = $row['type'];
+				$experience = $row['experience'];
+				$jobdescription = $row['description'];
+				$jobrespo = $row['responsibility'];
+				$jobreq = $row['requirements'];
+				$closingdate = $row['closing_date'];
+				$opendate = $row['date_posted'];
+				$compid = $row['company'];
+				if ($jobtype == "Freelance") {
+				$sta = '<span class="label label-success">Freelance</span>';
+				}
+				if ($jobtype == "Part-time") {
+				$sta = '<span class="label label-danger">Part-time</span>';									  
+				}
+				if ($jobtype == "Full-time") {
+				$sta = '<span class="label label-warning">Full-time</span>';										  
+				}
+			}
+		}					  
+	}catch(Exception $e){
+		print_r($e);
 	}
-	if ($jobtype == "Part-time") {
-	$sta = '<span class="label label-danger">Part-time</span>';
-											  
-	}
-	if ($jobtype == "Full-time") {
-	$sta = '<span class="label label-warning">Full-time</span>';
-											  
-	}
-
-	
-	}
-	}
-
-					  
-	}catch(PDOException $e)
-    {
-
-    }
-
-
 }else{
-header("location:./");	
+	header("location:./");	
 }
 
 
-try {
-    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
+try{
 	
-$stmt = $conn->prepare("SELECT * FROM tbl_users WHERE member_no = '$compid'");
-$stmt->execute();
-$result = $stmt->fetchAll();
+	$stmt = $conn->prepare("SELECT * FROM tbl_users WHERE member_no = '$compid'");
+	$stmt->execute();
+	$result = $stmt->fetchAll();
 
 
-    foreach($result as $row)
-    {
-    $compname = $row['first_name'];
-	$complogo = $row['avatar'];
-	$compbout = $row['about'];
+    foreach($result as $row){
+	    $compname = $row['first_name'];
+		$complogo = $row['avatar'];
+		$compbout = $row['about'];
 	}
 
 					  
-	}catch(PDOException $e)
-    {
-
-    }
+}catch(PDOException $e){
+	print_r($e);
+}
 	
 
 $today_date = strtotime(date('Y/m/d'));
@@ -98,48 +78,39 @@ $post_year = date_format(date_create_from_format('d/m/Y', $closingdate), 'Y');
 $conv_date = strtotime($last_date);
 
 if ($today_date > $conv_date){
-$jobexpired = true;
+	$jobexpired = true;
 }else{
-$jobexpired = false;
+	$jobexpired = false;
 }
 
+$tags_share  = array(
+	"og:url"    => $actual_link."/explore-job.php?jobid=".$jobid,
+    "og:type"  => "article",
+    "og:title" => $jobtitle,
+    "og:description" => $jobdescription, 
+    "og:image" => 'data:image/jpeg;base64,'.base64_encode($complogo) );
+include_once 'headerPrincipal.php';
 
-require 'headerPrincipal.php'
-?>
-
-
-<body class="not-transparent-header">
-
+?><body class="not-transparent-header">
 	<div class="container-wrapper">
-
-
-	
 			<div id="registerModal" class="modal fade login-box-wrapper" tabindex="-1" style="display: none;" data-backdrop="static" data-keyboard="false" data-replace="true">
-			
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 					<h4 class="modal-title text-center">Crea tu cuenta gratis</h4>
 				</div>
-				
 				<div class="modal-body">
-				
 					<div class="row gap-20">
-					
 						<div class="col-sm-6 col-md-6">
 							<a href="register.php?p=Employer" class="btn btn-facebook btn-block mb-5-xs">Registro Empresa</a>
 						</div>
 						<div class="col-sm-6 col-md-6">
 							<a href="register.php?p=Employee" class="btn btn-facebook btn-block mb-5-xs">Registro Personal</a>
 						</div>
-
 					</div>
-				
 				</div>
-				
 				<div class="modal-footer text-center">
 					<button type="button" data-dismiss="modal" class="btn btn-primary btn-inverse">Cerrar</button>
 				</div>
-				
 			</div>
 		<div class="main-wrapper">
 		

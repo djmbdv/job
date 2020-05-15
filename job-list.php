@@ -1,8 +1,10 @@
-<!doctype html>
-<html lang="es_ES">
 <?php 
 require 'constants/settings.php'; 
 require 'constants/check-login.php';
+
+global $conn;
+global $actual_link;
+global $isHttps;
 
 $fromsearch = false;
 
@@ -16,8 +18,8 @@ if (isset($_GET['page'])) {
 $page = $_GET['page'];
 if ($page=="" || $page=="1")
 {
-$page1 = 0;
-$page = 1;
+	$page1 = 0;
+	$page = 1;
 }else{
 $page1 = ($page*16)-16;
 }					
@@ -46,30 +48,15 @@ $title = "Lista de Servicios";
 
 require 'headerPrincipal.php';
 ?>
-
-
-
-
-
 <body class="not-transparent-header">
-
-	<div class="container-wrapper">
-
-	
-
-
+	<div class="container-wrapper" style="padding-top: 14em;">
 		<div class="main-wrapper">
-		
 			<div class="second-search-result-wrapper">
-			
 				<div class="container">
-				
 					<form action="job-list.php" method="GET" autocomplete="off">
-					
 						<div class="second-search-result-inner">
 							<span class="labeling">Buscar </span>
 							<div class="row">
-							
 								<div class="col-xss-12 col-xs-6 col-sm-6 col-md-5">
 									<div class="form-group form-lg">
 										<select class="form-control" name="category" required/>
@@ -191,23 +178,17 @@ require 'headerPrincipal.php';
 							
 								<div class="result-list-wrapper">
 								<?php
-								require 'constants/db_config.php';
 								
 								try {
-                                $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-                                $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
                                 $stmt = $conn->prepare($query1);
 								if ($fromsearch == true) {
-								$stmt->bindParam(':cate', $slc_category);
-                                $stmt->bindParam(':country', $slc_country);	
+									$stmt->bindParam(':cate', $slc_category);
+	                                $stmt->bindParam(':country', $slc_country);	
 								}
                                 $stmt->execute();
                                 $result = $stmt->fetchAll();
-                                foreach($result as $row)
-                                {
-								//$post_date = date_format(date_create_from_format('d/m/Y', $row['closing_date']), 'd');
-                               // $post_month = date_format(date_create_from_format('d/m/Y', $row['closing_date']), 'F');
-                               // $post_year = date_format(date_create_from_format('d/m/Y', $row['closing_date']), 'Y');
+                                foreach($result as $row){
 								$type = $row['type'];
 								$compid = $row['company'];
 								
@@ -215,10 +196,9 @@ require 'headerPrincipal.php';
                                 $stmtb->execute();
                                 $resultb = $stmtb->fetchAll();
                                 foreach($resultb as $rowb) {
-								$complogo = $rowb['avatar'];
-								$thecompname = $rowb['first_name'];	
-								$telefono = $rowb['telefono'];	
-									
+									$complogo = $rowb['avatar'];
+									$thecompname = $rowb['first_name'];	
+									$telefono = isset($rowb['telefono'])? $rowb['telefono'] :"";
 								}
 								if ($type == "Freelance") {
 								$sta = '<span class="job-label label label-success">Freelance</span>';
@@ -234,7 +214,7 @@ require 'headerPrincipal.php';
 								}
 		                        
 								?>
-										<div class="job-item-list">
+									<div class="job-item-list">
 									
 										<div class="image">
 										<?php 
@@ -248,11 +228,8 @@ require 'headerPrincipal.php';
 										
 										<div class="content">
 											<div class="job-item-list-info">
-											
 												<div class="row">
-												
 													<div class="col-sm-7 col-md-8">
-													
 														<h4 class="heading"><?php echo $row['title']; ?></h4>
 														<div class="meta-div clearfix mb-25">
 															<span>por <a href="company.php?ref=<?php echo "$compid"; ?>">  <?php echo "$thecompname"; ?> - Disponibilidad</a></span>
@@ -263,9 +240,21 @@ require 'headerPrincipal.php';
 													</div>
 													
 													<div class="col-sm-5 col-md-4">
+														<div class="social meta-list" style="padding-bottom: 1em; ">
+															<?php
+																$url = urldecode(($isHttps?'https://':'http://' ).$actual_link.'/explore-job.php?jobid='.$row['job_id']);
+															?>
+														    <a href="whatsapp://send?text=<?=$url?>" id="share-wa" class="sharer button">
+														    	<i class="fa fa-2x fa-whatsapp"></i>
+														    </a>
+															<a href="<?='https://www.facebook.com/sharer/sharer.php?u='.$url ?>" id="share-fb" class="sharer button"><i class="fa fa-2x fa-facebook-square"></i></a>
+															<a href="https://twitter.com/intent/tweet?text=<?= $url ?>" id="share-tw" class="sharer button"><i class="fa fa-2x fa-twitter-square"></i></a>
+															<a href="https://www.linkedin.com/shareArticle?mini=true&url=<?=$url?>&title=<?= $row['title'] ?>" id="share-li" class="sharer button"><i class="fa fa-2x fa-linkedin-square"></i></a>
+														</div>
+  
 														<ul class="meta-list">
 															<li>
-																<span>Departamento-:</span>
+																<span>Departamento:</span>
 																<?php echo $row['country']; ?>
 															</li>
 															<li>
@@ -278,7 +267,7 @@ require 'headerPrincipal.php';
 															</li>
 															<li>
 																<span>Telefono: </span>
-																		<?php echo $row['telefono']; ?>
+																<?php echo $row['telefono']; ?>
 															</li>
 														</ul>
 													</div>
@@ -299,7 +288,7 @@ require 'headerPrincipal.php';
 													</div>
 													
 													<div class="col-sm-5 col-md-4">
-														<a target="_blank" href="explore-job.php?jobid=<?php echo $row['job_id']; ?>" class="btn btn-primary">Ver este Servicio</a>
+														<a target="_blank" href="explore-job.php?jobid=<?= $row['job_id']; ?>" class="btn btn-primary">Ver este Servicio</a>
 													</div>
 													
 												</div>
@@ -330,22 +319,17 @@ require 'headerPrincipal.php';
 								require 'constants/db_config.php';
 								
 								try {
-                                $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-                                $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                                $stmt = $conn->prepare($query2);
-								if ($fromsearch == true) {
-								$stmt->bindParam(':cate', $slc_category);
-                                $stmt->bindParam(':country', $slc_country);	
-								}
-                                $stmt->execute();
-                                $result = $stmt->fetchAll();
- 
-                                foreach($result as $row)
-                                {
-		                        $total_records++;
-                                }
-
-					  
+	                                $stmt = $conn->prepare($query2);
+									if ($fromsearch == true) {
+									$stmt->bindParam(':cate', $slc_category);
+	                                $stmt->bindParam(':country', $slc_country);	
+									}
+	                                $stmt->execute();
+	                                $result = $stmt->fetchAll();
+	 
+		                            foreach($result as $row){
+			                        	$total_records++;
+	                                }
 	                            }catch(PDOException $e)
                                 {
 
@@ -420,15 +404,5 @@ require 'headerPrincipal.php';
 <script type="text/javascript" src="js/jquery.introLoader.min.js"></script>
 <script type="text/javascript" src="js/jquery.responsivegrid.js"></script>
 <script type="text/javascript" src="js/customs.js"></script>
-
-
 </body>
-
-
 </html>
-
-
-
-
-
-

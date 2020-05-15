@@ -1,8 +1,9 @@
-<!doctype html>
-<html lang="es_ES">
+<!DOCTYPE html>
+<html lang="es">
 
 <head>
-
+	<?php 
+	global $tags_share;?>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,11 +13,21 @@
 	<meta name="keywords" content="trabajo, empleos, cv, curriculum, empresas, carrera,servicios profesionales, tecnicos, bolsa de trabajo, servicios" />
 	<meta name="author" content="BwireSoft">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta property="og:image:type" content="image/jpeg" />
-    <meta property="og:image:width" content="500" />
-    <meta property="og:image:height" content="300" />
-    <meta property="og:description" content="Portal de empleos / Bolsa de trabajo" />
-
+	<?php
+		if(!isset($tags_share)):?>
+	    <meta property="og:image:type" content="image/jpeg" />
+	    <meta property="og:image:width" content="500" />
+	    <meta property="og:image:height" content="300" />
+	    <meta property="og:description" content="Portal de empleos / Bolsa de trabajo" />
+	<?php
+		else:
+			foreach ($tags_share as $property => $content):
+			?>
+			<meta property="<?=$property?>" content="<?=$content?>" />
+	<?php
+			endforeach;
+		endif;
+	?>
 	<link rel="shortcut icon" href="images/ico/favicon.png">
 
 	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
@@ -68,12 +79,9 @@
 	<link rel="stylesheet" href="icons/flaticon-ventures/flaticon-ventures.css">
 
 	<link href="css/style.css" rel="stylesheet">
-
-	
 </head>
 <header id="header">
-
-			<nav class="navbar navbar-default navbar-fixed-top navbar-sticky-function">
+	<nav class="navbar navbar-default navbar-fixed-top navbar-sticky-function">
 
 				<div class="container">
 					

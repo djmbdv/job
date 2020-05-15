@@ -16,7 +16,7 @@
 	if ($stmt->execute()):?>
 	<script type="text/javascript">
 		alert("Usuario Verificado con exito");
-		window.location.href = "$protocol://$actual_link$local/login.php";
+		window.location.href = '<?= "$protocol://$actual_link$local/login.php" ?>';
 	</script>
 	<?php
 	else:
