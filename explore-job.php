@@ -33,13 +33,13 @@ if (isset($_GET['jobid'])) {
 				$opendate = $row['date_posted'];
 				$compid = $row['company'];
 				if ($jobtype == "Freelance") {
-				$sta = '<span class="label label-success">Freelance</span>';
+					$sta = '<span class="label label-success">Freelance</span>';
 				}
 				if ($jobtype == "Part-time") {
-				$sta = '<span class="label label-danger">Part-time</span>';									  
+					$sta = '<span class="label label-danger">Part-time</span>';									  
 				}
 				if ($jobtype == "Full-time") {
-				$sta = '<span class="label label-warning">Full-time</span>';										  
+					$sta = '<span class="label label-warning">Full-time</span>';										  
 				}
 			}
 		}					  
@@ -117,8 +117,8 @@ include_once 'headerPrincipal.php';
 				<div class="container">
 					<ol class="breadcrumb-list booking-step">
 						<li><a href="/">Inicio</a></li>
-						<li><a target="_blank" href="company.php?ref=<?php echo "$compid"; ?>"><?php echo "$compname"; ?></a></li>
-						<li><span><?php echo "$jobtitle"; ?></span></li>
+						<li><a target="_blank" href="company.php?ref=<?= $compid ?>"><?= $compname ?></a></li>
+						<li><span><?= $jobtitle ?></span></li>
 					</ol>
 				</div>
 			</div>
@@ -132,24 +132,24 @@ include_once 'headerPrincipal.php';
 									<h2 class="heading mb-15"><?php echo "$jobtitle"; ?></h2>
 									<div class="meta-div clearfix mb-25">
 										<span>Creado por <a target="_blank" href="company.php?ref=<?php echo "$compid"; ?>"><?php echo "$compname"; ?></a> disponibilidad </span>
-										<?php echo "$sta"; ?>
+										<?= $sta  ?>
 									</div>
 									<ul class="meta-list clearfix">
 										<li>
 											<h4 class="heading">Ubicacion:</h4>
-											<?php echo "$jobcity"; ?> , <?php echo "$jobcountry"; ?>
+											<?=$jobcity?> , <?=$jobcountry?>
 										</li>
 										<li>
 											<h4 class="heading">expiracion de servicio:</h4>
-											<?php echo "$post_month"; ?> <?php echo "$post_date"; ?>, <?php echo "$post_year"; ?>
+											<?=$post_month; ?> <?php echo "$post_date"; ?>, <?php echo "$post_year"; ?>
 										</li>
 										<li>
 											<h4 class="heading">Experiencia</h4>
-											<?php echo "$experience"; ?> 
+											<?=$experience?> 
 										</li>
 										<li>
 											<h4 class="heading">Posteado el: </h4>
-											<?php echo "$opendate"; ?>
+											<?=$opendate ?>
 										</li>
 									</ul>
 								</div>
@@ -162,7 +162,7 @@ include_once 'headerPrincipal.php';
 										<center>
 											<img class="autofit2" alt="image" title="<?= $compname ?>" width="180" height="100" src="data:image/jpeg;base64,<?= base64_encode($complogo) ?>"/>
 										</center>;
-										?>
+										<?php endif;?>
 									</div>
 									
 									<p><?php echo "$compbout"; ?></p>
@@ -185,8 +185,6 @@ include_once 'headerPrincipal.php';
 											<div class="tab-content-inner">
 												<div class="recent-job-wrapper alt-stripe mr-0">
 <?php
-
-try {
 	$stmt = $conn->prepare("SELECT * FROM tbl_jobs WHERE company = '$compid' AND job_id != :jobid ORDER BY rand() LIMIT 5");
 	$stmt->bindParam(':jobid', $jobid);
 	$stmt->execute();
@@ -215,22 +213,23 @@ try {
 				</div>';
 						  
 		} ?>
-													<a href="explore-job.php?jobid=<?php echo $row['job_id']; ?>" class="recent-job-item clearfix">
+													<a href="explore-job.php?jobid=<?= $row['job_id']; ?>" class="recent-job-item clearfix">
 														<div class="GridLex-grid-middle">
 															<div class="GridLex-col-6_sm-12_xs-12">
 																<div class="job-position">
 																	<div class="image">
 <?php
-	if ($complogo == null): ?>
+		if ($complogo == null): ?>
 										                            <center>
 										                            	<img class="autofit3" alt="image"  src="images/blank.png"/>
 										                            </center>
 <?php 
-	else: ?>
+		else: ?>
 										                           	<center>
 										                           		<img class="autofit3" alt="image" title="'.$compname.'" width="180" height="100" src="data:image/jpeg;base64,<?= base64_encode($complogo) ?>"/>
 										                           	</center>
-	endif; ?>
+<?php
+		endif; ?>
 																	</div>
 																	<div class="content">
 																		<h4><?= $row['title']; ?></h4>
@@ -246,15 +245,14 @@ try {
 															</div>
 															<div class="GridLex-col-3_sm-4_xs-4_xss-12">
                                                              <?= $sta ?>
-																<span class="font12 block spacing1 font400 text-center"> Due - <?php echo "$post_month"; ?> <?php echo "$post_date"; ?>, <?php echo "$post_year"; ?></span>
+																<span class="font12 block spacing1 font400 text-center"> Due - <?= $post_month ?>
+																 <= $post_date ?>, <?=$post_year?></span>
 															</div>
 														</div>
 													</a>
 <?php															
 	endforeach;
-}catch(PDOException $e){
-	print_r($e)
-}
+
 ?>
 												</div>
 											</div>
@@ -267,7 +265,7 @@ try {
 				</div>
 			</div>
 <?php 
-	include_once 'footer.php'; ?>
+	require_once 'footer.php'; ?>
 		</div>
 	</div> 
 	<div id="back-to-top">
