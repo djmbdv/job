@@ -3,7 +3,7 @@
 require 'constants/connection.php';
 $file_id = $_GET['id'];
 
-$global $conn;
+global $conn;
 
 try {
 	$stmt = $conn->prepare("SELECT * FROM tbl_professional_qualification WHERE id = :fileid");
