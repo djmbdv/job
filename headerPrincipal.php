@@ -1,10 +1,9 @@
-<!DOCTYPE html>
+<?php 
+	global $tags_share; 
+?><!DOCTYPE html>
 <html lang="es">
-
 <head>
-	<?php 
-	global $tags_share;?>
-	<meta charset="utf-8">
+	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -51,7 +50,6 @@
 	<script type="text/javascript" src="js/bootstrap-tokenfield.js"></script>
 	<script type="text/javascript" src="js/typeahead.bundle.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap3-wysihtml5.min.js"></script>
-	<script type="text/javascript" src="js/bootstrap-select.min.js"></script>
 
 	<script type="text/javascript" src="js/bootstrap-select.js"></script>
 	<script type="text/javascript" src="js/ion.rangeSlider.min.js"></script>
@@ -77,100 +75,68 @@
 	<link rel="stylesheet" href="icons/flaticon-streamline-outline/flaticon-streamline-outline.css">
 	<link rel="stylesheet" href="icons/flaticon-thick-icons/flaticon-thick.css">
 	<link rel="stylesheet" href="icons/flaticon-ventures/flaticon-ventures.css">
-
 	<link href="css/style.css" rel="stylesheet">
 </head>
 <header id="header">
 	<nav class="navbar navbar-default navbar-fixed-top navbar-sticky-function">
-
-				<div class="container">
-					
-					<div class="logo-wrapper">
-						<div class="logo">
-							<a href="./"> <img style="height:80px" src="images/logo4.png"   alt="Logo" /></a>
-						</div>
-					</div>
-					
-					<div id="navbar" class="navbar-nav-wrapper navbar-arrow">
-					
-						<ul class="nav navbar-nav" id="responsive-menu">
-						
-							<li>
-							
-								<a style="color:#d4bb03"  href="./">Inicio</a>
-								
-							</li>
-							
-							<li>
-								<a style="color:#d4bb03"  href="job-list.php">Lista de Servicios</a>
-
-							</li>
-						<!--	
-							<li>
-								<a href="employers.php">Empresa</a>
-							</li>
-							
-							<li>
-								<a href="employees.php">Personal</a>
-							</li>
-							
-							<li> -->
-								<a style="color:#d4bb03"  href="contact.php">Contacto</a>
-							</li>
-
-						</ul>
-				
-					</div>
-
-					<div  class="nav-mini-wrapper">
-						<ul  class="nav-mini sign-in">
-						<?php
-						if (isset($user_online ) && $user_online == true) {
-						print '
-						    <li><a  href="logout.php">Cerrar Sesión</a></li>
-							<li><a  href="'.$myrole.'">Perfil</a></li>';
-						}else{
-						print '
-							<li><a style="color:#d4bb03"  href="login.php">Ingresar</a></li>
-							<li><a style="color:#d4bb03"  data-toggle="modal" href="#registerModal">Registrate</a></li>';						
-						}
-						
-						?>
-
-						</ul>
-					</div>
-				
+		<div class="container">
+			<div class="logo-wrapper">
+				<div class="logo">
+					<a href="./"> <img style="height:80px" src="images/logo4.png"   alt="Logo" /></a>
 				</div>
-				
-				<div id="slicknav-mobile"></div>
-				
-			</nav>
-
-			
-			<div id="registerModal" class="modal fade login-box-wrapper" tabindex="-1" style="display: none;" data-backdrop="static" data-keyboard="false" data-replace="true">
-			
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h4 class="modal-title text-center">Registrate gratis</h4>
-				</div>
-				
-				<div class="modal-body">
-				
-					<div class="row gap-20">
-					
-						<div class="col-sm-6 col-md-6">
-							<a href="register.php?p=Employer" class="btn btn-facebook btn-block mb-5-xs">Registrarme</a>
-						</div>
-					
-					</div>
-				
-				</div>
-				
-				<div class="modal-footer text-center">
-					<button type="button" data-dismiss="modal" class="btn btn-primary btn-inverse">Cerrar</button>
-				</div>
-				
+			</div>
+			<div id="navbar" class="navbar-nav-wrapper navbar-arrow">
+				<ul class="nav navbar-nav" id="responsive-menu">
+					<li>
+						<a style="color:#d4bb03"  href="./">Inicio</a>
+					</li>
+					<li>
+						<a style="color:#d4bb03"  href="job-list.php">Lista de Servicios</a>
+					</li><!--	
+					<li>
+						<a href="employers.php">Empresa</a>
+					</li>
+					<li>
+						<a href="employees.php">Personal</a>
+					</li>-->
+					<li> 
+						<a style="color:#d4bb03"  href="contact.php">Contacto</a>
+					</li>
+				</ul>
 			</div>
 
+			<div  class="nav-mini-wrapper">
+				<ul  class="nav-mini sign-in">
+<?php if (isset($user_online ) && $user_online == true): ?>
+				    <li><a  href="logout.php">Cerrar Sesión</a></li>
+					<li><a  href="<?=$myrole?>">Perfil</a></li>
+<?php else: ?>
+					<li><a style="color:#d4bb03"  href="login.php">Ingresar</a></li>
+					<li><a style="color:#d4bb03"  data-toggle="modal" href="#registerModal">Registrate</a></li>
+<?php endif;?>
+				</ul>
+			</div>
+		</div>
+				
+		<div id="slicknav-mobile"></div>
+	</nav>
+
 			
-		</header>
+	<div id="registerModal" class="modal fade login-box-wrapper" tabindex="-1" style="display: none;" data-backdrop="static" data-keyboard="false" data-replace="true">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<h4 class="modal-title text-center">Registrate gratis</h4>
+		</div>
+		
+		<div class="modal-body">
+			<div class="row gap-20">
+				<div class="col-sm-6 col-md-6">
+					<a href="register.php?p=Employer" class="btn btn-facebook btn-block mb-5-xs">Registrarme</a>
+				</div>
+			</div>
+		</div>
+		<div class="modal-footer text-center">
+			<button type="button" data-dismiss="modal" class="btn btn-primary btn-inverse">Cerrar</button>
+		</div>
+	</div>	
+</header>

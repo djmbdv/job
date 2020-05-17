@@ -1,16 +1,10 @@
 <footer class="footer-wrapper">
-			
-            <div class="main-footer">
-            
-                <div class="container">
-                
+    <div class="main-footer">        
+        <div class="container">    
+            <div class="row">
+                <div class="col-sm-12 col-md-9">   
                     <div class="row">
-                    
-                        <div class="col-sm-12 col-md-9">
-                        
-                            <div class="row">
-                            
-                                <div class="col-sm-6 col-md-4">
+                        <div class="col-sm-6 col-md-4">
                                 
                                     <div class="footer-about-us">
                                         <h5 class="footer-title">Acerca de la empresa</h5>
@@ -83,16 +77,7 @@
                                 <li><a href="<?php echo "#"; ?>"><i class="ri ri-instagram" data-toggle="tooltip" data-placement="top" title="instagram"></i></a></li>
                             </ul>
                         </div>
-                    
                     </div>
-
                 </div>
-                
             </div>
-            <?php 
-include 'constants/settings.php'; 
-
-require 'constants/db_config.php'; 
-//include 'constants/check-login.php';
-?>
         </footer>
