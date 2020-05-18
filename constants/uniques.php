@@ -78,8 +78,3 @@ function get_rand_letters($length) {
     }
     return $rand_id;
 }
-
-
-
-
-?>

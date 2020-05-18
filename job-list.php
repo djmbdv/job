@@ -1,5 +1,6 @@
 <?php 
-require 'constants/settings.php'; 
+require_once 'constants/settings.php';
+require_once 'constants/connection.php';
 require 'constants/check-login.php';
 
 global $conn;
@@ -8,11 +9,6 @@ global $isHttps;
 
 $fromsearch = false;
 
-if (isset($_GET['search']) && $_GET['search'] == "✓") {
-
-}else{
-
-}
 
 if (isset($_GET['page'])) {
 $page = $_GET['page'];
@@ -28,21 +24,21 @@ if ($page=="" || $page=="1"){
 }
 
 if (isset($_GET['country']) && ($_GET['category']) ){
-$cate = $_GET['category'];
-$country = $_GET['country'];	
-$query1 = "SELECT * FROM tbl_jobs WHERE category = :cate AND country = :country ORDER BY enc_id DESC LIMIT $page1,12";
-$query2 = "SELECT * FROM tbl_jobs WHERE category = :cate AND country = :country ORDER BY enc_id DESC";
-$fromsearch = true;
+	$cate = $_GET['category'];
+	$country = $_GET['country'];	
+	$query1 = "SELECT * FROM tbl_jobs WHERE category = :cate AND country = :country ORDER BY enc_id DESC LIMIT $page1,12";
+	$query2 = "SELECT * FROM tbl_jobs WHERE category = :cate AND country = :country ORDER BY enc_id DESC";
+	$fromsearch = true;
 
-$slc_country = "$country";
-$slc_category = "$cate";
-$title = "$slc_category empleos en $slc_country";
-}else{
-$query1 = "SELECT * FROM tbl_jobs ORDER BY enc_id DESC LIMIT $page1,12";
-$query2 = "SELECT * FROM tbl_jobs ORDER BY enc_id DESC";	
-$slc_country = "NULL";
-$slc_category = "NULL";	
-$title = "Lista de Servicios";
+	$slc_country = "$country";
+	$slc_category = "$cate";
+	$title = "$slc_category empleos en $slc_country";
+	}else{
+	$query1 = "SELECT * FROM tbl_jobs ORDER BY enc_id DESC LIMIT $page1,12";
+	$query2 = "SELECT * FROM tbl_jobs ORDER BY enc_id DESC";	
+	$slc_country = "NULL";
+	$slc_category = "NULL";	
+	$title = "Lista de Servicios";
 }
 
 require 'headerPrincipal.php';
@@ -58,171 +54,121 @@ require 'headerPrincipal.php';
 							<div class="row">
 								<div class="col-xss-12 col-xs-6 col-sm-6 col-md-5">
 									<div class="form-group form-lg">
-										<select class="form-control" name="category" required/>
+										<select class="form-control" name="category" required>
 										<option value="">-Seleccionar Categoria-</option>
-										 <?php
-										 require 'constants/db_config.php';
-										 try {
-                                         $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-                                         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+<?php
 
-	
-                                         $stmt = $conn->prepare("SELECT * FROM tbl_categories ORDER BY category");
-                                         $stmt->execute();
-                                         $result = $stmt->fetchAll();
+$stmt = $conn->prepare("SELECT * FROM tbl_categories ORDER BY category");
+$stmt->execute();
+$result = $stmt->fetchAll();
 
-                                         foreach($result as $row)
-										 
-                                         {
-										 $cat = $row['category'];
-                                        ?>
-										<option  <?php if ($slc_category == "$cat") { print ' selected '; } ?> value="<?php echo $row['category']; ?>"><?php echo $row['category']; ?></option>
-										<?php
-	                                     }
-                                         $stmt->execute();
-					  
-	                                     }catch(PDOException $e)
-                                         {
-                                    
-                                         }
-	
-										?>
-														   
+foreach($result as $row):
+	$cat = $row['category'];
+?>
+										<option  <?php if ($slc_category == "$cat") { print ' selected '; } ?> value="<?= $row['category'] ?>">
+											<= $row['category'] ?>
+										</option>
+<?php
+endforeach; ?>			   
 										</select>
 									</div>
 								</div>
 								
 								<div class="col-xss-12 col-xs-6 col-sm-6 col-md-5">
 									<div class="form-group form-lg">
-										<select class="form-control" name="Departametno" required/>
+										<select class="form-control" name="Departametno" required>
 										<option value="">-Seleccionar departamento-</option>
-										 <?php
-										 require 'constants/db_config.php';
-										 try {
-                                         $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-                                         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+<?php
+							
+$stmt = $conn->prepare("SELECT * FROM tbl_countries ORDER BY country_name");
+$stmt->execute();
+$result = $stmt->fetchAll();
 
-	
-                                         $stmt = $conn->prepare("SELECT * FROM tbl_countries ORDER BY country_name");
-                                         $stmt->execute();
-                                         $result = $stmt->fetchAll();
-
-                                         foreach($result as $row)
-										
-                                         {
-											  $cnt = $row['country_name'];
-                                        ?>
-										
+foreach($result as $row):
+	$cnt = $row['country_name']; ?>	
 										<option <?php if ($slc_country == "$cnt") { print ' selected '; } ?> value="<?php echo $row['country_name']; ?>"><?php echo $row['country_name']; ?></option>
-										<?php
-	                                     }
-                                         $stmt->execute();
-					  
-	                                     }catch(PDOException $e)
-                                         {
-               
-                                         }
-	
-										?>
+<?php
+endforeach; ?>
 										</select>
 									</div>
 								</div>
-								
 								<div class="col-xss-12 col-xs-6 col-sm-4 col-md-2">
 									<button name="search" value="✓" type="submit" class="btn btn-block">Buscar</button>
 								</div>
-							
 							</div>
 						</div>
-					
 					</form>
-					
-
 				</div>
-			
 			</div>
 		
 			<div class="breadcrumb-wrapper">
-			
 				<div class="container">
-				
 					<ol class="breadcrumb-list booking-step">
 						<li><a href="./">Inicio</a></li>
 						<li><span><?php echo "$title"; ?></span></li>
 					</ol>
-					
 				</div>
-				
 			</div>
 
 			
 			<div class="section sm">
-			
 				<div class="container">
-				
 					<div class="sorting-wrappper">
-			
 						<div class="sorting-header">
 							<h3 class="sorting-title"><?php echo "$title"; ?></h3>
 						</div>
-						
-		
 					</div>
-					
 					<div class="result-wrapper">
-					
 						<div class="row">
-						
 							<div class="col-sm-12 col-md-12 mt-25">
-							
 								<div class="result-list-wrapper">
-								<?php
-								
-								try {
+<?php
 
-                                $stmt = $conn->prepare($query1);
-								if ($fromsearch == true) {
-									$stmt->bindParam(':cate', $slc_category);
-	                                $stmt->bindParam(':country', $slc_country);	
-								}
-                                $stmt->execute();
-                                $result = $stmt->fetchAll();
-                                foreach($result as $row){
-								$type = $row['type'];
-								$compid = $row['company'];
-								
-								$stmtb = $conn->prepare("SELECT * FROM tbl_users WHERE member_no = '$compid' and role = 'employer'");
-                                $stmtb->execute();
-                                $resultb = $stmtb->fetchAll();
-                                foreach($resultb as $rowb) {
-									$complogo = $rowb['avatar'];
-									$thecompname = $rowb['first_name'];	
-									$telefono = isset($rowb['telefono'])? $rowb['telefono'] :"";
-								}
-								if ($type == "Freelance") {
-								$sta = '<span class="job-label label label-success">Freelance</span>';
-											  
-								}
-								if ($type == "Part-time") {
-								$sta = '<span class="job-label label label-danger">Part-time</span>';
-											  
-								}
-								if ($type == "Full-time") {
-								$sta = '<span class="job-label label label-warning">Full-time</span>';
-											  
-								}
-		                        
-								?>
+
+$stmt = $conn->prepare($query1);
+if ($fromsearch == true) {
+$stmt->bindParam(':cate', $slc_category);
+$stmt->bindParam(':country', $slc_country);	
+}
+$stmt->execute();
+$result = $stmt->fetchAll();
+foreach($result as $row){
+$type = $row['type'];
+$compid = $row['company'];
+
+$stmtb = $conn->prepare("SELECT * FROM tbl_users WHERE member_no = '$compid' and role = 'employer'");
+$stmtb->execute();
+$resultb = $stmtb->fetchAll();
+foreach($resultb as $rowb) {
+	$complogo = $rowb['avatar'];
+	$thecompname = $rowb['first_name'];	
+	$telefono = isset($rowb['telefono'])? $rowb['telefono'] :"";
+	}
+	if ($type == "Freelance") {
+	$sta = '<span class="job-label label label-success">Freelance</span>';
+			  
+	}
+	if ($type == "Part-time") {
+	$sta = '<span class="job-label label label-danger">Part-time</span>';
+			  
+	}
+	if ($type == "Full-time") {
+	$sta = '<span class="job-label label label-warning">Full-time</span>';
+			  
+	}
+
+?>
 									<div class="job-item-list">
 									
 										<div class="image">
-										<?php 
-										if ($complogo == null) {
-										print '<center><img class="autofit3" alt="image"  src="images/blank.png"/></center>';
-										}else{
-										echo '<center><img class="autofit3" alt="image" title="'.$thecompname.'" width="180" height="100" src="data:image/jpeg;base64,'.base64_encode($complogo).'"/></center>';	
-										}
-										 ?>
+<?php 
+	if ($complogo == null): ?>
+										<center><img class="autofit3" alt="image"  src="images/blank.png"/></center>';
+<?php
+	else: ?>
+										<center><img class="autofit3" alt="image" title="<?= $thecompname ?>" width="180" height="100" src="data:image/jpeg;base64,<?=base64_encode($complogo) ?>"/></center>
+<?php
+	endif;?>
 										</div>
 										
 										<div class="content">
@@ -302,11 +248,7 @@ require 'headerPrincipal.php';
 	 
 	                            }
 
-					  
-	                            }catch(PDOException $e)
-                                {
-
-                                } ?>
+ ?>
                                 </div>
 								
 					
@@ -315,9 +257,8 @@ require 'headerPrincipal.php';
 						        <ul class="pager-list">
 								<?php
 								$total_records = 0;
-								require 'constants/db_config.php';
 								
-								try {
+							
 	                                $stmt = $conn->prepare($query2);
 									if ($fromsearch == true) {
 									$stmt->bindParam(':cate', $slc_category);
@@ -329,10 +270,7 @@ require 'headerPrincipal.php';
 		                            foreach($result as $row){
 			                        	$total_records++;
 	                                }
-	                            }catch(PDOException $e)
-                                {
-
-                                }
+	                            
 	
                                 $records = $total_records/12;
                                 $records = ceil($records);
@@ -353,16 +291,10 @@ require 'headerPrincipal.php';
 								?>
 
 						            </ul>	
-					
 					                </div>
-								
 							</div>
-							
-						
 						</div>
-						
 					</div>
-
 				</div>
 			
 			</div>
