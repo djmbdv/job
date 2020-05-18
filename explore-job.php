@@ -6,48 +6,48 @@ require 'constants/connection.php';
 global $conn;
 global $actual_link;
 $closingdate = "";
-if (isset($_GET['jobid'])) {
 
-	$jobid = $_GET['jobid'];
+if(!isset($_GET['jobid']) || !is_numeric($_GET['jobid'])){
+	header('location: ./');
+	die();
+}
+$jobid = $_GET['jobid'];
 
-	try {
-	    $stmt = $conn->prepare("SELECT * FROM tbl_jobs WHERE job_id = :jobid");
-		$stmt->bindParam(':jobid', $jobid);
-	    $stmt->execute();
-	    $result = $stmt->fetchAll();
-		$rec = count($result);
-		if ($rec == "0") {
-			header("location:./");	
-		}else{
-		    foreach($result as $row){
-				$jobtitle = $row['title'];
-				$jobcity = $row['city'];
-				$jobcountry = $row['country'];
-				$jobcategory = $row['category'];
-				$jobtype = $row['type'];
-				$experience = $row['experience'];
-				$jobdescription = $row['description'];
-				$jobrespo = $row['responsibility'];
-				$jobreq = $row['requirements'];
-				$closingdate = $row['closing_date'];
-				$opendate = $row['date_posted'];
-				$compid = $row['company'];
-				if ($jobtype == "Freelance") {
-					$sta = '<span class="label label-success">Freelance</span>';
-				}
-				if ($jobtype == "Part-time") {
-					$sta = '<span class="label label-danger">Part-time</span>';									  
-				}
-				if ($jobtype == "Full-time") {
-					$sta = '<span class="label label-warning">Full-time</span>';										  
-				}
+try {
+	$stmt = $conn->prepare("SELECT * FROM tbl_jobs WHERE job_id = :jobid");
+	$stmt->bindParam(':jobid', $jobid);
+	$stmt->execute();
+	$result = $stmt->fetchAll();
+	$rec = count($result);
+	if ($rec == "0") {
+		header("location:./");	
+	}else{
+		foreach($result as $row){
+			$jobtitle = $row['title'];
+			$jobcity = $row['city'];
+			$jobcountry = $row['country'];
+			$jobcategory = $row['category'];
+			$jobtype = $row['type'];
+			$experience = $row['experience'];
+			$jobdescription = $row['description'];
+			$jobrespo = $row['responsibility'];
+			$jobreq = $row['requirements'];
+			$closingdate = $row['closing_date'];
+			$opendate = $row['date_posted'];
+			$compid = $row['company'];
+			if ($jobtype == "Freelance") {
+				$sta = '<span class="label label-success">Freelance</span>';
 			}
-		}					  
-	}catch(Exception $e){
-		print_r($e);
-	}
-}else{
-	header("location:./");	
+			if ($jobtype == "Part-time") {
+				$sta = '<span class="label label-danger">Part-time</span>';									  
+			}
+			if ($jobtype == "Full-time") {
+				$sta = '<span class="label label-warning">Full-time</span>';										  
+			}
+		}
+	}					  
+}catch(Exception $e){
+	print_r($e);
 }
 
 
@@ -82,7 +82,6 @@ if ($today_date > $conv_date){
 }else{
 	$jobexpired = false;
 }
-
 $tags_share  = array(
 	"og:url"    => $actual_link."/explore-job.php?jobid=".$jobid,
     "og:type"  => "article",

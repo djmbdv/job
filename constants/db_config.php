@@ -5,3 +5,4 @@ $username =  "root";
 $password = "fabianjose";
 $password = "";
 $dbname = "remotepc_bwirejobs_db";
+$s = $sg;
