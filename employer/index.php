@@ -1,25 +1,25 @@
-<!doctype html>
-<html lang="es_ES">
-<?php 
-include '../constants/settings.php'; 
-include 'constants/check-login.php';
+<!DOCTYPE html>
+<html lang="es">
+<?php
 
-if ($user_online == "true") {
-if ($myrole == "employer") {
-}else{
-header("location:../");		
-}
-}else{
-header("location:../");	
+require_once '../constants/settings.php';
+require_once '../constants/connection.php';
+require_once 'constants/check-login.php';
+
+global $conn;
+global $title_site;
+
+if (!$user_online  || $myrole != "employer") {
+	header('location:../');
+	die();
 }
 ?>
 <head>
-
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Platea21 - Company Profile</title>
+	<title><?= $title_site ?> - <?=$compname?></title>
 	<meta name="description" content="Online Job Management / Job Portal" />
 	<meta name="keywords" content="job, work, resume, applicants, application, employee, employer, hire, hiring, human resource management, hr, online job management, company, worker, career, recruiting, recruitment" />
 	<meta name="author" content="BwireSoft">
@@ -53,102 +53,67 @@ header("location:../");
 	<link href="../css/style.css" rel="stylesheet">
 	
 </head>
-
-
 <body class="not-transparent-header">
-
 	<div class="container-wrapper">
-
 		<header id="header">
-
 			<nav class="navbar navbar-default navbar-fixed-top navbar-sticky-function">
-
 				<div class="container">
-					
 				<div class="logo-wrapper">
 						<div class="logo">
 							<a href="./"> <img style="height:40px" src="../images/logo4.png"   alt="Logo" /></a>
 						</div>
 					</div>
-					
 					<div id="navbar" class="navbar-nav-wrapper navbar-arrow">
-					
 						<ul class="nav navbar-nav" id="responsive-menu">
-						
 							<li>
-							
 								<a href="../">Inicio</a>
-								
 							</li>
-							
-							
 							<li>
 								<a href="../contact.php">Contacto</a>
 							</li>
-
 						</ul>
-				
 					</div>
-
 					<div class="nav-mini-wrapper">
 						<ul class="nav-mini sign-in">
 							<li><a href="../logout.php">Salir</a></li>
 							<li><a href="./">Perfil</a></li>
 						</ul>
 					</div>
-				
 				</div>
-				
 				<div id="slicknav-mobile"></div>
-				
 			</nav>
-
-			
 		</header>
-
 		<div class="main-wrapper">
-		
 			<div class="breadcrumb-wrapper">
-			
 				<div class="container">
-				
 					<ol class="breadcrumb-list booking-step">
 						<li><a href="../">Inicio</a></li>
 						<li><span>perfil</span></li>
 					</ol>
-					
 				</div>
-				
 			</div>
-
-			
 			<div class="admin-container-wrapper">
-
 				<div class="container">
-				
 					<div class="GridLex-gap-15-wrappper">
-					
 						<div class="GridLex-grid-noGutter-equalHeight">
-						
 							<div class="GridLex-col-3_sm-4_xs-12">
-							
 								<div class="admin-sidebar">
-										
-										
 									<div class="admin-user-item for-employer">
-										
 										<div class="image">
-										<?php 
-										if ($logo == null) {
-										print '<center>Company Logo Here</center>';
-										}else{
-										echo '<center><img alt="image" title="'.$compname.'" width="180" height="100" src="data:image/jpeg;base64,'.base64_encode($logo).'"/></center>';	
-										}
-										?><br>
+<?php 
+	if ($logo == null): ?>
+											<center>Company Logo Here</center>
+<?php 
+	else: ?>
+											<center>
+												<img alt="image" title="<?=$compname?>" width="180" height="100" src="data:image/jpeg;base64,<?=base64_encode($logo) ?>"/>
+											</center>	
+<?php
+	endif; ?>
+											<br/>
 										</div>
 										
-										<h4><?php echo "$compname"; ?></h4>
-										
+										<h4><?= $compname ?></h4>
 									</div>
 									
 									<div class="admin-user-action text-center">
@@ -156,7 +121,6 @@ header("location:../");
 										<a href="post-job.php" class="btn btn-primary btn-sm btn-inverse">Publicar Servicio</a>
 										
 									</div>
-									
 									<ul class="admin-user-menu clearfix">
 										<li  class="active">
 											<a href="./"><i class="fa fa-user"></i> Perfil</a>
@@ -187,7 +151,9 @@ header("location:../");
 									<div class="admin-section-title">
 									
 										<h2>Perfil</h2>
-										<p>Ultimo inicio de sesion: <span class="text-primary"><?php echo "$mylogin"; ?></span></p>
+										<p>
+											&Uacute;ltimo inicio de sesi&oacute;n: <span class="text-info"><?= $mylogin ?></span>
+										</p>
 										
 									</div>
 									
@@ -201,26 +167,18 @@ header("location:../");
 												
 													<div class="form-group">
 														<label>Nombre</label>
-														<input name="company" placeholder="Enter Nombre de Empresa" type="text" class="form-control" value="<?php echo "$compname"; ?>" required>
+														<input name="company" placeholder="Enter Nombre de Empresa" type="text" class="form-control" value="<?= $compname ?>" required>
 													</div>
 													
 												</div>
 												<div class="clear"></div>
-												
-											<!-- 		<div class="col-sm-6 col-md-4">
-												
-												<div class="form-group">
-														<label>Establecida en</label>
-                                                    <input name="year" placeholder="Ingrese años ej: 2016, 2017, 2018" type="text" class="form-control" value="<?php echo "$esta"; ?>" required>
-													</div>
-													
-												</div>-->
+								
 												
 												<div class="col-sm-6 col-md-4">
 												
 													<div class="form-group">
 														<label>Rubro</label>
-                                                    <input class="form-control" placeholder="Ej: Ventas, Viajes" name="type" required type="text" value="<?php echo "$mytitle"; ?>" required> 
+                                                    	<input class="form-control" placeholder="Ej: Ventas, Viajes" name="type" required type="text" value="<?= $mytitle ?>" required/> 
 													</div>
 													
 												</div>
@@ -228,18 +186,6 @@ header("location:../");
 												<div class="clear"></div>
 
 													<div class="form-group">
-											<!-- 	
-													<div class="col-sm-6 col-md-4">
-														<label>Personas</label>
-														<select name="people" required class="selectpicker show-tick form-control mb-15" data-live-search="false">
-															<option <?php if ($mypeople == "1-10") { print ' selected '; } ?> value="1-10">1-10</option>
-															<option <?php if ($mypeople == "11-100") { print ' selected '; } ?> value="11-100">11-100</option>
-															<option <?php if ($mypeople == "200+") { print ' selected '; } ?> value="200+" >200+</option>
-															<option <?php if ($mypeople == "300+") { print ' selected '; } ?> value="300+">300+</option>
-															<option <?php if ($mypeople == "1000+") { print ' selected '; } ?>value="1000+">1000+ </option>
-														</select>
-													</div>
--->	
 													<div class="col-sm-6 col-md-4">
 														<label>Página Web</label>
 														<input type="text" class="form-control" value="<?php echo "$myweb"; ?>" name="web" placeholder="Ingresa tu website">
@@ -284,28 +230,16 @@ header("location:../");
 														<label>Departamento</label>
 														<select name="country" required class="selectpicker show-tick form-control" data-live-search="true">
 															<option disabled value="">Seleccionar</option>
-						                                   <?php
-														   require '../constants/db_config.php';
-														   try {
-                                                           $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-                                                           $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+<?php
 
-	
-                                                           $stmt = $conn->prepare("SELECT * FROM tbl_countries ORDER BY country_name");
-                                                           $stmt->execute();
-                                                           $result = $stmt->fetchAll();
-  
-                                                           foreach($result as $row)
-                                                           {
-		                                                    ?> <option <?php if ($country == $row['country_name']) { print ' selected '; } ?> value="<?php echo $row['country_name']; ?>"><?php echo $row['country_name']; ?></option> <?php
-	 
-	                                                        }
+	$stmt = $conn->prepare("SELECT * FROM tbl_countries ORDER BY country_name");
+	$stmt->execute();
+	$result = $stmt->fetchAll();
 
-					  
-	                                                       }catch(PDOException $e)
-                                                           {
-
-                                                           }
+	foreach($result as $row):?>
+                                                           	<option <?= ($country == $row['country_name']) ? 'selected':'' ?> value="<?php echo $row['country_name']; ?>"><?php echo $row['country_name']; ?></option>
+<?php
+	endforeach;
 	
 														   ?>
 														</select>
@@ -314,28 +248,19 @@ header("location:../");
 												</div>
 
 												<div class="clear"></div>
-												
 												<div class="col-sm-6 col-md-4">
-												
 													<div class="form-group">
 														<label>Teléfono</label>
-														<input type="text" name="phone" required class="form-control" value="<?php echo "$myphone"; ?>" placeholder="Ingresa tu phone">
+														<input type="tel" name="phone" required class="form-control" value="<?= $myphone ?>" placeholder="Ingresa tu phone">
 													</div>
-													
 												</div>
-												
 												<div class="col-sm-6 col-md-4">
-												
 													<div class="form-group">
 														<label>Correo Electrónico</label>
 														<input type="email" name="email" required class="form-control" value="<?php echo "$mymail"; ?>" placeholder="Ingresa tu email">
 													</div>
-													
 												</div>
-												
 
-
-												<div class="clear"></div>
 												
 
 
@@ -345,7 +270,7 @@ header("location:../");
 												
 													<div class="form-group bootstrap3-wysihtml5-wrapper">
 														<label>Historia de ti o de tu Empresa</label>
-														<textarea name="background" class="bootstrap3-wysihtml5 form-control" placeholder="Ingresa historia de la empresa ..." style="height: 200px;"><?php echo "$desc"; ?></textarea>
+														<textarea name="background" class="bootstrap3-wysihtml5 form-control" placeholder="Ingresa historia de la empresa ..." style="height: 200px;"><?= $desc ?></textarea>
 													</div>
 													
 												</div>
@@ -356,7 +281,9 @@ header("location:../");
 												
 													<div class="form-group bootstrap3-wysihtml5-wrapper">
 														<label>Cuentanos un poco sobre tus Servicios</label>
-														<textarea name="services" class="bootstrap3-wysihtml5 form-control" placeholder="Ingresa servicios de la empresa ..." style="height: 200px;"><?php echo "$myserv"; ?></textarea>
+														<textarea name="services" class="bootstrap3-wysihtml5 form-control" placeholder="Ingresa servicios de la empresa ..." style="height: 200px;">
+															<?= $myserv ?>
+														</textarea>
 													</div>
 													
 												</div>
@@ -367,7 +294,9 @@ header("location:../");
 												
 													<div class="form-group bootstrap3-wysihtml5-wrapper">
 														<label>Cuentanos un poco sobre tu Experiencia</label>
-														<textarea name="expertise" class="bootstrap3-wysihtml5 form-control" placeholder="Ingresa experiencia de la empresa ..." style="height: 200px;"><?php echo "$myex"; ?></textarea>
+														<textarea name="expertise" class="bootstrap3-wysihtml5 form-control" placeholder="Ingresa experiencia de la empresa ..." style="height: 200px;">
+															<?= $myex ?>
+														</textarea>
 													</div>
 													
 												</div>
@@ -378,10 +307,10 @@ header("location:../");
 													<button type="submit" class="btn btn-primary">Guardar</button>
 													<button type="reset" class="btn btn-warning">Cancelar</button>
 												</div>
-
 											</div>
-											
-										</form><br>
+										</form>
+
+										<br>
 										
 										<form action="app/new-dp.php" method="POST" enctype="multipart/form-data">
 										<div class="row gap-20">
@@ -407,18 +336,12 @@ header("location:../");
 										?>
 										</div>
 										</div>
-										</form>
-									
+									</form>
 								</div>
-
 							</div>
-							
 						</div>
-
 					</div>
-
 				</div>
-			
 			</div>
 
 			<footer class="footer-wrapper">

@@ -1,11 +1,11 @@
 <?php
-require '../../constants/db_config.php';
+require '../../constants/connection.php';
 require '../constants/check-login.php';
 
 $companame = ucwords($_POST['company']);
-$esta = $_POST['year'];
+//$esta = $_POST['year'];
 $type = ucwords($_POST['type']);
-$people = $_POST['people'];
+//$people = $_POST['people'];
 $web = $_POST['web'];
 $city = ucwords($_POST['city']);
 $street = ucwords($_POST['street']);
@@ -17,21 +17,17 @@ $service = $_POST['services'];
 $expertise = $_POST['expertise'];
 $myemail = $_POST['email'];
 
-    try {
-    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-	
-    $stmt = $conn->prepare("SELECT * FROM tbl_users WHERE email = :email AND member_no != '$myid'");
-	$stmt->bindParam(':email', $myemail);
-    $stmt->execute();
-    $result = $stmt->fetchAll();
-    $rec = count($result);
-	
-	if ($rec == "0") {
-    $stmt = $conn->prepare("UPDATE tbl_users SET first_name = :compname, byear = :esta, title = :type, city = :city, street = :street, zip = :zip, country = :country, phone = :phone, about = :about, services = :service, expertise = :expertise, people = :people, website = :website WHERE member_no='$myid'");
+$stmt = $conn->prepare("SELECT * FROM tbl_users WHERE email = :email AND member_no != :id ");
+$stmt->bindParam(':email', $myemail);
+$stmt->bindParam(':id',$myid,PDO::PARAM_STR,255);
+$stmt->execute();
+if ($stmt->rowCount() == 0) {
+/*    $stmt = $conn->prepare("UPDATE tbl_users SET first_name = :compname, title = :type, city = :city, street = :street, zip = :zip, country = :country, phone = :phone, about = :about, services = :service, expertise = :expertise, people = :people, website = :website WHERE member_no=:id'");
+    $stmt->bindParam(':compname', $companame);*/
+    $stmt = $conn->prepare("UPDATE tbl_users SET first_name = :compname, title = :type, city = :city, street = :street, zip = :zip, country = :country, phone = :phone, about = :about, services = :service, expertise = :expertise, website = :website WHERE member_no=:id");
     $stmt->bindParam(':compname', $companame);
-    $stmt->bindParam(':esta', $esta);
+//    $stmt->bindParam(':esta', $esta);
 	$stmt->bindParam(':type', $type);
     $stmt->bindParam(':city', $city);
 	$stmt->bindParam(':street', $street);
@@ -41,8 +37,9 @@ $myemail = $_POST['email'];
 	$stmt->bindParam(':about', $about);
     $stmt->bindParam(':service', $service);
 	$stmt->bindParam(':expertise', $expertise);
-    $stmt->bindParam(':people', $people);
+//    $stmt->bindParam(':people', $people);
 	$stmt->bindParam(':website', $web);
+	$stmt->bindParam(':id', $myid);
     $stmt->execute();
 	
 	$_SESSION['compname'] = $companame;
@@ -59,17 +56,12 @@ $myemail = $_POST['email'];
 	$_SESSION['myexp'] = $expertise;
 	$_SESSION['website'] = $web;
 	$_SESSION['people'] = $people;
-	header("location:../?r=9837");	
-	}else{
+	if($stmt->rowCount() == 1)
+		header("location:../?r=9837");
+	else header("location:../?r=0");
+}else
 	header("location:../?r=0927");
-	}
 
-					  
-	}catch(PDOException $e)
-    {
-    echo "Connection failed: " . $e->getMessage();
-    }
 
-?>
 
 

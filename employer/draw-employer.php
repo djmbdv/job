@@ -1,4 +1,6 @@
 <?php
+
+
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 $sql = 'SELECT * from tbl_users';
@@ -105,7 +107,7 @@ while($row = mysqli_fetch_assoc($result)) {
 
     if($a ==  $_GET['email']) {
 
-        alert('correo repetio');
+      //  alert('correo repetio');
 
     }
     

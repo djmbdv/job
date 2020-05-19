@@ -44,7 +44,7 @@
 	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap-modalmanager.js"></script>
 	<script type="text/javascript" src="js/bootstrap-modal.js"></script>
-	<script type="text/javascript" src="js/smoothscroll.js"></script>
+	<!--script type="text/javascript" src="js/smoothscroll.js"></script-->
 
 	<script type="text/javascript" src="js/wow.min.js"></script>
 

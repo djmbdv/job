@@ -12,45 +12,39 @@ function generate_verification_token($email){
 	$stmt->bindParam(':email', $email);
 	$stmt->bindParam(':token', $token);
 	$stmt->execute();
-	echo "Tonken generado $token";
+	echo "Tonken generado: $token";
 	return $token;
 }
 
 
 
 function create_verification_email($email){
-	try{
-		global $conn;
-		global $smtp_host;
-		global $smtp_user;
-		global $smtp_pass;
-		global $title_site;
-		global $contact_email;
-		global $actual_link;
-		global $isHttps;
-		$mail = new PHPMailer();
-		$mail->isSMTP();
-	    $mail->Host       = $smtp_host;
-	    $mail->SMTPAuth   = true;
-	    $mail->Username   = $smtp_user;                     
-	    $mail->Password   = $smtp_pass;
-	    $mail->Port       = 587;    
+	global $smtp_host;
+	global $smtp_user;
+	global $smtp_pass;
+	global $title_site;
+	global $contact_email;
+	global $actual_link;
+	global $isHttps;
+	$mail = new PHPMailer();
+	$mail->isSMTP();
+    $mail->Host       = $smtp_host;
+    $mail->SMTPAuth   = true;
+    $mail->Username   = $smtp_user;                     
+    $mail->Password   = $smtp_pass;
+    $mail->Port       = 587;    
 
-	    $mail->setFrom($smtp_user, $title_site);
-	    $mail->addAddress($email); 
-	    $mail->addReplyTo($contact_email, $title_site);
-	    $mail->isHTML(true);
-	    $mail->Subject = 'Verificacion de Cuenta';
-	    $token = generate_verification_token($email);
-	    $protocol = $isHttps ? "https" : "http";
-	    $local = LOCAL ? "/job" : "";
-	    $mail->Body    = "Link de Verificacion <b><a href='$protocol://$actual_link$local/app/email-verification.php?t=$token'>$protocol://$actual_link$local/app/email-verification.php?t=$token</a></b>";
-	    $mail->send();
-	    return true;
-	}catch(Exception $e){
-		print_r($e);
-		return false;
-	}    
+    $mail->setFrom($smtp_user, $title_site);
+    $mail->addAddress($email); 
+    $mail->addReplyTo($contact_email, $title_site);
+    $mail->isHTML(true);
+    $mail->Subject = 'Verificacion de Cuenta';
+    $token = generate_verification_token($email);
+    $protocol = $isHttps ? "https" : "http";
+    $local = LOCAL ? "/job" : "";
+    $mail->Body    = "Link de Verificacion <b><a href='$protocol://$actual_link$local/app/email-verification.php?t=$token'>$protocol://$actual_link$local/app/email-verification.php?t=$token</a></b>";
+    $mail->send();
+    return true;
 }
 
 
@@ -60,7 +54,6 @@ function register_as_employee(){
 	try{
 		global $conn;
 		$role = 'employee';
-	    $account_type = $_POST['acctype'];
 	    $last_login = date('d-m-Y h:m A [T P]');
 		$member_no = 'EM'.get_rand_numbers(9).'';
 	    $fname = ucwords($_POST['fname']);
@@ -82,6 +75,7 @@ function register_as_employee(){
 	    $stmt->execute();			  
 		echo true;
 	}catch(PDOException $e){
+		print_r($e);
 		echo false;
 	}
 }

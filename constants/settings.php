@@ -1,4 +1,5 @@
 <?php
+
 define('LOCAL', true);
 $actual_link = $_SERVER['HTTP_HOST'];
 $title_site = "Directorio Profesional";
