@@ -139,9 +139,7 @@ if (!$user_online  || $myrole != "employer") {
 											<a href="../logout.php"><i class="fa fa-sign-out"></i> Logout</a>
 										</li>
 									</ul>
-									
 								</div>
-
 							</div>
 							
 							<div class="GridLex-col-9_sm-8_xs-12">

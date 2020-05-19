@@ -24,8 +24,8 @@ if (isset($_GET['page'])) {
 }
 $cate = "";
 if (isset($_GET['country']) && ($_GET['category']) ){
-	$cate = $_GET['category'];
-	$country = $_GET['country'];	
+	$cate = urldecode($_GET['category']);
+	$country =urldecode($_GET['country']);	
 	$query1 = "SELECT * FROM tbl_jobs WHERE category = :cate AND country = :country ORDER BY enc_id DESC LIMIT $page1,12";
 	$query2 = "SELECT * FROM tbl_jobs WHERE category = :cate AND country = :country ORDER BY enc_id DESC";
 	$fromsearch = true;
@@ -61,11 +61,9 @@ require 'headerPrincipal.php';
 $stmt = $conn->prepare("SELECT * FROM tbl_categories ORDER BY category");
 $stmt->execute();
 $result = $stmt->fetchAll();
-foreach($result as $row):
-	$cat = $row['category'];
-?>
-											<option value="<?= $row['category'] ?>"  <?= ($cate == $cat)?'selected':'' ?> >
-												<?= $row['category'] ?>
+foreach($result as $row): ?>
+											<option value="<?= $row['category'] ?>"  <?= ($cate == $row['category'])?'selected':'' ?> >
+												<?=  $row['category'] ?>
 											</option>
 <?php
 endforeach; ?>			   

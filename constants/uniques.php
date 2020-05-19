@@ -1,7 +1,5 @@
 <?php
 function assign_rand_value($num) {
-
-  
     switch($num) {
         case "1"  : $rand_value = "a"; break;
         case "2"  : $rand_value = "b"; break;
