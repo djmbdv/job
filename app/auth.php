@@ -19,8 +19,10 @@ $stmt->execute();
 
 $rec = $stmt->rowCount();
 
-if ($rec != "0"){ 
-	header("location:../login.php?r=0346");
+if ($rec != 1){ 
+	//header("location:../login.php?r=0346");
+
+	echo "$rec $myemail $mypass";
 	die();
 }
 session_start();
@@ -66,4 +68,4 @@ $stmt->bindParam(':lastlogin', $last_login);
 $stmt->bindParam(':email', $myemail);
 $stmt->execute();
 
-header("location: ./$role");
+header("location: ../$role");

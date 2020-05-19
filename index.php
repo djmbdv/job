@@ -1,8 +1,9 @@
 <?php 
 require_once 'constants/connection.php';
-global $conn;
+require_once 'constants/check-login.php';
+include 'headerPrincipal.php';
 
-include 'headerPrincipal.php'; 
+global $conn;
 ?>
 <style>
 	.autofit2 {
