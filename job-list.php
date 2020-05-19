@@ -11,18 +11,18 @@ $fromsearch = false;
 
 
 if (isset($_GET['page'])) {
-$page = $_GET['page'];
-if ($page=="" || $page=="1"){
-	$page1 = 0;
-	$page = 1;
-}else{
-	$page1 = ($page*16)-16;
-}					
+	$page = $_GET['page'];
+	if ($page=="" || $page=="1"){
+		$page1 = 0;
+		$page = 1;
+	}else{
+		$page1 = ($page*16)-16;
+	}					
 }else{
 	$page1 = 0;
 	$page = 1;	
 }
-
+$cate = "";
 if (isset($_GET['country']) && ($_GET['category']) ){
 	$cate = $_GET['category'];
 	$country = $_GET['country'];	
@@ -30,8 +30,8 @@ if (isset($_GET['country']) && ($_GET['category']) ){
 	$query2 = "SELECT * FROM tbl_jobs WHERE category = :cate AND country = :country ORDER BY enc_id DESC";
 	$fromsearch = true;
 
-	$slc_country = "$country";
-	$slc_category = "$cate";
+	$slc_country = $country;
+	$slc_category = $cate;
 	$title = "$slc_category empleos en $slc_country";
 }else{
 	$query1 = "SELECT * FROM tbl_jobs ORDER BY enc_id DESC LIMIT $page1,12";
@@ -64,7 +64,7 @@ $result = $stmt->fetchAll();
 foreach($result as $row):
 	$cat = $row['category'];
 ?>
-											<option value="<?= $row['category'] ?>"  <?= ($slc_category == $cat)?'selected':'' ?> >
+											<option value="<?= $row['category'] ?>"  <?= ($cate == $cat)?'selected':'' ?> >
 												<?= $row['category'] ?>
 											</option>
 <?php
@@ -75,7 +75,7 @@ endforeach; ?>
 								
 								<div class="col-xss-12 col-xs-6 col-sm-6 col-md-5">
 									<div class="form-group form-lg">
-										<select class="form-control" name="Departametno" required>
+										<select class="form-control"  name="country" required>
 										<option value="">-Seleccionar departamento-</option>
 <?php
 							
@@ -126,35 +126,35 @@ endforeach; ?>
 
 $stmt = $conn->prepare($query1);
 if ($fromsearch == true) {
-$stmt->bindParam(':cate', $slc_category);
-$stmt->bindParam(':country', $slc_country);	
+	$stmt->bindParam(':cate', $slc_category);
+	$stmt->bindParam(':country', $slc_country);
 }
 $stmt->execute();
 $result = $stmt->fetchAll();
 foreach($result as $row){
-$type = $row['type'];
-$compid = $row['company'];
+	$type = $row['type'];
+	$compid = $row['company'];
 
-$stmtb = $conn->prepare("SELECT * FROM tbl_users WHERE member_no = '$compid' and role = 'employer'");
-$stmtb->execute();
-$resultb = $stmtb->fetchAll();
-foreach($resultb as $rowb) {
-	$complogo = $rowb['avatar'];
-	$thecompname = $rowb['first_name'];	
-	$telefono = isset($rowb['telefono'])? $rowb['telefono'] :"";
-	}
-	if ($type == "Freelance") {
-	$sta = '<span class="job-label label label-success">Freelance</span>';
-			  
-	}
-	if ($type == "Part-time") {
-	$sta = '<span class="job-label label label-danger">Part-time</span>';
-			  
-	}
-	if ($type == "Full-time") {
-	$sta = '<span class="job-label label label-warning">Full-time</span>';
-			  
-	}
+	$stmtb = $conn->prepare("SELECT * FROM tbl_users WHERE member_no = '$compid' and role = 'employer'");
+	$stmtb->execute();
+	$resultb = $stmtb->fetchAll();
+	foreach($resultb as $rowb) {
+		$complogo = $rowb['avatar'];
+		$thecompname = $rowb['first_name'];	
+		$telefono = isset($rowb['telefono'])? $rowb['telefono'] :"";
+		}
+		if ($type == "Freelance") {
+		$sta = '<span class="job-label label label-success">Freelance</span>';
+				  
+		}
+		if ($type == "Part-time") {
+		$sta = '<span class="job-label label label-danger">Part-time</span>';
+				  
+		}
+		if ($type == "Full-time") {
+		$sta = '<span class="job-label label label-warning">Full-time</span>';
+				  
+		}
 
 ?>
 									<div class="job-item-list">
@@ -176,7 +176,7 @@ foreach($resultb as $rowb) {
 													<div class="col-sm-7 col-md-8">
 														<h4 class="heading"><?php echo $row['title']; ?></h4>
 														<div class="meta-div clearfix mb-25">
-															<span>por <a href="company.php?ref=<?php echo "$compid"; ?>">  <?php echo "$thecompname"; ?> - Disponibilidad</a></span>
+															<span>por <a href="company.php?ref=<?php echo "$compid"; ?>">  <?= $thecompname ?> - Disponibilidad</a></span>
 															<?php echo "$sta"; ?>
 														</div>
 														
