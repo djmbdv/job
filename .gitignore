@@ -2,3 +2,5 @@ images/
 icons/
 error_log
 constansts/settings.php
+.swp
+.DS_Store
