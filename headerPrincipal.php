@@ -1,4 +1,5 @@
 <?php 
+	require_once "constants/check-login.php";
 	global $tags_share; 
 ?><!DOCTYPE html>
 <html lang="es">

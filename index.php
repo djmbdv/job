@@ -1,6 +1,5 @@
 <?php 
 require_once 'constants/connection.php';
-require_once 'constants/check-login.php';
 include 'headerPrincipal.php';
 
 global $conn;

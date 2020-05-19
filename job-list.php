@@ -33,7 +33,7 @@ if (isset($_GET['country']) && ($_GET['category']) ){
 	$slc_country = "$country";
 	$slc_category = "$cate";
 	$title = "$slc_category empleos en $slc_country";
-	}else{
+}else{
 	$query1 = "SELECT * FROM tbl_jobs ORDER BY enc_id DESC LIMIT $page1,12";
 	$query2 = "SELECT * FROM tbl_jobs ORDER BY enc_id DESC";	
 	$slc_country = "NULL";
@@ -55,19 +55,18 @@ require 'headerPrincipal.php';
 								<div class="col-xss-12 col-xs-6 col-sm-6 col-md-5">
 									<div class="form-group form-lg">
 										<select class="form-control" name="category" required>
-										<option value="">-Seleccionar Categoria-</option>
+											<option value="">-Seleccionar Categoria-</option>
 <?php
 
 $stmt = $conn->prepare("SELECT * FROM tbl_categories ORDER BY category");
 $stmt->execute();
 $result = $stmt->fetchAll();
-
 foreach($result as $row):
 	$cat = $row['category'];
 ?>
-										<option  <?php if ($slc_category == "$cat") { print ' selected '; } ?> value="<?= $row['category'] ?>">
-											<= $row['category'] ?>
-										</option>
+											<option value="<?= $row['category'] ?>"  <?= ($slc_category == $cat)?'selected':'' ?> >
+												<?= $row['category'] ?>
+											</option>
 <?php
 endforeach; ?>			   
 										</select>
