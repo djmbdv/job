@@ -1,17 +1,5 @@
-
-
-
 jQuery(function($) {
-
-
-
 	"use strict";
-
-
-	
-	/**
-	 * introLoader - Preloader
-	 */
 	$("#introLoader").introLoader({
 		animation: {
 				name: 'gifLoader',
@@ -323,8 +311,6 @@ jQuery(function($) {
 			}
 		]
 	});
-
-	
 	
 })
 

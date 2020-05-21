@@ -6,3 +6,4 @@
 	}else{
 		$user_online = false;
 	}
+	session_commit();

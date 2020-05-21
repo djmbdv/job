@@ -7,3 +7,4 @@ if(isset($_POST['email'])){
 	$stmt->execute();
 	echo ($stmt->rowCount() > 0)?0:1;
 }
+session_commit();
