@@ -23,7 +23,7 @@
       $stmt = $conn->prepare("select  first_name, last_name, gender, bdate, bmonth, byear, email , education, title, city, street, zip,country, phone, about, services, expertise, people, last_login, role, website,member_no, verified from tbl_users where member_no=:id");
       $stmt->bindParam(":id",$id);
       $stmt->execute();
-      $o = $stmt->fetch();
+      $o = $stmt->fetchObject();
       echo json_encode($o);
       break;
     case 'del':
@@ -32,6 +32,11 @@
       $stmt = $conn->prepare("delete from tbl_users where member_no=:id");
       $stmt->bindParam(":id",$id);
       echo $stmt->execute();
+    case 'count':
+      $stmt = $conn->prepare("select count(member_no) as num from tbl_users");
+      $stmt->execute();
+      $o = $stmt->fetchObject();
+      echo json_encode($o->num);
     default:
       echo false;
       break;

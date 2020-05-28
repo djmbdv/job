@@ -155,7 +155,7 @@ global $conn;
 								foreach($resultb as $rowb) {
 									$complogo = $rowb['avatar'];
 									$thecompname = $rowb['first_name'];	
-									
+									$menber_no = $rowb['member_no'];	
 								}
 							
 								if ($type == "Freelance") {
@@ -181,13 +181,14 @@ global $conn;
 									<div class="GridLex-col-5_xs-12">
 										<div class="job-position">
 											<div class="image">
-								<?php 
-								if ($complogo == null) {
-									print '<center><img alt="image"  src="images/blank.png"/></center>';
-								}else{
-									echo '<center><img alt="image" title="'.$thecompname.'" width="180" height="100" src="data:image/jpeg;base64,'.base64_encode($complogo).'"/></center>';	
-								}
-								?>
+<?php 
+if ($complogo == null): ?>
+									<center><img alt="image"  src="images/blank.png"/></center>
+<?php 
+else: ?>
+									<center><img alt="image" title="<?=$thecompname?>" width="180" height="100" src="app/image-profiles.php?id=<?=$menber_no?>"/></center>
+<?php
+endif; ?>
 											</div>
 											<div class="content">
 												<h4><?php echo "$title"; ?></h4>
