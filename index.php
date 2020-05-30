@@ -22,11 +22,8 @@ global $conn;
 		<div class="main-wrapper">
 			<div class="hero" style="background-image:url('https://i.ytimg.com/vi/OiyHs4rQh8s/maxresdefault.jpg');background-size: cover;">
 				<div class="container">
-				<p><br><br><br></p>
-				<p style="color:#d4bb03" >
-				Busque con confianza en el directorio profesional mas actualizado de la web
-				</p>
 					<div class="main-search-form-wrapper">
+						<h4 class="text-primary">Aqui<b>Online</b></h4>
 						<form action="job-list.php" method="GET" autocomplete="on">
 							<div class="form-holder">
 								<div class="row gap-0  ">
@@ -238,6 +235,8 @@ else: ?>
   border-top: none;
   z-index: 99;
   /*position the autocomplete items to be the same width as the container:*/
+  margin-top: 2px;
+  background: gray;
   top: 100%;
   left: 0;
   right: 0;
@@ -353,6 +352,7 @@ var categories = (
 	 echo  json_encode( $result); ?>).map(x => x.category);
 
 autocomplete(document.getElementById("category-input"), categories);
+
 </script>
 </body>
 </html>

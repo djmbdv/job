@@ -44,10 +44,7 @@
 	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap-modalmanager.js"></script>
 	<script type="text/javascript" src="js/bootstrap-modal.js"></script>
-	<!--script type="text/javascript" src="js/smoothscroll.js"></script-->
-
 	<script type="text/javascript" src="js/wow.min.js"></script>
-
 	<script type="text/javascript" src="js/bootstrap-tokenfield.js"></script>
 	<script type="text/javascript" src="js/typeahead.bundle.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap3-wysihtml5.min.js"></script>
@@ -103,6 +100,13 @@
     font-size: 11px;
     padding-top: 27px;
     padding-bottom: 17px;
+}
+#category-inputautocomplete-list{
+	padding: 3em;
+	border-radius: 3px;
+	width: 150%;
+	border:none;
+	box-shadow: 3px;
 }
 </style>
 <header id="header">

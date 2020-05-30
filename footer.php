@@ -9,7 +9,6 @@
                                 <h4 class="footer-title" style="color: white;">Aqu&iacute;<b>Online</b></h4>
                                 <small>Somos una empresa de servicios de directorios online.</small>
                             </div>
-
                     </div>
                 </div>
             </div>
@@ -19,7 +18,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-4 col-md-4">
-                    <p class="copy-right">&#169; Copyright <?php echo date('Y'); ?> fabianjose</p>
+                    <p class="copy-right">&#169; Copyright <?= date('Y'); ?> Aqui<b>Online</b></p>
                 </div>
                 <div class="col-sm-4 col-md-4">
                 </div>
