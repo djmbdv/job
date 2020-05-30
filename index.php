@@ -20,7 +20,7 @@ global $conn;
 	<div id="introLoader" class="introLoading"></div>
 	<div class="container-wrapper">
 		<div class="main-wrapper">
-			<div class="hero" style="background-image:url('https://i.ytimg.com/vi/OiyHs4rQh8s/maxresdefault.jpg');">
+			<div class="hero" style="background-image:url('https://i.ytimg.com/vi/OiyHs4rQh8s/maxresdefault.jpg');background-size: cover;">
 				<div class="container">
 				<p><br><br><br></p>
 				<p style="color:#d4bb03" >
@@ -31,7 +31,7 @@ global $conn;
 							<div class="form-holder">
 								<div class="row gap-0  ">
 									<div  class="autocomplete col-xss-6 col-xs-6 col-sm-6">
-										<input class="form-control" name="category" id="category-input"  name="">
+										<input class="form-control" name="category" id="category-input" placeholder="Producto, Empresa, Servicio..."  name="">
 										<!--select class="form-control" name="category" required/>
 										<option   value="">- Selecciona categoria -</option>
 										<?php

@@ -91,6 +91,19 @@
 .navbar-default > .container > .logo-wrapper > .logo > img {
 	max-height: 3.5rem;
 }
+.img-footer{
+	margin-right: auto;
+    margin-left: auto;
+    max-height: 3rem;
+}
+.bottom-footer {
+    background: black;
+    color: white;
+    line-height: 22px;
+    font-size: 11px;
+    padding-top: 27px;
+    padding-bottom: 17px;
+}
 </style>
 <header id="header">
 	<nav class="navbar navbar-default navbar-fixed-top navbar-sticky-function">
