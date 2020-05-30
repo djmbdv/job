@@ -49,7 +49,7 @@
 	<script type="text/javascript" src="js/typeahead.bundle.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap3-wysihtml5.min.js"></script>
 
-	<script type="text/javascript" src="js/bootstrap-select.js"></script>
+	<!--script type="text/javascript" src="js/bootstrap-select.js"></script -->
 	<script type="text/javascript" src="js/ion.rangeSlider.min.js"></script>
 	<script type="text/javascript" src="js/handlebars.min.js"></script>
 
