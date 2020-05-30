@@ -174,7 +174,7 @@ ul.nav-mini.sign-in li a:hover {
 
 .nav.navbar-nav > li > a {
     line-height: 36px;
-    font-size: 16px;
+    font-size: 0.875rem;
     padding-top: 0;
     padding-bottom: 0;
     -webkit-transition: all 0.3s ease-in-out 0s;
@@ -182,7 +182,6 @@ ul.nav-mini.sign-in li a:hover {
     -ms-transition: all 0.3s ease-in-out 0s;
     -o-transition: all 0.3s ease-in-out 0s;
     transition: all 0.3s ease-in-out 0s;
-    text-transform: lowercase;
     letter-spacing: 1px;
     padding-left: 14px;
     color: #FFF;
@@ -330,7 +329,6 @@ ul.nav-mini li a {
     -ms-transition: all 0.3s ease-in-out 0s;
     -o-transition: all 0.3s ease-in-out 0s;
     transition: all 0.3s ease-in-out 0s;
-    text-transform: lowercase;
     letter-spacing: 1px;
 }
 
@@ -598,12 +596,12 @@ ul.nav-mini li a {
 
 .main-search-form-wrapper {
     z-index: 5;
-    width: 55%;
+    width: 74%;
     margin: 0 auto;
     position: relative;
-    border: 2px solid rgba(255, 255, 255, 0.9);
-    border-radius: 50px;
-    padding: 0 20px;
+    border-radius: 8px;
+    padding: 65px 20px;
+    background: rgba(18, 21, 22, .7);
 }
 
 .main-search-form-wrapper .form-control {
@@ -1263,7 +1261,6 @@ ul.quick-search-keyword li:last-child a:after {
 
 .tab-style-01 ul.nav li h4 {
     margin: 0;
-    text-transform: lowercase;
     line-height: 1;
     padding: 18px 25px 14px;
     border-radius: 3px 3px 0 0;
@@ -3332,7 +3329,6 @@ ul.meta-list li span {
     margin-left: 30px;
     font-size: 11px;
     font-weight: 600;
-    text-transform: lowercase;
 }
 
 .job-item-grid-wrapper {
@@ -5289,7 +5285,7 @@ ul.admin-user-menu li.active a {
 .admin-section-title h2 {
     line-height: 1.2;
     margin-bottom: 15px;
-    text-transform: lowercase;
+    
     font-size: 34px;
     color: #656565;
 }

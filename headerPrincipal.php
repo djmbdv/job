@@ -76,32 +76,40 @@
 	<link rel="stylesheet" href="icons/flaticon-streamline-outline/flaticon-streamline-outline.css">
 	<link rel="stylesheet" href="icons/flaticon-thick-icons/flaticon-thick.css">
 	<link rel="stylesheet" href="icons/flaticon-ventures/flaticon-ventures.css">
-	<link href="css/style.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/style.css?3" >
 </head>
+<style type="text/css">
+.navbar-sticky > .container > .logo-wrapper > .logo > img {
+	max-height: 3rem;
+}
+.navbar-sticky {
+	background-color: black;
+}
+.navbar-default{
+	box-shadow: 0px 3px 7.92px 0.08px rgba(0, 0, 0, 0.1);
+}
+.navbar-default > .container > .logo-wrapper > .logo > img {
+	max-height: 3.5rem;
+}
+</style>
 <header id="header">
 	<nav class="navbar navbar-default navbar-fixed-top navbar-sticky-function">
 		<div class="container">
 			<div class="logo-wrapper">
 				<div class="logo">
-					<a href="./"> <img style="height:80px" src="images/logo4.png"   alt="Logo" /></a>
+					<img class="img img-responsive" src="images/logo4.png"   alt="Logo" />
 				</div>
 			</div>
 			<div id="navbar" class="navbar-nav-wrapper navbar-arrow">
 				<ul class="nav navbar-nav" id="responsive-menu">
 					<li>
-						<a style="color:#d4bb03"  href="./">Inicio</a>
+						<a  href="./">Inicio</a>
 					</li>
 					<li>
-						<a style="color:#d4bb03"  href="job-list.php">Lista de Servicios</a>
-					</li><!--	
-					<li>
-						<a href="employers.php">Empresa</a>
+						<a  href="job-list.php">Lista de Servicios</a>
 					</li>
-					<li>
-						<a href="employees.php">Personal</a>
-					</li>-->
 					<li> 
-						<a style="color:#d4bb03"  href="contact.php">Contacto</a>
+						<a href="contact.php">Contacto</a>
 					</li>
 				</ul>
 			</div>
@@ -112,8 +120,8 @@
 				    <li><a  href="logout.php">Cerrar Sesión</a></li>
 					<li><a  href="<?=$myrole?>">Perfil</a></li>
 <?php else: ?>
-					<li><a style="color:#d4bb03"  href="login.php">Ingresar</a></li>
-					<li><a style="color:#d4bb03"  data-toggle="modal" href="#registerModal">Registrate</a></li>
+					<li><a  href="login.php">Ingresar</a></li>
+					<li><a data-toggle="modal" href="#registerModal">Registro</a></li>
 <?php endif;?>
 				</ul>
 			</div>

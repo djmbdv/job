@@ -20,7 +20,7 @@ global $conn;
 	<div id="introLoader" class="introLoading"></div>
 	<div class="container-wrapper">
 		<div class="main-wrapper">
-			<div class="hero" style="background-image:url('images/wallpaperflare.com_wallpaper.jpg');">
+			<div class="hero" style="background-image:url('https://i.ytimg.com/vi/OiyHs4rQh8s/maxresdefault.jpg');">
 				<div class="container">
 				<p><br><br><br></p>
 				<p style="color:#d4bb03" >
@@ -29,9 +29,10 @@ global $conn;
 					<div class="main-search-form-wrapper">
 						<form action="job-list.php" method="GET" autocomplete="on">
 							<div class="form-holder">
-								<div class="row gap-0">
-									<div  class="col-xss-6 col-xs-6 col-sm-6">
-										<select class="form-control" name="category" required/>
+								<div class="row gap-0  ">
+									<div  class="autocomplete col-xss-6 col-xs-6 col-sm-6">
+										<input class="form-control" name="category" id="category-input"  name="">
+										<!--select class="form-control" name="category" required/>
 										<option   value="">- Selecciona categoria -</option>
 										<?php
 										 try {
@@ -48,7 +49,7 @@ global $conn;
 	                                     	print_r($e);
                                          }
 										?>			   
-										</select>
+										</select-->
 									</div>
 									<div class="col-xss-6 col-xs-6 col-sm-6">
 										<select class="form-control"  name="country" required/>
@@ -187,8 +188,7 @@ if ($complogo == null): ?>
 <?php 
 else: ?>
 									<center><img alt="image" title="<?=$thecompname?>" width="180" height="100" src="app/image-profiles.php?id=<?=$menber_no?>"/></center>
-<?php
-endif; ?>
+<?php endif; ?>
 											</div>
 											<div class="content">
 												<h4><?php echo "$title"; ?></h4>
@@ -225,5 +225,134 @@ endif; ?>
 <div id="back-to-top">
    <a href="#"><i class="ion-ios-arrow-up"></i></a>
 </div>
+<style type="text/css">
+	.autocomplete {
+  position: relative;
+  display: inline-block;
+}
+
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff;
+  border-bottom: 1px solid #d4d4d4;
+}
+.autocomplete-items div:hover {
+  /*when hovering an item:*/
+  background-color: #e9e9e9;
+}
+.autocomplete-active {
+  /*when navigating through the items using the arrow keys:*/
+  background-color: DodgerBlue !important;
+  color: #ffffff;
+}
+</style>
+<script type="text/javascript">
+	function autocomplete(inp, arr) {
+  var currentFocus;
+  /*execute a function when someone writes in the text field:*/
+  inp.addEventListener("input", function(e) {
+      var a, b, i, val = this.value;
+      /*close any already open lists of autocompleted values*/
+      closeAllLists();
+      if (!val) { return false;}
+      currentFocus = -1;
+      /*create a DIV element that will contain the items (values):*/
+      a = document.createElement("DIV");
+      a.setAttribute("id", this.id + "autocomplete-list");
+      a.setAttribute("class", "autocomplete-items");
+      /*append the DIV element as a child of the autocomplete container:*/
+      this.parentNode.appendChild(a);
+      /*for each item in the array...*/
+      for (i = 0; i < arr.length; i++) {
+        /*check if the item starts with the same letters as the text field value:*/
+        if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+          /*create a DIV element for each matching element:*/
+          b = document.createElement("DIV");
+          b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+          b.innerHTML += arr[i].substr(val.length);
+          /*insert a input field that will hold the current array item's value:*/
+          b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+          /*execute a function when someone clicks on the item value (DIV element):*/
+              b.addEventListener("click", function(e) {
+              /*insert the value for the autocomplete text field:*/
+              inp.value = this.getElementsByTagName("input")[0].value;
+              /*close the list of autocompleted values,
+              (or any other open lists of autocompleted values:*/
+              closeAllLists();
+          });
+          a.appendChild(b);
+        }
+      }
+  });
+  /*execute a function presses a key on the keyboard:*/
+  inp.addEventListener("keydown", function(e) {
+      var x = document.getElementById(this.id + "autocomplete-list");
+      if (x) x = x.getElementsByTagName("div");
+      if (e.keyCode == 40) {
+        /*If the arrow DOWN key is pressed,
+        increase the currentFocus variable:*/
+        currentFocus++;
+        /*and and make the current item more visible:*/
+        addActive(x);
+      } else if (e.keyCode == 38) { //up
+        /*If the arrow UP key is pressed,
+        decrease the currentFocus variable:*/
+        currentFocus--;
+        /*and and make the current item more visible:*/
+        addActive(x);
+      } else if (e.keyCode == 13) {
+        /*If the ENTER key is pressed, prevent the form from being submitted,*/
+        e.preventDefault();
+        if (currentFocus > -1) {
+          /*and simulate a click on the "active" item:*/
+          if (x) x[currentFocus].click();
+        }
+      }
+  });
+  function addActive(x) {
+    if (!x) return false;
+    removeActive(x);
+    if (currentFocus >= x.length) currentFocus = 0;
+    if (currentFocus < 0) currentFocus = (x.length - 1);
+    x[currentFocus].classList.add("autocomplete-active");
+  }
+  function removeActive(x) {
+    for (var i = 0; i < x.length; i++) {
+      x[i].classList.remove("autocomplete-active");
+    }
+  }
+  function closeAllLists(elmnt) {
+    var x = document.getElementsByClassName("autocomplete-items");
+    for (var i = 0; i < x.length; i++) {
+      if (elmnt != x[i] && elmnt != inp) {
+      x[i].parentNode.removeChild(x[i]);
+    }
+  }
+}
+document.addEventListener("click", function (e) {
+    closeAllLists(e.target);
+});
+}
+var categories = (
+<?php
+	 $stmt = $conn->prepare("SELECT * FROM tbl_categories ORDER BY category");
+	 $stmt->execute();
+	 $result = $stmt->fetchAll();
+	 echo  json_encode( $result); ?>).map(x => x.category);
+
+autocomplete(document.getElementById("category-input"), categories);
+</script>
 </body>
 </html>
