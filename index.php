@@ -155,7 +155,7 @@ global $conn;
 												  
 								}
 							?>
-							<a class="recent-job-item clearfix" target="_blank" href="explore-job.php?jobid=<?php echo $row['job_id']; ?>">
+							<a class="recent-job-item clearfix" target="_blank" href="explore-job.php?jobid=<?= $row['job_id']?>">
 								<div class="GridLex-grid-middle">
 									<div class="GridLex-col-5_xs-12">
 										<div class="job-position">
@@ -169,15 +169,15 @@ else: ?>
 <?php endif; ?>
 											</div>
 											<div class="content">
-												<h4><?php echo "$title"; ?></h4>
-												<p><?php echo "$thecompname"; ?></p>
+												<h4><?=$title ?></h4>
+												<p><?=$thecompname?></p>
 											</div>
 										</div>
 									</div>
 									<div class="GridLex-col-5_xs-8_xss-12 mt-10-xss">
 										<div class="job-location">
 											<i class="fa fa-map-marker text-primary"></i>
-											<?= "$jobcountry" ?></strong> - <?= "$jobcity" ?>
+											<?=$jobcountry?></strong> - <?=$jobcity?>
 										</div>
 									</div>
 									<div class="GridLex-col-2_xs-4_xss-12">

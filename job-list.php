@@ -44,7 +44,7 @@ if (isset($_GET['country']) && ($_GET['category']) ){
 require 'headerPrincipal.php';
 ?>
 <body class="not-transparent-header">
-	<div class="container-wrapper" style="padding-top: 14em;">
+	<div class="container-wrapper" style="padding-top: 8em;">
 		<div class="main-wrapper">
 			<div class="second-search-result-wrapper">
 				<div class="container">
@@ -138,7 +138,8 @@ foreach($result as $row){
 	$resultb = $stmtb->fetchAll();
 	foreach($resultb as $rowb) {
 		$complogo = $rowb['avatar'];
-		$thecompname = $rowb['first_name'];	
+		$thecompname = $rowb['first_name'];
+		$member_no =$rowb['member_no'];
 		$telefono = isset($rowb['telefono'])? $rowb['telefono'] :"";
 		}
 		if ($type == "Freelance") {
@@ -163,7 +164,7 @@ foreach($result as $row){
 										<center><img class="autofit3" alt="image"  src="images/blank.png"/></center>';
 <?php
 	else: ?>
-										<center><img class="autofit3" alt="image" title="<?= $thecompname ?>" width="180" height="100" src="data:image/jpeg;base64,<?=base64_encode($complogo) ?>"/></center>
+										<center><img class="autofit3" alt="image" title="<?= $thecompname ?>" width="180" height="100" src="app/image-profiles.php?id=<?=$member_no?>"/></center>
 <?php
 	endif;?>
 										</div>
@@ -175,10 +176,9 @@ foreach($result as $row){
 														<h4 class="heading"><?php echo $row['title']; ?></h4>
 														<div class="meta-div clearfix mb-25">
 															<span>por <a href="company.php?ref=<?php echo "$compid"; ?>">  <?= $thecompname ?> - Disponibilidad</a></span>
-															<?php echo "$sta"; ?>
+															<?=$sta?>
 														</div>
-														
-														<p class="texing character_limit"><?php echo $row['description']; ?></p>
+														<p class="texing character_limit"><?=$row['description']?></p>
 													</div>
 													
 													<div class="col-sm-5 col-md-4">
@@ -305,32 +305,5 @@ foreach($result as $row){
 <div id="back-to-top">
    <a href="#"><i class="ion-ios-arrow-up"></i></a>
 </div>
-
-<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
-<script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
-<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/bootstrap-modalmanager.js"></script>
-<script type="text/javascript" src="js/bootstrap-modal.js"></script>
-<script type="text/javascript" src="js/smoothscroll.js"></script>
-<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
-<script type="text/javascript" src="js/jquery.waypoints.min.js"></script>
-<script type="text/javascript" src="js/wow.min.js"></script>
-<script type="text/javascript" src="js/jquery.slicknav.min.js"></script>
-<script type="text/javascript" src="js/jquery.placeholder.min.js"></script>
-<script type="text/javascript" src="js/bootstrap-tokenfield.js"></script>
-<script type="text/javascript" src="js/typeahead.bundle.min.js"></script>
-<script type="text/javascript" src="js/bootstrap3-wysihtml5.min.js"></script>
-<script type="text/javascript" src="js/bootstrap-select.min.js"></script>
-<script type="text/javascript" src="js/jquery-filestyle.min.js"></script>
-<script type="text/javascript" src="js/bootstrap-select.js"></script>
-<script type="text/javascript" src="js/ion.rangeSlider.min.js"></script>
-<script type="text/javascript" src="js/handlebars.min.js"></script>
-<script type="text/javascript" src="js/jquery.countimator.js"></script>
-<script type="text/javascript" src="js/jquery.countimator.wheel.js"></script>
-<script type="text/javascript" src="js/slick.min.js"></script>
-<script type="text/javascript" src="js/easy-ticker.js"></script>
-<script type="text/javascript" src="js/jquery.introLoader.min.js"></script>
-<script type="text/javascript" src="js/jquery.responsivegrid.js"></script>
-<script type="text/javascript" src="js/customs.js"></script>
 </body>
 </html>
