@@ -600,7 +600,7 @@ ul.nav-mini li a {
     margin: 0 auto;
     position: relative;
     border-radius: 8px;
-    padding: 65px 20px;
+    padding: 40px 20px;
     background: rgba(18, 21, 22, .7);
 }
 
@@ -613,11 +613,6 @@ ul.nav-mini li a {
     height: 50px;
 }
 
-.main-search-form-wrapper .row > div:last-child .form-control {
-    padding-right: 25px;
-    border-left: 1px solid rgba(255, 255, 255, 0.7);
-    padding-left: 20px;
-}
 
 .main-search-form-wrapper .form-control::-moz-placeholder {
     color: rgba(255, 255, 255, 0.8);
@@ -649,7 +644,7 @@ ul.nav-mini li a {
 
 .main-search-form-wrapper .btn-holder .btn:hover {
     padding-right: 15px;
-    color: #33B6CB;
+    color: #e9ab28;
 }
 
 .main-search-wrapper {
@@ -682,7 +677,7 @@ ul.nav-mini li a {
 }
 
 .second-search-result-wrapper {
-    background: #33B6CB;
+    background: #e9ab28;
     padding-top: 30px;
     padding-bottom: 20px;
 }
@@ -700,7 +695,7 @@ ul.nav-mini li a {
     text-transform: uppercase;
     font-weight: 400;
     line-height: 1;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Cabin', sans-serif;
     font-size: 25px;
 }
 
@@ -831,7 +826,7 @@ ul.quick-search-keyword li:last-child a:after {
     font-size: 11px;
     letter-spacing: 2px;
     padding: 12px 15px;
-    border: 2px solid #33B6CB;
+    border: 2px solid #e9ab28;
     font-weight: 600;
     line-height: 1;
     display: inline-block;
@@ -1178,9 +1173,9 @@ ul.quick-search-keyword li:last-child a:after {
 .process-item .content h4,
 .process-item .content h5,
 .process-item .content h6 {
-    color: #33B6CB;
+    color: #e9ab28;
     line-height: 1.2;
-    border-bottom: 2px solid #33B6CB;
+    border-bottom: 2px solid #e9ab28;
     padding-bottom: 15px;
     letter-spacing: 1px;
 }
@@ -1274,12 +1269,12 @@ ul.quick-search-keyword li:last-child a:after {
 }
 
 .tab-style-01 ul.nav li h4 a:hover {
-    color: #33B6CB;
+    color: #e9ab28;
 }
 
 .tab-style-01 ul.nav li.active h4 {
     border-color: #CCC;
-    border-top-color: #33B6CB;
+    border-top-color: #e9ab28;
     border-bottom: 1px solid #FFF;
 }
 
@@ -1426,7 +1421,7 @@ ul.quick-search-keyword li:last-child a:after {
     color: #333;
     margin-bottom: 20px;
     text-shadow: 5px 5px 1px rgba(0, 0, 0, .1);
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Cabin', sans-serif;
 }
 
 
@@ -1475,7 +1470,7 @@ ul.quick-search-keyword li:last-child a:after {
     text-transform: uppercase;
     font-weight: 400;
     font-size: 12px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Cabin', sans-serif;
 }
 
 .checkbox-block.job-type-checkbox input[type='checkbox'] + label:before {
@@ -1489,7 +1484,7 @@ ul.quick-search-keyword li:last-child a:after {
 }
 
 .checkbox-block.job-type-checkbox input[type='checkbox']:checked + label {
-    background: #33B6CB;
+    background: #e9ab28;
     color: #FFF;
 }
 
@@ -1518,7 +1513,7 @@ ul.quick-search-keyword li:last-child a:after {
     padding: 0;
     position: relative;
     padding-right: 27px;
-    color: #33B6CB;
+    color: #e9ab28;
     text-transform: capitalize;
     font-size: 14px;
     font-weight: 600;
@@ -1536,7 +1531,7 @@ ul.quick-search-keyword li:last-child a:after {
 }
 
 .btn-toggle.btn-refine.collapsed {
-    color: #33B6CB;
+    color: #e9ab28;
 }
 
 .btn-toggle.btn-refine.collapsed:after {
@@ -1611,9 +1606,9 @@ ul.quick-search-keyword li:last-child a:after {
 }
 
 .post-hero-texting {
-    border: 1px solid #33B6CB;
+    border: 1px solid #e9ab28;
     border-radius: 3px;
-    color: #33B6CB;
+    color: #e9ab28;
     font-size: 12px;
     font-weight: 600;
     padding: 4px 10px;
@@ -1684,9 +1679,9 @@ ul.ticker-list li a {
 }
 
 ul.ticker-list li a .labeling {
-    border: 1px solid #33B6CB;
+    border: 1px solid #e9ab28;
     border-radius: 3px;
-    color: #33B6CB;
+    color: #e9ab28;
     font-size: 12px;
     font-weight: 600;
     padding: 3px 10px;
@@ -1698,7 +1693,7 @@ ul.ticker-list li a .labeling {
 ul.ticker-list li a:after {
     font-family: 'FontAwesome';
     content: "\f178";
-    color: #33B6CB;
+    color: #e9ab28;
     transition: all 0.3s ease;
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
@@ -1716,8 +1711,6 @@ ul.ticker-list li a:hover:after {
 
 .breadcrumb-wrapper {
     padding: 10px 0;
-    background: #F5F5F5;
-    border-bottom: 1px solid #E6E6E6;
 }
 
 ol.breadcrumb-list li {
@@ -1983,7 +1976,7 @@ ol.breadcrumb-list li a:after {
 
 .category-item-09 .heading .pre-heading,
 .category-item-09 .heading .post-heading {
-    background: #33B6CB;
+    background: #e9ab28;
     color: #FFF;
     display: inline-block;
     font-size: 12px;
@@ -2427,16 +2420,16 @@ ul.sidebar-menu > li > a:after {
 ul.sidebar-menu > li.active > a {
     font-weight: 600;
     padding-left: 20px;
-    color: #33B6CB;
+    color: #e9ab28;
 }
 
 ul.sidebar-menu > li.active > a:after {
     left: 0;
-    color: #33B6CB;
+    color: #e9ab28;
 }
 
 ul.sidebar-menu > li > a:hover {
-    color: #33B6CB;
+    color: #e9ab28;
     font-weight: 600;
 }
 
@@ -2473,12 +2466,12 @@ ul.sidebar-menu > li ul li:before {
 
 ul.sidebar-menu > li ul li.active a {
     font-weight: 600;
-    color: #33B6CB;
+    color: #e9ab28;
 }
 
 ul.sidebar-menu > li ul li.active:before {
-    border-top: 1px dotted #33B6CB;
-    border-bottom: 1px dotted #33B6CB;
+    border-top: 1px dotted #e9ab28;
+    border-bottom: 1px dotted #e9ab28;
 }
 
 .sidebar-menu-title {
@@ -2617,7 +2610,7 @@ ul.blog-meta li:after {
     color: #BBB4AB;
     width: 5px;
     height: 2px;
-    background: #33B6CB;
+    background: #e9ab28;
     display: block;
     position: absolute;
     top: 10px;
@@ -2802,7 +2795,7 @@ ul.comment-item ul {
     left: 15px;
     right: 0;
     bottom: 0;
-    background: #33B6CB;
+    background: #e9ab28;
     color: #FFF;
     font-size: 12px;
     letter-spacing: 1px;
@@ -3091,7 +3084,7 @@ ul.pager-list.pull-right li {
 .pagination > li > span:hover,
 .pagination > li > a:focus,
 .pagination > li > span:focus {
-    color: #33B6CB;
+    color: #e9ab28;
     background-color: #EDF2F2;
 }
 
@@ -3101,7 +3094,7 @@ ul.pager-list.pull-right li {
 .pagination > .active > span:hover,
 .pagination > .active > a:focus,
 .pagination > .active > span:focus {
-    background-color: #33B6CB;
+    background-color: #e9ab28;
 }
 
 @media only screen and (max-width: 1199px) {}
@@ -3156,7 +3149,7 @@ ul.pager-list.pull-right li {
     bottom: -11px;
     left: -14px;
     width: 3px;
-    background: #33B6CB;
+    background: #e9ab28;
 }
 
 .recent-job-item.highlight:first-child > div:before {
@@ -3357,7 +3350,7 @@ ul.meta-list li span {
     width: 26px;
     height: 26px;
     line-height: 26px;
-    background: #33B6CB;
+    background: #e9ab28;
     color: #FFF;
     text-align: center;
 }
@@ -3704,7 +3697,7 @@ ul.meta-list li span {
 .resume-list-item .content a:hover h3,
 .resume-list-item .content a:hover h4,
 .resume-list-item .content a:hover h4 {
-    color: #33B6CB;
+    color: #e9ab28;
 }
 
 .resume-list-btn {
@@ -3807,7 +3800,7 @@ ul.meta-list li span {
 
 .browse-job-category h5 a:hover,
 .browse-job-category h6 a:hover {
-    color: #33B6CB;
+    color: #e9ab28;
 }
 
 .browse-job-sub-category a {
@@ -4104,12 +4097,12 @@ ul.multiple-sticky-nav.company-directory-menu {
 .company-directory-title {
     margin: 0 0 15px;
     line-height: 1.2;
-    border-bottom: 1px solid #33B6CB;
+    border-bottom: 1px solid #e9ab28;
     font-size: 18px;
 }
 
 .company-directory-title span {
-    background: #33B6CB;
+    background: #e9ab28;
     color: #FFF;
     text-transform: uppercase;
     display: inline-block;
@@ -4168,7 +4161,7 @@ ul.company-directory-list.col-5 li {
 
 .company-directory-item a:hover h5,
 .company-directory-item a:hover h6 {
-    color: #33B6CB;
+    color: #e9ab28;
 }
 
 .company-directory-item.alt a {
@@ -4180,7 +4173,7 @@ ul.company-directory-list.col-5 li {
 .company-directory-item.alt h5,
 .company-directory-item.alt h6 {
     font-weight: 700;
-    color: #33B6CB;
+    color: #e9ab28;
     letter-spacing: 0;
 }
 
@@ -4291,7 +4284,7 @@ ul.company-directory-list.col-5 li {
     width: 80px;
     height: 80px;
     margin: 0 auto 20px;
-    border: 6px double #33B6CB;
+    border: 6px double #e9ab28;
     padding: 3px;
     border-radius: 50%;
 }
@@ -4351,7 +4344,7 @@ ul.company-directory-list.col-5 li {
 .employee-detail-header .image {
     width: 130px;
     margin: 0 auto 20px;
-    border: 6px double #33B6CB;
+    border: 6px double #e9ab28;
     padding: 5px;
     border-radius: 50%;
 }
@@ -4454,7 +4447,7 @@ ul.company-directory-list.col-5 li {
     height: 20px;
     border-radius: 50%;
     display: block;
-    background: #33B6CB;
+    background: #e9ab28;
     border: 2px solid #FFF;
 }
 
@@ -4504,7 +4497,7 @@ ul.employee-detail-list li:before {
     height: 10px;
     border-radius: 50%;
     display: block;
-    background: #33B6CB;
+    background: #e9ab28;
     border: 2px solid #FFF;
 }
 
@@ -4531,10 +4524,10 @@ ul.work-expereince-interest li {
 ul.work-expereince-interest li .icon {
     width: 70px;
     height: 70px;
-    border: 2px solid #33B6CB;
+    border: 2px solid #e9ab28;
     border-radius: 50%;
     display: block;
-    color: #33B6CB;
+    color: #e9ab28;
     font-size: 34px;
     line-height: 70px;
     text-align: center;
@@ -4553,7 +4546,7 @@ ul.work-expereince-interest li .icon {
     width: 100px;
     margin-bottom: 15px;
     border-radius: 50%;
-    border: 6px double #33B6CB;
+    border: 6px double #e9ab28;
     padding: 2px;
 }
 
@@ -4605,7 +4598,7 @@ ul.work-expereince-interest li .icon {
 }
 
 .person-long-item ul.person-long-item-meta li.texting {
-    color: #33B6CB;
+    color: #e9ab28;
     font-weight: 700;
 }
 
@@ -4665,7 +4658,7 @@ ul.work-expereince-interest li .icon {
 .employee-grid-item-01 h5 {
     line-height: 1.2;
     margin: 15px 0 7px;
-    color: #33B6CB;
+    color: #e9ab28;
 }
 
 .employee-grid-item-01 ul.skill-list li {
@@ -4800,12 +4793,12 @@ ul.work-expereince-interest li .icon {
 .testimonial-grid-item .heading h3,
 .testimonial-grid-item .heading h4,
 .testimonial-grid-item .heading h5 {
-    border-bottom: 2px solid #33B6CB;
+    border-bottom: 2px solid #e9ab28;
     line-height: 1.2;
     padding-bottom: 10px;
     margin: 1px 0 5px;
     margin-left: 65px;
-    color: #33B6CB;
+    color: #e9ab28;
 }
 
 .testimonial-grid-item .heading span {
@@ -4931,7 +4924,7 @@ ul.work-expereince-interest li .icon {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: #33B6CB;
+    background: #e9ab28;
     color: #FFF;
     text-align: center;
     line-height: 40px;
@@ -5039,8 +5032,8 @@ h5.footer-title {
 }
 
 .footer-about-us a {
-    border: 2px solid #33B6CB;
-    color: #33B6CB;
+    border: 2px solid #e9ab28;
+    color: #e9ab28;
     text-transform: uppercase;
     margin-top: 10px;
     padding: 4px 12px;
@@ -5131,7 +5124,7 @@ ul.bottom-footer-menu li:after {
     right: -20px;
     width: 4px;
     height: 4px;
-    background: #33B6CB;
+    background: #e9ab28;
     border-radius: 50%;
 }
 
@@ -5209,7 +5202,7 @@ ul.bottom-footer-menu.for-social li:after {
     width: 100px;
     margin: 0 auto 15px;
     border-radius: 50%;
-    border: 6px double #33B6CB;
+    border: 6px double #e9ab28;
     padding: 2px;
 }
 
@@ -5272,7 +5265,7 @@ ul.admin-user-menu li a:hover {
 
 ul.admin-user-menu li.active a {
     font-weight: 600;
-    color: #33B6CB;
+    color: #e9ab28;
 }
 
 .admin-section-title {
@@ -5311,7 +5304,7 @@ ul.admin-user-menu li.active a {
     line-height: 80px;
     font-size: 47px;
     color: #FFF;
-    background: #33B6CB;
+    background: #e9ab28;
     border-radius: 50%;
     margin: 0 auto;
 }
@@ -5364,7 +5357,7 @@ ul.admin-user-menu li.active a {
     height: 0;
     border-style: solid;
     border-width: 0 80px 80px 0;
-    border-color: transparent #33B6CB transparent transparent;
+    border-color: transparent #e9ab28 transparent transparent;
     position: absolute;
     top: 0;
     right: 0;
@@ -5386,7 +5379,7 @@ ul.admin-user-menu li.active a {
 }
 
 .pricing-item.best {
-    border-color: #33B6CB;
+    border-color: #e9ab28;
     padding: 30px 0 0;
     margin: 0;
 }
@@ -5443,7 +5436,7 @@ ul.pricing-item-list li i {
 
 @media only screen and (max-width: 991px) {
     .pricing-item.best {
-        border-color: #33B6CB;
+        border-color: #e9ab28;
         margin: 20px 30px 0;
     }
 }
@@ -5519,7 +5512,7 @@ ul.address-list li > i {
 
 .contact-map .infoBox {
     background: #fff!important;
-    border: 1px solid #33B6CB;
+    border: 1px solid #e9ab28;
     border-radius: 3px;
     font-size: 14px;
     line-height: 1.2;
@@ -5538,7 +5531,7 @@ ul.address-list li > i {
     width: 0;
     position: absolute;
     pointer-events: none;
-    border-top-color: #33B6CB;
+    border-top-color: #e9ab28;
     border-width: 10px;
     margin-left: -10px;
 }

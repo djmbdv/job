@@ -20,9 +20,8 @@ $stmt->execute();
 $rec = $stmt->rowCount();
 
 if ($rec != 1){ 
-	//header("location:../login.php?r=0346");
-
-	echo "$rec $myemail $mypass";
+//	echo "$rec $myemail $mypass";
+	echo 0;
 	die();
 }
 session_start();

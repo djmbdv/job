@@ -22,33 +22,21 @@ global $conn;
 		<div class="main-wrapper">
 			<div class="hero" style="background-image:url('https://i.ytimg.com/vi/OiyHs4rQh8s/maxresdefault.jpg');background-size: cover;">
 				<div class="container">
+					<h1 class=" text-center text-shadow" style="text-shadow: 3px black;color: whitesmoke;">Aqui<b>Online</b>
+					</h1>
+					
+					<h6 class="text-center text-primary">Encuentra lo que buscas en una sola p&aacute;gina</h6>
+					
 					<div class="main-search-form-wrapper">
-						<h4 class="text-primary">Aqui<b>Online</b></h4>
 						<form action="job-list.php" method="GET" autocomplete="on">
 							<div class="form-holder">
 								<div class="row gap-0  ">
 									<div  class="autocomplete col-xss-6 col-xs-6 col-sm-6">
+										<small class="text-white">Qu&eacute;</small>
 										<input class="form-control" name="category" id="category-input" placeholder="Producto, Empresa, Servicio..."  name="">
-										<!--select class="form-control" name="category" required/>
-										<option   value="">- Selecciona categoria -</option>
-										<?php
-										 try {
-                                         $stmt = $conn->prepare("SELECT * FROM tbl_categories ORDER BY category");
-                                         $stmt->execute();
-                                         $result = $stmt->fetchAll();
-                                         foreach($result as $row):?>
-										<option style="color:black" value="<?= $row['category']; ?>">
-											<?=$row['category']; ?></option>
-										<?php
-	                                     endforeach;
-					  
-	                                     }catch(PDOException $e){
-	                                     	print_r($e);
-                                         }
-										?>			   
-										</select-->
 									</div>
 									<div class="col-xss-6 col-xs-6 col-sm-6">
+										<small class="text-white">D&oacute;nde</small>
 										<select class="form-control"  name="country" required/>
 										<option value="">- Selecciona ciudad -<option>
 										<?php
@@ -119,20 +107,13 @@ global $conn;
 					</div>
 				</div>
 			</div>
-			
 			<div class="bg-light pt-80 pb-80">
 				<div class="container">
 					<div class="row">
-						<div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
-							<div class="section-title">
-								<h2>Servicios Recientes</h2>
-							</div>
-						</div>
+						<h4 class="text-center">Servicios Recientes</h4>
 					</div>
 					<div class="row">
-						
 						<div class="col-md-12">
-						
 							<div class="recent-job-wrapper alt-stripe mr-0">
 						<?php
 							try {
@@ -223,38 +204,32 @@ else: ?>
    <a href="#"><i class="ion-ios-arrow-up"></i></a>
 </div>
 <style type="text/css">
-	.autocomplete {
+.autocomplete {
   position: relative;
   display: inline-block;
 }
 
 .autocomplete-items {
   position: absolute;
-  border: 1px solid #d4d4d4;
-  border-bottom: none;
-  border-top: none;
+  border: 2px solid black;
   z-index: 99;
-  /*position the autocomplete items to be the same width as the container:*/
   margin-top: 2px;
-  background: gray;
+  background: white;
   top: 100%;
   left: 0;
   right: 0;
+  padding-bottom: 1em;
 }
-.autocomplete-items div {
+.autocomplete-items {
   padding: 10px;
-  cursor: pointer;
   background-color: #fff;
-  border-bottom: 1px solid #d4d4d4;
 }
-.autocomplete-items div:hover {
-  /*when hovering an item:*/
-  background-color: #e9e9e9;
-}
+
 .autocomplete-active {
   /*when navigating through the items using the arrow keys:*/
   background-color: DodgerBlue !important;
   color: #ffffff;
+  cursor: pointer;
 }
 </style>
 <script type="text/javascript">
@@ -274,10 +249,22 @@ else: ?>
       /*append the DIV element as a child of the autocomplete container:*/
       this.parentNode.appendChild(a);
       /*for each item in the array...*/
+      cola = document.createElement("div");
+      t = document.createElement("h6");
+      t.setAttribute("class","list-item-title");
+      t.innerHTML = "Servicios";
+      cola.appendChild(t);
+      cola.setAttribute("class", "col-md-6");
+      colb = document.createElement("div");
+      colb.setAttribute("class", "col-md-6");
+      t = document.createElement("h6");
+      t.setAttribute("class","list-item-title");
+      t.innerHTML = "Empresas";
+      colb.appendChild(t);
+      a.appendChild(cola);
+      a.appendChild(colb);
       for (i = 0; i < arr.length; i++) {
-        /*check if the item starts with the same letters as the text field value:*/
         if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
-          /*create a DIV element for each matching element:*/
           b = document.createElement("DIV");
           b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
           b.innerHTML += arr[i].substr(val.length);
@@ -291,17 +278,19 @@ else: ?>
               (or any other open lists of autocompleted values:*/
               closeAllLists();
           });
-          a.appendChild(b);
+          cola.appendChild(b);
         }
       }
+
+      flecha = document.createElement("div");
+      flecha.setAttribute("class","suggarrow");
+      a.appendChild(flecha);
   });
   /*execute a function presses a key on the keyboard:*/
   inp.addEventListener("keydown", function(e) {
       var x = document.getElementById(this.id + "autocomplete-list");
       if (x) x = x.getElementsByTagName("div");
       if (e.keyCode == 40) {
-        /*If the arrow DOWN key is pressed,
-        increase the currentFocus variable:*/
         currentFocus++;
         /*and and make the current item more visible:*/
         addActive(x);

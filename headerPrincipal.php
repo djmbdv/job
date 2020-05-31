@@ -30,6 +30,19 @@
 	?>
 	<link rel="shortcut icon" href="images/ico/favicon.png">
 
+
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" media="screen">	
+	<link href="css/animate.css" rel="stylesheet">
+	<link href="css/main.css?7" rel="stylesheet">
+	<link href="css/component.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin">
+	<link rel="stylesheet" href="icons/linearicons/style.css">
+	<link rel="stylesheet" href="icons/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="icons/simple-line-icons/css/simple-line-icons.css">
+	<link rel="stylesheet" href="icons/ionicons/css/ionicons.css">
+	<link rel="stylesheet" href="icons/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
+	<link rel="stylesheet" href="icons/rivolicons/style.css">
+	<link rel="stylesheet" href="css/style.css?9" >
 	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
 	<script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
 	<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
@@ -46,34 +59,13 @@
 	<script type="text/javascript" src="js/bootstrap-modal.js"></script>
 	<script type="text/javascript" src="js/wow.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap-tokenfield.js"></script>
-	<script type="text/javascript" src="js/typeahead.bundle.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap3-wysihtml5.min.js"></script>
-
-	<!--script type="text/javascript" src="js/bootstrap-select.js"></script -->
 	<script type="text/javascript" src="js/ion.rangeSlider.min.js"></script>
 	<script type="text/javascript" src="js/handlebars.min.js"></script>
-
 	<script type="text/javascript" src="js/slick.min.js"></script>
 	<script type="text/javascript" src="js/easy-ticker.js"></script>
 	<script type="text/javascript" src="js/validator.min.js"></script>
-	<script type="text/javascript" src="js/customs.js"></script>
-
-	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" media="screen">	
-	<link href="css/animate.css" rel="stylesheet">
-	<link href="css/main.css" rel="stylesheet">
-	<link href="css/component.css" rel="stylesheet">
-	
-	<link rel="stylesheet" href="icons/linearicons/style.css">
-	<link rel="stylesheet" href="icons/font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" href="icons/simple-line-icons/css/simple-line-icons.css">
-	<link rel="stylesheet" href="icons/ionicons/css/ionicons.css">
-	<link rel="stylesheet" href="icons/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
-	<link rel="stylesheet" href="icons/rivolicons/style.css">
-	<link rel="stylesheet" href="icons/flaticon-line-icon-set/flaticon-line-icon-set.css">
-	<link rel="stylesheet" href="icons/flaticon-streamline-outline/flaticon-streamline-outline.css">
-	<link rel="stylesheet" href="icons/flaticon-thick-icons/flaticon-thick.css">
-	<link rel="stylesheet" href="icons/flaticon-ventures/flaticon-ventures.css">
-	<link rel="stylesheet" href="css/style.css?3" >
+	<script type="text/javascript" src="js/customs.js?1"></script>
 </head>
 <style type="text/css">
 .navbar-sticky > .container > .logo-wrapper > .logo > img {
@@ -102,11 +94,22 @@
     padding-bottom: 17px;
 }
 #category-inputautocomplete-list{
-	padding: 3em;
+	padding: 0.5rem;
 	border-radius: 3px;
 	width: 150%;
-	border:none;
-	box-shadow: 3px;
+	box-shadow: 0 0 4px rgba(0,0,0,0.5);
+}
+.list-item-title{
+	text-shadow: 1px;
+	padding: 1px;
+	text-align: center;
+}
+.suggarrow, .suggarrow-shadow {
+    border: 10px solid;
+    border-color: transparent transparent #fff transparent;
+    left: 145px;
+    position: absolute;
+    top: -20px;
 }
 </style>
 <header id="header">

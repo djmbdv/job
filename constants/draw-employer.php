@@ -3,13 +3,8 @@
 ?>
 <form name="frm" class="form-employer" action="app/create-account.php" method="POST" role="form" error="0">
 <div class="login-box-wrapper">
-							
-<div class="modal-header">
-	<h4 class="modal-title text-center">Crea tu cuenta gratis</h4>
-</div>
-
 <div class="modal-body">
-																
+<h4 class="modal-title text-center">Crea tu cuenta gratis</h4>												
 <div class="row gap-20">																	
 	<div class="col-sm-12 col-md-12">
 		<div class="form-group"> 

@@ -53,11 +53,8 @@ function reset_text(){
 								?>
 	                                <form name="frm" action="app/auth.php" method="POST" autocomplete="off">
 	                                	<div class="login-box-wrapper">
-	                                		<div class="modal-header">
-		                                		<h4 class="modal-title text-center">Ingresa a tu cuenta</h4>
-	                                		</div>
-
-	                                		<div class="modal-body">			
+	                                		<div class="modal-body">
+	                                		<h4 class="text-center" style="padding-bottom: 20px;">Ingresa a tu cuenta</h4>			
 	                                			<div class="row gap-20">
 			                                		<div class="col-sm-12 col-md-12">
 			                                			<div class="form-group"> 
@@ -79,9 +76,7 @@ function reset_text(){
 													</div>
 												</div>
 											</div>
-											<div class="modal-footer text-center">
-												<button type="submit" class="btn btn-primary">Iniciar Sesión</button>
-											</div>						
+											<button type="submit" class="btn btn-primary btn-block">Iniciar Sesión</button>
 										</div>
 									</form>
 
