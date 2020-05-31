@@ -279,15 +279,6 @@ h3 .small,
     font-size: 65%
 }
 
-h4,
-.h4,
-h5,
-.h5,
-h6,
-.h6 {
-    margin-top: 18px;
-    margin-bottom: 13px
-}
 
 h4 small,
 .h4 small,
@@ -2607,7 +2598,6 @@ label {
 }
 
 .section-title h2 {
-    text-transform: lowercase;
     text-align: center;
     font-size: 40px;
     font-weight: 400;
@@ -2619,8 +2609,7 @@ label {
     text-align: center;
     font-size: 25px;
     color: #656565;
-    text-transform: lowercase;
-}
+    }
 
 .section-title p {
     font-weight: 400;
@@ -2653,8 +2642,7 @@ label {
 .section-title-02 h3 {
     font-size: 34px;
     color: #656565;
-    text-transform: lowercase;
-    line-height: 1.2;
+        line-height: 1.2;
     margin-bottom: 0;
 }
 
@@ -2756,7 +2744,7 @@ h6.heading {
 }
 
 .bg-dark {
-    background: #444 !important;
+    background: black !important;
     color: #FFF;
 }
 

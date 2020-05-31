@@ -102,7 +102,7 @@ endforeach; ?>
 				<div class="container">
 					<ol class="breadcrumb-list booking-step">
 						<li><a href="./">Inicio</a></li>
-						<li><span><?php echo "$title"; ?></span></li>
+						<li><span><?=$title?></span></li>
 					</ol>
 				</div>
 			</div>
@@ -110,14 +110,16 @@ endforeach; ?>
 			
 			<div class="section sm">
 				<div class="container">
-					<div class="sorting-wrappper">
-						<div class="sorting-header">
-							<h3 class="sorting-title"><?php echo "$title"; ?></h3>
-						</div>
-					</div>
+
 					<div class="result-wrapper">
 						<div class="row">
-							<div class="col-sm-12 col-md-12 mt-25">
+							<div class="col-md-3">
+							<h2>B&uacute;squeda</h2>
+						</div>
+							<div class="col-sm-12 col-md-9 col-lg-9 mt-25">
+						<div class="bg-dark">
+							<h5 class="sorting-title "><?=$title?></h5>
+					</div>
 								<div class="result-list-wrapper">
 <?php
 
@@ -173,12 +175,23 @@ foreach($result as $row){
 											<div class="job-item-list-info">
 												<div class="row">
 													<div class="col-sm-7 col-md-8">
-														<h4 class="heading"><?php echo $row['title']; ?></h4>
+														<h4 class="heading"><?=$row['title']?></h4>
 														<div class="meta-div clearfix mb-25">
-															<span>por <a href="company.php?ref=<?php echo "$compid"; ?>">  <?= $thecompname ?> - Disponibilidad</a></span>
+															<span>por <a href="company.php?ref=<?=$compid?>">  <?= $thecompname ?> - Disponibilidad</a></span>
 															<?=$sta?>
 														</div>
 														<p class="texing character_limit"><?=$row['description']?></p>
+														<!--div class="ec-stars-wrapper">
+												  <a href="#" data-value="1" title="Votar con 1 estrellas">&#9733;</a>
+												  <a href="#" data-value="2" title="Votar con 2 estrellas">&#9733;</a>
+												  <a href="#" data-value="3" title="Votar con 3 estrellas">&#9733;</a>
+												  <a href="#" data-value="4" title="Votar con 4 estrellas">&#9733;</a>
+												  <a href="#" data-value="5" title="Votar con 5 estrellas">&#9733;</a>
+												</div-->
+												<span class="stars-outer" data-rating="5">
+                  <span class="stars-inner" style="width: 50%;"></span>
+                </span>
+                <span>(5 Reviews)</span>
 													</div>
 													
 													<div class="col-sm-5 col-md-4">

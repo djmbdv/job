@@ -91,26 +91,26 @@ $tags_share  = array(
 include_once 'headerPrincipal.php';
 
 ?><body class="not-transparent-header">
-	<div class="container-wrapper">
-			<div id="registerModal" class="modal fade login-box-wrapper" tabindex="-1" style="display: none;" data-backdrop="static" data-keyboard="false" data-replace="true">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h4 class="modal-title text-center">Crea tu cuenta gratis</h4>
-				</div>
-				<div class="modal-body">
-					<div class="row gap-20">
-						<div class="col-sm-6 col-md-6">
-							<a href="register.php?p=Employer" class="btn btn-facebook btn-block mb-5-xs">Registro Empresa</a>
-						</div>
-						<div class="col-sm-6 col-md-6">
-							<a href="register.php?p=Employee" class="btn btn-facebook btn-block mb-5-xs">Registro Personal</a>
-						</div>
+		<div id="registerModal" class="modal fade login-box-wrapper" tabindex="-1" style="display: none;" data-backdrop="static" data-keyboard="false" data-replace="true">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title text-center">Crea tu cuenta gratis</h4>
+			</div>
+			<div class="modal-body">
+				<div class="row gap-20">
+					<div class="col-sm-6 col-md-6">
+						<a href="register.php?p=Employer" class="btn btn-facebook btn-block mb-5-xs">Registro Empresa</a>
+					</div>
+					<div class="col-sm-6 col-md-6">
+						<a href="register.php?p=Employee" class="btn btn-facebook btn-block mb-5-xs">Registro Personal</a>
 					</div>
 				</div>
-				<div class="modal-footer text-center">
-					<button type="button" data-dismiss="modal" class="btn btn-primary btn-inverse">Cerrar</button>
-				</div>
 			</div>
+			<div class="modal-footer text-center">
+				<button type="button" data-dismiss="modal" class="btn btn-primary btn-inverse">Cerrar</button>
+			</div>
+		</div>
+	<div class="container-wrapper">
 		<div class="main-wrapper">
 			<div class="breadcrumb-wrapper">
 				<div class="container">
@@ -125,7 +125,10 @@ include_once 'headerPrincipal.php';
 			<div class="section sm">
 				<div class="container">
 					<div class="row">
-						<div class="col-md-10 col-md-offset-1">
+						<div class="col-md-3">
+							dasdasdadasdasd
+						</div>
+						<div class="col-md-9 ">
 							<div class="job-detail-wrapper">
 								<div class="job-detail-header text-center">
 									<h2 class="heading mb-15"><?php echo "$jobtitle"; ?></h2>

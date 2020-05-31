@@ -2,7 +2,7 @@
 
 define('LOCAL', true);
 $actual_link = $_SERVER['HTTP_HOST'];
-$title_site = "Directorio Profesional";
+$title_site = "AquiOnline";
 $default_timezone = 'UTC';
 $smtp_host = 'remotepcsolutions.com';
 $smtp_user = 'fabian@remotepcsolutions.com';

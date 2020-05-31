@@ -167,13 +167,8 @@ ul.nav-mini.sign-in li a:hover {
     display: inline-block;
 }
 
-.nav.navbar-nav li a {
-    color: #FFF;
-    font-weight: 600;
-}
-
 .nav.navbar-nav > li > a {
-    line-height: 36px;
+    line-height: 40px;
     font-size: 0.875rem;
     padding-top: 0;
     padding-bottom: 0;
@@ -1437,7 +1432,7 @@ ul.quick-search-keyword li:last-child a:after {
 
 .sorting-title {
     line-height: 1;
-    margin: 0 0 15px;
+    padding: 10px;
 }
 
 .job-type-checkbox-wrapper {

@@ -1,23 +1,13 @@
-<!doctype html>
-<html lang="es_ES">
 <?php 
 include 'constants/settings.php'; 
 include 'constants/check-login.php';
 require 'headerPrincipal.php'
-
 ?>
-
-
 <body class="not-transparent-header">
 
 	<div class="container-wrapper">
-
-		
-
 		<div class="main-wrapper">
-
 			<div class="breadcrumb-wrapper">
-			
 				<div class="container">
 				
 					<ol class="breadcrumb-list">
@@ -26,29 +16,17 @@ require 'headerPrincipal.php'
 					</ol>
 					
 				</div>
-				
 			</div>
-			
 			<div class="section sm">
-			
 				<div class="container">
-				
 					<div class="row">
-					
 						<div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
-						
 							<div class="section-title">
-							
-								<h2>Contactanos para ayudarte</h2>
-								
+								<h2>Cont&aacute;ctanos</h2>
 							</div>
-
 						</div>
-					
 					</div>
-					
 					<div class="row">
-
 						<div class="col-sm-7 col-md-6 col-md-offset-1 mb-30">
 						<?php include 'constants/check_reply.php'; ?>
 						

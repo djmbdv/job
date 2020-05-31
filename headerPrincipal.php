@@ -1,14 +1,15 @@
 <?php 
+	require_once "constants/settings.php";
 	require_once "constants/check-login.php";
-	global $tags_share; 
+	global $tags_share;
+	global $title_site;
 ?><!DOCTYPE html>
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-	<title>Directorio Profesional</title>
+	<title><?=$title_site?></title>
 	<meta name="description" content="Portal de empleos / Bolsa de trabajo" />
 	<meta name="keywords" content="trabajo, empleos, cv, curriculum, empresas, carrera,servicios profesionales, tecnicos, bolsa de trabajo, servicios" />
 	<meta name="author" content="BwireSoft">
@@ -28,12 +29,10 @@
 			endforeach;
 		endif;
 	?>
-	<link rel="shortcut icon" href="images/ico/favicon.png">
-
-
+	<link rel="shortcut icon" href="images/logo4.png">
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" media="screen">	
 	<link href="css/animate.css" rel="stylesheet">
-	<link href="css/main.css?7" rel="stylesheet">
+	<link href="css/main.css?11" rel="stylesheet">
 	<link href="css/component.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin">
 	<link rel="stylesheet" href="icons/linearicons/style.css">
@@ -42,7 +41,7 @@
 	<link rel="stylesheet" href="icons/ionicons/css/ionicons.css">
 	<link rel="stylesheet" href="icons/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
 	<link rel="stylesheet" href="icons/rivolicons/style.css">
-	<link rel="stylesheet" href="css/style.css?9" >
+	<link rel="stylesheet" href="css/style.css?12" >
 	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
 	<script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
 	<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
@@ -111,6 +110,70 @@
     position: absolute;
     top: -20px;
 }
+.ec-stars-wrapper {
+  font-size: 0;
+  display: inline-block;
+}
+.ec-stars-wrapper a {
+  text-decoration: none;
+  display: inline-block;
+  font-size: 32px;
+  font-size: 2rem;
+  color: #888;
+}
+.ec-stars-wrapper:hover a {
+  color: gold;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: -webkit-linear-gradient(yellow, red);
+}
+.ec-stars-wrapper a:hover ~ a {
+  color: gray;
+  -webkit-text-fill-color: gray;
+}
+
+.stars-outer {
+  font-size: 16px;
+  position: relative;
+  display: inline-block;
+  color: blue;
+  font-family: 'FontAwesome';
+}
+
+.stars-outer:before {
+  content: '\f005 \f005 \f005 \f005 \f005';
+  color: gray;
+}
+
+.stars-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+}
+
+.stars-inner:before {
+  content: '\f005 \f005 \f005 \f005 \f005';
+  color: yellow;
+}
+
+.stars {
+  font-size : 20px;
+  color: gray;
+  cursor: pointer;
+}
+
+.star.hover {
+  color: yellow;
+}
+
+.star.is-selected {
+  color: yellow;
+}
+
 </style>
 <header id="header">
 	<nav class="navbar navbar-default navbar-fixed-top navbar-sticky-function">
