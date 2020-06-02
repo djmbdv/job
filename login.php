@@ -126,3 +126,4 @@ function reset_text(){
 	</div>
 </body>
 </html>
+<?php ob_flush();

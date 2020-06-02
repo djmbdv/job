@@ -312,3 +312,4 @@ foreach($result as $row){
 </div>
 </body>
 </html>
+<?php ob_flush();

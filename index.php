@@ -216,3 +216,4 @@ autocomplete(document.getElementById("category-input"), categories);
 </script>
 </body>
 </html>
+<?php ob_flush();

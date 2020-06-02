@@ -275,3 +275,4 @@ include_once 'headerPrincipal.php';
 	</div>
 </body>
 </html>
+<?php ob_flush();

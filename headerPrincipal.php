@@ -32,7 +32,7 @@
 	<link rel="shortcut icon" href="images/logo4.png">
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" media="screen">	
 	<link href="css/animate.css" rel="stylesheet">
-	<link href="css/main.css?12" rel="stylesheet">
+	<link href="css/main.css?13" rel="stylesheet">
 	<link href="css/component.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin">
 	<link rel="stylesheet" href="icons/linearicons/style.css">
