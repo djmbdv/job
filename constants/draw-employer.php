@@ -1,11 +1,9 @@
 <?php
-	require_once 'constants/connection.php';
-?>
+	require_once 'constants/connection.php';?>
 <form name="frm" class="form-employer" action="app/create-account.php" method="POST" role="form" error="0">
 <div class="login-box-wrapper">
 <div class="modal-body">
-<h4 class="modal-title text-center">Crea tu cuenta gratis</h4>												
-<div class="row gap-20">																	
+<h4 class="text-center" style="padding-bottom: 20px;">Crea tu cuenta gratis</h4>																										
 	<div class="col-sm-12 col-md-12">
 		<div class="form-group"> 
 			<label>Nombre de Empresa</label>
@@ -17,7 +15,7 @@
 	<div class="col-sm-12 col-md-12">
 		<div class="form-group"> 
 			<select class="form-control" name="category" required/>
-				<option   value="">Selecciona categoria</option>
+				<option   value="">Selecciona Categoria</option>
 				<?php
 					$stmt = $conn->prepare("SELECT * FROM tbl_categories ORDER BY category");
 					$stmt->execute();
@@ -58,14 +56,10 @@
 			<div class="help-block with-errors"></div>
 		</div>											
 	</div>								
-	<input type="hidden" name="acctype" value="102">						
-</div>
-
-</div> <!-- MODAL BODY -->
-<div class="modal-footer text-center">
-<button  id="regb" name="reg_mode" class="btn btn-primary">Registrar</button>
-</div>
+	<input type="hidden" name="acctype" value="102">
 										
+</div>
+<button  id="regb" name="reg_mode" class="btn btn-primary btn-block">Registrar</button>
 </div>
 </form>
 <script type="text/javascript">

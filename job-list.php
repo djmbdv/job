@@ -57,7 +57,6 @@ require 'headerPrincipal.php';
 										<select class="form-control" name="category" required>
 											<option value="">-Seleccionar Categoria-</option>
 <?php
-
 $stmt = $conn->prepare("SELECT * FROM tbl_categories ORDER BY category");
 $stmt->execute();
 $result = $stmt->fetchAll();
@@ -181,13 +180,6 @@ foreach($result as $row){
 															<?=$sta?>
 														</div>
 														<p class="texing character_limit"><?=$row['description']?></p>
-														<!--div class="ec-stars-wrapper">
-												  <a href="#" data-value="1" title="Votar con 1 estrellas">&#9733;</a>
-												  <a href="#" data-value="2" title="Votar con 2 estrellas">&#9733;</a>
-												  <a href="#" data-value="3" title="Votar con 3 estrellas">&#9733;</a>
-												  <a href="#" data-value="4" title="Votar con 4 estrellas">&#9733;</a>
-												  <a href="#" data-value="5" title="Votar con 5 estrellas">&#9733;</a>
-												</div-->
 												<span class="stars-outer" data-rating="5">
                   <span class="stars-inner" style="width: 50%;"></span>
                 </span>
