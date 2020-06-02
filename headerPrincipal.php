@@ -204,7 +204,7 @@
 					<li><a  href="<?=$myrole?>">Perfil</a></li>
 <?php else: ?>
 					<li><a  href="login.php">Ingresar</a></li>
-					<li><a data-toggle="modal" href="#registerModal">Registro</a></li>
+					<li><a  href="registter.php">Registro</a></li>
 <?php endif;?>
 				</ul>
 			</div>
@@ -212,23 +212,4 @@
 				
 		<div id="slicknav-mobile"></div>
 	</nav>
-
-			
-	<div id="registerModal" class="modal fade login-box-wrapper" tabindex="-1" style="display: none;" data-backdrop="static" data-keyboard="false" data-replace="true">
-		<div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-			<h4 class="modal-title text-center">Registrate gratis</h4>
-		</div>
-		
-		<div class="modal-body">
-			<div class="row gap-20">
-				<div class="col-sm-6 col-md-6">
-					<a href="register.php?p=Employer" class="btn btn-facebook btn-block mb-5-xs">Registrarme</a>
-				</div>
-			</div>
-		</div>
-		<div class="modal-footer text-center">
-			<button type="button" data-dismiss="modal" class="btn btn-primary btn-inverse">Cerrar</button>
-		</div>
-	</div>	
 </header>

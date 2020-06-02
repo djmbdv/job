@@ -125,9 +125,6 @@ include_once 'headerPrincipal.php';
 			<div class="section sm">
 				<div class="container">
 					<div class="row">
-						<div class="col-md-3">
-							dasdasdadasdasd
-						</div>
 						<div class="col-md-9 ">
 							<div class="job-detail-wrapper">
 								<div class="job-detail-header text-center">
