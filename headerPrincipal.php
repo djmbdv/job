@@ -189,7 +189,7 @@
 						<a  href="./">Inicio</a>
 					</li>
 					<li>
-						<a  href="job-list.php">Lista de Servicios</a>
+						<a  href="list.php">Lista de Servicios</a>
 					</li>
 					<li> 
 						<a href="contact.php">Contacto</a>
