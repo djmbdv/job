@@ -1,35 +1,16 @@
 <?php
-	require_once 'constants/connection.php';?>
+
+require_once 'constants/connection.php';?>
 <form name="frm" class="form-employer" action="app/create-account.php" method="POST" role="form" error="0">
 <div class="login-box-wrapper">
 <div class="modal-body">
-<h4 class="text-center" style="padding-bottom: 20px;">Crea tu cuenta gratis</h4>																										
+<h4 class="text-center" style="padding-bottom: 20px;">Crea tu cuenta gratis</h4>										
 	<div class="col-sm-12 col-md-12">
 		<div class="form-group"> 
 			<label>Nombre de Empresa</label>
 			<input class="form-control" placeholder="Ingresa tu Nombre de Empresa" name="company" required type="text"> 
 		</div>												
-	</div>
-
-
-	<div class="col-sm-12 col-md-12">
-		<div class="form-group"> 
-			<select class="form-control" name="category" required/>
-				<option   value="">Selecciona Categoria</option>
-				<?php
-					$stmt = $conn->prepare("SELECT * FROM tbl_categories ORDER BY category");
-					$stmt->execute();
-					$result = $stmt->fetchAll();
-					foreach($result as $row): 
-				?>
-				<option style="color:black" value="<?= $row['id']; ?>"><?= $row['category']; ?></option>
-				<?php
-					endforeach;
-				?>														   
-			</select>									
-		</div>
-	</div>
-												
+	</div>										
 	<div class="col-sm-12 col-md-12">
 		<div class="form-group has-feedback"> 
 			<label>Correo Electrónico</label>
@@ -57,7 +38,6 @@
 		</div>											
 	</div>								
 	<input type="hidden" name="acctype" value="102">
-										
 </div>
 <button  id="regb" name="reg_mode" class="btn btn-primary btn-block">Registrar</button>
 </div>
@@ -74,10 +54,8 @@
 		var errores = 0;
 		$("form").find("input").each(function(){
 			var i = Number.isNaN(parseInt($(this).attr("error")))?0:parseInt($(this).attr("error"));
-		//	alert(i);
 			setError(getError() + i);
 		});
-	//	alert(errores);
 		return errores;
 	}
 

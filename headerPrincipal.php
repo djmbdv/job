@@ -204,7 +204,7 @@
 					<li><a  href="<?=$myrole?>">Perfil</a></li>
 <?php else: ?>
 					<li><a  href="login.php">Ingresar</a></li>
-					<li><a  href="registter.php">Registro</a></li>
+					<li><a  href="register.php">Registro</a></li>
 <?php endif;?>
 				</ul>
 			</div>

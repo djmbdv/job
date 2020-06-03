@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="es">
 <?php 
 	include 'constants/settings.php'; 
 	include 'constants/check-login.php';
@@ -20,14 +18,10 @@
 			<div class="login-container-wrapper">	
 				<div class="container">
 					<div class="row">
-
 						<div class="col-sm-4 col-sm-offset-4">
 <?php
-	if (isset($_GET['p'])) {
-		$position = $_GET['p'];
-	    if ($position == "Employee") include 'constants/draw-employee.php';
-	    if ($position == "Employer") include 'constants/draw-employer.php';		
-	}
+	if (isset($_GET['p']) && $_GET['p'] == "Employee") include 'constants/draw-employee.php';
+	else include 'constants/draw-employer.php';
 ?>
 						</div>
 					</div>
