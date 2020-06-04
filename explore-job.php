@@ -13,61 +13,54 @@ if(!isset($_GET['jobid']) || !is_numeric($_GET['jobid'])){
 }
 $jobid = $_GET['jobid'];
 
-try {
-	$stmt = $conn->prepare("SELECT * FROM tbl_jobs WHERE job_id = :jobid");
-	$stmt->bindParam(':jobid', $jobid);
-	$stmt->execute();
-	$result = $stmt->fetchAll();
-	$rec = count($result);
-	if ($rec == "0") {
-		header("location:./");	
-	}else{
-		foreach($result as $row){
-			$jobtitle = $row['title'];
-			$jobcity = $row['city'];
-			$jobcountry = $row['country'];
-			$jobcategory = $row['category'];
-			$jobtype = $row['type'];
-			$experience = $row['experience'];
-			$jobdescription = $row['description'];
-			$jobrespo = $row['responsibility'];
-			$jobreq = $row['requirements'];
-			$closingdate = $row['closing_date'];
-			$opendate = $row['date_posted'];
-			$compid = $row['company'];
-			if ($jobtype == "Freelance") {
-				$sta = '<span class="label label-success">Freelance</span>';
-			}
-			if ($jobtype == "Part-time") {
-				$sta = '<span class="label label-danger">Part-time</span>';									  
-			}
-			if ($jobtype == "Full-time") {
-				$sta = '<span class="label label-warning">Full-time</span>';										  
-			}
+$stmt = $conn->prepare("SELECT * FROM tbl_jobs WHERE job_id = :jobid");
+$stmt->bindParam(':jobid', $jobid);
+$stmt->execute();
+$result = $stmt->fetchAll();
+$rec = count($result);
+if ($rec == "0") {
+	header("location:./");	
+}else{
+	foreach($result as $row){
+		$jobtitle = $row['title'];
+		$jobcity = $row['city'];
+		$jobcountry = $row['country'];
+		$jobcategory = $row['category'];
+		$jobtype = $row['type'];
+		$experience = $row['experience'];
+		$jobdescription = $row['description'];
+		$jobrespo = $row['responsibility'];
+		$jobreq = $row['requirements'];
+		$closingdate = $row['closing_date'];
+		$opendate = $row['date_posted'];
+		$compid = $row['company'];
+		if ($jobtype == "Freelance") {
+			$sta = '<span class="label label-success">Freelance</span>';
 		}
-	}					  
-}catch(Exception $e){
-	print_r($e);
-}
-
-
-try{
-	
-	$stmt = $conn->prepare("SELECT * FROM tbl_users WHERE member_no = '$compid'");
-	$stmt->execute();
-	$result = $stmt->fetchAll();
-
-
-    foreach($result as $row){
-	    $compname = $row['first_name'];
-		$complogo = $row['avatar'];
-		$compbout = $row['about'];
+		if ($jobtype == "Part-time") {
+			$sta = '<span class="label label-danger">Part-time</span>';									  
+		}
+		if ($jobtype == "Full-time") {
+			$sta = '<span class="label label-warning">Full-time</span>';										  
+		}
 	}
+}					  
 
-					  
-}catch(PDOException $e){
-	print_r($e);
+
+
+	
+$stmt = $conn->prepare("SELECT * FROM tbl_users WHERE member_no = '$compid'");
+$stmt->execute();
+$result = $stmt->fetchAll();
+
+$member_no =  $compid;
+foreach($result as $row){
+    $compname = $row['first_name'];
+	$complogo = $row['avatar'];
+	$compbout = $row['about'];
 }
+
+					
 	
 
 $today_date = strtotime(date('Y/m/d'));
@@ -155,16 +148,19 @@ include_once 'headerPrincipal.php';
 								<div class="job-detail-company-overview clearfix">
 									<h3>Un resumen sobre mi</h3>
 									<div class="image">
-										<?php if($complogo == null): ?>
+<?php
+	if($complogo == null): ?>
 										<center>No Company Logo</center>
-										<?php else: ?>
+<?php
+	else: ?>
 										<center>
-											<img class="autofit2" alt="image" title="<?= $compname ?>" width="180" height="100" src="data:image/jpeg;base64,<?= base64_encode($complogo) ?>"/>
-										</center>;
-										<?php endif;?>
+											<img class="autofit2" alt="image" title="<?= $compname ?>" width="180" height="100" src="app/image-profiles.php?id=<?=$member_no?>"/>
+										</center>
+<?php
+	endif;?>
 									</div>
 									
-									<p><?php echo "$compbout"; ?></p>
+									<p><?=$compbout?></p>
 								</div>
 								
 								<div class="job-detail-content mt-30 clearfix">
@@ -251,7 +247,6 @@ include_once 'headerPrincipal.php';
 													</a>
 <?php															
 	endforeach;
-
 ?>
 												</div>
 											</div>

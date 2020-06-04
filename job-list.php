@@ -1,7 +1,8 @@
 <?php
+
 require_once 'constants/settings.php';
 require_once 'constants/connection.php';
-
+require_once 'constants/check-login.php';
 global $conn;
 global $actual_link;
 global $isHttps;
@@ -130,7 +131,7 @@ foreach($result as $row):
 							</li>
 							<li>
 								<span>Telefono: </span>
-								<?=$row['telefono']?>
+								<?= $user_online?   $row['telefono']: '<a class="only-logged" href="#">Ver tel&eacute;fono</a>' ?>
 							</li>
 						</ul>
 					</div>										
