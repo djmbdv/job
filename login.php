@@ -58,7 +58,7 @@ function reset_text(){
 	                                		<div class="col-sm-12 col-md-12">
 	                                			<div class="form-group"> 
 	                                				<label>Correo Electrónico</label>
-	                                				<input class="form-control" placeholder="Ingresa tu Correo Electrónico" name="email" required type="text"> 
+	                                				<input class="form-control" placeholder="Ingresa tu Correo Electrónico" name="email" type="email" required> 
 	                                			</div>
 	                                 		</div>
 													
@@ -70,7 +70,7 @@ function reset_text(){
 			                                </div>
 								          	<div class="col-sm-12 col-md-12">
 											    <div class="login-box-link-action">
-													<a data-toggle="modal" onclick = "reset_text()" href="#forgotPasswordModal">¿Olvido contraseña?</a> 
+													<a data-toggle="modal" onclick = "reset_text()" href="#forgotPasswordModal">¿Olvid&oacute; la contraseña?</a> 
 											    </div>
 											</div>
 										</div>

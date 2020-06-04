@@ -7,8 +7,6 @@ global $conn;
 global $actual_link;
 global $isHttps;
 
-$fromsearch = false;
-
 
 require 'headerPrincipal.php';
 ?>

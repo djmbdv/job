@@ -1,7 +1,7 @@
 <?php
 require_once 'constants/settings.php';
 require_once 'constants/connection.php';
-
+require_once 'constants/check-login.php';
 global $conn;
 global $actual_link;
 global $isHttps;
@@ -50,9 +50,6 @@ if ($fromsearch == true) {
 $stmt->execute();
 $result = $stmt->fetchAll();?>
 <div class="col-sm-12 col-md-9 col-lg-9 mt-25">
-	<!--div class="bg-dark">
-		<h5 class="sorting-title "><?=$title?></h5>
-	</div-->
 	<div class="result-list-wrapper">
 <?php
 foreach($result as $row):
@@ -137,7 +134,14 @@ foreach($result as $row):
 								</li>
 								<li>
 									<span>Telefono: </span>
-									<?=$row['telefono']?>
+<?php
+	if($user_online):
+		echo $row['phone'];
+	else: ?>
+
+									<a class="hide-number" href="#">Ver Tel&eacute;fono</a>
+<?php
+	endif;?>
 								</li>
 							</ul>
 						</div>										
@@ -184,7 +188,7 @@ $records = ceil($records);
 if ($records > 1 ) {
 $prevpage = $page - 1;
 $nextpage = $page + 1;
-
+/*
 print '<li class="paging-nav" '; if ($page == "1") { print 'class="disabled"'; } print '><a '; if ($page == "1") { print ''; } else { print 'href="job-list.php?page='.$prevpage.''; ?> <?php if ($fromsearch == true) { print '&category='.$cate.'&country='.$country.'&search=✓'; }'';} print '"><i class="fa fa-chevron-left"></i></a></li>';
 for ($b=1;$b<=$records;$b++)
  {
@@ -193,13 +197,10 @@ for ($b=1;$b<=$records;$b++)
  }	
  print '<li class="paging-nav"'; if ($page == $records) { print 'class="disabled"'; } print '><a '; if ($page == $records) { print ''; } else { print 'href="job-list.php?page='.$nextpage.''; ?> <?php if ($fromsearch == true) { print '&category='.$cate.'&country='.$country.'&search=✓'; }'';} print '"><i class="fa fa-chevron-right"></i></a></li>';
  }
-
+*/
 
 ?>
 		</ul>	
 	</div>
+
 </div>
-<div class="pager-wrapper">		
-<ul class="pager-list">
-	<li class="paging-nav"><a href="#"><i class="fa fa-angle-double-left"></i></a></li>
-	<li class="paging-nav"><a href="#"><i class="fa fa-angle-left"></i></a></li>
