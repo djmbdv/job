@@ -29,7 +29,7 @@
 			endforeach;
 		endif;
 	?>
-	<link rel="shortcut icon" href="images/logo4.png">
+	<link rel="shortcut icon" href="images/SOLOLOGO.png">
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" media="screen">	
 	<link href="css/animate.css" rel="stylesheet">
 	<link href="css/main.css?13" rel="stylesheet">
@@ -66,6 +66,8 @@
 	<script type="text/javascript" src="js/validator.min.js"></script>
 	<script type="text/javascript" src="js/customs.js?1"></script>
 </head>
+<link rel="stylesheet" href="css/main.css">
+
 <style type="text/css">
 .navbar-sticky > .container > .logo-wrapper > .logo > img {
 	max-height: 3rem;
@@ -180,7 +182,7 @@
 		<div class="container">
 			<div class="logo-wrapper">
 				<div class="logo">
-					<img class="img img-responsive" src="images/logo4.png"   alt="Logo" />
+					<img class="img img-responsive" src="images/LOGOBLANCo.png"   alt="Logo" />
 				</div>
 			</div>
 			<div id="navbar" class="navbar-nav-wrapper navbar-arrow">

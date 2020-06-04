@@ -20,7 +20,7 @@ global $conn;
 	<div id="introLoader" class="introLoading"></div>
 	<div class="container-wrapper">
 		<div class="main-wrapper">
-			<div class="hero" style="background-image:url('https://i.ytimg.com/vi/OiyHs4rQh8s/maxresdefault.jpg');background-size: cover;">
+			<div class="hero" style="background-image:url('https://img.wallpapersafari.com/desktop/1600/900/65/95/gqO8SC.jpg');background-size: cover;">
 				<div class="container">
 					<h1 class=" text-center text-shadow" style="text-shadow: 3px black;color: whitesmoke;">Aqui<b>Online</b>
 					</h1>
@@ -31,12 +31,12 @@ global $conn;
 						<form action="job-list.php" method="GET" autocomplete="on">
 							<div class="form-holder">
 								<div class="row gap-0  ">
-									<div  class="autocomplete col-xss-6 col-xs-6 col-sm-6">
-										<small class="text-white">Qu&eacute;</small>
+									<div  class="autocomplete col-xss-5 col-xs-5 col-sm-5">
+										<small class="text-white">Qu&eacute; Buscas?</small>
 										<input class="form-control" name="category" id="category-input" placeholder="Producto, Empresa, Servicio..."  name="">
 									</div>
-									<div class="col-xss-6 col-xs-6 col-sm-6">
-										<small class="text-white">D&oacute;nde</small>
+									<div class="col-xss-5 col-xs-5 col-sm-5">
+										<small class="text-white">D&oacute;nde lo necesitas?</small>
 										<select class="form-control"  name="country" required/>
 										<option value="">- Selecciona ciudad -<option>
 										<?php
@@ -54,20 +54,133 @@ global $conn;
 	                                    }catch(PDOException $e){
 	                                    	print_r($e);
 										}
-										?>
-										</select>
-									</div>
-								</div>
+                    ?>
+                    
+                      
+                    </select>
+                    
+                    
+                    
+                  </div>
+                    <div class="col col-2" style="margin-top:30px;"  >
+                    <button type="submit" name="search" value="✓"  class="button button--medium button--square button--primary"  style="margin-left: 40px;" >
+              <i class="fa fa-search"></i> Buscar
+            </button>   
+                    </div>
+                </div>
+                
 							</div>
-							<div class="btn-holder">
-								<button name="search" value="✓" type="submit" class="btn">
-									<i class="ion-android-search"></i>
-								</button>
-							</div>
-						</form>
-					</div>
+							
+            </form>
+        
+           
+          </div>
+          <div>
+            <br>
+          <div class="locations-container t-center">
+        <ul class="min-list inline-list locations locations--layout-1">
+         
+          <li class="location">
+            <a href="#" class="c-white"><i class="fa fa-book"></i>Directorio</a>
+          </li>
+          <li class="location">
+            <a href="#" class="c-white"><i class="fa fa-user"></i>Profesionales</a>
+          </li>
+          <li class="location">
+            <a href="#" class="c-white"><i class="fa fa-wrench"></i>Servicios</a>
+          </li>
+          <li class="location">
+            <a href="#" class="c-white"><i class="fa fa-cutlery"></i>Restaurantes</a>
+          </li>
+        </ul>
+      </div>
+          </div>
+
+
 				</div>
-			</div>
+      </div>
+      
+
+
+                      <section id="cubos" class="container">
+
+                      <div class="row" >
+                          <div class="col col-md-4" style="text-align: -webkit-center;">
+                          <img id="logito" src="images/empresas.png" alt="">
+                            <p> <b>Empresas</b>   </p>
+
+
+                          </div>
+                          <div class="col col-md-4" style="text-align: -webkit-center;">
+                          <img id="logito" src="images/servicios.png" alt="">
+                          <p> <b>Servicios</b>   </p>
+
+
+                          </div>
+                          <div class="col col-md-4" style="text-align: -webkit-center;">
+
+                          <img id="logito" src="images/productos.png" style="width: 230px;" alt="">
+                          <p> <b>Productos</b>   </p>
+
+                          </div>
+                  </div>
+
+
+
+                      </section>
+
+
+                        <section class="" id="franja"  style="background-color:#26272a;">
+                            <div class="text-center">
+                              <p id="blog-texto"> Blog</p>
+                            </div>
+                        </section>
+
+
+
+                      <section id="blog" class="container">
+
+                      <div class="row" >
+                          <div class="col col-md-4" style="text-align: -webkit-center;">
+                          <img id="foto-blog" src="https://www.teledisca.com/wp-content/uploads/2020/04/Juan-Camilo-Ruiz-Product-Manager-InterNexa-768x668.jpg" alt="">
+                            <p> <b>Post #1</b>   </p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil 
+                              asperiores earum consequatur minima blanditiis quia ratione? 
+                              Recusandae totam molestiae quaerat porro perspiciatis! Iste,
+                               hic provident esse reiciendis reprehenderit temporibus optio!</p>
+
+
+                          </div>
+                          <div class="col col-md-4" style="text-align: -webkit-center;">
+                          <img id="foto-blog" src="https://www.teledisca.com/wp-content/uploads/2020/04/5e8c6d9e5f164.jpeg" alt="">
+                          <p> <b>Post #2/b>   </p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil 
+                              asperiores earum consequatur minima blanditiis quia ratione? 
+                              Recusandae totam molestiae quaerat porro perspiciatis! Iste,
+                               hic provident esse reiciendis reprehenderit temporibus optio!</p>
+
+                          </div>
+                          <div class="col col-md-4" style="text-align: -webkit-center;">
+
+                          <img id="foto-blog" src="https://www.teledisca.com/wp-content/uploads/2020/03/1366_2000.jpg" alt="">
+                          <p> <b>Post #3</b>   </p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil 
+                              asperiores earum consequatur minima blanditiis quia ratione? 
+                              Recusandae totam molestiae quaerat porro perspiciatis! Iste,
+                               hic provident esse reiciendis reprehenderit temporibus optio!</p>
+
+
+                          </div>
+                  </div>
+
+                      </section>
+
+
+
+
+
+
+
 			<?php require 'footer.php';?>
 		</div> 
 	</div>
@@ -123,7 +236,7 @@ global $conn;
       cola = document.createElement("div");
       t = document.createElement("h6");
       t.setAttribute("class","list-item-title");
-      t.innerHTML = "Servicios";
+      t.innerHTML = "Servicios/Productos";
       cola.appendChild(t);
       cola.setAttribute("class", "col-md-6");
       colb = document.createElement("div");
