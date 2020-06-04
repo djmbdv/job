@@ -1,5 +1,3 @@
-<!doctype html>
-<html lang="es_ES">
 <?php 
 require 'constants/settings.php'; 
 require 'constants/check-login.php';

@@ -15,9 +15,9 @@ require 'headerPrincipal.php';
 		<div class="main-wrapper">
 			<div class="second-search-result-wrapper">
 				<div class="container">
-					<form action="job-list.php" method="GET" autocomplete="off">
+					<form action="list.php" method="GET" autocomplete="off">
 						<div class="second-search-result-inner">
-							<span class="labeling">Buscar </span>
+							<span class="labeling">Buscar</span>
 							<div class="row">
 								<div class="col-xss-12 col-xs-6 col-sm-6 col-md-5">
 									<div class="form-group form-lg">
@@ -49,7 +49,7 @@ $result = $stmt->fetchAll();
 
 foreach($result as $row):
 	$cnt = $row['country_name']; ?>	
-										<option <?php if ($slc_country == "$cnt") { print ' selected '; } ?> value="<?php echo $row['country_name']; ?>"><?php echo $row['country_name']; ?></option>
+										<option <?php if ($slc_country == "$cnt") { print ' selected '; } ?> value="<?=$row['country_name']?>"><?= $row['country_name']?></option>
 <?php
 endforeach; ?>
 										</select>
@@ -72,25 +72,90 @@ endforeach; ?>
 					</ol>
 				</div>
 			</div>
-
-			
 			<div class="section sm">
 				<div class="container">
-
 					<div class="result-wrapper">
-						<div class="row">						
-							<?php include_once 'job-list.php';?>
+						<div class="row">
+							<div class="col-sm-12 col-md-9 col-lg-9 mt-25">
+								<div id="job-list" page="1" <?= isset($_GET['category'])?"category='".$_GET['category']."'":""  ?>  <?= isset($_GET['country'])?"country='".$_GET['country']."'":""  ?> >
+								</div>
+								<div class="pager-wrapper">		
+									<ul class="pager-list">
+										<li class="paging-nav paging-nav-start">
+											<a href="#"><i class="fa fa-angle-double-left"></i></a>
+										</li>
+										<li class="paging-nav paging-nav-prev">
+											<a href="#"><i class="fa fa-angle-left"></i></a>
+										</li>
+										<li class="paging-nav paging-nav-next">
+											<a href="#"><i class="fa fa-angle-right"></i></a>
+										</li>
+										<li class="paging-nav paging-nav-last">
+											<a href="#"><i class="fa fa-angle-double-right"></i></a>
+										</li>
+									</ul>							
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
-			
 			</div>
-			<?php require 'footer.php';?>
+			<?php include_once 'footer.php';?>
 		</div>
 	</div> 
 <div id="back-to-top">
    <a href="#"><i class="ion-ios-arrow-up"></i></a>
 </div>
+<script type="text/javascript">
+	$(document).ready((e)=>{
+		$.get("job-list.php",{
+			page: 1,
+			category:$("#job-list").attr("category"),
+			country:$("#job-list").attr("coutry")
+		}).done((data)=>{
+		//	alert(data);
+			$("#job-list").html(data);
+		})
+	});
+	$("paging-nav").click(e=>{
+		$("#job-list").html("<p>loading</p>");
+	});
+	$(".paging-nav-start > a").click((e)=>{
+		e.preventDefault();
+		$.get("job-list.php",{
+			page: 1,
+			category:$("#job-list").attr("category"),
+			country:$("#job-list").attr("coutry")
+		}).done((data)=>{
+			alert(data);
+			$("#job-list").html(data);
+		})
+	});
+	$(".paging-nav-prev > a").click((e)=>{
+		e.preventDefault();
+		$.get("job-list.php",{
+			page: parseInt($("#job-list").attr("page"))-1,
+			category:$("#job-list").attr("category"),
+			country:$("#job-list").attr("coutry")
+		}).done((data)=>{
+			alert(data);
+			$("#job-list").html(data);
+			$("#job-list").attr("page",parseInt($("#job-list").attr("page"))-1);
+		});
+	});
+	$(".paging-nav-next > a").click((e)=>{
+		e.preventDefault();
+		$.get("job-list.php",{
+			page: parseInt($("#job-list").attr("page"))+1,
+			category:$("#job-list").attr("category"),
+			country:$("#job-list").attr("coutry")
+		}).done((data)=>{
+			alert(data);
+			$("#job-list").html(data);
+			$("#job-list").attr("page",parseInt($("#job-list").attr("page"))+1);
+		});
+	});
+</script>
 </body>
 </html>
 <?php ob_flush();

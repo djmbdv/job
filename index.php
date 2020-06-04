@@ -28,7 +28,7 @@ global $conn;
 					<h6 class="text-center text-primary">Encuentra lo que buscas en una sola p&aacute;gina</h6>
 					
 					<div class="main-search-form-wrapper">
-						<form action="job-list.php" method="GET" autocomplete="on">
+						<form action="list.php" method="GET" autocomplete="on">
 							<div class="form-holder">
 								<div class="row gap-0  ">
 									<div  class="autocomplete col-xss-5 col-xs-5 col-sm-5">
@@ -48,22 +48,19 @@ global $conn;
 										<option style="color:black" value="<?= $row['country_name']; ?>">
 											<?=$row['country_name']; ?>
 										</option>
-										<?php
-	                                     	endforeach;
-					  
-	                                    }catch(PDOException $e){
-	                                    	print_r($e);
-										}
-                    ?>
-                    
-                      
-                    </select>
+<?php
+ 	endforeach;
+
+}catch(PDOException $e){
+	print_r($e);
+} ?>
+                    					</select>
                     
                     
                     
                   </div>
                     <div class="col col-2" style="margin-top:30px;"  >
-                    <button type="submit" name="search" value="✓"  class="button button--medium button--square button--primary"  style="margin-left: 40px;" >
+                    <button type="submit"  class="button button--medium button--square button--primary"  style="margin-left: 40px;" >
               <i class="fa fa-search"></i> Buscar
             </button>   
                     </div>
