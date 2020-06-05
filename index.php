@@ -16,7 +16,7 @@ global $conn;
 		object-fit:cover; 
 	}
 </style>
-<body class="home">
+<body class="home" style="padding-top: 0;">
 	<div id="introLoader" class="introLoading"></div>
 	<div class="container-wrapper">
 		<div class="main-wrapper">

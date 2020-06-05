@@ -205,7 +205,9 @@
   color: #ffffff;
   cursor: pointer;
 }
-
+body{
+	padding-top: 3em;
+}
 </style>
 <header id="header">
 	<nav class="navbar navbar-default navbar-fixed-top navbar-sticky-function">

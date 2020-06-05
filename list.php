@@ -11,7 +11,7 @@ global $isHttps;
 require 'headerPrincipal.php';
 ?>
 <body class="not-transparent-header">
-	<div class="container-wrapper" style="padding-top: 8em;">
+	<div class="container-wrapper">
 		<div class="main-wrapper">
 			<div class="second-search-result-wrapper">
 				<div class="container">
