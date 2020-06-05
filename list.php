@@ -101,7 +101,6 @@ endforeach; ?>
 <script type="text/javascript">
 	function tel(){
 			$(".only-logged").click(e=>{
-	        alert("a");
 	        e.preventDefault();
 	        window.location.href = "<?=$prefix?>login.php";
     	});
