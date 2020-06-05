@@ -1,19 +1,23 @@
-<!doctype html>
-<html lang="es_ES">
-<?php 
-require 'constants/settings.php'; 
-require 'constants/check-login.php';
-require 'constants/db_config.php';
+<?php
 
-if (isset($_GET['ref'])) {
+require_once 'constants/settings.php'; 
+require_once 'constants/check-login.php';
+require_once 'constants/connection.php';
+
+
+global $conn;
+
+if (!isset($_GET['ref'])){
+	header("location:./");
+	die();
+}
+
 
 $company_id = $_GET['ref'];
 
 
 
     try {
-    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 	
     $stmt = $conn->prepare("SELECT * FROM tbl_users WHERE member_no = :memberno AND role = 'employer'");
@@ -55,9 +59,7 @@ $company_id = $_GET['ref'];
  
     }
 	
-}else{
-header("location:./");
-}
+
 
 if (isset($_GET['page'])) {
 $page = $_GET['page'];
@@ -75,74 +77,53 @@ $page = 1;
 require 'headerPrincipal.php'
 
 ?>
-
-
-
 <body class="not-transparent-header">
-
 	<div class="container-wrapper">
-
-	
-	
 		<div class="main-wrapper">
-		
 			<div class="breadcrumb-wrapper">
-			
 				<div class="container">
-				
 					<ol class="breadcrumb-list booking-step">
 						<li><a href="employers.php">Empresas</a></li>
-						<li><span><?php echo "$compname"; ?></span></li>
+						<li><span><?=$compname?></span></li>
 					</ol>
-					
 				</div>
-				
 			</div>
-
-			
 			<div class="section sm">
-			
 				<div class="container">
-				
 					<div class="row">
-						
 							<div class="col-md-10 col-md-offset-1">
-							
 								<div class="company-detail-wrapper">
-								
 									<div class="company-detail-header text-center">
-										
 										<div class="image">
-										<?php 
-										if ($complogo == null) {
-										print '<center>Company Logo Here</center>';
-										}else{
-										echo '<center><img alt="image" title="'.$compname.'" width="180" height="100" src="data:image/jpeg;base64,'.base64_encode($complogo).'"/></center>';	
-										}
-										?>
+<?php 
+if ($complogo == null):?>
+											<center>Company Logo Here</center>
+<?php
+	else:?>
+											<center>
+												<img alt="image" title="<?=$compname?>" width="180" height="100" src="data:image/jpeg;base64,<?=base64_encode($complogo)?>"/>
+											</center>	
+<?php
+	endif; ?>
 										</div>
 										
-										<h2 class="heading mb-15"><?php echo "$compname"; ?></h2>
+										<h2 class="heading mb-15"><?=$compname?></h2>
 									
-										<p class="location"><i class="fa fa-map-marker"></i> <?php echo "$compzip"; ?> <?php echo "$compcity"; ?>. <?php echo "$compstreet"; ?>, <?php echo "$compcountry"; ?> <span class="mh-5">|</span> <i class="fa fa-phone"></i> <?php echo "$compphone"; ?></p>
-										
+										<p class="location">
+											<i class="fa fa-map-marker"></i>
+											<?=$compzip?> <?=$compcity?>. <?=$compstreet?>, <?=$compcountry?>
+											<span class="mh-5">|</span>
+											<i class="fa fa-phone"></i>
+											<?= $user_online? $compphone: '<a class="only-logged" href="#">Ver tel&eacute;fono</a>' ?>
+										</p>
 										<ul class="meta-list clearfix">
-										<!--	<li>
-												<h4 class="heading">Establecida en:</h4>
-												<?php echo ""; ?>
-											</li>  -->
-											
-											<li>
-												<h4 class="heading"></h4>
-												<?php echo ""; ?>
-											</li>	
 											<li>
 												<h4 class="heading">Rubro:</h4>
 												<?php echo "$comptype"; ?>
 											</li>
 											<li>
 												<h4 class="heading">Página Web: </h4>
-												<a target="_blank" href="https://<?php echo "$compweb"; ?>"><?php echo "$compweb"; ?></a>
+												<a target="_blank" href="//<?=$compweb?>"><?=$compweb?></a>
 											</li>
 										</ul>
 										
@@ -152,7 +133,7 @@ require 'headerPrincipal.php'
 									
 										<h3>Descripción de la Empresa</h3>
 										
-										<p><?php echo "$compbout"; ?></p>
+										<p><?=$compbout?></p>
 
 										
 										<h3>Servicios</h3>
@@ -350,142 +331,14 @@ require 'headerPrincipal.php'
 						</div>
 						
 					</div>
-				
 				</div>
-			
 			</div>
-
-			<footer class="footer-wrapper">
-			
-				<div class="main-footer">
-				
-					<div class="container">
-					
-						<div class="row">
-						
-							<div class="col-sm-12 col-md-9">
-							
-								<div class="row">
-								
-									<div class="col-sm-6 col-md-4">
-									
-										<div class="footer-about-us">
-											<h5 class="footer-title">Sobre Platea21</h5>
-											<p>platea21 es un portal dedicado a la programacion web y escritorio 2018.</p>
-										
-										</div>
-
-									</div>
-									
-									<div class="col-sm-6 col-md-5 mt-30-xs">
-										<h5 class="footer-title">Enlaces Rapidos</h5>
-										<ul class="footer-menu clearfix">
-											<li><a href="../">Inicio</a></li>
-											<li><a href="../job-list.php">Lista de empleos</a></li>
-											<li><a href="../employers.php">Empresas</a></li>
-											<li><a href="../employees.php">Personas</a></li>
-											<li><a href="../contact.php">Contacto</a></li>
-											<li><a href="#">Ir Arriba</a></li>
-
-										</ul>
-									
-									</div>
-
-								</div>
-
-							</div>
-							
-							<div class="col-sm-12 col-md-3 mt-30-sm">
-							
-								<h5 class="footer-title">Contacto Platea21</h5>
-								
-								<p>Dirección : Tacna - Perú</p>
-								<p>Correo Electrónico : <a href="mailto:gorchor@gmail.com">gorchor@gmail.com</a></p>
-								<p>Teléfono: <a href="tel:+51948445199">+51948445199</a></p>
-								
-
-							</div>
-
-							
-						</div>
-						
-					</div>
-					
-				</div>
-				
-				<div class="bottom-footer">
-				
-					<div class="container">
-					
-						<div class="row">
-						
-							<div class="col-sm-4 col-md-4">
-					
-								<p class="copy-right">&#169; Copyright <?php echo date('Y'); ?> Platea21</p>
-								
-							</div>
-							
-							<div class="col-sm-4 col-md-4">
-							
-								<ul class="bottom-footer-menu">
-									<li><a >Desarrollado por @gorchor</a></li>
-								</ul>
-							
-							</div>
-							
-							<div class="col-sm-4 col-md-4">
-								<ul class="bottom-footer-menu for-social">
-									<li><a href="<?php echo "$tw"; ?>"><i class="ri ri-twitter" data-toggle="tooltip" data-placement="top" title="twitter"></i></a></li>
-									<li><a href="<?php echo "$fb"; ?>"><i class="ri ri-facebook" data-toggle="tooltip" data-placement="top" title="facebook"></i></a></li>
-									<li><a href="<?php echo "$ig"; ?>"><i class="ri ri-instagram" data-toggle="tooltip" data-placement="top" title="instagram"></i></a></li>
-								</ul>
-							</div>
-						
-						</div>
-
-					</div>
-					
-				</div>
-			
-			</footer>
-			
+			<?php include_once "footer.php";?>
 		</div>
-		
-
 	</div>
- 
-
 <div id="back-to-top">
    <a href="#"><i class="ion-ios-arrow-up"></i></a>
 </div>
-
-<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
-<script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
-<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/bootstrap-modalmanager.js"></script>
-<script type="text/javascript" src="js/bootstrap-modal.js"></script>
-<script type="text/javascript" src="js/smoothscroll.js"></script>
-<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
-<script type="text/javascript" src="js/jquery.waypoints.min.js"></script>
-<script type="text/javascript" src="js/wow.min.js"></script>
-<script type="text/javascript" src="js/jquery.slicknav.min.js"></script>
-<script type="text/javascript" src="js/jquery.placeholder.min.js"></script>
-<script type="text/javascript" src="js/bootstrap-tokenfield.js"></script>
-<script type="text/javascript" src="js/typeahead.bundle.min.js"></script>
-<script type="text/javascript" src="js/bootstrap3-wysihtml5.min.js"></script>
-<script type="text/javascript" src="js/bootstrap-select.min.js"></script>
-<script type="text/javascript" src="js/jquery-filestyle.min.js"></script>
-<script type="text/javascript" src="js/bootstrap-select.js"></script>
-<script type="text/javascript" src="js/ion.rangeSlider.min.js"></script>
-<script type="text/javascript" src="js/handlebars.min.js"></script>
-<script type="text/javascript" src="js/jquery.countimator.js"></script>
-<script type="text/javascript" src="js/jquery.countimator.wheel.js"></script>
-<script type="text/javascript" src="js/slick.min.js"></script>
-<script type="text/javascript" src="js/easy-ticker.js"></script>
-<script type="text/javascript" src="js/jquery.introLoader.min.js"></script>
-<script type="text/javascript" src="js/jquery.responsivegrid.js"></script>
-<script type="text/javascript" src="js/customs.js"></script>
-
 
 </body>
 

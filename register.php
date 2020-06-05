@@ -2,8 +2,7 @@
 	include 'constants/settings.php'; 
 	include 'constants/check-login.php';
 	include 'headerPrincipal.php';
-?>
-<body class="not-transparent-header">
+?><body class="not-transparent-header">
 	<div class="container-wrapper">
 		<div class="main-wrapper">
 			<div class="breadcrumb-wrapper">
