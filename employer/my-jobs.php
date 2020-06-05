@@ -43,8 +43,8 @@ include_once "../headerPrincipal.php";
 				<div class="container">
 				
 					<ol class="breadcrumb-list booking-step">
-						<li><a href="../">Bwire Jobs</a></li>
-						<li><span>My Jobs</span></li>
+						<li><a href="../">Inicio</a></li>
+						<li><span>Mis Publicaciones</span></li>
 					</ol>
 					
 				</div>
@@ -83,7 +83,7 @@ include_once "../headerPrincipal.php";
 									
 									<div class="admin-user-action text-center">
 									
-										<a href="post-job.php" class="btn btn-primary btn-sm btn-inverse">Publicar Empleo</a>
+										<a href="post-job.php" class="btn btn-primary btn-sm btn-inverse">Publicar Servicio</a>
 										
 									</div>
 									

@@ -139,7 +139,7 @@ include_once "../headerPrincipal.php";
 												
 													<div class="form-group">
 														<label>Calle</label>
-														<input name="street" required type="text" class="form-control" value="<?php echo "$street"; ?>" placeholder="Ingresa tu street">
+														<input name="street" required type="text" class="form-control" value="<?=$street?>" placeholder="Ingresa tu street">
 													</div>
 													
 												</div>
@@ -150,7 +150,7 @@ include_once "../headerPrincipal.php";
 												
 													<div class="form-group">
 														<label>Código Postal</label>
-														<input name="zip" required type="text" class="form-control" value="<?php echo "$zip"; ?>" placeholder="Ingresa tu zip">
+														<input name="zip" required type="text" class="form-control" value="<?=$zip ?>" placeholder="Ingresa tu zip">
 													</div>
 													
 												</div>
@@ -168,7 +168,7 @@ include_once "../headerPrincipal.php";
 	$result = $stmt->fetchAll();
 
 	foreach($result as $row):?>
-                                                           	<option <?= ($country == $row['country_name']) ? 'selected':'' ?> value="<?php echo $row['country_name']; ?>"><?php echo $row['country_name']; ?></option>
+                                                           	<option <?= ($country == $row['country_name']) ? 'selected':'' ?> value="<?= $row['country_name']?>"><?=$row['country_name']?></option>
 <?php
 	endforeach;
 	

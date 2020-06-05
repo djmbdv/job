@@ -59,10 +59,10 @@ global $conn;
                     
                     
                   </div>
-                    <div class="col col-2" style="margin-top:30px;"  >
-                    <button type="submit"  class="button button--medium button--square button--primary"  style="margin-left: 40px;" >
+                    <div class="col-lg-2 col-md-2" style="margin-top:30px;"  >
+                    <button type="submit"  class="btn button--medium  btn-primary"  style="margin-left: 40px;" >
               <i class="fa fa-search"></i> Buscar
-            </button>   
+            		</button>   
                     </div>
                 </div>
                 

@@ -60,47 +60,11 @@ $job_title = $row['title'];
 }
 	
 }
+$deep_url = 1;
+include_once "../headerPrincipal.php";
+
 ?>
-<head>
 
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Platea21 - Applicants for the job <?php echo "$job_title"; ?></title>
-	<meta name="description" content="Online Job Management / Job Portal" />
-	<meta name="keywords" content="job, work, resume, applicants, application, employee, employer, hire, hiring, human resource management, hr, online job management, company, worker, career, recruiting, recruitment" />
-	<meta name="author" content="BwireSoft">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<meta property="og:image" content="http://<?php echo "$actual_link"; ?>/images/banner.jpg" />
-    <meta property="og:image:secure_url" content="https://<?php echo "$actual_link"; ?>/images/banner.jpg" />
-    <meta property="og:image:type" content="image/jpeg" />
-    <meta property="og:image:width" content="500" />
-    <meta property="og:image:height" content="300" />
-    <meta property="og:image:alt" content="Bwire Jobs" />
-    <meta property="og:description" content="Online Job Management / Job Portal" />
-
-	<link rel="shortcut icon" href="../images/ico/favicon.png">
-	
-	<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css" media="screen">	
-	<link href="../css/animate.css" rel="stylesheet">
-	<link href="../css/main.css" rel="stylesheet">
-	<link href="../css/component.css" rel="stylesheet">
-	
-	<link rel="stylesheet" href="../icons/linearicons/style.css">
-	<link rel="stylesheet" href="../icons/font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" href="../icons/simple-line-icons/simple-line-icons.html">
-	<link rel="stylesheet" href="../icons/ionicons/css/ionicons.css">
-	<link rel="stylesheet" href="../icons/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
-	<link rel="stylesheet" href="../icons/rivolicons/style.css">
-	<link rel="stylesheet" href="../icons/flaticon-line-icon-set/flaticon-line-icon-set.css">
-	<link rel="stylesheet" href="../icons/flaticon-streamline-outline/flaticon-streamline-outline.css">
-	<link rel="stylesheet" href="../icons/flaticon-thick-icons/flaticon-thick.css">
-	<link rel="stylesheet" href="../icons/flaticon-ventures/flaticon-ventures.css">
-
-	<link href="../css/style.css" rel="stylesheet">
-
-	
-</head>
 
   <style>
   
