@@ -121,11 +121,11 @@
   color: #888;
 }
 .ec-stars-wrapper:hover a {
-  color: yellow;
+  color: #e9ab28;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-image: -webkit-linear-gradient(yellow, yellow);
+  background-color: #e9ab28;
 }
 .ec-stars-wrapper a:hover ~ a {
   color: gray;
@@ -156,7 +156,7 @@
 
 .stars-inner:before {
   content: '\f005 \f005 \f005 \f005 \f005';
-  color: yellow;
+  color: #e9ab28;
 }
 
 .stars {
@@ -166,11 +166,11 @@
 }
 
 .star.hover {
-  color: yellow;
+  color: #e9ab28;
 }
 
 .star.is-selected {
-  color: yellow;
+  color: #e9ab28;
 }
 .ec-stars-wrapper > a{
 	content: '\f005 ';
