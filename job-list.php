@@ -25,6 +25,17 @@ $query1 = isset($_GET['category']) ? "SELECT * FROM tbl_jobs WHERE category like
 if(isset($_GET['country']))$query1.= "AND country like :country ";
 $query2 = (string)$query1;
 $query1.="ORDER BY enc_id DESC LIMIT $offset,12";
+
+
+if(isset($_GET['count'])){
+	$smtm2 = $conn->prepare($query2);
+	$stmt2->bindParam(':cate', $cate);
+	if(isset($_GET['country']))$stmt2->bindParam(':country', $country);
+	$smtm2->execute();
+	echo $smtm2->rowCount();
+	die(); 
+}
+
 $stmt = $conn->prepare($query1);
 $stmt->bindParam(':cate', $cate);
 if(isset($_GET['country']))$stmt->bindParam(':country', $country);

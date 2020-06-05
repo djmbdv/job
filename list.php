@@ -77,7 +77,7 @@ endforeach; ?>
 					<div class="result-wrapper">
 						<div class="row">
 							<div class="col-sm-12 col-md-9 col-lg-9 mt-25">
-								<div id="job-list" page="1" <?= isset($_GET['category'])?"category='".$_GET['category']."'":""  ?>  <?= isset($_GET['country'])?"country='".$_GET['country']."'":""  ?> >
+								<div id="job-list" page="1" max-count="" <?= isset($_GET['category'])?"category='".$_GET['category']."'":""  ?>  <?= isset($_GET['country'])?"country='".$_GET['country']."'":""  ?> >
 								</div>
 								<div class="pager-wrapper">		
 									<ul class="pager-list">

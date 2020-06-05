@@ -1,7 +1,7 @@
 <?php
 
-require 'constants/settings.php'; 
-require 'constants/connection.php'; 
+require_once 'constants/settings.php'; 
+require_once 'constants/connection.php'; 
 
 global $conn;
 global $actual_link;
@@ -75,12 +75,16 @@ if ($today_date > $conv_date){
 }else{
 	$jobexpired = false;
 }
+
+
+$protocol = $isHttps? 'https://':'http://';
+$local = LOCAL ? "/job" : "";
 $tags_share  = array(
-	"og:url"    => $actual_link."/explore-job.php?jobid=".$jobid,
+	"og:url"    => $protocol.$actual_link."$local/explore-job.php?jobid=".$jobid,
     "og:type"  => "article",
     "og:title" => $jobtitle,
     "og:description" => $jobdescription, 
-    "og:image" => 'data:image/jpeg;base64,'.base64_encode($complogo) );
+    "og:image" => "$protocol$actual_link$local/app/image-profiles.php?id=$member_no" );
 include_once 'headerPrincipal.php';
 
 ?><body class="not-transparent-header">
@@ -123,9 +127,18 @@ include_once 'headerPrincipal.php';
 								<div class="job-detail-header text-center">
 									<h2 class="heading mb-15"><?php echo "$jobtitle"; ?></h2>
 									<div class="meta-div clearfix mb-25">
-										<span>Creado por <a target="_blank" href="company.php?ref=<?php echo "$compid"; ?>"><?php echo "$compname"; ?></a> disponibilidad </span>
+										<div class="line-stars">
+											<div class="ec-stars-wrapper">
+												<a href="#" data-value="1" class="fa fa-star star is-selected" title="Votar con 1 estrellas"></a>
+												<a href="#" data-value="2" class="fa fa-star star" title="Votar con 2 estrellas"></a>
+												<a href="#" data-value="3" class="fa fa-star star" title="Votar con 3 estrellas"></a>
+												<a href="#" data-value="4" class="fa fa-star star" title="Votar con 4 estrellas"></a>
+												<a href="#" data-value="5" class="fa fa-star star" title="Votar con 5 estrellas"></a>
+											</div>
+										</div>
 										<?= $sta  ?>
 									</div>
+									
 									<ul class="meta-list clearfix">
 										<li>
 											<h4 class="heading">Ubicacion:</h4>
@@ -265,6 +278,19 @@ include_once 'headerPrincipal.php';
 	<div id="back-to-top">
 	   <a href="#"><i class="ion-ios-arrow-up"></i></a>
 	</div>
+<script type="text/javascript">
+	$(".star").click(e =>{
+		$(e.srcElement).parent().addClass("voting");
+		$(e.srcElement).parent().find("a:lt("+$(e.srcElement).attr("data-value")+  ")").addClass("is-selected");
+		$(e.srcElement).parent().find("a:gt("+(parseInt( $(e.srcElement).attr("data-value"))-1) +")").removeClass("is-selected");
+		$.post("app/starts.php",{
+			"jobid":"<?=$jobid?>",
+			"value":$(e.srcElement).attr("data-value")
+		}).done((data)=>{
+			if(data== 1)$(e.srcElement).parent().removeClass("voting");
+		});
+	});
+</script>
 </body>
 </html>
 <?php ob_flush();

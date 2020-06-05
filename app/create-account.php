@@ -84,8 +84,7 @@ function register_as_employer() {
 	try{
 		global $conn;
 		$role = 'employer';
-	    $account_type = $_POST['acctype'];
-	    $last_login = date('d-m-Y h:m A [T P]');
+		$last_login = date('d-m-Y h:m A [T P]');
 	    $comp_no = 'CM'.get_rand_numbers(9).'';
 	    $cname = ucwords($_POST['company']);
 	    $email = $_POST['email'];

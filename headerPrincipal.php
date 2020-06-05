@@ -119,16 +119,14 @@
 .ec-stars-wrapper a {
   text-decoration: none;
   display: inline-block;
-  font-size: 32px;
-  font-size: 2rem;
   color: #888;
 }
 .ec-stars-wrapper:hover a {
-  color: gold;
+  color: yellow;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-image: -webkit-linear-gradient(yellow, red);
+  background-image: -webkit-linear-gradient(yellow, yellow);
 }
 .ec-stars-wrapper a:hover ~ a {
   color: gray;
@@ -174,6 +172,13 @@
 
 .star.is-selected {
   color: yellow;
+}
+.ec-stars-wrapper > a{
+	content: '\f005 ';
+	color: gray;
+	font-family: 'FontAwesome';
+	font-size: 16px;
+	display: inline-block;
 }
 
 </style>
