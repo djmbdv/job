@@ -28,7 +28,7 @@ global $conn;
 					<h6 class="text-center text-primary">Encuentra lo que buscas en una sola p&aacute;gina</h6>
 					
 					<div class="main-search-form-wrapper">
-						<form action="list.php" method="GET" autocomplete="on">
+						<form action="list.php" method="GET">
 							<div class="form-holder">
 								<div class="row gap-0  ">
 									<div  class="autocomplete col-xss-5 col-xs-5 col-sm-5">

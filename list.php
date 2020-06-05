@@ -87,6 +87,9 @@ endforeach; ?>
 										<li class="paging-nav paging-nav-prev">
 											<a href="#"><i class="fa fa-angle-left"></i></a>
 										</li>
+										<li>
+											<span class="num-page"></span>
+										</li>
 										<li class="paging-nav paging-nav-next">
 											<a href="#"><i class="fa fa-angle-right"></i></a>
 										</li>
@@ -115,6 +118,7 @@ endforeach; ?>
 		}).done((data)=>{
 		//	alert(data);
 			$("#job-list").html(data);
+			$(".num-page").text($("#job-list").attr("page"));
 		})
 	});
 	$("paging-nav").click(e=>{
@@ -127,8 +131,9 @@ endforeach; ?>
 			category:$("#job-list").attr("category"),
 			country:$("#job-list").attr("coutry")
 		}).done((data)=>{
-			alert(data);
 			$("#job-list").html(data);
+			$("#job-list").attr("page",1);
+			$(".num-page").text($("#job-list").attr("page"));
 		})
 	});
 	$(".paging-nav-prev > a").click((e)=>{
@@ -138,9 +143,9 @@ endforeach; ?>
 			category:$("#job-list").attr("category"),
 			country:$("#job-list").attr("coutry")
 		}).done((data)=>{
-			alert(data);
 			$("#job-list").html(data);
 			$("#job-list").attr("page",parseInt($("#job-list").attr("page"))-1);
+			$(".num-page").text($("#job-list").attr("page"));
 		});
 	});
 	$(".paging-nav-next > a").click((e)=>{
@@ -150,9 +155,9 @@ endforeach; ?>
 			category:$("#job-list").attr("category"),
 			country:$("#job-list").attr("coutry")
 		}).done((data)=>{
-			alert(data);
 			$("#job-list").html(data);
 			$("#job-list").attr("page",parseInt($("#job-list").attr("page"))+1);
+			$(".num-page").text($("#job-list").attr("page"));
 		});
 	});
 </script>

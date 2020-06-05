@@ -8,21 +8,11 @@ global $actual_link;
 global $isHttps;
 
 $fromsearch = false;
+$numlist = 12;
 
 
-
-if (isset($_GET['page'])) {
-	$page = $_GET['page'];
-	if ($page=="" || $page=="1"){
-		$page1 = 0;
-		$page = 1;
-	}else{
-		$page1 = ($page*16)-16;
-	}					
-}else{
-	$page1 = 0;
-	$page = 1;	
-}
+$page = isset($_GET["page"])? intval($_GET["page"]) >= 1 ?intval($_GET["page"]):1:1;
+$offset = ($page - 1) * $numlist;
 $cate = "";
 $country = "";
 
@@ -33,17 +23,14 @@ $cate.='%';
 $country.='%';	
 $query1 = isset($_GET['category']) ? "SELECT * FROM tbl_jobs WHERE category like :cate ": "SELECT * FROM tbl_jobs ";
 if(isset($_GET['country']))$query1.= "AND country like :country ";
-$query1.="ORDER BY enc_id DESC LIMIT 12";
-$query2 = "SELECT * FROM tbl_jobs WHERE category LIKE :cate AND country LIKE :country ORDER BY enc_id DESC Limit $page1,12";
+$query2 = (string)$query1;
+$query1.="ORDER BY enc_id DESC LIMIT $offset,12";
 $stmt = $conn->prepare($query1);
 $stmt->bindParam(':cate', $cate);
 if(isset($_GET['country']))$stmt->bindParam(':country', $country);
 $slc_country = $country;
 $slc_category = $cate;
 $title = "$slc_category empleos en $slc_country";
-
-
-
 $stmt->execute();
 $result = $stmt->fetchAll();?>
 
