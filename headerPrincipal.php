@@ -3,6 +3,7 @@
 	require_once "constants/check-login.php";
 	global $tags_share;
 	global $title_site;
+	$prefix = isset($deep_url)?str_repeat("../",$deep_url):"";
 ?><!DOCTYPE html>
 <html lang="es">
 <head>
@@ -29,45 +30,43 @@
 			endforeach;
 		endif;
 	?>
-	<link rel="shortcut icon" href="images/SOLOLOGO.png">
-	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" media="screen">	
-	<link href="css/animate.css" rel="stylesheet">
-	<link href="css/main.css?13" rel="stylesheet">
-	<link href="css/component.css" rel="stylesheet">
+	<link rel="shortcut icon" href="<?=$prefix?>images/SOLOLOGO.png">
+	<link rel="stylesheet" type="text/css" href="<?=$prefix?>bootstrap/css/bootstrap.min.css" media="screen">	
+	<link href="<?=$prefix?>css/animate.css" rel="stylesheet">
+	<link href="<?=$prefix?>css/main.css?13" rel="stylesheet">
+	<link href="<?=$prefix?>css/component.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin">
-	<link rel="stylesheet" href="icons/linearicons/style.css">
-	<link rel="stylesheet" href="icons/font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" href="icons/simple-line-icons/css/simple-line-icons.css">
-	<link rel="stylesheet" href="icons/ionicons/css/ionicons.css">
-	<link rel="stylesheet" href="icons/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
-	<link rel="stylesheet" href="icons/rivolicons/style.css">
-	<link rel="stylesheet" href="css/style.css?12" >
-	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
-	<script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
-	<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
-	<script type="text/javascript" src="js/jquery.waypoints.min.js"></script>
-	<script type="text/javascript" src="js/jquery.slicknav.min.js"></script>
-	<script type="text/javascript" src="js/jquery.placeholder.min.js"></script>
-	<script type="text/javascript" src="js/jquery-filestyle.min.js"></script>
-	<script type="text/javascript" src="js/jquery.countimator.js"></script>
-	<script type="text/javascript" src="js/jquery.countimator.wheel.js"></script>
-	<script type="text/javascript" src="js/jquery.introLoader.min.js"></script>
-	<script type="text/javascript" src="js/jquery.responsivegrid.js"></script>
-	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="js/bootstrap-modalmanager.js"></script>
-	<script type="text/javascript" src="js/bootstrap-modal.js"></script>
-	<script type="text/javascript" src="js/wow.min.js"></script>
-	<script type="text/javascript" src="js/bootstrap-tokenfield.js"></script>
-	<script type="text/javascript" src="js/bootstrap3-wysihtml5.min.js"></script>
-	<script type="text/javascript" src="js/ion.rangeSlider.min.js"></script>
-	<script type="text/javascript" src="js/handlebars.min.js"></script>
-	<script type="text/javascript" src="js/slick.min.js"></script>
-	<script type="text/javascript" src="js/easy-ticker.js"></script>
-	<script type="text/javascript" src="js/validator.min.js"></script>
-	<script type="text/javascript" src="js/customs.js?1"></script>
+	<link rel="stylesheet" href="<?=$prefix?>icons/linearicons/style.css">
+	<link rel="stylesheet" href="<?=$prefix?>icons/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="<?=$prefix?>icons/simple-line-icons/css/simple-line-icons.css">
+	<link rel="stylesheet" href="<?=$prefix?>icons/ionicons/css/ionicons.css">
+	<link rel="stylesheet" href="<?=$prefix?>icons/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
+	<link rel="stylesheet" href="<?=$prefix?>icons/rivolicons/style.css">
+	<link rel="stylesheet" href="<?=$prefix?>css/style.css?12" >
+	<script type="text/javascript" src="<?=$prefix?>js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="<?=$prefix?>js/jquery-migrate-1.2.1.min.js"></script>
+	<script type="text/javascript" src="<?=$prefix?>js/jquery.easing.1.3.js"></script>
+	<script type="text/javascript" src="<?=$prefix?>js/jquery.waypoints.min.js"></script>
+	<script type="text/javascript" src="<?=$prefix?>js/jquery.slicknav.min.js"></script>
+	<script type="text/javascript" src="<?=$prefix?>js/jquery.placeholder.min.js"></script>
+	<script type="text/javascript" src="<?=$prefix?>js/jquery-filestyle.min.js"></script>
+	<script type="text/javascript" src="<?=$prefix?>js/jquery.countimator.js"></script>
+	<script type="text/javascript" src="<?=$prefix?>js/jquery.countimator.wheel.js"></script>
+	<script type="text/javascript" src="<?=$prefix?>js/jquery.introLoader.min.js"></script>
+	<script type="text/javascript" src="<?=$prefix?>js/jquery.responsivegrid.js"></script>
+	<script type="text/javascript" src="<?=$prefix?>bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="<?=$prefix?>js/bootstrap-modalmanager.js"></script>
+	<script type="text/javascript" src="<?=$prefix?>js/bootstrap-modal.js"></script>
+	<script type="text/javascript" src="<?=$prefix?>js/wow.min.js"></script>
+	<script type="text/javascript" src="<?=$prefix?>js/bootstrap-tokenfield.js"></script>
+	<script type="text/javascript" src="<?=$prefix?>js/bootstrap3-wysihtml5.min.js"></script>
+	<script type="text/javascript" src="<?=$prefix?>js/ion.rangeSlider.min.js"></script>
+	<script type="text/javascript" src="<?=$prefix?>js/handlebars.min.js"></script>
+	<script type="text/javascript" src="<?=$prefix?>js/slick.min.js"></script>
+	<script type="text/javascript" src="<?=$prefix?>js/easy-ticker.js"></script>
+	<script type="text/javascript" src="<?=$prefix?>js/validator.min.js"></script>
+	<script type="text/javascript" src="<?=$prefix?>js/customs.js?1"></script>
 </head>
-<link rel="stylesheet" href="css/main.css">
-
 <style type="text/css">
 .navbar-sticky > .container > .logo-wrapper > .logo > img {
 	max-height: 3rem;
