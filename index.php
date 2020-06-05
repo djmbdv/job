@@ -28,12 +28,12 @@ global $conn;
 					<h6 class="text-center text-primary">Encuentra lo que buscas en una sola p&aacute;gina</h6>
 					
 					<div class="main-search-form-wrapper">
-						<form action="list.php" method="GET">
+						<form action="list.php" method="GET" autocomplete="off">
 							<div class="form-holder">
 								<div class="row gap-0  ">
 									<div  class="autocomplete col-xss-5 col-xs-5 col-sm-5">
 										<small class="text-white">Qu&eacute; Buscas?</small>
-										<input class="form-control" name="category" id="category-input" placeholder="Producto, Empresa, Servicio..."  name="">
+										<input class="form-control" style="display: inline-block;" name="category" id="category-input" placeholder="Producto, Empresa, Servicio..."  name="">
 									</div>
 									<div class="col-xss-5 col-xs-5 col-sm-5">
 										<small class="text-white">D&oacute;nde lo necesitas?</small>
@@ -184,35 +184,6 @@ global $conn;
 <div id="back-to-top">
    <a href="#"><i class="ion-ios-arrow-up"></i></a>
 </div>
-<style type="text/css">
-.autocomplete {
-  position: relative;
-  display: inline-block;
-}
-
-.autocomplete-items {
-  position: absolute;
-  border: 2px solid black;
-  z-index: 99;
-  margin-top: 2px;
-  background: white;
-  top: 100%;
-  left: 0;
-  right: 0;
-  padding-bottom: 1em;
-}
-.autocomplete-items {
-  padding: 10px;
-  background-color: #fff;
-}
-
-.autocomplete-active {
-  /*when navigating through the items using the arrow keys:*/
-  background-color: DodgerBlue !important;
-  color: #ffffff;
-  cursor: pointer;
-}
-</style>
 <script type="text/javascript">
 	function autocomplete(inp, arr) {
   var currentFocus;

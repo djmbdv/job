@@ -180,6 +180,32 @@
 	font-size: 16px;
 	display: inline-block;
 }
+.autocomplete {
+  position: relative;
+}
+
+.autocomplete-items {
+  position: absolute;
+  border: 2px solid black;
+  z-index: 99;
+  margin-top: 2px;
+  background: white;
+  top: 100%;
+  left: 0;
+  right: 0;
+  padding-bottom: 1em;
+}
+.autocomplete-items {
+  padding: 10px;
+  background-color: #fff;
+}
+
+.autocomplete-active {
+  /*when navigating through the items using the arrow keys:*/
+  background-color: DodgerBlue !important;
+  color: #ffffff;
+  cursor: pointer;
+}
 
 </style>
 <header id="header">
