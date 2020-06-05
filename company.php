@@ -149,7 +149,7 @@ if ($complogo == null):?>
 									
 									<div class="section-title mb-40">
 						
-										<h4 class="text-left">trabajos ofrecidos en <?php echo "$compname"; ?></h4>
+										<h4 class="text-left">Trabajos ofrecidos en <?php echo "$compname"; ?></h4>
 										
 									</div>
 
@@ -218,20 +218,20 @@ if ($complogo == null):?>
 														<div class="col-sm-5 col-md-4">
 														<ul class="meta-list">
 															<li>
-																<span>País:</span>
-																<?php echo $row['country']; ?>
+																<span>Departamento:</span>
+																<?= $row['country']; ?>
 															</li>
 															<li>
 																<span>Ciudad:</span>
-																<?php echo $row['city']; ?>
+																<?= $row['city']; ?>
 															</li>
 															<li>
 																<span>Experiencia:</span>
-																<?php echo $row['experience']; ?>
+																<?= $row['experience']; ?>
 															</li>
 															<li>
 																<span>Fecha Limite: </span>
-																<?php echo "$post_month"; ?> <?php echo "$post_date"; ?>, <?php echo "$post_year"; ?>
+																<?= $post_month?> <?=$post_date?>, <?=$post_year?>
 															</li>
 														</ul>
 														</div>
@@ -246,13 +246,13 @@ if ($complogo == null):?>
 													
 														<div class="col-sm-7 col-md-8">
 														<div class="sub-category">
-															<a><?php echo $row['category']; ?></a>
+															<a><?=$row['category']?></a>
 
 														</div>
 														</div>
 														
 													<div class="col-sm-5 col-md-4">
-														<a target="_blank" href="explore-job.php?jobid=<?php echo $row['job_id']; ?>" class="btn btn-primary">Ver empleo</a>
+														<a target="_blank" href="explore-job.php?jobid=<?php echo $row['job_id']; ?>" class="btn btn-primary">Ver Servicio</a>
 													</div>
 														
 													</div>

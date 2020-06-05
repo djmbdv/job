@@ -9,6 +9,7 @@ global $isHttps;
 
 
 require 'headerPrincipal.php';
+$slc_country =urldecode(isset($_GET['country'])?$_GET['country']:"");
 ?>
 <body class="not-transparent-header">
 	<div class="container-wrapper">
@@ -37,7 +38,7 @@ $result = $stmt->fetchAll();
 
 foreach($result as $row):
 	$cnt = $row['country_name']; ?>	
-										<option <?php if ($slc_country == "$cnt") { print ' selected '; } ?> value="<?=$row['country_name']?>"><?= $row['country_name']?></option>
+										<option <?php if ($slc_country == "$cnt") { print ' selected '; } ?> value="<?= $row['country_name']; ?>"><?= $row['country_name']?></option>
 <?php
 endforeach; ?>
 										</select>

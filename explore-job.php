@@ -196,7 +196,7 @@ include_once 'headerPrincipal.php';
 								</div>
 								<div class="tab-style-01">
 									<ul class="nav" role="tablist">
-										<li role="presentation" class="active"><h4><a href="#relatedJob1" role="tab" data-toggle="tab">Mas servicios de  <?php echo "$compname"; ?></a></h4></li>
+										<li role="presentation" class="active"><h4><a href="#relatedJob1" role="tab" data-toggle="tab">Mas servicios de  <?=$compname?></a></h4></li>
 									</ul>
 									<div class="tab-content">
 										<div role="tabpanel" class="tab-pane fade in active" id="relatedJob1">
@@ -264,7 +264,7 @@ include_once 'headerPrincipal.php';
 															<div class="GridLex-col-3_sm-4_xs-4_xss-12">
                                                              <?= $sta ?>
 																<span class="font12 block spacing1 font400 text-center"> Due - <?= $post_month ?>
-																 <= $post_date ?>, <?=$post_year?></span>
+																 <?= $post_date ?>, <?=$post_year?></span>
 															</div>
 														</div>
 													</a>

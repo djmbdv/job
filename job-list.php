@@ -101,7 +101,7 @@ foreach($result as $row):
 						<span class="stars-outer" data-rating="5">
 	              			<span class="stars-inner" style="width: 50%;"></span>
 	            		</span>
-	            		<span>(5 Reviews)</span>
+	            		<small>(5 votos)</small>
 					</div>
 					<div class="col-sm-5 col-md-4">
 						<div class="social meta-list" style="padding-bottom: 1em; ">
