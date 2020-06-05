@@ -125,17 +125,27 @@ include_once 'headerPrincipal.php';
 						<div class="col-md-9 ">
 							<div class="job-detail-wrapper">
 								<div class="job-detail-header text-center">
-									<h2 class="heading mb-15"><?php echo "$jobtitle"; ?></h2>
+									<h2 class="heading mb-15"><?=$jobtitle?></h2>
 									<div class="meta-div clearfix mb-25">
+<?php
+	if($user_online): ?>
 										<div class="line-stars">
 											<div class="ec-stars-wrapper">
-												<a href="#" data-value="1" class="fa fa-star star is-selected" title="Votar con 1 estrellas"></a>
+												<a href="#" data-value="1" class="fa fa-star star" title="Votar con 1 estrellas"></a>
 												<a href="#" data-value="2" class="fa fa-star star" title="Votar con 2 estrellas"></a>
 												<a href="#" data-value="3" class="fa fa-star star" title="Votar con 3 estrellas"></a>
 												<a href="#" data-value="4" class="fa fa-star star" title="Votar con 4 estrellas"></a>
 												<a href="#" data-value="5" class="fa fa-star star" title="Votar con 5 estrellas"></a>
 											</div>
 										</div>
+<?php
+	else: ?>
+										<span class="stars-outer" data-rating="5">
+					              			<span class="stars-inner" style="width: 50%;"></span>
+					            		</span>
+					            		<span>(5 Votos)</span>
+<?php
+	endif; ?>										
 										<?= $sta  ?>
 									</div>
 									
