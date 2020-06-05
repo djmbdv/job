@@ -36,3 +36,10 @@
         </div>
     </div>
 </footer>
+<script type="text/javascript">
+
+    $(".only-logged").click(e=>{
+        e.preventDefault();
+        window.ocation.href = "<?=$prefix?>login.php";
+    });
+</script>

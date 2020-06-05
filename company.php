@@ -167,8 +167,7 @@ if ($complogo == null):?>
                                     $stmt->execute();
                                     $result = $stmt->fetchAll();
 
-                                    foreach($result as $row)
-                                    {
+                                    foreach($result as $row){
 									$post_date = date_format(date_create_from_format('d/m/Y', $row['closing_date']), 'd');
                                     $post_month = date_format(date_create_from_format('d/m/Y', $row['closing_date']), 'F');
                                     $post_year = date_format(date_create_from_format('d/m/Y', $row['closing_date']), 'Y');

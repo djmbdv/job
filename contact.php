@@ -80,13 +80,13 @@ require 'headerPrincipal.php'
 							<ul class="address-list">
 								<li>
 										<h5>Dirección</h5>
-										<address> Tacna, <br/>Perú <br/> </address>
+										<address> Bogot&aacute;, <br/>Colombia <br/> </address>
 								</li>
 								<li>
-										<h5>Correo Electrónico</h5><a href="mailto:gorchor@gmail.com">gorchor@gmail.com</a>
+										<h5>Correo Electrónico</h5><a href="mailto:gorchor@gmail.com">info@aquionline.co</a>
 								</li>
 								<li>
-										<h5>Teléfono</h5><a href="tel:+51948445199">+51948445199</a>
+										<h5>Teléfono</h5><a href="tel:+51948445199">+19876542468</a>
 								</li>
 
 								<li>
