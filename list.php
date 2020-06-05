@@ -99,6 +99,13 @@ endforeach; ?>
    <a href="#"><i class="ion-ios-arrow-up"></i></a>
 </div>
 <script type="text/javascript">
+	function tel(){
+			$(".only-logged").click(e=>{
+	        alert("a");
+	        e.preventDefault();
+	        window.location.href = "<?=$prefix?>login.php";
+    	});
+	}
 	$(document).ready((e)=>{
 		$.get("job-list.php",{
 			page: 1,
@@ -108,6 +115,7 @@ endforeach; ?>
 		//	alert(data);
 			$("#job-list").html(data);
 			$(".num-page").text($("#job-list").attr("page"));
+			tel();
 		})
 	});
 	$("paging-nav").click(e=>{
@@ -123,6 +131,7 @@ endforeach; ?>
 			$("#job-list").html(data);
 			$("#job-list").attr("page",1);
 			$(".num-page").text($("#job-list").attr("page"));
+			tel();
 		})
 	});
 	$(".paging-nav-prev > a").click((e)=>{
@@ -135,6 +144,7 @@ endforeach; ?>
 			$("#job-list").html(data);
 			$("#job-list").attr("page",parseInt($("#job-list").attr("page"))-1);
 			$(".num-page").text($("#job-list").attr("page"));
+			tel();
 		});
 	});
 	$(".paging-nav-next > a").click((e)=>{
@@ -147,6 +157,7 @@ endforeach; ?>
 			$("#job-list").html(data);
 			$("#job-list").attr("page",parseInt($("#job-list").attr("page"))+1);
 			$(".num-page").text($("#job-list").attr("page"));
+			tel();
 		});
 	});
 function autocomplete(inp, arr) {

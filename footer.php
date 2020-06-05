@@ -39,7 +39,8 @@
 <script type="text/javascript">
 
     $(".only-logged").click(e=>{
+        alert("a");
         e.preventDefault();
-        window.ocation.href = "<?=$prefix?>login.php";
+        window.location.href = "<?=$prefix?>login.php";
     });
 </script>
