@@ -12,9 +12,10 @@ if (!$user_online  || $myrole != "employer") {
 	die();
 }
 $deep_url = 1;
+include_once "../headerPrincipal.php";
 ?>
 <body class="not-transparent-header">
-	<?php include_once "../headerPrincipal.php";?>
+	<div class="container-wrapper">
 		<div class="main-wrapper">
 			<div class="breadcrumb-wrapper">
 				<div class="container">
