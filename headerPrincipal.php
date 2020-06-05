@@ -212,19 +212,19 @@
 		<div class="container">
 			<div class="logo-wrapper">
 				<div class="logo">
-					<img class="img img-responsive" src="images/LOGOBLANCo.png"   alt="Logo" />
+					<img class="img img-responsive" src="<?=$prefix?>images/LOGOBLANCo.png"   alt="Logo" />
 				</div>
 			</div>
 			<div id="navbar" class="navbar-nav-wrapper navbar-arrow">
 				<ul class="nav navbar-nav" id="responsive-menu">
 					<li>
-						<a  href="./">Inicio</a>
+						<a  href="<?=$prefix?>./">Inicio</a>
 					</li>
 					<li>
-						<a  href="list.php">Lista de Servicios</a>
+						<a  href="<?=$prefix?>list.php">Lista de Servicios</a>
 					</li>
 					<li> 
-						<a href="contact.php">Contacto</a>
+						<a href="<?=$prefix?>contact.php">Contacto</a>
 					</li>
 				</ul>
 			</div>
@@ -232,11 +232,11 @@
 			<div  class="nav-mini-wrapper">
 				<ul  class="nav-mini sign-in">
 <?php if (isset($user_online ) && $user_online == true): ?>
-				    <li><a  href="logout.php">Cerrar Sesión</a></li>
-					<li><a  href="<?=$myrole?>">Perfil</a></li>
+				    <li><a  href="<?=$prefix?>logout.php">Cerrar Sesión</a></li>
+					<li><a  href="<?=$prefix?><?=$myrole?>">Perfil</a></li>
 <?php else: ?>
-					<li><a  href="login.php">Ingresar</a></li>
-					<li><a  href="register.php">Registro</a></li>
+					<li><a  href="<?=$prefix?>login.php">Ingresar</a></li>
+					<li><a  href="<?=$prefix?>register.php">Registro</a></li>
 <?php endif;?>
 				</ul>
 			</div>
