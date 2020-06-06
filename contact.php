@@ -11,7 +11,7 @@ require 'headerPrincipal.php'
 				
 					<ol class="breadcrumb-list">
 						<li><a href="./">Inicio</a></li>
-						<li><span>Contact Us</span></li>
+						<li><span>Contáctanos</span></li>
 					</ol>
 					
 				</div>
