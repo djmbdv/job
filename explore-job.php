@@ -297,6 +297,7 @@ include_once 'headerPrincipal.php';
 			"jobid":"<?=$jobid?>",
 			"value":$(e.srcElement).attr("data-value")
 		}).done((data)=>{
+			alert(data);
 			if(data== 1)$(e.srcElement).parent().removeClass("voting");
 		});
 	});

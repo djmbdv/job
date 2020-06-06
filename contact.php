@@ -4,7 +4,6 @@ include 'constants/check-login.php';
 require 'headerPrincipal.php'
 ?>
 <body class="not-transparent-header">
-
 	<div class="container-wrapper">
 		<div class="main-wrapper">
 			<div class="breadcrumb-wrapper">
@@ -83,47 +82,32 @@ require 'headerPrincipal.php'
 										<address> Bogot&aacute;, <br/>Colombia <br/> </address>
 								</li>
 								<li>
-										<h5>Correo Electrónico</h5><a href="mailto:gorchor@gmail.com">info@aquionline.co</a>
+										<h5>Correo Electrónico</h5><a href="mailto:info@aquionline.co">info@aquionline.co</a>
 								</li>
 								<li>
 										<h5>Teléfono</h5><a href="tel:+51948445199">+19876542468</a>
 								</li>
 
 								<li>
-										<h5>Redes Sociales</h5>
-										<div class="contact-social">
-										
-											<a href="<?php echo "$fb"; ?>" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a>
-											<a href="<?php echo "$tw"; ?>" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a>
-											<a href="<?php echo "$ig"; ?>" data-toggle="tooltip" data-placement="top" title="Instagram"><i class="fa fa-instagram"></i></a>
-										
-										</div>
-								</li>
+									<h5>Redes Sociales</h5>
+									<div class="contact-social">
 									
+										<a href="<?=$fb?>" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a>
+										<a href="<?=$tw?>" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a>
+										<a href="<?=$ig ?>" data-toggle="tooltip" data-placement="top" title="Instagram"><i class="fa fa-instagram"></i></a>
+									</div>
+								</li>
 							</ul>
-						
 						</div>
-						
 					</div>
-
-					
 				</div>
-			
 			</div>
-
 			<?php require 'footer.php';?>
-
-			
 		</div>
-
-
 	</div>
-
- 
-
-<div id="back-to-top">
-   <a href="#"><i class="ion-ios-arrow-up"></i></a>
-</div>
+	<div id="back-to-top">
+	   <a href="#"><i class="ion-ios-arrow-up"></i></a>
+	</div>
 
 
 <script>
@@ -203,7 +187,5 @@ google.maps.event.addDomListener(window, 'resize', function() {
 }
 google.maps.event.addDomListener(window, 'load', initialize);
 </script>
-
 </body>
-
 </html>

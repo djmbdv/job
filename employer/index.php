@@ -82,9 +82,9 @@ include_once "../headerPrincipal.php";
 									<div class="admin-section-title">
 									
 										<h2>Perfil</h2>
-										<p>
+										<small>
 											&Uacute;ltimo inicio de sesi&oacute;n: <span class="text-info"><?= $mylogin ?></span>
-										</p>
+										</small>
 										
 									</div>
 									
@@ -249,7 +249,7 @@ include_once "../headerPrincipal.php";
 												
 										<div class="form-group bootstrap3-wysihtml5-wrapper">
 										<label><h1>Elija un logo para perfil</h1></label>
-										<input  class="btn btn-success" accept="image/*" type="file" name="image"  required >
+										<input  class="btn btn-warning" accept="image/*" type="file" name="image"  required >
 										</div>
 													
 										</div>

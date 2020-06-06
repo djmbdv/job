@@ -33,7 +33,7 @@
 	<link rel="shortcut icon" href="<?=$prefix?>images/SOLOLOGO.png">
 	<link rel="stylesheet" type="text/css" href="<?=$prefix?>bootstrap/css/bootstrap.min.css" media="screen">	
 	<link href="<?=$prefix?>css/animate.css" rel="stylesheet">
-	<link href="<?=$prefix?>css/main.css?13" rel="stylesheet">
+	<link href="<?=$prefix?>css/main.css?14" rel="stylesheet">
 	<link href="<?=$prefix?>css/component.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin">
 	<link rel="stylesheet" href="<?=$prefix?>icons/linearicons/style.css">
@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="<?=$prefix?>icons/ionicons/css/ionicons.css">
 	<link rel="stylesheet" href="<?=$prefix?>icons/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
 	<link rel="stylesheet" href="<?=$prefix?>icons/rivolicons/style.css">
-	<link rel="stylesheet" href="<?=$prefix?>css/style.css?12" >
+	<link rel="stylesheet" href="<?=$prefix?>css/style.css?14" >
 	<script type="text/javascript" src="<?=$prefix?>js/jquery-1.11.3.min.js"></script>
 	<script type="text/javascript" src="<?=$prefix?>js/jquery-migrate-1.2.1.min.js"></script>
 	<script type="text/javascript" src="<?=$prefix?>js/jquery.easing.1.3.js"></script>

@@ -139,10 +139,22 @@ foreach($result as $row):
 			<div class="job-item-list-bottom">
 				<div class="row">
 					<div class="col-sm-7 col-md-8">
-						<div class="sub-category">
+						<div class="sub-category col-sm-7">
 							<a><?= $row['category'] ?></a>
 						</div>
+						<div class="thumbails col-sm-5" >
+							<div class="thumb">
+								<img class="img img-responsive img-thumb" src="https://ucarecdn.com/9e7211c0-b73b-4b1d-8b47-4b1700f9a80f/-/scale_crop/84x56/center/"/>
+							</div>
+							<div class="thumb">
+								<img class="img img-responsive img-thumb" src="https://ucarecdn.com/9e7211c0-b73b-4b1d-8b47-4b1700f9a80f/-/scale_crop/84x56/center/"/>
+							</div>
+							<div class="thumb">
+								<img class="img img-responsive img-thumb" src="https://ucarecdn.com/9e7211c0-b73b-4b1d-8b47-4b1700f9a80f/-/scale_crop/84x56/center/"/>
+							</div>
+						</div>
 					</div>
+					
 					<div class="col-sm-5 col-md-4">
 						<a target="_blank" href="explore-job.php?jobid=<?= $row['job_id']; ?>" class="btn btn-primary">Ver este Servicio</a>
 					</div>
@@ -153,3 +165,29 @@ foreach($result as $row):
 <?php
 endforeach;?>
 </div>
+<style>
+	.thumbails {
+	    right: 0;
+	    display: inline-block;
+	    position: absolute;
+	}
+	.thumbails::after {
+	  content: "";
+
+	  display: table;
+	}
+
+	.thumb{
+	  float: right;
+	  width: 33.33%;
+	  padding: 1px;
+	  background: none;
+	}
+	.img-thumb{
+		width: 100%;
+	}
+	.thumb:hover{
+		border: 1px solid yellow;
+		transition: all 0.3s ease;
+	}
+</style>
