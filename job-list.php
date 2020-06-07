@@ -48,6 +48,7 @@ $result = $stmt->fetchAll();?>
 <div class="result-list-wrapper" id->
 <?php
 foreach($result as $row):
+	$jobid = $row['job_id'];
 	$type = $row['type'];
 	$compid = $row['company'];
 	$stmtb = $conn->prepare("SELECT * FROM tbl_users WHERE member_no = '$compid' and role = 'employer'");
@@ -98,10 +99,16 @@ foreach($result as $row):
 						<p class="texing character_limit">
 							<?=$row['description']?>
 						</p>
+<?php
+	$stmt2 = $conn->prepare("select count(value) as num, avg(value) as prom from tbl_votes where job_id = :job_id");
+	$stmt2->bindValue(":job_id",$jobid);
+	$stmt2->execute();
+	$votos = $stmt2->fetchObject();
+	?>	
 						<span class="stars-outer" data-rating="5">
-	              			<span class="stars-inner" style="width: 50%;"></span>
+	              			<span class="stars-inner" style="width: <?=(($votos->prom/5)*100)."%"?>;"></span>
 	            		</span>
-	            		<small>(5 votos)</small>
+	            		<small>(<?=$votos->num ?> Votos)</small>
 					</div>
 					<div class="col-sm-5 col-md-4">
 						<div class="social meta-list" style="padding-bottom: 1em; ">
