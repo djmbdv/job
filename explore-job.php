@@ -87,7 +87,13 @@ $tags_share  = array(
     "og:image" => "$protocol$actual_link$local/app/image-profiles.php?id=$member_no" );
 include_once 'headerPrincipal.php';
 
-?><body class="not-transparent-header">
+?>
+
+<div>
+
+</div>
+
+		<body class="not-transparent-header">
 		<div id="registerModal" class="modal fade login-box-wrapper" tabindex="-1" style="display: none;" data-backdrop="static" data-keyboard="false" data-replace="true">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -178,7 +184,9 @@ include_once 'headerPrincipal.php';
 									</ul>
 								</div>
 								<div class="job-detail-company-overview clearfix">
-									<h3>Un resumen sobre mi</h3>
+									<h3>Un resumen sobre la empresa</h3>
+									<div class="row">
+											<div class="col col-3">
 									<div class="image">
 <?php
 	if($complogo == null): ?>
@@ -186,22 +194,40 @@ include_once 'headerPrincipal.php';
 <?php
 	else: ?>
 										<center>
+										
 											<img class="autofit2" alt="image" title="<?= $compname ?>" width="180" height="100" src="app/image-profiles.php?id=<?=$member_no?>"/>
+
+											</div>
+											<div class="col col-9">
+											<br>
+											<p><?=$compbout?></p>
+											</div>
+										</div>
+											
+
 										</center>
 <?php
+
 	endif;?>
 									</div>
 									
-									<p><?=$compbout?></p>
+									
+								
 								</div>
 								
 								<div class="job-detail-content mt-30 clearfix">
 									<h3>Descripcion del servicio</h3>
 									<p><?= $jobdescription ?></p>
+									<hr>
+
 									<h3>Actividades que puedo realizar</h3>
                                     <p><?= $jobrespo ?></p>
+									<hr>
+
 									<h3>Habilidades</h3>
                                     <p><?= $jobreq ?></p>
+									<hr>
+
 								</div>
 								<div class="tab-style-01">
 									<ul class="nav" role="tablist">
@@ -312,5 +338,7 @@ include_once 'headerPrincipal.php';
 	});
 </script>
 </body>
+
+
 </html>
 <?php ob_flush();
