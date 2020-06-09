@@ -185,7 +185,7 @@ global $conn;
    <a href="#"><i class="ion-ios-arrow-up"></i></a>
 </div>
 <script type="text/javascript">
-	function autocomplete(inp, arr) {
+	function autocomplete(inp) {
   var currentFocus;
   /*execute a function when someone writes in the text field:*/
   inp.addEventListener("input", function(e) {
@@ -303,14 +303,9 @@ document.addEventListener("click", function (e) {
     closeAllLists(e.target);
 });
 }
-var categories = (
-<?php
-	 $stmt = $conn->prepare("SELECT * FROM tbl_categories ORDER BY category");
-	 $stmt->execute();
-	 $result = $stmt->fetchAll();
-	 echo  json_encode( $result); ?>).map(x => x.category);
 
-autocomplete(document.getElementById("category-input"), categories);
+
+autocomplete(document.getElementById("category-input"));
 
 </script>
 </body>
