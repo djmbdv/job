@@ -185,7 +185,8 @@ endforeach; ?>
       colb.appendChild(t);
       a.appendChild(cola);
       a.appendChild(colb);
-      $.get("app/search.php",{s : val}).done(data=>{
+      $.get("app/search.php",{s : val,len:val.length}).done(data=>{
+      		if(data.len != this.value.length)return;
       		data.empresas.forEach(empresa => {
 	      		b = document.createElement("DIV");
 	      		b.classList.add("text-center");
@@ -204,6 +205,7 @@ endforeach; ?>
 				colb.appendChild(b);
       		});
       		data.servicios.forEach(servicio=>{
+
       			b = document.createElement("DIV");
       			b.classList.add("text-center");
 		          b.innerHTML = "<strong>" + servicio.substr(0, val.length) + "</strong>";

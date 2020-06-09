@@ -5,6 +5,7 @@
 	global $conn;
 
 	$s = $_GET["s"];
+	$l = $_GET["len"];
 	header("Content-type:application/json");
 	$stmt = $conn->prepare("select distinct IF(tbl_jobs.title like :bus,tbl_jobs.title, IF(category like :bus, category,NULL )) as busqueda from tbl_jobs where tbl_jobs.title  like :bus or category like :bus  limit  14");
 
@@ -16,4 +17,5 @@
 	$ou = new stdClass();
 	$ou->servicios = $stmt->fetchAll(PDO::FETCH_COLUMN,0);
 	$ou->empresas = $stmt2->fetchAll(PDO::FETCH_COLUMN,0);
+	$ou->len = $l;
 	echo json_encode($ou);

@@ -215,7 +215,9 @@ global $conn;
       colb.appendChild(t);
       a.appendChild(cola);
       a.appendChild(colb);
-      $.get("app/search.php",{s : val}).done(data=>{
+      $.get("app/search.php",{s : val,len:val.length}).done(data=>{
+      		if(data.len != document.getElementById("category-input").value.length)return;
+      		console.log(document.getElementById("category-input").value.length);
       		data.empresas.forEach(empresa => {
 	      		b = document.createElement("DIV");
 	      		b.classList.add("text-center");
