@@ -118,10 +118,6 @@ if ($complogo == null):?>
 										</p>
 										<ul class="meta-list clearfix">
 											<li>
-												<h4 class="heading">Rubro:</h4>
-												<?php echo "$comptype"; ?>
-											</li>
-											<li>
 												<h4 class="heading">Página Web: </h4>
 												<a target="_blank" href="//<?=$compweb?>"><?=$compweb?></a>
 											</li>
@@ -163,11 +159,7 @@ if ($complogo == null):?>
                                     $result = $stmt->fetchAll();
 
                                     foreach($result as $row){
-                                    	echo $row['closing_date'];
-									$post_date = date_format(date_create_from_format('d/m/Y', $row['closing_date']), 'd');
-                                    $post_month = date_format(date_create_from_format('d/m/Y', $row['closing_date']), 'F');
-                                    $post_year = date_format(date_create_from_format('d/m/Y', $row['closing_date']), 'Y');
-									$type = $row['type'];
+                                  	$type = $row['type'];
 									if ($type == "Freelance") {
 									$sta = '<span class="job-label label label-success">Freelance</span>';
 											  
@@ -225,8 +217,8 @@ if ($complogo == null):?>
 																<?= $row['experience']; ?>
 															</li>
 															<li>
-																<span>Fecha Limite: </span>
-																<?= $post_month?> <?=$post_date?>, <?=$post_year?>
+																<span>Tel&eacute;fono:</span>
+																<?= $user_online?   $row['telefono']: '<a class="only-logged" href="#">Ver tel&eacute;fono</a>' ?>
 															</li>
 														</ul>
 														</div>
@@ -317,12 +309,10 @@ if ($complogo == null):?>
 
 						            </ul>	
 					
-					                </div>
+					            </div>
 									
-							</div>
-						
-						</div>
-						
+							</div>						
+						</div>						
 					</div>
 				</div>
 			</div>
