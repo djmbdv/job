@@ -77,13 +77,14 @@ include_once "../headerPrincipal.php";
 										?><br>
 										</div>
 										
-										<h4><?php echo "$compname"; ?></h4>
+										<h3><?=$compname?></h3>
 										
 									</div>
 									
 									<div class="admin-user-action text-center">
 									
 										<a href="post-job.php" class="btn btn-primary btn-sm btn-inverse">Publicar Servicio</a>
+										<a href="post-job.php?p=1" class="btn btn-primary btn-sm btn-inverse" style="margin:3em; ">Publicar Producto</a>
 										
 									</div>
 									

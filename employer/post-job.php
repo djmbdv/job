@@ -1,92 +1,64 @@
-<!DOCTYPE html>
-<html lang="es_ES">
+<?php
 
-<?php 
-require '../constants/settings.php'; 
-require 'constants/check-login.php';
+require_once '../constants/settings.php';
+require_once '../constants/connection.php';
+require_once '../constants/check-login.php';
 
-if ($user_online == "true") {
-if ($myrole == "employer") {
-}else{
-header("location:../");		
-}
-}else{
-header("location:../");	
-}
-
+if (!$user_online ||  !$myrole == "employer") header("location:../");
+global $conn;
 $deep_url = 1;
 include_once "../headerPrincipal.php";
+$producto = false;
+if(isset($_GET["p"]))$producto = true;
 ?>
-
 <body class="not-transparent-header">
 	<div class="container-wrapper">
 		<div class="main-wrapper">
-		
 			<div class="breadcrumb-wrapper">
-			
 				<div class="container">
-				
 					<ol class="breadcrumb-list booking-step">
 						<li><a href="../">Inicio</a></li>
-						<li><a ><?php echo "$compname"; ?></a></li>
+						<li><a ><?=$compname?></a></li>
 						<li><span>Publicar Servicio</span></li>
 					</ol>
-					
 				</div>
-				
 			</div>
-
-			
 			<div class="section sm">
-			
 				<div class="container">
-				
 					<div class="row">
+						<div class="col-sm-5 col-md-4">
 						
-							<div class="col-sm-5 col-md-4">
-							
-								<div class="company-detail-sidebar">
-									
-									<div class="image">
-										<?php 
-										if ($logo == null) {
-										print '<center>Company Logo Here</center>';
-										}else{
-										echo '<center><img alt="image" title="'.$compname.'" width="180" height="100" src="data:image/jpeg;base64,'.base64_encode($logo).'"/></center>';	
-										}
-										?>
-									</div>
-									
-									<h2 class="heading mb-15"><h4><?php echo "$compname"; ?></h4>
+							<div class="company-detail-sidebar">
 								
-									<p class="location"><i class="fa fa-map-marker"></i> <?php echo "$zip"; ?> <?php echo "$city"; ?>. <?php echo "$street"; ?>, <?php echo "$country"; ?> <span class="block"> <i class="fa fa-phone"></i> <?php echo "$myphone"; ?></span></p>
-									
-									<ul class="meta-list clearfix">
-								<!-- 		<li>
-											<h4 class="heading">Establecida en:</h4>
-											<?php echo "$esta"; ?>
-										</li>-->
-										<li>
-											<h4 class="heading">Rubro:</h4>
-											<?php echo "$mytitle"; ?>
-										</li>
-									<!-- 	<li>
-											<h4 class="heading">Personas:</h4>
-											<?php echo "$mypeople"; ?>
-										</li> -->
-										<li>
-											<h4 class="heading">Website: </h4>
-											<a target="_blank" href="https://<?php echo "$myweb"; ?>"><?php echo "$myweb"; ?></a>
-										</li>
-										<li>
-											<h4 class="heading">Email: </h4>
-											<?php echo "$mymail"; ?>
-										</li>
+								<div class="image">
+									<?php 
+									if ($logo == null) {
+									print '<center>Company Logo Here</center>';
+									}else{
+									echo '<center><img alt="image" title="'.$compname.'" width="180" height="100" src="data:image/jpeg;base64,'.base64_encode($logo).'"/></center>';	
+									}
+									?>
+								</div>
+								
+								<h2 class="heading mb-15"><h4><?php echo "$compname"; ?></h4>
+							
+								<p class="location"><i class="fa fa-map-marker"></i> <?php echo "$zip"; ?> <?php echo "$city"; ?>. <?php echo "$street"; ?>, <?php echo "$country"; ?> <span class="block"> <i class="fa fa-phone"></i> <?php echo "$myphone"; ?></span></p>
+								
+								<ul class="meta-list clearfix">
 
-									</ul>
-									
-									
-									<a href="./" class="btn btn-primary mt-5"><i class="fa fa-pencil-square-o mr-5"></i>Edit</a>
+									<li>
+										<h4 class="heading">Website: </h4>
+										<a target="_blank" href="//<?=$myweb?>"><?=$myweb?></a>
+									</li>
+									<li>
+										<h4 class="heading">Email: </h4>
+										<?=$mymail?>
+									</li>
+
+								</ul>
+								
+								
+								<a href="./" class="btn btn-primary mt-5"><i class="fa fa-pencil-square-o mr-5"></i>Edit</a>
 									
 								</div>
 					
@@ -100,18 +72,18 @@ include_once "../headerPrincipal.php";
 									<div class="company-detail-company-overview  mt-0 clearfix">
 										
 										<div class="section-title-02">
-											<h3 class="text-left">Publicar Nuevo Servicio</h3>
+											<h3 class="text-left">Publicar Nuevo <?=$producto?"Producto":"Servicio"?></h3>
 										</div>
 
 										<form class="post-form-wrapper" action="app/post-job.php" method="POST" autocomplete="off">
 								
 											<div class="row gap-20">
-											<?php require 'constants/check_reply.php'; ?>
+											<?php include 'constants/check_reply.php'; ?>
 										
 												<div class="col-sm-8 col-md-8">
 												
 													<div class="form-group">
-														<label>Titulo del servicio</label>
+														<label>T&iacute;tulo del servicio</label>
 														<input name="title" required type="text" class="form-control" placeholder="Escriba un titulo">
 													</div>
 													
@@ -141,10 +113,8 @@ include_once "../headerPrincipal.php";
 														<select name="country" required class="selectpicker show-tick form-control" data-live-search="true">
 															<option disabled value="">Seleccionar</option>
 						                                   <?php
-														   require '../constants/db_config.php';
 														   try {
-                                                           $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-                                                           $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                                                         
 
 	
                                                            $stmt = $conn->prepare("SELECT * FROM tbl_countries ORDER BY country_name");
@@ -178,10 +148,8 @@ include_once "../headerPrincipal.php";
 															<select name="category" required class="selectpicker show-tick form-control" data-live-search="true">
 															<option disabled value="">Seleccionar</option>
 						                                   <?php
-														   require '../constants/db_config.php';
 														   try {
-                                                           $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-                                                           $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                                                           
 
 	
                                                            $stmt = $conn->prepare("SELECT * FROM tbl_categories ORDER BY category");
@@ -207,21 +175,13 @@ include_once "../headerPrincipal.php";
 													</div>
 													
 												</div>
-											    <div class="col-sm-4 col-md-4">
-												
-													<div class="form-group">
-														<label>fecha de expiracion del servicio</label>
-														<input name="deadline" required type="text" class="form-control" placeholder="Eg: 30/12/2018">
-													</div>
-													
-												</div>
 												
 												<div class="clear"></div>
 												
 												<div class="col-xss-12 col-xs-6 col-sm-6 col-md-4">
 												
 													<div class="form-group mb-20">
-														<label>Como ofrece su servicio </label>
+														<label>C&oacute;mo ofrece su servicio?</label>
 														<select name="jobtype" required class="selectpicker show-tick form-control" data-live-search="false" data-selected-text-format="count > 3" data-done-button="true" data-done-button-text="OK" data-none-selected-text="All">
 															<option value="" selected>Seleccionar</option>
 															<option value="Full-time" data-content="<span class='label label-warning'>Full-time</span>">Full-time</option>
@@ -244,11 +204,8 @@ include_once "../headerPrincipal.php";
 															<option value="4 Years">4 Años</option>
 															<option value="5 Years">5 Años</option>
 															<option value="Expert">Experto(+5 Años)</option>
-
 														</select>
 													</div>
-													
-													
 												</div>
 
 												<div class="clear"></div>
@@ -285,12 +242,16 @@ include_once "../headerPrincipal.php";
 												</div>
 												
 												<div class="clear"></div>
-												
-
-												
-												<div class="clear"></div>
-												
-
+												<div class="form-group">
+												iv>
+											        <label>Upload Image File:</label>
+											        <input name="userImage" id="userImage" type="file" class="demoInputBox" />
+											    </div>
+											    <div><input type="submit" id="btnSubmit" value="Submit" class="btnSubmit" /></div>
+											    <div id="progress-div"><div id="progress-bar"></div></div>
+											    <div id="targetLayer"></div>
+													
+												</div>
 												
 												<div class="clear mb-10"></div>
 
@@ -307,67 +268,49 @@ include_once "../headerPrincipal.php";
 											</div>
 											
 										</form>
+										   
 										
 									</div>
-									
-							
-
-
 								</div>
-
 							</div>
 						
 						</div>
 						
 					</div>
-				
 				</div>
-			
 			</div>
-
 			<?php include_once "../footer.php"; ?>
-		
 	</div>
-
 <div id="back-to-top">
    <a href="#"><i class="ion-ios-arrow-up"></i></a>
 </div>
-
-
-<script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
-<script type="text/javascript" src="../js/jquery-migrate-1.2.1.min.js"></script>
-<script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="../js/bootstrap-modalmanager.js"></script>
-<script type="text/javascript" src="../js/bootstrap-modal.js"></script>
-<script type="text/javascript" src="../js/smoothscroll.js"></script>
-<script type="text/javascript" src="../js/jquery.easing.1.3.js"></script>
-<script type="text/javascript" src="../js/jquery.waypoints.min.js"></script>
-<script type="text/javascript" src="../js/wow.min.js"></script>
-<script type="text/javascript" src="../js/jquery.slicknav.min.js"></script>
-<script type="text/javascript" src="../js/jquery.placeholder.min.js"></script>
-<script type="text/javascript" src="../js/bootstrap-tokenfield.js"></script>
-<script type="text/javascript" src="../js/typeahead.bundle.min.js"></script>
-<script type="text/javascript" src="../js/bootstrap3-wysihtml5.min.js"></script>
-<script type="text/javascript" src="../js/bootstrap-select.min.js"></script>
-<script type="text/javascript" src="../js/jquery-filestyle.min.js"></script>
-<script type="text/javascript" src="../js/bootstrap-select.js"></script>
-<script type="text/javascript" src="../js/ion.rangeSlider.min.js"></script>
-<script type="text/javascript" src="../js/handlebars.min.js"></script>
-<script type="text/javascript" src="../js/jquery.countimator.js"></script>
-<script type="text/javascript" src="../js/jquery.countimator.wheel.js"></script>
-<script type="text/javascript" src="../js/slick.min.js"></script>
-<script type="text/javascript" src="../js/easy-ticker.js"></script>
-<script type="text/javascript" src="../js/jquery.introLoader.min.js"></script>
-<script type="text/javascript" src="../js/jquery.responsivegrid.js"></script>
-<script type="text/javascript" src="../js/customs.js"></script>
-
-
+<script type="text/javascript">
+$(document).ready(function() { 
+    $('#uploadForm').submit(function(e) {	
+        if($('#userImage').val()) {
+            e.preventDefault();
+            $('#loader-icon').show();
+            $(this).ajaxSubmit({ 
+                target:   '#targetLayer', 
+                beforeSubmit: function() {
+                    $("#progress-bar").width('0%');
+                },
+                uploadProgress: function (event, position, total, percentComplete){	
+                    $("#progress-bar").width(percentComplete + '%');
+                    $("#progress-bar").html('<div id="progress-status">' + percentComplete +' %</div>')
+                },
+                success:function (){
+                    $('#loader-icon').hide();
+                },
+                resetForm: true 
+            }); 
+            return false; 
+        }
+    });
+});
+</script>
 <script type="text/javascript" src="../js/fileinput.min.js"></script>
 <script type="text/javascript" src="../js/customs-fileinput.js"></script>
-
-
-
-
 <script type="text/javascript" src="../js/jquery.sheepItPlugin.js"></script>
 <script type="text/javascript" src="../js/customs-sheepItPlugin.js"></script>
 

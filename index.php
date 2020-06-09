@@ -37,7 +37,7 @@ global $conn;
 									</div>
 									<div class="col-xss-5 col-xs-5 col-sm-5">
 										<small class="text-white">D&oacute;nde lo necesitas?</small>
-										<select class="form-control"  name="country" required/>
+										<select class="form-control"  name="country"/>
 										<option value="">- Selecciona ciudad -<option>
 										<?php
 										try{
@@ -217,7 +217,6 @@ global $conn;
       a.appendChild(colb);
       $.get("app/search.php",{s : val,len:val.length}).done(data=>{
       		if(data.len != document.getElementById("category-input").value.length)return;
-      		console.log(document.getElementById("category-input").value.length);
       		data.empresas.forEach(empresa => {
 	      		b = document.createElement("DIV");
 	      		b.classList.add("text-center");
