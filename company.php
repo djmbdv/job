@@ -155,12 +155,7 @@ if ($complogo == null):?>
 
 									<div class="result-list-wrapper">
 									<?php
-									require 'constants/db_config.php';
-									
 									try {
-                                    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-                                    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
 	
                                     $stmt = $conn->prepare("SELECT * FROM tbl_jobs WHERE company = :compid ORDER BY enc_id DESC LIMIT 5");
                                     $stmt->bindParam(':compid', $company_id);
@@ -168,6 +163,7 @@ if ($complogo == null):?>
                                     $result = $stmt->fetchAll();
 
                                     foreach($result as $row){
+                                    	echo $row['closing_date'];
 									$post_date = date_format(date_create_from_format('d/m/Y', $row['closing_date']), 'd');
                                     $post_month = date_format(date_create_from_format('d/m/Y', $row['closing_date']), 'F');
                                     $post_year = date_format(date_create_from_format('d/m/Y', $row['closing_date']), 'Y');
@@ -280,9 +276,7 @@ if ($complogo == null):?>
 						            <ul class="pager-list">
 								<?php
 								$total_records = 0;
-								require'constants/db_config.php';
 								try {
-                                $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
                                 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 	

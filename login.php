@@ -1,6 +1,5 @@
-<?php 
-include 'headerPrincipal.php'; 
-?>
+<?php
+include 'headerPrincipal.php';?>
 <script type="text/javascript">
 function update(str){
 	if(document.getElementById('mymail').value == ""){
@@ -76,6 +75,7 @@ function reset_text(){
 										</div>
 									</div>
 									<button type="submit" class="btn btn-primary btn-block">Iniciar Sesión</button>
+									<a href="register.php"  class="btn btn-secondary btn-block">Registro</a>
 								</div>
 							</form>
 
