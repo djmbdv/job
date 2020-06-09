@@ -21,7 +21,7 @@ $cate = urldecode(isset($_GET['category'])?$_GET['category']:"");
 $country =urldecode(isset($_GET['country'])?$_GET['country']:"");
 $cate.='%';
 $country.='%';	
-$query1 = isset($_GET['category']) ? "SELECT * FROM tbl_jobs WHERE category like :cate ": "SELECT * FROM tbl_jobs ";
+$query1 = isset($_GET['category']) ? "SELECT * FROM tbl_jobs join tbl_users on tbl_jobs.company = tbl_users.member_no WHERE category like :cate or tbl_jobs.title like :cate or tbl_users.first_name like :cate ": "SELECT * FROM tbl_jobs  ";
 if(isset($_GET['country']))$query1.= "AND country like :country ";
 $query2 = (string)$query1;
 $query1.="ORDER BY enc_id DESC LIMIT $offset,12";
@@ -85,13 +85,15 @@ foreach($result as $row):
 				<img class="autofit3" alt="image" title="<?= $thecompname ?>" width="180" height="100" src="app/image-profiles.php?id=<?=$member_no?>"/>
 			</center>
 <?php
-	endif;?>
+	endif;
+	?>
 			</div>
+
 		<div class="content">
 			<div class="job-item-list-info">
 				<div class="row">
 					<div class="col-sm-7 col-md-8">
-						<h4 class="heading"><?=$row['title']?></h4>
+						<h4 class="heading"><?=$row[1]?></h4>
 						<div class="meta-div clearfix mb-25">
 							<span>por <a href="company.php?ref=<?=$compid?>">  <?= $thecompname ?> - Disponibilidad</a></span>
 							<?=$sta?>

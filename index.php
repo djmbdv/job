@@ -218,6 +218,7 @@ global $conn;
       $.get("app/search.php",{s : val}).done(data=>{
       		data.empresas.forEach(empresa => {
 	      		b = document.createElement("DIV");
+	      		b.classList.add("text-center");
 				b.innerHTML = "<strong>" + empresa.substr(0, val.length) + "</strong>";
 				b.innerHTML += empresa.substr(val.length);
 				/*insert a input field that will hold the current array item's value:*/
@@ -234,6 +235,7 @@ global $conn;
       		});
       		data.servicios.forEach(servicio=>{
       			b = document.createElement("DIV");
+      			b.classList.add("text-center");
 		          b.innerHTML = "<strong>" + servicio.substr(0, val.length) + "</strong>";
 		          b.innerHTML += servicio.substr(val.length);
 		          /*insert a input field that will hold the current array item's value:*/
