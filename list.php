@@ -11,6 +11,27 @@ global $isHttps;
 require 'headerPrincipal.php';
 $slc_country =urldecode(isset($_GET['country'])?$_GET['country']:"");
 ?>
+<div class="modal fade" id="modal-galery" role="dialog">
+    
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <p>Some text in the modal.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+  </div>
+
+
+
 <body class="not-transparent-header">
 	<div class="container-wrapper">
 		<div class="main-wrapper">
@@ -185,8 +206,8 @@ endforeach; ?>
       colb.appendChild(t);
       a.appendChild(cola);
       a.appendChild(colb);
-      $.get("app/search.php",{s : val,len:val.length}).done(data=>{
-      		if(data.len != this.value.length)return;
+      $.get("app/search.php",{s : val,len:val.length}).done(data=>{      	
+      		if(data.len != document.getElementById("category-input").value.length)return;
       		data.empresas.forEach(empresa => {
 	      		b = document.createElement("DIV");
 	      		b.classList.add("text-center");
@@ -275,8 +296,6 @@ document.addEventListener("click", function (e) {
     closeAllLists(e.target);
 });
 }
-
-
 autocomplete(document.getElementById("category-input"));
 
 </script>

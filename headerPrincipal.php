@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="<?=$prefix?>icons/ionicons/css/ionicons.css">
 	<link rel="stylesheet" href="<?=$prefix?>icons/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
 	<link rel="stylesheet" href="<?=$prefix?>icons/rivolicons/style.css">
-	<link rel="stylesheet" href="<?=$prefix?>css/style.css?15" >
+	<link rel="stylesheet" href="<?=$prefix?>css/style.css?18" >
 	<script type="text/javascript" src="<?=$prefix?>js/jquery-1.11.3.min.js"></script>
 	<script type="text/javascript" src="<?=$prefix?>js/jquery-migrate-1.2.1.min.js"></script>
 	<script type="text/javascript" src="<?=$prefix?>js/jquery.easing.1.3.js"></script>

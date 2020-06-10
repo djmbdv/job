@@ -152,7 +152,7 @@ foreach($result as $row):
 							<a><?= $row['category'] ?></a>
 						</div>
 						<div class="thumbails col-sm-5" >
-							<div class="thumb">
+							<div class="thumb" data-image="http://127.0.0.1/job/app/image-profiles.php?id=CM377671653">
 								<img class="img img-responsive img-thumb" src="https://ucarecdn.com/9e7211c0-b73b-4b1d-8b47-4b1700f9a80f/-/scale_crop/84x56/center/"/>
 							</div>
 							<div class="thumb">
@@ -200,3 +200,9 @@ endforeach;?>
 		transition: all 0.3s ease;
 	}
 </style>
+<script type="text/javascript">
+	$(".thumb").click(e=>{
+	$("#modal-galery > .modal-content").children(".modal-body").html($("<img/>").attr("src",$(e.srcElement).attr("data-image")));
+	$("#modal-galery").modal();
+});
+</script>
