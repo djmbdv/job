@@ -109,43 +109,25 @@ if ($complogo == null):?>
 										
 										<h2 class="heading mb-15"><?=$compname?></h2>
 									
-										<p class="location">
+										<p class="location"> 
 											<i class="fa fa-map-marker"></i>
-											<?=$compzip?> <?=$compcity?>. <?=$compstreet?>, <?=$compcountry?>
-											<span class="mh-5">|</span>
+											<?=$compzip?> <?=$compcity?>. , <?=$compcountry?> <br> <?=$compstreet?>
+											<span class="mh-5"><br></span>
 											<i class="fa fa-phone"></i>
-											<?= $user_online? $compphone: '<a class="only-logged" href="#">Ver tel&eacute;fono</a>' ?>
+											<?= $user_online? $compphone: ' <a class="only-logged" href="#">Ver tel&eacute;fono</a>' ?> <br>
+											NIT:	<?php echo "$comptype"; ?> <br>
+											pagina web: <a target="_blank" href="//<?=$compweb?>"><?=$compweb?></a>
 										</p>
-										<ul class="meta-list clearfix">
-											<li>
-												<h4 class="heading">Página Web: </h4>
-												<a target="_blank" href="//<?=$compweb?>"><?=$compweb?></a>
-											</li>
-										</ul>
+									
 										
 									</div>
 						
-									<div class="company-detail-company-overview clearfix">
-									
-										<h3>Descripción de la Empresa</h3>
-										
-										<p><?=$compbout?></p>
-
-										
-										<h3>Servicios</h3>
-										
-										<p><?php echo "$compserv"; ?></p>
-										
-										<h3>Experiencia</h3>
-										
-										<p><?php echo "$compexp"; ?></p>
-										
-									</div><br><br>
+								
 
 									
 									<div class="section-title mb-40">
 						
-										<h4 class="text-left">Trabajos ofrecidos en <?php echo "$compname"; ?></h4>
+										<h4 class="text-left">Trabajos ofrecidos por <?php echo "$compname"; ?></h4>
 										
 									</div>
 
