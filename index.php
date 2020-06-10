@@ -187,20 +187,15 @@ global $conn;
 <script type="text/javascript">
 	function autocomplete(inp) {
   var currentFocus;
-  /*execute a function when someone writes in the text field:*/
   inp.addEventListener("input", function(e) {
       var a, b, i, val = this.value;
-      /*close any already open lists of autocompleted values*/
       closeAllLists();
       if (!val) { return false;}
       currentFocus = -1;
-      /*create a DIV element that will contain the items (values):*/
       a = document.createElement("DIV");
       a.setAttribute("id", this.id + "autocomplete-list");
       a.setAttribute("class", "autocomplete-items");
-      /*append the DIV element as a child of the autocomplete container:*/
       this.parentNode.appendChild(a);
-      /*for each item in the array...*/
       cola = document.createElement("div");
       t = document.createElement("h6");
       t.setAttribute("class","list-item-title");
@@ -215,13 +210,15 @@ global $conn;
       colb.appendChild(t);
       a.appendChild(cola);
       a.appendChild(colb);
-      $.get("app/search.php",{s : val,len:val.length}).done(data=>{
+      var rval = RegExp(val,'i');
+      $.get("app/search.php",{s : val,len:val.length}).done(data=>{      	
       		if(data.len != document.getElementById("category-input").value.length)return;
       		data.empresas.forEach(empresa => {
 	      		b = document.createElement("DIV");
 	      		b.classList.add("text-center");
-				b.innerHTML = "<strong>" + empresa.substr(0, val.length) + "</strong>";
-				b.innerHTML += empresa.substr(val.length);
+	      		b.innerHTML = empresa.substr(0, empresa.search(rval));
+				b.innerHTML += "<strong>" + val + "</strong>";
+				b.innerHTML += empresa.substr(empresa.search(rval) + val.length);
 				/*insert a input field that will hold the current array item's value:*/
 				b.innerHTML += "<input type='hidden' value='" +  empresa + "'>";
 				/*execute a function when someone clicks on the item value (DIV element):*/
@@ -235,10 +232,12 @@ global $conn;
 				colb.appendChild(b);
       		});
       		data.servicios.forEach(servicio=>{
+
       			b = document.createElement("DIV");
       			b.classList.add("text-center");
-		          b.innerHTML = "<strong>" + servicio.substr(0, val.length) + "</strong>";
-		          b.innerHTML += servicio.substr(val.length);
+      				b.innerHTML = servicio.substr(0,servicio.search(rval));
+		          b.innerHTML += "<strong>" +val+ "</strong>";
+		          b.innerHTML += servicio.substr(servicio.search(rval)+val.length);
 		          /*insert a input field that will hold the current array item's value:*/
 		          b.innerHTML += "<input type='hidden' value='" + servicio + "'>";
 		          /*execute a function when someone clicks on the item value (DIV element):*/

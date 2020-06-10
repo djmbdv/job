@@ -206,13 +206,15 @@ endforeach; ?>
       colb.appendChild(t);
       a.appendChild(cola);
       a.appendChild(colb);
+      var rval = RegExp(val,'i');
       $.get("app/search.php",{s : val,len:val.length}).done(data=>{      	
       		if(data.len != document.getElementById("category-input").value.length)return;
       		data.empresas.forEach(empresa => {
 	      		b = document.createElement("DIV");
 	      		b.classList.add("text-center");
-				b.innerHTML = "<strong>" + empresa.substr(0, val.length) + "</strong>";
-				b.innerHTML += empresa.substr(val.length);
+	      		b.innerHTML = empresa.substr(0, empresa.search(rval));
+				b.innerHTML += "<strong>" + val + "</strong>";
+				b.innerHTML += empresa.substr(empresa.search(rval) + val.length);
 				/*insert a input field that will hold the current array item's value:*/
 				b.innerHTML += "<input type='hidden' value='" +  empresa + "'>";
 				/*execute a function when someone clicks on the item value (DIV element):*/
@@ -229,8 +231,9 @@ endforeach; ?>
 
       			b = document.createElement("DIV");
       			b.classList.add("text-center");
-		          b.innerHTML = "<strong>" + servicio.substr(0, val.length) + "</strong>";
-		          b.innerHTML += servicio.substr(val.length);
+      				b.innerHTML = servicio.substr(0,servicio.search(rval));
+		          b.innerHTML += "<strong>" +val+ "</strong>";
+		          b.innerHTML += servicio.substr(servicio.search(rval)+val.length);
 		          /*insert a input field that will hold the current array item's value:*/
 		          b.innerHTML += "<input type='hidden' value='" + servicio + "'>";
 		          /*execute a function when someone clicks on the item value (DIV element):*/
@@ -255,19 +258,14 @@ endforeach; ?>
       if (x) x = x.getElementsByTagName("div");
       if (e.keyCode == 40) {
         currentFocus++;
-        /*and and make the current item more visible:*/
         addActive(x);
       } else if (e.keyCode == 38) { //up
-        /*If the arrow UP key is pressed,
-        decrease the currentFocus variable:*/
+        /*If the arrow UP key is pressed*/
         currentFocus--;
-        /*and and make the current item more visible:*/
         addActive(x);
       } else if (e.keyCode == 13) {
-        /*If the ENTER key is pressed, prevent the form from being submitted,*/
         e.preventDefault();
         if (currentFocus > -1) {
-          /*and simulate a click on the "active" item:*/
           if (x) x[currentFocus].click();
         }
       }
