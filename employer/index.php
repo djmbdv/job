@@ -109,12 +109,15 @@ include_once "../headerPrincipal.php";
 
 												</div>
 
-												<div class="col-sm-6 col-md-4">
-														<label>Página Web</label>
-														<input type="text" class="form-control" value="<?php echo "$myweb"; ?>" name="web" placeholder="Ingresa tu website">
-													</div>
 											
-
+													<div class="col-sm-6 col-md-4">
+												
+												<div class="form-group">
+													<label>NIT</label>
+													<input class="form-control" placeholder="ingrese su nit" name="type" required type="text" value="<?= $mytitle ?>" required/> 
+												</div>
+												
+											</div>
 												<div class="clear"></div>
 												
 												<div class="col-sm-6 col-md-4">
@@ -146,6 +149,7 @@ include_once "../headerPrincipal.php";
 													
 												</div>
 												
+												
 												<div class="col-sm-6 col-md-4">
 												
 													<div class="form-group">
@@ -168,7 +172,7 @@ include_once "../headerPrincipal.php";
 													</div>
 													
 												</div>
-
+												
 												<div class="clear"></div>
 												<div class="col-sm-6 col-md-4">
 													<div class="form-group">
@@ -185,8 +189,12 @@ include_once "../headerPrincipal.php";
 
 												
 
+													<div class="col-sm-6 mt-4">
+													<label>Página Web</label>
+														<input type="text" class="form-control" value="<?php echo "$myweb"; ?>" name="web" placeholder="Ingresa tu website">
+													
+												</div>
 
-												
 
 												<div class="col-sm-12 mt-10">
 													<button type="submit" class="btn btn-primary"><p style="color:black">Guardar</p></button>
@@ -209,7 +217,7 @@ include_once "../headerPrincipal.php";
 										</div>
 												
 										<div class="clear"></div>
-
+							
 										<div class="col-sm-12 mt-10">
 										<button type="submit" class="btn btn-primary"><p style="color:black">Actualizar</p></button>
 										<?php 
@@ -221,6 +229,10 @@ include_once "../headerPrincipal.php";
 										?>
 										</div>
 										</div>
+
+
+
+										
 									</form>
 								</div>
 							</div>

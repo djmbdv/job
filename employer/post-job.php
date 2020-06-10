@@ -26,7 +26,7 @@ if(isset($_GET["p"]))$producto = true;
 			<div class="section sm">
 				<div class="container">
 					<div class="row">
-						<div class="col-sm-5 col-md-4">
+						<div class="col-sm-5 col-md-3">
 						
 							<div class="company-detail-sidebar">
 								
@@ -58,7 +58,7 @@ if(isset($_GET["p"]))$producto = true;
 								</ul>
 								
 								
-								<a href="./" class="btn btn-primary mt-5"><i class="fa fa-pencil-square-o mr-5"></i>Edit</a>
+								<a href="./" class="btn btn-primary mt-5"><i class="fa fa-pencil-square-o mr-5" ></i> Editar</a>
 									
 								</div>
 					
@@ -99,7 +99,7 @@ if(isset($_GET["p"]))$producto = true;
 													</div>
 
 													<div class="form-group">
-														<label>numero de Telefono para este servicio </label>
+														<label>Telefono para este servicio</label>
 														<input name="telefono" required type="text" class="form-control" placeholder="Escriba su numero de telefono">
 													</div>
 													
@@ -136,13 +136,6 @@ if(isset($_GET["p"]))$producto = true;
 														   ?>
 														</select>
 													</div>
-													
-												</div>
-												
-												<div class="clear"></div>
-												
-												<div class="col-sm-4 col-md-4">
-												
 													<div class="form-group">
 														<label>Categoria del servicio</label>
 															<select name="category" required class="selectpicker show-tick form-control" data-live-search="true">
@@ -174,10 +167,18 @@ if(isset($_GET["p"]))$producto = true;
 														
 													</div>
 													
+													
 												</div>
 												
 												<div class="clear"></div>
 												
+												<div class="col-sm-4 col-md-4">
+												
+													
+												</div>
+												
+												<div class="clear"></div>
+												<!--
 												<div class="col-xss-12 col-xs-6 col-sm-6 col-md-4">
 												
 													<div class="form-group mb-20">
@@ -207,39 +208,39 @@ if(isset($_GET["p"]))$producto = true;
 														</select>
 													</div>
 												</div>
-
+-->
 												<div class="clear"></div>
 												
 												<div class="col-sm-12 col-md-12">
 												
 													<div class="form-group bootstrap3-wysihtml5-wrapper">
 														<label>Describa el servicio</label>
-														<textarea class="form-control bootstrap3-wysihtml5" name="description" required placeholder="Escriba una descripcion" style="height: 200px;"></textarea>
+														<textarea class="form-control bootstrap3-wysihtml" name="description" required placeholder="Escriba una descripcion" style="height: 100px;"></textarea>
 													</div>
 													
 												</div>
 												
 												<div class="clear"></div>
 												
-												<div class="col-sm-12 col-md-12">
+											<!--	<div class="col-sm-12 col-md-12">
 												
 													<div class="form-group bootstrap3-wysihtml5-wrapper">
 														<label>Activiades que puede realizar</label>
-														<textarea name="responsiblities" required class="form-control bootstrap3-wysihtml5" placeholder="Acividades" style="height: 200px;"></textarea>
+														<textarea name="responsiblities" required class="form-control bootstrap3-wysihtml5" placeholder="Acividades" style="height: 100px;"></textarea>
 													</div>
 													
 												</div>
 												
 												<div class="clear"></div>
 												
-												<div class="col-sm-12 col-md-12">
+										<!--		<div class="col-sm-12 col-md-12">
 												
 													<div class="form-group bootstrap3-wysihtml5-wrapper">
 														<label>Describa sus Habilidades</label>
 														<textarea name="requirements" required class="form-control bootstrap3-wysihtml5" placeholder="escriba sus habilidades" style="height: 200px;"></textarea>
 													</div>
 													
-												</div>
+												</div> -->
 												
 												<div class="clear"></div>
 												<div class="form-group">
