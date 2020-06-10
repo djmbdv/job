@@ -51,7 +51,13 @@ include_once "../headerPrincipal.php";
 									
 									<div class="admin-user-action text-center">
 									
-										<a href="post-job.php" class="btn btn-primary btn-sm btn-inverse">Publicar Servicio</a>
+										<a href="post-job.php" class="btn btn-primary btn-sm "> <p style="color:black">Publicar servicio</p> </a>
+										
+									</div>
+
+									<div class="admin-user-action text-center">
+									
+										<a href="post-job.php" class="btn btn-primary btn-sm "><p style="color:black">Publicar producto</p></a>
 										
 									</div>
 									<ul class="admin-user-menu clearfix">
@@ -66,7 +72,7 @@ include_once "../headerPrincipal.php";
 											<a href="../company.php?ref=<?php echo "$myid"; ?>"><i class="fa fa-briefcase"></i> Descripción Empresa</a>
 										</li>
 										<li>
-											<a href="my-jobs.php"><i class="fa fa-bookmark"></i> Posted Jobs</a>
+											<a href="my-jobs.php"><i class="fa fa-eye"></i> Ver Servicios y productos publicados</a>
 										</li>
 										<li>
 											<a href="../logout.php"><i class="fa fa-sign-out"></i> Logout</a>
@@ -81,10 +87,10 @@ include_once "../headerPrincipal.php";
 
 									<div class="admin-section-title">
 									
-										<h2>Perfil</h2>
-										<small>
+										<h2>Perfil de su empresa</h2>
+									<!--	<small>
 											&Uacute;ltimo inicio de sesi&oacute;n: <span class="text-info"><?= $mylogin ?></span>
-										</small>
+										</small> -->
 										
 									</div>
 									
@@ -94,42 +100,27 @@ include_once "../headerPrincipal.php";
 												<?php include 'constants/check_reply.php'; ?>
 												<div class="clear"></div>
 												
-												<div class="col-sm-12 col-md-8">
-												
-													<div class="form-group">
-														<label>Nombre</label>
-														<input name="company" placeholder="Enter Nombre de Empresa" type="text" class="form-control" value="<?= $compname ?>" required>
-													</div>
-													
-												</div>
-												<div class="clear"></div>
-								
-												
 												<div class="col-sm-6 col-md-4">
 												
 													<div class="form-group">
-														<label>Rubro</label>
-                                                    	<input class="form-control" placeholder="Ej: Ventas, Viajes" name="type" required type="text" value="<?= $mytitle ?>" required/> 
+														<label>Nombre de la empresa</label>
+														<input name="company" placeholder="Enter Nombre de Empresa" type="text" class="form-control" value="<?= $compname ?>" required>
 													</div>
-													
-												</div>
-												
-												<div class="clear"></div>
 
-													<div class="form-group">
-													<div class="col-sm-6 col-md-4">
+												</div>
+
+												<div class="col-sm-6 col-md-4">
 														<label>Página Web</label>
 														<input type="text" class="form-control" value="<?php echo "$myweb"; ?>" name="web" placeholder="Ingresa tu website">
 													</div>
-														
-												</div>
-												
+											
+
 												<div class="clear"></div>
-												<br>
+												
 												<div class="col-sm-6 col-md-4">
 												
 													<div class="form-group">
-														<label>Ciudad/Pueblo</label>
+														<label>Ciudad</label>
 														<input name="city" required type="text" class="form-control" value="<?php echo "$city"; ?>" placeholder="Ingresa tu city">
 													</div>
 													
@@ -138,8 +129,8 @@ include_once "../headerPrincipal.php";
 												<div class="col-sm-6 col-md-4">
 												
 													<div class="form-group">
-														<label>Calle</label>
-														<input name="street" required type="text" class="form-control" value="<?=$street?>" placeholder="Ingresa tu street">
+														<label>Direccion</label>
+														<input name="street" required type="text" class="form-control" value="<?=$street?>" placeholder="Ingresa tu street"  required>
 													</div>
 													
 												</div>
@@ -150,7 +141,7 @@ include_once "../headerPrincipal.php";
 												
 													<div class="form-group">
 														<label>Código Postal</label>
-														<input name="zip" required type="text" class="form-control" value="<?=$zip ?>" placeholder="Ingresa tu zip">
+														<input name="zip"  type="text" class="form-control" value="<?=$zip ?>" placeholder="Ingresa tu zip">
 													</div>
 													
 												</div>
@@ -182,7 +173,7 @@ include_once "../headerPrincipal.php";
 												<div class="col-sm-6 col-md-4">
 													<div class="form-group">
 														<label>Teléfono</label>
-														<input type="tel" name="phone" required class="form-control" value="<?= $myphone ?>" placeholder="Ingresa tu phone">
+														<input type="tel" name="phone" required class="form-control" value="<?= $myphone ?>" placeholder="Ingresa tu telefono"  required>
 													</div>
 												</div>
 												<div class="col-sm-6 col-md-4">
@@ -195,48 +186,11 @@ include_once "../headerPrincipal.php";
 												
 
 
-												<div class="clear"></div>
 												
-												<div class="col-sm-12 col-md-12">
-												
-													<div class="form-group bootstrap3-wysihtml5-wrapper">
-														<label>Historia de ti o de tu Empresa</label>
-														<textarea name="background" class="bootstrap3-wysihtml5 form-control" placeholder="Ingresa historia de la empresa ..." style="height: 200px;"><?= $desc ?></textarea>
-													</div>
-													
-												</div>
-												
-												<div class="clear"></div>
-												
-												<div class="col-sm-12 col-md-12">
-												
-													<div class="form-group bootstrap3-wysihtml5-wrapper">
-														<label>Cuentanos un poco sobre tus Servicios</label>
-														<textarea name="services" class="bootstrap3-wysihtml5 form-control" placeholder="Ingresa servicios de la empresa ..." style="height: 200px;">
-															<?= $myserv ?>
-														</textarea>
-													</div>
-													
-												</div>
-												
-												<div class="clear"></div>
-												
-												<div class="col-sm-12 col-md-12">
-												
-													<div class="form-group bootstrap3-wysihtml5-wrapper">
-														<label>Cuentanos un poco sobre tu Experiencia</label>
-														<textarea name="expertise" class="bootstrap3-wysihtml5 form-control" placeholder="Ingresa experiencia de la empresa ..." style="height: 200px;">
-															<?= $myex ?>
-														</textarea>
-													</div>
-													
-												</div>
-												
-												<div class="clear"></div>
 
 												<div class="col-sm-12 mt-10">
-													<button type="submit" class="btn btn-primary">Guardar</button>
-													<button type="reset" class="btn btn-warning">Cancelar</button>
+													<button type="submit" class="btn btn-primary"><p style="color:black">Guardar</p></button>
+													<button type="reset" class="btn btn-warning"><p style="color:black">Cancelar</p></button>
 												</div>
 											</div>
 										</form>
@@ -248,7 +202,7 @@ include_once "../headerPrincipal.php";
 										<div class="col-sm-12 col-md-12">
 												
 										<div class="form-group bootstrap3-wysihtml5-wrapper">
-										<label><h1>Elija un logo para perfil</h1></label>
+										<label><h1>Elija foto o logo para perfil</h1></label>
 										<input  class="btn btn-warning" accept="image/*" type="file" name="image"  required >
 										</div>
 													
@@ -257,12 +211,12 @@ include_once "../headerPrincipal.php";
 										<div class="clear"></div>
 
 										<div class="col-sm-12 mt-10">
-										<button type="submit" class="btn btn-primary">Actualizar</button>
+										<button type="submit" class="btn btn-primary"><p style="color:black">Actualizar</p></button>
 										<?php 
 										if ($logo == null) {
 
 										}else{
-										?><a onclick = "return confirm('Are you sure you want to delete your logo ?')" class="btn btn-primary btn-inverse" href="app/drop-dp.php">Eliminar</a> <?php
+										?><a onclick = "return confirm('Are you sure you want to delete your logo ?')" class="btn btn-primary btn-inverse" href="app/drop-dp.php"><p style="color:black">Eliminar</p></a> <?php
 										}
 										?>
 										</div>
