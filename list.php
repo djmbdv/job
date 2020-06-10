@@ -258,19 +258,14 @@ endforeach; ?>
       if (x) x = x.getElementsByTagName("div");
       if (e.keyCode == 40) {
         currentFocus++;
-        /*and and make the current item more visible:*/
         addActive(x);
       } else if (e.keyCode == 38) { //up
-        /*If the arrow UP key is pressed,
-        decrease the currentFocus variable:*/
+        /*If the arrow UP key is pressed*/
         currentFocus--;
-        /*and and make the current item more visible:*/
         addActive(x);
       } else if (e.keyCode == 13) {
-        /*If the ENTER key is pressed, prevent the form from being submitted,*/
         e.preventDefault();
         if (currentFocus > -1) {
-          /*and simulate a click on the "active" item:*/
           if (x) x[currentFocus].click();
         }
       }
