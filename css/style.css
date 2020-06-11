@@ -663,7 +663,7 @@ ul.nav-mini li a {
     text-transform: uppercase;
     color: #FFF;
     font-weight: 400;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0 0 8px;
     text-align: left !important;
 }
@@ -692,7 +692,7 @@ ul.nav-mini li a {
     text-transform: uppercase;
     font-weight: 400;
     line-height: 1;
-    font-family: 'Cabin', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 25px;
 }
 
@@ -1418,7 +1418,7 @@ ul.quick-search-keyword li:last-child a:after {
     color: #333;
     margin-bottom: 20px;
     text-shadow: 5px 5px 1px rgba(0, 0, 0, .1);
-    font-family: 'Cabin', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 
@@ -1467,7 +1467,7 @@ ul.quick-search-keyword li:last-child a:after {
     text-transform: uppercase;
     font-weight: 400;
     font-size: 12px;
-    font-family: 'Cabin', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 .checkbox-block.job-type-checkbox input[type='checkbox'] + label:before {

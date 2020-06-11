@@ -53,24 +53,11 @@ foreach($result as $row):
 	$compid = $row['company'];
 	$stmtb = $conn->prepare("SELECT * FROM tbl_users WHERE member_no = '$compid' and role = 'employer'");
 	$stmtb->execute();
-	$resultb = $stmtb->fetchAll();
-	foreach($resultb as $rowb){
-		$complogo = $rowb['avatar'];
-		$thecompname = $rowb['first_name'];
-		$member_no =$rowb['member_no'];
-		$telefono = isset($rowb['telefono'])? $rowb['telefono'] :"";
-	}
-	if ($type == "Freelance") {
-	$sta = '<span class="job-label label label-success">Freelance</span>';
-			  
-	}
-	if ($type == "Part-time") {
-	$sta = '<span class="job-label label label-danger">Part-time</span>';
-			  
-	}
-	if ($type == "Full-time") {
-	$sta = '<span class="job-label label label-warning">Full-time</span>';	  
-	}
+	$o = $stmtb->fetchObject();
+	$complogo = $o->avatar;
+	$thecompname = $o->first_name;
+	$member_no =$o->member_no;
+	$telefono = isset($o->telefono)? $o->telefono :"";
 ?>
 	<div class="job-item-list">
 		<div class="image">
@@ -96,7 +83,6 @@ foreach($result as $row):
 						<h4 class="heading"><?=$row[1]?></h4>
 						<div class="meta-div clearfix mb-25">
 							<span>por <a href="company.php?ref=<?=$compid?>">  <?= $thecompname ?> - Disponibilidad</a></span>
-							<?=$sta?>
 						</div>
 						<p class="texing character_limit">
 							<?=$row['description']?>
@@ -152,15 +138,18 @@ foreach($result as $row):
 							<a><?= $row['category'] ?></a>
 						</div>
 						<div class="thumbails col-sm-5" >
-							<div class="thumb" data-image="http://127.0.0.1/job/app/image-profiles.php?id=CM377671653">
-								<img class="img img-responsive img-thumb" src="https://ucarecdn.com/9e7211c0-b73b-4b1d-8b47-4b1700f9a80f/-/scale_crop/84x56/center/"/>
+<?php 
+	$smtm3 = $conn->prepare("select * from tbl_image_service where service = :service");
+	$smtm3->bindValue(":service", $row['job_id']);
+	$smtm3->execute();
+	foreach ($smtm3->fetchAll() as $thumb):
+ ?>
+						
+							<div class="thumb" >
+								<img class="img img-responsive img-thumb" otro="<?=$thumb['path']?>" src="app/thumbs.php?id_image=<?=$thumb['id']?>"/>
 							</div>
-							<div class="thumb">
-								<img class="img img-responsive img-thumb" src="https://ucarecdn.com/9e7211c0-b73b-4b1d-8b47-4b1700f9a80f/-/scale_crop/84x56/center/"/>
-							</div>
-							<div class="thumb">
-								<img class="img img-responsive img-thumb" src="https://ucarecdn.com/9e7211c0-b73b-4b1d-8b47-4b1700f9a80f/-/scale_crop/84x56/center/"/>
-							</div>
+<?php
+	endforeach; ?>
 						</div>
 					</div>
 					
@@ -201,8 +190,11 @@ endforeach;?>
 	}
 </style>
 <script type="text/javascript">
-	$(".thumb").click(e=>{
-	$("#modal-galery > .modal-content").children(".modal-body").html($("<img/>").attr("src",$(e.srcElement).attr("data-image")));
+	$(".thumb").click(e =>{
+		console.log(e);
+		console.log($(e.srcElement).attr("otro"));
+	var image = $("<img>").attr("src",$(e.srcElement).attr("otro"));
+	$("#modal-galery > .modal-content").children(".modal-body").html(image);
 	$("#modal-galery").modal();
-});
+	});
 </script>
