@@ -22,9 +22,8 @@ global $conn;
 		<div class="main-wrapper">
 			<div class="hero" style="background-image:url('images/background-index.png');background-size: cover;">
 				<div class="container">
-					<h1 class=" text-center text-shadow" style="text-shadow: 3px black;color: whitesmoke;"> <b> <p style="font-family: 'Poppins', sans-serif;"> Encuentra lo que necesitas en un click</p></b>
+					<h2 class=" text-center text-shadow" style="text-shadow: 3px black;color: whitesmoke;"> <b> <p > Encuentra lo que necesitas en un click</p></b>
 					</h1>
-					
 					
 					<div class="main-search-form-wrapper">
 						<form action="list.php" method="GET" autocomplete="off">
@@ -77,17 +76,12 @@ global $conn;
         <ul class="min-list inline-list locations locations--layout-1">
          
           <li class="location">
-            <a href="#" class="c-white"><i class="fa fa-book"></i>Directorio</a>
+            <a href="register.php" class="c-white"><i class="fa fa-book"></i>Crea tu servicios ahora</a>
           </li>
           <li class="location">
-            <a href="#" class="c-white"><i class="fa fa-user"></i>Profesionales</a>
+            <a href="register.php" class="c-white"><i class="fa fa-user"></i>Promocionate con nosotros</a>
           </li>
-          <li class="location">
-            <a href="#" class="c-white"><i class="fa fa-wrench"></i>Servicios</a>
-          </li>
-          <li class="location">
-            <a href="#" class="c-white"><i class="fa fa-cutlery"></i>Restaurantes</a>
-          </li>
+         
         </ul>
       </div>
           </div>

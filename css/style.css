@@ -141,7 +141,7 @@ ul.nav-mini.sign-in li:after {
 }
 
 ul.nav-mini.sign-in li a {
-    border: 1px solid rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
     line-height: 1;
     border-radius: 2px;
     font-weight: 600;
@@ -151,7 +151,7 @@ ul.nav-mini.sign-in li a {
 }
 
 ul.nav-mini.sign-in li a:hover {
-    color: #FFF;
+    color: rgb(0, 0, 0);
     background: #2991A2;
     border-color: #2991A2;
 }
@@ -179,7 +179,7 @@ ul.nav-mini.sign-in li a:hover {
     transition: all 0.3s ease-in-out 0s;
     letter-spacing: 1px;
     padding-left: 14px;
-    color: #FFF;
+    color: #000;
 }
 
 .nav.navbar-nav > li:last-child > a {
@@ -275,7 +275,7 @@ ul.nav-mini.sign-in li a:hover {
 .navbar-nav > li.dropdown.active > a:hover,
 .navbar-nav > li:hover > a,
 .navbar-nav > li.active > a {
-    color: rgba(255, 255, 255, 0.8) !important;
+    color: rgba(0, 0, 0, 0.8) !important;
     background: transparent !important;
 }
 
@@ -318,7 +318,7 @@ ul.nav-mini li {
 }
 
 ul.nav-mini li a {
-    color: #fff;
+    color: #000;
     -webkit-transition: all 0.3s ease-in-out 0s;
     -moz-transition: all 0.3s ease-in-out 0s;
     -ms-transition: all 0.3s ease-in-out 0s;

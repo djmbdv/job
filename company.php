@@ -88,13 +88,31 @@ require 'headerPrincipal.php'
 					</ol>
 				</div>
 			</div>
-			<div class="section sm">
+			<div class="section sm" >
 				<div class="container">
-					<div class="row">
-							<div class="col-md-10 col-md-offset-1">
-								<div class="company-detail-wrapper">
-									<div class="company-detail-header text-center">
-										<div class="image">
+			
+
+
+<!--PRUEBA DE CARD PARA PERFIL DE EMPRESA-->
+
+
+
+<div class="container">
+
+
+<div class="resume">
+    <header class="page-header">
+    <h1 class="page-title">Resumen de <?=$compname?></h1>
+  </header>
+<div class="row">
+  <div class="col-xs-12 col-sm-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
+    <div class="panel panel-default">
+      <div class="panel-heading resume-heading">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="col-xs-12 col-sm-4">
+             
+              <div class="img-circle img-responsive">
 <?php 
 if ($complogo == null):?>
 											<center>Company Logo Here</center>
@@ -106,23 +124,59 @@ if ($complogo == null):?>
 <?php
 	endif; ?>
 										</div>
-										
-										<h2 class="heading mb-15"><?=$compname?></h2>
-									
-										<p class="location"> 
-											<i class="fa fa-map-marker"></i>
-											<?=$compzip?> <?=$compcity?>. , <?=$compcountry?> <br> <?=$compstreet?>
-											<span class="mh-5"><br></span>
-											<i class="fa fa-phone"></i>
-											<?= $user_online? $compphone: ' <a class="only-logged" href="#">Ver tel&eacute;fono</a>' ?> <br>
-											NIT:	<?php echo "$comptype"; ?> <br>
-											pagina web: <a target="_blank" href="//<?=$compweb?>"><?=$compweb?></a>
-										</p>
-									
-										
-									</div>
-						
-								
+              <div class="row">
+                <div class="col-xs-12 social-btns">
+                  
+               
+                </div>
+              </div>
+              
+            </div>
+
+            <div class="col-xs-12 col-sm-8">
+              <ul class="list-group">
+                <li class="list-group-item"><?=$compname?></li>
+                <li class="list-group-item">	<i class="fa fa-map-marker"></i>	<?=$compzip?> <?=$compcity?>. , <?=$compcountry?> <?=$compstreet?></li>
+                <li class="list-group-item"> NIT:	<?php echo "$comptype"; ?> </li>
+                <li class="list-group-item"><i class="fa fa-phone"></i> 	  <?= $user_online?  $compphone:  '<a class="only-logged" href="#">Ver tel&eacute;fono</a>' ?>
+ </li>
+                <li class="list-group-item"><i class="fa fa-amp"></i> pagina web: <a target="_blank" href="//<?=$compweb?>"><?=$compweb?></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+    
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 									
 									<div class="section-title mb-40">
