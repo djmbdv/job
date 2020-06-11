@@ -20,12 +20,11 @@ global $conn;
 	<div id="introLoader" class="introLoading"></div>
 	<div class="container-wrapper">
 		<div class="main-wrapper">
-			<div class="hero" style="background-image:url('https://img.wallpapersafari.com/desktop/1600/900/65/95/gqO8SC.jpg');background-size: cover;">
+			<div class="hero" style="background-image:url('images/prueba33.jpg');background-size: cover;">
 				<div class="container">
-					<h1 class=" text-center text-shadow" style="text-shadow: 3px black;color: whitesmoke;">Aqui<b>Online</b>
+					<h1 class=" text-center text-shadow" style="text-shadow: 3px black;color: whitesmoke;"> <b> <p style="font-family: 'Poppins', sans-serif;"> Encuentra lo que necesitas en un click</p></b>
 					</h1>
 					
-					<h6 class="text-center text-primary">Encuentra lo que buscas en una sola p&aacute;gina</h6>
 					
 					<div class="main-search-form-wrapper">
 						<form action="list.php" method="GET" autocomplete="off">

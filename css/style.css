@@ -90,7 +90,7 @@ Last change:    23/05/2015
 }
 
 .not-transparent-header .navbar-default {
-    background: #20262F;
+    background: #fff;
 }
 
 .logo-wrapper,
@@ -318,7 +318,7 @@ ul.nav-mini li {
 }
 
 ul.nav-mini li a {
-    color: #FFF;
+    color: #fff;
     -webkit-transition: all 0.3s ease-in-out 0s;
     -moz-transition: all 0.3s ease-in-out 0s;
     -ms-transition: all 0.3s ease-in-out 0s;
@@ -402,7 +402,9 @@ ul.nav-mini li a {
     padding: 0;
 }
 
-.navbar-sticky .navbar-nav > li > a {}
+.navbar-sticky .navbar-nav > li > a {
+    color:black;
+}
 
 .navbar-sticky .navbar-nav > li > a:hover,
 .navbar-sticky .navbar-nav > li > a:focus {

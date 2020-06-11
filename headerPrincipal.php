@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="<?=$prefix?>icons/ionicons/css/ionicons.css">
 	<link rel="stylesheet" href="<?=$prefix?>icons/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
 	<link rel="stylesheet" href="<?=$prefix?>icons/rivolicons/style.css">
-	<link rel="stylesheet" href="<?=$prefix?>css/style.css?18" >
+	<link rel="stylesheet" href="<?=$prefix?>css/style.css?19" >
 	<script type="text/javascript" src="<?=$prefix?>js/jquery-1.11.3.min.js"></script>
 	<script type="text/javascript" src="<?=$prefix?>js/jquery-migrate-1.2.1.min.js"></script>
 	<script type="text/javascript" src="<?=$prefix?>js/jquery.easing.1.3.js"></script>
@@ -66,16 +66,19 @@
 	<script type="text/javascript" src="<?=$prefix?>js/easy-ticker.js"></script>
 	<script type="text/javascript" src="<?=$prefix?>js/validator.min.js"></script>
 	<script type="text/javascript" src="<?=$prefix?>js/customs.js?1"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,100;1,400&display=swap" rel="stylesheet">
 </head>
 <style type="text/css">
 .navbar-sticky > .container > .logo-wrapper > .logo > img {
-	max-height: 3rem;
+	max-height: 6rem;
+
 }
 .navbar-sticky {
-	background-color: black;
+	background-color: white;
+	<background-image></background-image>
 }
 .navbar-default{
-	box-shadow: 0px 3px 7.92px 0.08px rgba(0, 0, 0, 0.1);
+	box-shadow: 0px 3px 7.92px 0.08px rgba(0, 0, 0, 0.1);*/
 }
 .navbar-default > .container > .logo-wrapper > .logo > img {
 	max-height: 3.5rem;
@@ -214,7 +217,7 @@ body{
 		<div class="container">
 			<div class="logo-wrapper">
 				<div class="logo">
-					<img class="img img-responsive" src="<?=$prefix?>images/LOGOBLANCo.png"   alt="Logo" />
+					<img class="img img-responsive" src="<?=$prefix?>images/logonegro.png"   alt="Logo" />
 				</div>
 			</div>
 			<div id="navbar" class="navbar-nav-wrapper navbar-arrow">
