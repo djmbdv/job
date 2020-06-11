@@ -16,11 +16,14 @@ global $conn;
 		object-fit:cover; 
 	}
 </style>
-<body class="home" style="padding-top: 0;">
+
+ 
+
+<body class="home" id="home" style="padding-top: 0;">
 	<div id="introLoader" class="introLoading"></div>
 	<div class="container-wrapper">
 		<div class="main-wrapper">
-			<div class="hero" style="background-image:url('images/background-index.png');background-size: cover;">
+			<div class="hero" id="fondito" style="background-image:url('images/background-index.png');background-size: cover;">
 				<div class="container">
 					<h2 class=" text-center text-shadow" style="text-shadow: 3px black;color: whitesmoke;"> <b> <p > Encuentra lo que necesitas en un click</p></b>
 					</h1>
@@ -96,20 +99,19 @@ global $conn;
 
                       <div class="row" >
                           <div class="col col-md-4" style="text-align: -webkit-center;">
-                          <img class="logito" src="images/empresas.png?1" alt="">
+                       <a href="#home"  onclick="cambiarfondo3();">  <img class="logito" src="images/empresas.png?1" alt=""> </a> 
                             <p> <b>Empresas</b>   </p>
 
 
                           </div>
                           <div class="col col-md-4" style="text-align: -webkit-center;">
-                          <img class="logito" src="images/servicios.png?1" alt="">
+                    <a href="#home" onclick="cambiarfondo();">      <img class="logito" src="images/servicios.png?1" alt="" /> </a>
                           <p> <b>Servicios</b>   </p>
-
 
                           </div>
                           <div class="col col-md-4" style="text-align: -webkit-center;">
 
-                          <img class="logito" src="images/productos.png?1" alt="">
+                        <a href="#home" onclick="cambiarfondo2();">    <img class="logito" src="images/productos.png?1" alt="">  </a>
                           <p> <b>Productos</b>   </p>
 
                           </div>
@@ -178,6 +180,32 @@ global $conn;
    <a href="#"><i class="ion-ios-arrow-up"></i></a>
 </div>
 <script type="text/javascript">
+
+
+
+
+    function cambiarfondo(){
+      console.log("aca estoy");
+     var fondo =document.getElementById('fondito');
+     console.log(fondo);
+     fondo.style.backgroundImage = 'url(images/fondo-servicios.png)';
+          }
+          function cambiarfondo2(){
+      console.log("aca estoy");
+     var fondo =document.getElementById('fondito');
+     console.log(fondo);
+     fondo.style.backgroundImage = 'url(images/fondo-productos.png)';
+          }
+          function cambiarfondo3(){
+      console.log("aca estoy");
+     var fondo =document.getElementById('fondito');
+     console.log(fondo);
+     fondo.style.backgroundImage = 'url(images/fondo-empresas.png)';
+          }
+ 
+
+
+
 	function autocomplete(inp) {
   var currentFocus;
   inp.addEventListener("input", function(e) {

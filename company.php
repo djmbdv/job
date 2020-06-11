@@ -138,8 +138,7 @@ if ($complogo == null):?>
                 <li class="list-group-item"><?=$compname?></li>
                 <li class="list-group-item">	<i class="fa fa-map-marker"></i>	<?=$compzip?> <?=$compcity?>. , <?=$compcountry?> <?=$compstreet?></li>
                 <li class="list-group-item"> NIT:	<?php echo "$comptype"; ?> </li>
-                <li class="list-group-item"><i class="fa fa-phone"></i> 	  <?= $user_online?  $compphone:  '<a class="only-logged" href="#">Ver tel&eacute;fono</a>' ?>
- </li>
+                <li class="list-group-item"><i class="fa fa-phone"></i> 	  <?= $user_online?  $compphone:  '<a class="only-logged" href="#">Ver tel&eacute;fono</a>' ?> </li>
                 <li class="list-group-item"><i class="fa fa-amp"></i> pagina web: <a target="_blank" href="//<?=$compweb?>"><?=$compweb?></a></li>
               </ul>
             </div>
