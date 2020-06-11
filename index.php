@@ -20,7 +20,7 @@ global $conn;
 	<div id="introLoader" class="introLoading"></div>
 	<div class="container-wrapper">
 		<div class="main-wrapper">
-			<div class="hero" style="background-image:url('images/prueba33.jpg');background-size: cover;">
+			<div class="hero" style="background-image:url('images/background-index.png');background-size: cover;">
 				<div class="container">
 					<h1 class=" text-center text-shadow" style="text-shadow: 3px black;color: whitesmoke;"> <b> <p style="font-family: 'Poppins', sans-serif;"> Encuentra lo que necesitas en un click</p></b>
 					</h1>
@@ -102,20 +102,20 @@ global $conn;
 
                       <div class="row" >
                           <div class="col col-md-4" style="text-align: -webkit-center;">
-                          <img id="logito" src="images/empresas.png" alt="">
+                          <img class="logito" src="images/empresas.png?1" alt="">
                             <p> <b>Empresas</b>   </p>
 
 
                           </div>
                           <div class="col col-md-4" style="text-align: -webkit-center;">
-                          <img id="logito" src="images/servicios.png" alt="">
+                          <img class="logito" src="images/servicios.png?1" alt="">
                           <p> <b>Servicios</b>   </p>
 
 
                           </div>
                           <div class="col col-md-4" style="text-align: -webkit-center;">
 
-                          <img id="logito" src="images/productos.png" style="width: 230px;" alt="">
+                          <img class="logito" src="images/productos.png?1" alt="">
                           <p> <b>Productos</b>   </p>
 
                           </div>
