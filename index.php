@@ -100,19 +100,19 @@ global $conn;
                       <div class="row" >
                           <div class="col col-md-4" style="text-align: -webkit-center;">
                        <a href="#home"  onclick="cambiarfondo3();">  <img class="logito" src="images/empresas.png?1" alt=""> </a> 
-                            <p> <b>Empresas</b>   </p>
+                            <p style="font-size:30px"> <b>Empresas</b>   </p>
 
 
                           </div>
                           <div class="col col-md-4" style="text-align: -webkit-center;">
                     <a href="#home" onclick="cambiarfondo();">      <img class="logito" src="images/servicios.png?1" alt="" /> </a>
-                          <p> <b>Servicios</b>   </p>
+                          <p style="font-size:30px"> <b>Servicios</b>   </p>
 
                           </div>
                           <div class="col col-md-4" style="text-align: -webkit-center;">
 
                         <a href="#home" onclick="cambiarfondo2();">    <img class="logito" src="images/productos.png?1" alt="">  </a>
-                          <p> <b>Productos</b>   </p>
+                          <p style="font-size:30px"> <b>Productos</b>   </p>
 
                           </div>
                   </div>
