@@ -135,7 +135,7 @@ foreach($result as $row):
 				<div class="row">
 					<div class="col-sm-7 col-md-8">
 						<div class="sub-category col-sm-7">
-							<a><?= $row['category'] ?></a>
+							<a><?= $row['category'] ?> <?=$row['job_id']?></a>
 						</div>
 						<div class="thumbails col-sm-5" >
 <?php 
@@ -146,7 +146,7 @@ foreach($result as $row):
  ?>
 						
 							<div class="thumb" >
-								<img class="img img-responsive img-thumb" otro="<?=$thumb['path']?>" src="app/thumbs.php?id_image=<?=$thumb['id']?>"/>
+								<img class="img img-responsive img-thumb" otro="<?=$thumb['path']?>" src="app/thumb.php?id=<?=$thumb['id']?>"/>
 							</div>
 <?php
 	endforeach; ?>
