@@ -111,7 +111,7 @@ include_once "../headerPrincipal.php";
 
 									<div class="admin-section-title">
 									
-										<h2>Posted Jobs</h2>
+										<h2>Servicios y productos publicados </h2>
 										
 									</div>
 									<?php require 'constants/check_reply.php'; ?>
@@ -137,17 +137,17 @@ include_once "../headerPrincipal.php";
 										   $jobcountry = $row['country'];
 										   $type = $row['type'];
 										   $title = $row['title'];
-										   $deadline = $row['closing_date'];
+										  // $deadline = $row['closing_date'];
 										   if ($type == "Freelance") {
-											 $sta = '<span class="label label-success">Freelance</span>';
+											 $sta = '';
 											  
 										   }
 										   if ($type == "Part-time") {
-											 $sta = '<span class="label label-danger">Part-time</span>';
+											 $sta = '';
 											  
 										   }
 										   if ($type == "Full-time") {
-											 $sta = '<span class="label label-warning">Full-time</span>';
+											 $sta = '';
 											  
 										   }
 										   
@@ -182,16 +182,15 @@ include_once "../headerPrincipal.php";
 											<div class="content">
 											<h4 class="heading"><?php echo "$title"; ?></h4>
 											<p class="location"><i class="fa fa-map-marker text-primary"></i> <strong class="text-primary"><?php echo "$jobcountry" ?></strong> - <?php echo "$jobcity" ?></p>
-											<p class="date text-muted font12 font-italic">Deadline - <?php echo "$deadline"; ?></p>
 											</div>
 															
 											</a>
 														
 											<div class="content-bottom">
 											<div class="sub-category">
-											<a target="_blank" href="view-applicants.php?jobid=<?php echo $row['job_id']; ?>">Applicants</a>
-											<a href="edit-job.php?jobid=<?php echo $row['job_id']; ?>">Edit Job</a>
-											<a onclick = "return confirm('Are you sure you want to delete this job ?')" href="app/drop-job.php?id=<?php echo $row['job_id']; ?>">Delete Job</a>
+											<!-- <a target="_blank" href="view-applicants.php?jobid=<?php echo $row['job_id']; ?>">Applicants</a>-->
+											<a href="edit-job.php?jobid=<?php echo $row['job_id']; ?>">Editar</a>
+											<a onclick = "return confirm(' Estas seguro de eliminar este post?')" href="app/drop-job.php?id=<?php echo $row['job_id']; ?>">Eliminar</a>
 											</div>
 											</div>
 														
