@@ -168,13 +168,13 @@ include_once 'headerPrincipal.php';
 									<p><?= $jobdescription ?></p>
 									<hr>
 
-									<h3>Actividades que puedo realizar</h3>
+							<!--		<h3>Actividades que puedo realizar</h3>
                                     <p><?= $jobrespo ?></p>
 									<hr>
 
 									<h3>Habilidades</h3>
                                     <p><?= $jobreq ?></p>
-									<hr>
+									<hr> -->
 
 								</div>
 								<div class="tab-style-01">
@@ -197,21 +197,15 @@ include_once 'headerPrincipal.php';
 
 		$jobtype = $row['type'];
 		if ($jobtype == "Freelance") {
-		$sta = '<div class="job-label label label-success">
-				Freelance
-				</div>';
+		$sta = '';
 						  
 		}
 		if ($jobtype == "Part-time") {
-		$sta = '<div class="job-label label label-danger">
-				Part-time
-				</div>';
+		$sta = '';
 						  
 		}
 		if ($jobtype == "Full-time") {
-		      $sta = '<div class="job-label label label-warning">
-				Full-time
-				</div>';
+		      $sta = '';
 						  
 		} ?>
 													<a href="explore-job.php?jobid=<?= $row['job_id']; ?>" class="recent-job-item clearfix">
