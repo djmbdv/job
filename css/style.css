@@ -1,58 +1,3 @@
-/*------------------------------------------------------------------
-Project:        HaNgan
-Author:         Crenoveative
-URL:            http://crenoveative.com/ 
-Version:        1.0.0
-Created:        23/05/2016
-Last change:    23/05/2015
--------------------------------------------------------------------*/
-
-
-/*------------------------------------------------------------------
-* Table of Content
-* 1. Header
-* 2. Sticky Header
-* 3. Hero
-* 4. Search Form
-* 5. Featured Items
-* 6. Team
-* 7. Tab
-* 8. Counting
-* 9. 404 page
-* 10. Sorting
-* 11. Post Hero
-* 12. Latest Job Ticker
-* 13. Breadcrumb
-* 14. Category
-* 15. Sidebar
-* 16. Blog
-* 17. Social Share
-* 18. Pager
-* 19. Job
-* 20. Job Detail
-* 21. Resume
-* 22. Browse Job
-* 23. Apply Job
-* 24. Employer
-* 25. Employee
-* 26. Location
-* 27. Testimonial
-* 28. Popular Ralated
-* 29. Newsletter
-* 30. Footer
-* 31. Admin
-* 32. Pricing
-* 33. Contact Us
-* 34. Faq
-* 35. Static Page
-* 36. Login and Register
--------------------------------------------------------------------*/
-
-
-/**
- * Header
- */
-
 .navbar-default {
     background: transparent;
 }
@@ -596,7 +541,7 @@ ul.nav-mini li a {
     width: 74%;
     margin: 0 auto;
     position: relative;
-    border-radius: 8px;
+    border-radius: 4px;
     padding: 40px 20px;
     background: rgba(18, 21, 22, .7);
 }

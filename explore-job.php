@@ -31,18 +31,8 @@ if ($rec == "0") {
 		$jobdescription = $row['description'];
 		$jobrespo = $row['responsibility'];
 		$jobreq = $row['requirements'];
-		$closingdate = $row['closing_date'];
 		$opendate = $row['date_posted'];
 		$compid = $row['company'];
-		if ($jobtype == "Freelance") {
-			$sta = '<span class="label label-success">Freelance</span>';
-		}
-		if ($jobtype == "Part-time") {
-			$sta = '<span class="label label-danger">Part-time</span>';									  
-		}
-		if ($jobtype == "Full-time") {
-			$sta = '<span class="label label-warning">Full-time</span>';										  
-		}
 	}
 }					  
 
@@ -132,19 +122,11 @@ include_once 'headerPrincipal.php';
 									
 									<ul class="meta-list clearfix">
 										<li>
-											<h4 class="heading">Ubicacion:</h4>
+											<h4 class="heading">Ubicaci&oacute;n:</h4>
 											<?=$jobcity?> , <?=$jobcountry?>
 										</li>
 										<li>
-											<h4 class="heading">expiracion de servicio:</h4>
-											<?=$post_month; ?> <?php echo "$post_date"; ?>, <?php echo "$post_year"; ?>
-										</li>
-										<li>
-											<h4 class="heading">Experiencia</h4>
-											<?=$experience?> 
-										</li>
-										<li>
-											<h4 class="heading">Posteado el: </h4>
+											<h4 class="heading">Publicado el: </h4>
 											<?=$opendate ?>
 										</li>
 									</ul>
