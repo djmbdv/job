@@ -137,63 +137,49 @@ if(isset($_GET["p"]))$producto = true;
 													</div>
 													<div class="form-group">
 														<label>Categoria del servicio</label>
-															<select name="category" required class="selectpicker show-tick form-control" data-live-search="true">
+														<select name="category" required class="selectpicker show-tick form-control" data-live-search="true">
 															<option disabled value="">Seleccionar</option>
 <?php
-	try {
+try{
                                                            
 
-	
-                                                           $stmt = $conn->prepare("SELECT * FROM tbl_categories ORDER BY category");
-                                                           $stmt->execute();
-                                                           $result = $stmt->fetchAll();
-  
-                                                           foreach($result as $row)
-                                                           {
-		                                                    ?> <option value="<?php echo $row['category']; ?>"><?php echo $row['category']; ?></option> <?php
-	 
-	                                                        }
 
-					  
-	                                                       }catch(PDOException $e)
-                                                           {
+   $stmt = $conn->prepare("SELECT * FROM tbl_categories ORDER BY category");
+   $stmt->execute();
+   $result = $stmt->fetchAll();
 
-                                                           }
-	
-														   ?>
+   foreach($result as $row):?>
+															<option value="<?=$row['category']?>"><?=['category']?></option>
+<?php
+	endforeach;
+}catch(PDOException $e){}?>
+
 														</select>
-											
-														
 													</div>
-													
-													
 												</div>
-												
 												<div class="clear"></div>
-												
 												<div class="col-sm-4 col-md-4">
-												
-													
 												</div>
-												
 												<div class="clear"></div>
 												<div class="clear"></div>
-												
 												<div class="col-sm-12 col-md-12">
-												
 													<div class="form-group bootstrap3-wysihtml5-wrapper">
 														<label>Describa el servicio</label>
 														<textarea class="form-control bootstrap3-wysihtml" name="description" required placeholder="Escriba una descripcion" style="height: 100px;"></textarea>
 													</div>
-													
 												</div>
-												
 												<div class="clear"></div>
-												
 												<div class="clear"></div>
 												<div class="form-group">
-										
-											        <label>Upload Image File:</label>
+													<div class="file-upload-wrapper">
+													  <input type="file" id="input-file-now" class="file-upload" />
+													</div>
+												</div>
+												<div class="form-group">
+											        <label>Ingrese imagenes del servicio:</label>
+											        <div class="card" id="file-zone">
+											        	Hola
+											        </div>
 											        <input name="userImage" id="userImage" type="file" class="demoInputBox" multiple="" />
 											    </div>
 											    <div><input type="submit" id="btnSubmit" value="Submit" class="btnSubmit" /></div>
@@ -233,31 +219,7 @@ if(isset($_GET["p"]))$producto = true;
 <div id="back-to-top">
    <a href="#"><i class="ion-ios-arrow-up"></i></a>
 </div>
-<script type="text/javascript">
-$(document).ready(function() { 
-    $('#uploadForm').submit(function(e) {	
-        if($('#userImage').val()) {
-            e.preventDefault();
-            $('#loader-icon').show();
-            $(this).ajaxSubmit({ 
-                target:   '#targetLayer', 
-                beforeSubmit: function() {
-                    $("#progress-bar").width('0%');
-                },
-                uploadProgress: function (event, position, total, percentComplete){	
-                    $("#progress-bar").width(percentComplete + '%');
-                    $("#progress-bar").html('<div id="progress-status">' + percentComplete +' %</div>')
-                },
-                success:function (){
-                    $('#loader-icon').hide();
-                },
-                resetForm: true 
-            }); 
-            return false; 
-        }
-    });
-});
-</script>
+<script type="text/javascript">$('.file-upload').file_upload();</script>
 <script type="text/javascript" src="../js/fileinput.min.js"></script>
 <script type="text/javascript" src="../js/customs-fileinput.js"></script>
 <script type="text/javascript" src="../js/jquery.sheepItPlugin.js"></script>
