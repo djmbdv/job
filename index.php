@@ -187,6 +187,16 @@ $(function(){
   var colorTexto3 = document.getElementById('textoNav3'); 
 var lrNav1 = document.getElementById('lrNav1');
 var lrNav2 = document.getElementById('lrNav2');
+colorTexto1.style.color= 'white';
+            colorTexto2.style.color= 'white';
+            colorTexto3.style.color= 'white';
+            lrNav1.style.color= 'white';
+            lrNav2.style.color= 'white';
+
+var logo= document.getElementById('logo-logo');
+console.log(logo);
+logo.src='images/LOGOBLANCO.png';
+
 
     $(document).scroll(function(){
         if($(this).scrollTop() > 18) {
