@@ -4,7 +4,7 @@ require_once "../constants/connection.php";
 
 global $myID;
 global $conn;
-
+print_r($_GET);
 if(!$user_online || !isset($_GET["voto"]) || !isset($_GET['id']))die();
 $id = $_GET["id"];
 $voto = $_GET["voto"];

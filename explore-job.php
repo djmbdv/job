@@ -115,7 +115,10 @@ include_once 'headerPrincipal.php';
 									<h2 class="heading mb-15"><?=$jobtitle?></h2>
 									<div class="meta-div clearfix mb-25">
 <?php
-
+	$stmt2 = $conn->prepare("select count(value) as num, avg(value) as prom from tbl_votes where job_id = :job_id");
+		$stmt2->bindValue(":job_id",$jobid);
+		$stmt2->execute();
+		$votos = $stmt2->fetchObject();
 	if($user_online):
 
 
@@ -131,10 +134,7 @@ include_once 'headerPrincipal.php';
 										</div>
 <?php
 	else:
-		$stmt2 = $conn->prepare("select count(value) as num, avg(value) as prom from tbl_votes where job_id = :job_id");
-		$stmt2->bindValue(":job_id",$jobid);
-		$stmt2->execute();
-		$votos = $stmt2->fetchObject()
+	
 		?>
 										<span class="stars-outer" data-rating="5">
 					              			<span class="stars-inner" style="width: <?=(($votos->prom/5)*100)."%" ?>;" ></span>
@@ -309,11 +309,10 @@ include_once 'headerPrincipal.php';
 		$(e.srcElement).parent().addClass("voting");
 		$(e.srcElement).parent().find("a:lt("+$(e.srcElement).attr("data-value")+  ")").addClass("is-selected");
 		$(e.srcElement).parent().find("a:gt("+(parseInt( $(e.srcElement).attr("data-value"))-1) +")").removeClass("is-selected");
-		$.post("app/starts.php",{
-			"jobid":"<?=$jobid?>",
-			"value":$(e.srcElement).attr("data-value")
+		$.get("app/starts.php",{
+			"id":"<?=$jobid?>",
+			"voto":$(e.srcElement).attr("data-value")
 		}).done((data)=>{
-			alert(data);
 			if(data== 1)$(e.srcElement).parent().removeClass("voting");
 		});
 	});
