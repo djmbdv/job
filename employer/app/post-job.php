@@ -7,6 +7,11 @@ require '../../constants/uniques.php';
 global $conn;
 
 
+
+
+
+print_r($_FILES);
+die();
 if(!$user_online){
 	header('location: ../../');
 	die();

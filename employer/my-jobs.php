@@ -138,29 +138,12 @@ include_once "../headerPrincipal.php";
 										   $type = $row['type'];
 										   $title = $row['title'];
 										  // $deadline = $row['closing_date'];
-										   if ($type == "Freelance") {
-											 $sta = '';
-											  
-										   }
-										   if ($type == "Part-time") {
-											 $sta = '';
-											  
-										   }
-										   if ($type == "Full-time") {
-											 $sta = '';
-											  
-										   }
+										 
 										   
 										   ?>
 										   										  <div class="GridLex-col-4_sm-6_xs-6_xss-12">
 												
 											<div class="job-item-grid">
-													
-
-											<div class="labeling">
-											<?php echo "$sta"; ?>
-											</div>
-														
 											<a target="_blank" href="../explore-job.php?jobid=<?php echo $row['job_id']; ?>">
 														
 											<div class="image">

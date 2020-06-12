@@ -74,7 +74,7 @@ if(isset($_GET["p"]))$producto = true;
 											<h3 class="text-left">Publicar Nuevo <?=$producto?"Producto":"Servicio"?></h3>
 										</div>
 
-										<form class="post-form-wrapper" action="app/post-job.php" method="POST" autocomplete="off">
+										<form class="post-form-wrapper" action="app/post-job.php" method="POST" autocomplete="off" enctype="multipart/form-data">
 								
 											<div class="row gap-20">
 											<?php include 'constants/check_reply.php'; ?>
