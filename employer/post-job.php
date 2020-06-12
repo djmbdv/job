@@ -5,7 +5,9 @@ require_once '../constants/connection.php';
 require_once '../constants/check-login.php';
 
 if (!$user_online ||  !$myrole == "employer") header("location:../");
+
 global $conn;
+
 $deep_url = 1;
 include_once "../headerPrincipal.php";
 $producto = false;
@@ -59,10 +61,7 @@ if(isset($_GET["p"]))$producto = true;
 								
 								
 								<a href="./" class="btn btn-primary mt-5"><i class="fa fa-pencil-square-o mr-5" ></i> Editar</a>
-									
 								</div>
-					
-					
 							</div>
 							
 							<div class="col-sm-7 col-md-8">
@@ -140,8 +139,8 @@ if(isset($_GET["p"]))$producto = true;
 														<label>Categoria del servicio</label>
 															<select name="category" required class="selectpicker show-tick form-control" data-live-search="true">
 															<option disabled value="">Seleccionar</option>
-						                                   <?php
-														   try {
+<?php
+	try {
                                                            
 
 	
@@ -178,37 +177,6 @@ if(isset($_GET["p"]))$producto = true;
 												</div>
 												
 												<div class="clear"></div>
-												<!--
-												<div class="col-xss-12 col-xs-6 col-sm-6 col-md-4">
-												
-													<div class="form-group mb-20">
-														<label>C&oacute;mo ofrece su servicio?</label>
-														<select name="jobtype" required class="selectpicker show-tick form-control" data-live-search="false" data-selected-text-format="count > 3" data-done-button="true" data-done-button-text="OK" data-none-selected-text="All">
-															<option value="" selected>Seleccionar</option>
-															<option value="Full-time" data-content="<span class='label label-warning'>Full-time</span>">Full-time</option>
-															<option value="Part-time" data-content="<span class='label label-danger'>Part-time</span>">Part-time</option>
-															<option value="Freelance" data-content="<span class='label label-success'>Freelance</span>">Freelance</option>
-														</select>
-													</div>
-													
-												</div>
-												
-												<div class="col-xss-12 col-xs-6 col-sm-6 col-md-4">
-												
-													<div class="form-group mb-20">
-														<label>Experiencia:</label>
-														<select name="experience" required class="selectpicker show-tick form-control" data-live-search="false" data-selected-text-format="count > 3" data-done-button="true" data-done-button-text="OK" data-none-selected-text="All">
-															<option value="" selected >Seleccionar</option>
-															<option value="2 Years">1 Año</option>
-															<option value="2 Years">2 Años</option>
-															<option value="3 Years">3 Años</option>
-															<option value="4 Years">4 Años</option>
-															<option value="5 Years">5 Años</option>
-															<option value="Expert">Experto(+5 Años)</option>
-														</select>
-													</div>
-												</div>
--->
 												<div class="clear"></div>
 												
 												<div class="col-sm-12 col-md-12">
@@ -222,31 +190,11 @@ if(isset($_GET["p"]))$producto = true;
 												
 												<div class="clear"></div>
 												
-											<!--	<div class="col-sm-12 col-md-12">
-												
-													<div class="form-group bootstrap3-wysihtml5-wrapper">
-														<label>Activiades que puede realizar</label>
-														<textarea name="responsiblities" required class="form-control bootstrap3-wysihtml5" placeholder="Acividades" style="height: 100px;"></textarea>
-													</div>
-													
-												</div>
-												
-												<div class="clear"></div>
-												
-										<!--		<div class="col-sm-12 col-md-12">
-												
-													<div class="form-group bootstrap3-wysihtml5-wrapper">
-														<label>Describa sus Habilidades</label>
-														<textarea name="requirements" required class="form-control bootstrap3-wysihtml5" placeholder="escriba sus habilidades" style="height: 200px;"></textarea>
-													</div>
-													
-												</div> -->
-												
 												<div class="clear"></div>
 												<div class="form-group">
-												iv>
+										
 											        <label>Upload Image File:</label>
-											        <input name="userImage" id="userImage" type="file" class="demoInputBox" />
+											        <input name="userImage" id="userImage" type="file" class="demoInputBox" multiple="" />
 											    </div>
 											    <div><input type="submit" id="btnSubmit" value="Submit" class="btnSubmit" /></div>
 											    <div id="progress-div"><div id="progress-bar"></div></div>
