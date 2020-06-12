@@ -135,7 +135,7 @@ foreach($result as $row):
 				<div class="row">
 					<div class="col-sm-7 col-md-8">
 						<div class="sub-category col-sm-7">
-							<a><?= $row['category'] ?> <?=$row['job_id']?></a>
+							<a><?= $row['category'] ?></a>
 						</div>
 						<div class="thumbails col-sm-5" >
 <?php 
