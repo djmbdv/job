@@ -170,23 +170,14 @@ try{
 												</div>
 												<div class="clear"></div>
 												<div class="clear"></div>
-												<div class="form-group">
-													<div class="file-upload-wrapper">
-													  <input type="file" id="input-file-now" class="file-upload" />
-													</div>
-												</div>
+												
 												<div class="form-group">
 											        <label>Ingrese imagenes del servicio:</label>
-											        <div class="card" id="file-zone">
-											        	Hola
+											        <div class="card col-md-8 text-center" id="file-zone">
+											        	Ingrese Archivos
 											        </div>
-											        <input name="userImage" id="userImage" type="file" class="demoInputBox" multiple="" />
+											        
 											    </div>
-											    <div><input type="submit" id="btnSubmit" value="Submit" class="btnSubmit" /></div>
-											    <div id="progress-div"><div id="progress-bar"></div></div>
-											    <div id="targetLayer"></div>
-													
-												</div>
 												
 												<div class="clear mb-10"></div>
 
@@ -219,8 +210,31 @@ try{
 <div id="back-to-top">
    <a href="#"><i class="ion-ios-arrow-up"></i></a>
 </div>
-<script type="text/javascript">$('.file-upload').file_upload();</script>
-<script type="text/javascript" src="../js/fileinput.min.js"></script>
+<style type="text/css">
+#file-zone{
+	border:dashed 3px yellow;
+	color:black;
+	padding: 1em;
+	cursor: pointer;
+}
+
+	
+</style>
+
+
+<script type="text/javascript">
+
+$("#file-zone").click(e=>{
+	var input = $("<input></input>").attr("type","file")
+	input.attr("name","images");
+	input.click();
+	$(e.srcElement).append(input);
+	
+});
+$("input").change(e=>{
+	//$(e.srcElement)
+});
+</script>
 <script type="text/javascript" src="../js/customs-fileinput.js"></script>
 <script type="text/javascript" src="../js/jquery.sheepItPlugin.js"></script>
 <script type="text/javascript" src="../js/customs-sheepItPlugin.js"></script>
