@@ -33,11 +33,8 @@ require 'headerPrincipal.php';
 <body class="not-transparent-header">
 	<div class="container-wrapper">
 		<div class="main-wrapper">
-		
 			<div class="breadcrumb-wrapper">
-			
 				<div class="container">
-				
 					<ol class="breadcrumb-list booking-step">
 						<li><a href="./">Inicio</a></li>
 						<li><span>Empresas</span></li>
@@ -103,9 +100,9 @@ require 'headerPrincipal.php';
 						</div>
 					</div>
 					
-								<div class="pager-wrapper">
+					<div class="pager-wrapper">
 								
-						        <ul class="pager-list">
+						<ul class="pager-list">
 							<?php
 
 	
@@ -134,17 +131,14 @@ require 'headerPrincipal.php';
 								
 								?>
 
-						        </ul>	
-					
-					            </div>
+							</ul>	
+						</div>
+					</div>
 				</div>
 			</div>
 			<?php include_once "footer.php"; ?>
 		</div>
-
-
 	</div>
-
 <div id="back-to-top">
    <a href="#"><i class="ion-ios-arrow-up"></i></a>
 </div>

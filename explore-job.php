@@ -61,21 +61,6 @@ foreach($result as $row){
 }
 
 					
-	
-
-$today_date = strtotime(date('Y/m/d'));
-$last_date = date_format(date_create_from_format('d/m/Y', $closingdate), 'Y/m/d');
-$post_date = date_format(date_create_from_format('d/m/Y', $closingdate), 'd');
-$post_month = date_format(date_create_from_format('d/m/Y', $closingdate), 'F');
-$post_year = date_format(date_create_from_format('d/m/Y', $closingdate), 'Y');
-$conv_date = strtotime($last_date);
-
-if ($today_date > $conv_date){
-	$jobexpired = true;
-}else{
-	$jobexpired = false;
-}
-
 
 $protocol = $isHttps? 'https://':'http://';
 $local = LOCAL ? "/job" : "";
@@ -142,7 +127,7 @@ include_once 'headerPrincipal.php';
 					            		<span>(<?=$votos->num?> Votos)</span>
 <?php
 	endif; ?>										
-										<?= $sta  ?>
+									
 									</div>
 									
 									<ul class="meta-list clearfix">

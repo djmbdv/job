@@ -43,6 +43,7 @@
 	<link rel="stylesheet" href="<?=$prefix?>icons/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
 	<link rel="stylesheet" href="<?=$prefix?>icons/rivolicons/style.css">
 	<link rel="stylesheet" href="<?=$prefix?>css/style.css?25" >
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,100;1,400&display=swap" rel="stylesheet">
 	<script type="text/javascript" src="<?=$prefix?>js/jquery-1.11.3.min.js"></script>
 	<script type="text/javascript" src="<?=$prefix?>js/jquery-migrate-1.2.1.min.js"></script>
 	<script type="text/javascript" src="<?=$prefix?>js/jquery.easing.1.3.js"></script>
@@ -65,8 +66,6 @@
 	<script type="text/javascript" src="<?=$prefix?>js/slick.min.js"></script>
 	<script type="text/javascript" src="<?=$prefix?>js/easy-ticker.js"></script>
 	<script type="text/javascript" src="<?=$prefix?>js/validator.min.js"></script>
-	<script type="text/javascript" src="<?=$prefix?>js/customs.js?1"></script>
-	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,100;1,400&display=swap" rel="stylesheet">
 </head>
 <style type="text/css">
 .navbar-sticky > .container > .logo-wrapper > .logo > img {

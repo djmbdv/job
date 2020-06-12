@@ -1,19 +1,17 @@
 <?php
 require_once '../constants/settings.php';
 require_once '../constants/connection.php';
+require_once '../constants/check-login.php';
+
 date_default_timezone_set($default_timezone);
 
 
 $apply_date = date('m/d/Y');
 
-session_start();
-if (isset($_SESSION['logged']) && $_SESSION['logged'] == true) {
-	$myid = $_SESSION['myid'];	
-	$myrole = $_SESSION['role'];
+if ($user_online) {
 	$opt = $_GET['opt'];
 }else die();
 
-session_commit();
 if ($myrole == "employee"){
     $stmt = $conn->prepare("SELECT * FROM tbl_job_applications WHERE member_no = '$myid' AND job_id = :jobid");
 	$stmt->bindParam(':jobid', $opt);

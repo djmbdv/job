@@ -17,48 +17,42 @@ $company_id = $_GET['ref'];
 
 
 
-    try {
+try {
 
-	
-    $stmt = $conn->prepare("SELECT * FROM tbl_users WHERE member_no = :memberno AND role = 'employer'");
+
+	$stmt = $conn->prepare("SELECT * FROM tbl_users WHERE member_no = :memberno AND role = 'employer'");
 	$stmt->bindParam(':memberno', $company_id);
-    $stmt->execute();
-    $result = $stmt->fetchAll();
-	$rec = count($result);
+	$stmt->execute();
+//	$result = $stmt->fetchAll();
+	$rec = $stmt->rowCount();
 	
-	if ($rec == "0") {
-	header("location:./");	
-	}else{
+if ($rec == 0) {
+	header("location:./");
+	die();	
+}else{
+	$row = $stmt->fetchObject();
+	$compname = $row->first_name;
+	$compesta = $row->byear;
+	$compmail  = $row->email;
+	$comptype = $row->title;
+	$compphone = $row->phone;
+	$compcity = $row->city;
+	$compstreet = $row->street;
+	$compzip = $row->zip;
+	$compcountry = $row->country;
+	$compbout = $row->about;
+	$complogo = $row->avatar;
+	$compserv = $row->services;
+	$compexp = $row->expertise;
+	$compweb = $row->website;
+	$comppeopl = $row->people;
+}
 
-    foreach($result as $row)
-    {
-		
-    $compname = $row['first_name'];
-	$compesta = $row['byear'];
-    $compmail  = $row['email'];
-	$comptype = $row['title'];
-    $compphone = $row['phone'];
-	$compcity = $row['city'];
-	$compstreet = $row['street'];
-	$compzip = $row['zip'];
-    $compcountry = $row['country'];
-    $compbout = $row['about'];
-	$complogo = $row['avatar'];
-	$compserv = $row['services'];
-	$compexp = $row['expertise'];
-	$compweb = $row['website'];
-	$comppeopl = $row['people'];
-	
-	}
-	
-	}
+				  
+}catch(PDOException $e){
 
-					  
-	}catch(PDOException $e)
-    {
- 
-    }
-	
+}
+
 
 
 if (isset($_GET['page'])) {
@@ -153,30 +147,6 @@ if ($complogo == null):?>
 </div>
 
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 									
 									<div class="section-title mb-40">
 						
@@ -220,18 +190,15 @@ if ($complogo == null):?>
 										}
 										 ?>
 											</div>
-											
 											<div class="content">
 												<div class="job-item-list-info">
-												
-													<div class="row">
-													
+													<div class="row">													
 														<div class="col-sm-7 col-md-8">
 														
 															<h4 class="heading"><?php echo $row['title']; ?></h4>
 															<div class="meta-div clearfix mb-25">
-															<span>a <a href="company.php?ref=<?php echo "$company_id"; ?>"><?php echo "$compname"; ?></a></span>
-															<?php echo "$sta"; ?>
+															<span>a <a href="company.php?ref=<?=$company_id?>"><?=$compname?></a></span>
+														
 															</div>
 															
 															<p class="texing"><?php echo $row['description']; ?></p>
