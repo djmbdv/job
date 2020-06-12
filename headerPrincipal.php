@@ -216,31 +216,31 @@ body{
 		<div class="container">
 			<div class="logo-wrapper">
 				<div class="logo">
-					<img class="img img-responsive" src="<?=$prefix?>images/logonegro.png"   alt="Logo" />
+					<img class="img img-responsive" id="logo-logo" src="<?=$prefix?>images/LOGOBLANCO.PNG"   alt="Logo" />
 				</div>
 			</div>
 			<div id="navbar" class="navbar-nav-wrapper navbar-arrow">
 				<ul class="nav navbar-nav" id="responsive-menu">
 					<li>
-						<a  href="<?=$prefix?>./">Inicio</a>
+						<a  href="<?=$prefix?>./"><p id="textoNav1" style="color:white">Inicio</p></a>
 					</li>
 					<li>
-						<a  href="<?=$prefix?>list.php">Lista de Servicios</a>
+						<a  href="<?=$prefix?>list.php"> <p id="textoNav2" style="color:white">Lista de servicios </p></a>
 					</li>
 					<li> 
-						<a href="<?=$prefix?>contact.php">Contacto</a>
+						<a href="<?=$prefix?>contact.php"><p id="textoNav3" style="color:white">Contacto </p></a>
 					</li>
 				</ul>
 			</div>
 
-			<div  class="nav-mini-wrapper">
+			<div class="nav-mini-wrapper">
 				<ul  class="nav-mini sign-in">
 <?php if (isset($user_online ) && $user_online == true): ?>
 				    <li><a  href="<?=$prefix?>logout.php">Cerrar Sesión</a></li>
 					<li><a  href="<?=$prefix?><?=$myrole?>">Perfil</a></li>
 <?php else: ?>
-					<li><a  href="<?=$prefix?>login.php">Ingresar</a></li>
-					<li><a  href="<?=$prefix?>register.php">Registro</a></li>
+					<li><a id="lrNav1"  style="color:white" href="<?=$prefix?>login.php">Ingresar</a></li>
+					<li><a id="lrNav2"  style="color:white" href="<?=$prefix?>register.php">Registro</a></li>
 <?php endif;?>
 				</ul>
 			</div>
