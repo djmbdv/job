@@ -5846,7 +5846,6 @@ ul.static-page-menu li.active a {
 
 .login-container-wrapper .login-box-wrapper {
     border: 1px solid #DDD;
-    border-radius: 3px;
     -webkit-box-shadow: 0px 0px 11px -1px rgba(0, 0, 0, 0.16);
     -moz-box-shadow: 0px 0px 11px -1px rgba(0, 0, 0, 0.16);
     box-shadow: 0px 0px 11px -1px rgba(0, 0, 0, 0.16);
@@ -5899,7 +5898,9 @@ ul.static-page-menu li.active a {
     border-radius: 0px;
 }
 
-
+.alert{
+    border-radius: 0px;
+}
 .modal-content {
     border: none;
     border-radius: 0px;

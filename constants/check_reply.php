@@ -14,7 +14,7 @@ if (isset($_GET['r'])):
     foreach($result as $row):
         $description = $row['description'];
         $type = $row['type']; ?>
-<div class="alert alert-'.$type.'">
+<div class="alert alert-<?=$type?>">
     <?= $description ?>
 </div>
     <?php 

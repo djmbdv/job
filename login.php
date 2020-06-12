@@ -49,7 +49,7 @@ function reset_text(){
                         <?php
 							include 'constants/check_reply.php';	
 						?>
-                            <form name="frm" action="app/auth.php" method="POST" autocomplete="off">
+                            <form id="frm-login" name="frm" action="app/auth.php" method="POST" autocomplete="off">
                             	<div class="login-box-wrapper">
                             		<div class="modal-body">
                             		<h4 class="text-center" style="padding-bottom: 20px;">Ingresa a tu cuenta</h4>			
