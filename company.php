@@ -152,7 +152,7 @@ try {
 	if ($complogo == null) {
 		echo '<center><img class="autofit3" alt="image"  src="images/blank.png"/></center>';
 	}else{
-		echo '<center><img class="autofit3" alt="image" title="'.$compname.'" width="180" height="100" src="http://127.0.0.1/job/app/image-profiles.php?id='.$company_id .'"/></center>';	
+		echo '<center><img class="autofit3" alt="image" title="'.$compname.'" width="180" height="100" src="app/image-profiles.php?id='.$company_id .'"/></center>';	
 }?>
 											</div>
 											<div class="content">
