@@ -1,6 +1,22 @@
 <?php
 
 require_once 'constants/connection.php';?>
+<div id="messageModal" class="modal fade modal-dialog" role="dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Informaci&oacute;n</h4>
+      </div>
+      <div class="modal-body">
+        <p>Un email ha sido enviado a su correo para la activacion de su cuenta.</p>
+      </div>
+      <div class="modal-footer">
+        <button id="closeButton" type="button" class="btn btn-default" class="close-modal-info">Close</button>
+      </div>
+    </div>
+</div>
 <form name="frm" class="form-employer" action="app/create-account.php" method="POST" role="form" error="0">
 <div class="login-box-wrapper">
 <div class="modal-body">
@@ -141,11 +157,11 @@ require_once 'constants/connection.php';?>
 		}
 		var data = $(e.srcElement).serializeArray();
 		$.post('app/create-account.php', data, result =>{
-			switch(result){
-				case 1: alert("Cuenta registrada exitosamente. Ingrese a su correo para confimar el registro.");
-				break;
-				default: alert(result);
-			};	
+			if(result == 1) $("#messageModal").modal();
 		});
+	});
+	$("#closeButton").click(e=>{
+		console.log("cerrar");
+		window.location.href = "login.php";
 	});
 </script>

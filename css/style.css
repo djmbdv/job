@@ -5827,17 +5827,12 @@ ul.static-page-menu li.active a {
 
 /*    @djmbdv added        */
 
-.has-feedback label~.form-control-feedback {
-    top: 28px;
-}
-
 @media (min-width: 768px){
     .modal-content {
         -webkit-box-shadow: 0 5px 15px rgba(0,0,0,.5);
         /* box-shadow: 0 5px 15px rgba(0,0,0,.5); */
     }
 }
-
 .modal{
     border: none;
     border-radius: 0px;

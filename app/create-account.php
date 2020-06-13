@@ -12,7 +12,6 @@ function generate_verification_token($email){
 	$stmt->bindParam(':email', $email);
 	$stmt->bindParam(':token', $token);
 	$stmt->execute();
-	echo "Tonken generado: $token";
 	return $token;
 }
 
@@ -101,7 +100,6 @@ function register_as_employer() {
 		$stmt->bindParam(':memberno', $comp_no);
 		$stmt->bindParam(':verified', $verified);
 	    $stmt->execute();
-	    echo true;
 	    return true;
 	}catch(PDOException $e){
 		print_r($e);
