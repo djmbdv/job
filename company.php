@@ -101,7 +101,7 @@ if ($complogo == null):?>
 <?php
 	else:?>
 														<center>
-															<img alt="image" title="<?=$compname?>" width="180" height="100" src="http://127.0.0.1/job/app/image-profiles.php?id=<?=$company_id?>"/>
+															<img alt="image" title="<?=$compname?>" width="180" height="100" src="app/image-profiles.php?id=<?=$company_id?>"/>
 														</center>
 <?php
 	endif; ?>
