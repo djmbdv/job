@@ -10,8 +10,6 @@ global $conn;
 
 
 
-print_r($_FILES);
-die();
 if(!$user_online){
 	header('location: ../../');
 	die();
@@ -45,4 +43,33 @@ $stmt->bindParam(':dateposted', $postdate);
 $stmt->bindParam(':closingdate', $deadline);
 $stmt->bindParam(':telefono', $telefono);
 $stmt->execute();
+
+if(isset($_FILES["images"])):
+$target_dir = "../../images/uploads/";
+for($i = 0; $i < count($_FILES["images"]["name"]; $i++):
+	$target_file = $target_dir . basename($_FILES["image"]["name"]);
+	$uploadOk = 1;
+	$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+
+	if(isset($_POST["submit"])) {
+	  $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+	  if($check !== false) {
+	    $uploadOk = 1;
+	  } else {
+	    $uploadOk = 0;
+	  }
+	}
+
+	if ($_FILES["fileToUpload"]["size"] > 500000) {
+	  $uploadOk = 0;
+	}
+
+	if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+	&& $imageFileType != "gif" ) {
+	  $uploadOk = 0;
+	}
+endfor;
+endif;
+
+
 header("location:../post-job.php?r=9843");		  

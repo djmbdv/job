@@ -226,7 +226,7 @@ try{
 
 $("#file-zone").click(e=>{
 	var input = $("<input></input>").attr("type","file")
-	input.attr("name","images");
+	input.attr("name","images[]");
 	input.click();
 	$(e.srcElement).append(input);
 	
@@ -235,10 +235,6 @@ $("input").change(e=>{
 	//$(e.srcElement)
 });
 </script>
-<script type="text/javascript" src="../js/customs-fileinput.js"></script>
-<script type="text/javascript" src="../js/jquery.sheepItPlugin.js"></script>
-<script type="text/javascript" src="../js/customs-sheepItPlugin.js"></script>
-
 </body>
 
 </html>
