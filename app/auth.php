@@ -26,7 +26,18 @@ if ($rec != 1){
 session_start();
 
 $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+if(!$row['verified']){
+	header('location: ../login.php?r=0446');
+	die();
+}
+
+
+
 $role = $row['role'];
+
+
+
 $_SESSION['logged'] = true;
 $_SESSION['myid'] = $row['member_no'];
 $_SESSION['myemail'] = $row['email'];
