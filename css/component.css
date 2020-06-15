@@ -358,26 +358,6 @@ Last change:    23/05/2015
     transition: border-radius linear 0
 }
 
-.panel-heading a:before {
-    content: '\f055';
-    position: absolute;
-    font-family: 'FontAwesome';
-    right: 0;
-    top: 0;
-    font-size: 16px;
-    -webkit-transition: all .5s;
-    transition: all .5s;
-    -webkit-transform: scale(1);
-    transform: scale(1)
-}
-
-.panel-heading.active a:before {
-    content: '\f056';
-    -webkit-transition: all .5s;
-    transition: all .5s;
-    -webkit-transform: scale(0);
-    transform: scale(0)
-}
 
 .panel-body ul,
 .panel-body ol {

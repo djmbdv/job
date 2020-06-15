@@ -111,28 +111,17 @@ if(isset($_GET["p"]))$producto = true;
 														<label>Departamento</label>
 														<select name="country" required class="selectpicker show-tick form-control" data-live-search="true">
 															<option disabled value="">Seleccionar</option>
-						                                   <?php
-														   try {
-                                                         
+<?php
+try {
+	$stmt = $conn->prepare("SELECT * FROM tbl_countries ORDER BY country_name");
+	$stmt->execute();
+	$result = $stmt->fetchAll();
 
-	
-                                                           $stmt = $conn->prepare("SELECT * FROM tbl_countries ORDER BY country_name");
-                                                           $stmt->execute();
-                                                           $result = $stmt->fetchAll();
-  
-                                                           foreach($result as $row)
-                                                           {
-		                                                    ?> <option <?php if ($country == $row['country_name']) { print ' selected '; } ?> value="<?php echo $row['country_name']; ?>"><?php echo $row['country_name']; ?></option> <?php
-	 
-	                                                        }
-
-					  
-	                                                       }catch(PDOException $e)
-                                                           {
-
-                                                           }
-	
-														   ?>
+	foreach($result as $row):?>
+															<option <?php if ($country == $row['country_name']) { print ' selected '; } ?> value="<?=$row['country_name']?>"><?=$row['country_name']?></option>
+<?php
+	endforeach;
+}catch(PDOException $e){}?>
 														</select>
 													</div>
 													<div class="form-group">
@@ -141,15 +130,12 @@ if(isset($_GET["p"]))$producto = true;
 															<option disabled value="">Seleccionar</option>
 <?php
 try{
-                                                           
-
-
    $stmt = $conn->prepare("SELECT * FROM tbl_categories ORDER BY category");
    $stmt->execute();
    $result = $stmt->fetchAll();
 
    foreach($result as $row):?>
-															<option value="<?=$row['category']?>"><?=['category']?></option>
+															<option value="<?=$row['category']?>"><?=$row['category']?></option>
 <?php
 	endforeach;
 }catch(PDOException $e){}?>
