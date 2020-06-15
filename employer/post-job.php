@@ -157,10 +157,10 @@ try{
 												<div class="clear"></div>
 												<div class="clear"></div>
 												
-												<div class="form-group">
+												<div class="form-group group-file">
 											        <label>Ingrese imagenes del servicio:</label>
-											        <div class="card col-md-8 text-center" id="file-zone">
-											        	Ingrese Archivos
+											        <div class="card text-center" id="file-zone">
+											        <span style="padding-top:auto;">+</span>	
 											        </div>
 											        
 											    </div>
@@ -198,24 +198,87 @@ try{
 </div>
 <style type="text/css">
 #file-zone{
-	border:dashed 3px yellow;
+	border:dashed 0.25rem #e9ab28;
 	color:black;
 	padding: 1em;
 	cursor: pointer;
+	font-size: 25px;
+	color: #e9ab28;
+	width: 3em;
+	display:inline-block;
+	vertical-align: top;
+	margin-right: 2px;
+	height: 100px;
 }
-
+.input-zone{
+	display: none !important;
+}
+.input-image{
+	border:dashed 0.25rem #e9ab28;
+	padding: 0.25rem;
 	
+	color: orange;
+	min-width: 3em;
+	
+	background:#E6E6E6;
+	max-height: 100px;
+	vertical-align: top;
+	
+
+}
+.group-file{
+	width: 100%;
+}
+.close-span{
+	float:right;
+	right: 14px;
+	top:-90px;
+	position: relative;
+	color:#e9ab28;
+	font-weight:bolder;
+	z-index: 100;
+	cursor: pointer;
+}
+.close-span:hover{
+	color:#337ab7
+}
+.container-image-upload{
+	display: inline-block;
+	margin-right: 2px;
+}
 </style>
 
 
 <script type="text/javascript">
 
 $("#file-zone").click(e=>{
-	var input = $("<input></input>").attr("type","file")
-	input.attr("name","images[]");
-	input.click();
-	$(e.srcElement).append(input);
-	
+	var container = $("<div></div>").addClass("container-image-upload");
+	var deleteSpam = $("<span></span>").text("X").addClass("close-span");
+	var inputFile = $("<input></input>").attr("type","file").addClass("input-zone").addClass("hidden");
+	var inputImage = $("<img></img>").addClass("input-image");
+	inputFile.attr("name","images[]");
+	var erro = false;
+	inputFile.change(e=>{
+		console.log(e);
+		var archivo = e.target.files[0];
+		inputImage.attr("src",URL.createObjectURL(e.target.files[0]));
+		if(archivo.type.split('/')[0] !== "image"){
+			container.remove();
+			inputFile.remove();
+			erro = true;
+		}
+	});
+	if(erro)return;
+	inputFile.click();
+	$(e.srcElement).parents(".group-file").append(inputFile);
+	deleteSpam.click(e=>{
+		inputFile.remove();
+		container.remove();
+	});
+	container.append(inputImage);
+	container.append(deleteSpam);
+	$(e.srcElement).parents(".group-file").append(container);
+
 });
 $("input").change(e=>{
 	//$(e.srcElement)

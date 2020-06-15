@@ -13,7 +13,7 @@
 	<title><?=$title_site?></title>
 	<meta name="description" content="Portal de empleos / Bolsa de trabajo" />
 	<meta name="keywords" content="trabajo, empleos, cv, curriculum, empresas, carrera,servicios profesionales, tecnicos, bolsa de trabajo, servicios" />
-	<meta name="author" content="BwireSoft">
+	<meta name="author" content="remotepcsolutions.com">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<?php
 		if(!isset($tags_share)):?>
