@@ -8,7 +8,6 @@ global $conn;
 
 
 
-print_r($_FILES);
 $protocol = $isHttps ? "https" : "http";
 $local = LOCAL ? "/job" : "";
 //die();
@@ -63,7 +62,7 @@ for($i = 0; $i < count($_FILES["images"]["name"]); $i++):
 	}
 	if($uploadOk == 1){
 		if (move_uploaded_file($_FILES["images"]["tmp_name"][$i], $target_file)) {
-    echo "The file ". basename( $_FILES["images"]["name"][$i]). " has been uploaded.";
+
 
   } else {
     echo "Sorry, there was an error uploading your file.";
@@ -75,6 +74,4 @@ for($i = 0; $i < count($_FILES["images"]["name"]); $i++):
 	$stmt->execute();
 endfor;
 endif;
-
-
 header("location:../post-job.php?r=9843");		  

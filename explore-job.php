@@ -34,10 +34,7 @@ if ($rec == "0") {
 		$opendate = $row['date_posted'];
 		$compid = $row['company'];
 	}
-}					  
-
-
-
+}
 	
 $stmt = $conn->prepare("SELECT * FROM tbl_users WHERE member_no = '$compid'");
 $stmt->execute();
