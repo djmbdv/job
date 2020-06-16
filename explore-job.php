@@ -64,8 +64,7 @@ include_once 'headerPrincipal.php';
 <div>
 
 </div>
-
-		<body class="not-transparent-header">
+<body class="not-transparent-header">
 	<div class="container-wrapper">
 		<div class="main-wrapper">
 			<div class="breadcrumb-wrapper">
@@ -131,35 +130,27 @@ include_once 'headerPrincipal.php';
 								<div class="job-detail-company-overview clearfix">
 									<h3>Un resumen sobre la empresa</h3>
 									<div class="row">
-											<div class="col col-3">
-									<div class="image">
+										<div class="col col-3">
+											<div class="image">
 <?php
 	if($complogo == null): ?>
-										<center>No Company Logo</center>
+												<center>No Company Logo</center>
 <?php
 	else: ?>
-										<center>
-										
-											<img class="autofit2" alt="image" title="<?= $compname ?>" width="180" height="100" src="app/image-profiles.php?id=<?=$member_no?>"/>
-										</center>
+												<center>
+												
+													<img class="autofit2" alt="image" title="<?= $compname ?>" width="180" height="100" src="app/image-profiles.php?id=<?=$member_no?>"/>
 
-									</div>
-											<div class="col col-9">
-											<br>
-											<p><?=$compbout?></p>
-											</div>
-										</div>
-											
-
-										</center>
+													<div class="col col-9">
+														<br>
+														<p><?=$compbout?></p>
+													</div>
+												</center>
+											</div>			
 <?php
-
 	endif;?>
+										</div>
 									</div>
-									
-									
-								
-								</div>
 								
 								<div class="job-detail-content mt-30 clearfix">
 									<h3>Descripcion del servicio</h3>
@@ -194,33 +185,24 @@ include_once 'headerPrincipal.php';
 		$jobtype = $row['type'];
 
 		$jobtype = $row['type'];
-		if ($jobtype == "Freelance") {
-		$sta = '';
-						  
-		}
-		if ($jobtype == "Part-time") {
-		$sta = '';
-						  
-		}
-		if ($jobtype == "Full-time") {
-		      $sta = '';
-						  
-		} ?>
-													<a href="explore-job.php?jobid=<?= $row['job_id']; ?>" class="recent-job-item clearfix">
+		$member_no = $row['member_no'];
+
+?>
+													<a href="explore-job.php?jobid=<?= $row['job_id']?>" class="recent-job-item clearfix">
 														<div class="GridLex-grid-middle">
 															<div class="GridLex-col-6_sm-12_xs-12">
 																<div class="job-position">
 																	<div class="image">
 <?php
 		if ($complogo == null): ?>
-										                            <center>
-										                            	<img class="autofit3" alt="image"  src="images/blank.png"/>
-										                            </center>
+											                            <center>
+											                            	<img class="autofit3" alt="image"  src="images/blank.png"/>
+											                            </center>
 <?php 
 		else: ?>
-										                           	<center>
-										                           		<img class="autofit3" alt="image" title="'.$compname.'" width="180" height="100" src="data:image/jpeg;base64,<?= base64_encode($complogo) ?>"/>
-										                           	</center>
+											                           	<center>
+											                           		<img class="autofit3" alt="image" title="'.$compname.'" width="180" height="100" src="app/image-profiles.php?id=<?=$member_no?>"/>
+											                           	</center>
 <?php
 		endif; ?>
 																	</div>
@@ -236,11 +218,6 @@ include_once 'headerPrincipal.php';
 																	<?= $row['country'] ?>
 																</div>
 															</div>
-															<!--div class="GridLex-col-3_sm-4_xs-4_xss-12">
-                                                             <?= $sta ?>
-																<span class="font12 block spacing1 font400 text-center"> Due - <?= $post_month ?>
-																 <?= $post_date ?>, <?=$post_year?></span>
-															</div-->
 														</div>
 													</a>
 <?php															
@@ -256,9 +233,10 @@ include_once 'headerPrincipal.php';
 					</div>
 				</div>
 			</div>
+		</div>
 <?php 
 	require_once 'footer.php'; ?>
-		</div>
+		
 	</div> 
 	<div id="back-to-top">
 	   <a href="#"><i class="ion-ios-arrow-up"></i></a>
