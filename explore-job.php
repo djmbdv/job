@@ -184,9 +184,6 @@ include_once 'headerPrincipal.php';
 	foreach($result as $row):
 		$jobtype = $row['type'];
 
-		$jobtype = $row['type'];
-		$member_no = $row['member_no'];
-
 ?>
 													<a href="explore-job.php?jobid=<?= $row['job_id']?>" class="recent-job-item clearfix">
 														<div class="GridLex-grid-middle">
@@ -201,7 +198,7 @@ include_once 'headerPrincipal.php';
 <?php 
 		else: ?>
 											                           	<center>
-											                           		<img class="autofit3" alt="image" title="'.$compname.'" width="180" height="100" src="app/image-profiles.php?id=<?=$member_no?>"/>
+											                           		<img class="autofit3" alt="image" title="'.$compname.'" width="180" height="100" src="app/image-profiles.php?id=<?=$compid?>"/>
 											                           	</center>
 <?php
 		endif; ?>
