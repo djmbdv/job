@@ -141,8 +141,9 @@ include_once 'headerPrincipal.php';
 										<center>
 										
 											<img class="autofit2" alt="image" title="<?= $compname ?>" width="180" height="100" src="app/image-profiles.php?id=<?=$member_no?>"/>
+										</center>
 
-											</div>
+									</div>
 											<div class="col col-9">
 											<br>
 											<p><?=$compbout?></p>

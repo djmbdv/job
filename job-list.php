@@ -45,7 +45,7 @@ $title = "$slc_category empleos en $slc_country";
 $stmt->execute();
 $result = $stmt->fetchAll();?>
 
-<div class="result-list-wrapper" id->
+<div class="result-list-wrapper">
 <?php
 foreach($result as $row):
 	$jobid = $row['job_id'];
@@ -74,7 +74,7 @@ foreach($result as $row):
 <?php
 	endif;
 	?>
-			</div>
+		</div>
 
 		<div class="content">
 			<div class="job-item-list-info">
