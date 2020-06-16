@@ -252,6 +252,8 @@ try{
 <script type="text/javascript">
 
 $("#file-zone").click(e=>{
+
+	if($(e.srcElement).parents(".group-file").children("input").length >= 4)return;
 	var container = $("<div></div>").addClass("container-image-upload");
 	var deleteSpam = $("<span></span>").text("X").addClass("close-span");
 	var inputFile = $("<input></input>").attr("type","file").addClass("input-zone").addClass("hidden");
