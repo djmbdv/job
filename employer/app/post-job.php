@@ -12,7 +12,7 @@ $protocol = $isHttps ? "https" : "http";
 $local = LOCAL ? "/job" : "";
 //die();
 if(!$user_online){
-	header('location: ../../');
+	header('location: ../../login.php');
 	die();
 }
 

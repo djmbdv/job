@@ -138,7 +138,6 @@ include_once 'headerPrincipal.php';
 <?php
 	else: ?>
 												<center>
-												
 													<img class="autofit2" alt="image" title="<?= $compname ?>" width="180" height="100" src="app/image-profiles.php?id=<?=$member_no?>"/>
 
 													<div class="col col-9">
@@ -151,20 +150,10 @@ include_once 'headerPrincipal.php';
 	endif;?>
 										</div>
 									</div>
-								
 								<div class="job-detail-content mt-30 clearfix">
 									<h3>Descripcion del servicio</h3>
 									<p><?= $jobdescription ?></p>
 									<hr>
-
-							<!--		<h3>Actividades que puedo realizar</h3>
-                                    <p><?= $jobrespo ?></p>
-									<hr>
-
-									<h3>Habilidades</h3>
-                                    <p><?= $jobreq ?></p>
-									<hr> -->
-
 								</div>
 								<div class="tab-style-01">
 									<ul class="nav" role="tablist">
@@ -252,7 +241,5 @@ include_once 'headerPrincipal.php';
 	});
 </script>
 </body>
-
-
 </html>
 <?php ob_flush();
