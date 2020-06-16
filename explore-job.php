@@ -238,11 +238,11 @@ include_once 'headerPrincipal.php';
 																	<?= $row['country'] ?>
 																</div>
 															</div>
-															<div class="GridLex-col-3_sm-4_xs-4_xss-12">
+															<!--div class="GridLex-col-3_sm-4_xs-4_xss-12">
                                                              <?= $sta ?>
 																<span class="font12 block spacing1 font400 text-center"> Due - <?= $post_month ?>
 																 <?= $post_date ?>, <?=$post_year?></span>
-															</div>
+															</div-->
 														</div>
 													</a>
 <?php															
