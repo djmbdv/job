@@ -65,7 +65,7 @@ foreach($result as $row):
 	if ($complogo == null): ?>
 			<center>
 				<img class="autofit3" alt="image"  src="images/blank.png"/>
-			</center>';
+			</center>
 <?php
 	else: ?>
 			<center>
