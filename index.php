@@ -180,47 +180,6 @@ global $conn;
 </div>
 <script type="text/javascript">
 
-$(function(){
-  var colorTexto1 = document.getElementById('textoNav1');
-  var colorTexto2 = document.getElementById('textoNav2');
-
-  var colorTexto3 = document.getElementById('textoNav3'); 
-var lrNav1 = document.getElementById('lrNav1');
-var lrNav2 = document.getElementById('lrNav2');
-colorTexto1.style.color= 'white';
-            colorTexto2.style.color= 'white';
-            colorTexto3.style.color= 'white';
-            lrNav1.style.color= 'white';
-            lrNav2.style.color= 'white';
-
-var logo= document.getElementById('logo-logo');
-console.log(logo);
-logo.src='images/LOGOBLANCO.png';
-
-
-    $(document).scroll(function(){
-        if($(this).scrollTop() > 18) {
-            $('#logo-logo').attr('src','images/logonegro.png')
-            colorTexto1.style.color= 'black';
-            colorTexto2.style.color= 'black';
-            colorTexto3.style.color= 'black';
-           lrNav1.style.color= 'black';
-           lrNav2.style.color= 'black';
-           
-
-        } 
-        if($(this).scrollTop() < 18) {        
-         $('#logo-logo').attr('src','images/LOGOBLANCO.PNG');   
-            colorTexto1.style.color= 'white';
-            colorTexto2.style.color= 'white';
-            colorTexto3.style.color= 'white';
-            lrNav1.style.color= 'white';
-            lrNav2.style.color= 'white';
-        }
-    });
-});
-
-
     function cambiarfondo(){
       console.log("aca estoy");
      var fondo =document.getElementById('fondito');

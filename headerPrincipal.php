@@ -201,7 +201,6 @@
 }
 
 .autocomplete-active {
-  /*when navigating through the items using the arrow keys:*/
   background-color: DodgerBlue !important;
   color: #ffffff;
   cursor: pointer;
@@ -218,6 +217,30 @@
 .not-transparent-header .navbar-default > .container > .logo-wrapper > .logo-blanco{
 	display: none;
 }
+.navbar-default  > .container > .navbar-nav-wrapper  > .nav li a {
+	color: white;
+}
+.not-transparent-header  .navbar-default  > .container > .navbar-nav-wrapper > .nav > li > a  {
+	color: black;
+}
+.navbar-sticky  > .container > .navbar-nav-wrapper > .nav > li > a {
+	color: black;
+}
+
+
+.navbar-default  > .container >  .nav-mini-wrapper > ul.nav-mini.sign-in li a {
+	color: white;
+	border-color: white;
+}
+.not-transparent-header  .navbar-default  > .container > .nav-mini-wrapper > ul.nav-mini.sign-in li a   {
+	color: black;
+	border-color: black;
+}
+.navbar-sticky  > .container > .nav-mini-wrapper > ul.nav-mini.sign-in li a  {
+	color: black;
+	border-color: black;
+}
+
 body{
 	padding-top: 3em;
 }
@@ -237,13 +260,13 @@ body{
 			<div id="navbar" class="navbar-nav-wrapper navbar-arrow">
 				<ul class="nav navbar-nav" id="responsive-menu">
 					<li>
-						<a  href="<?=$prefix?>./"><p id="textoNav1" style="color:blackblack">Inicio</p></a>
+						<a  href="<?=$prefix?>./">Inicio</a>
 					</li>
 					<li>
-						<a  href="<?=$prefix?>list.php"> <p id="textoNav2" style="color:blackblack">Lista de servicios </p></a>
+						<a  href="<?=$prefix?>list.php"> Lista de servicios </a>
 					</li>
 					<li> 
-						<a href="<?=$prefix?>contact.php"><p id="textoNav3" style="color:blackblack">Contacto </p></a>
+						<a href="<?=$prefix?>contact.php">Contacto</a>
 					</li>
 				</ul>
 			</div>
@@ -254,8 +277,8 @@ body{
 				    <li><a  href="<?=$prefix?>logout.php">Cerrar Sesión</a></li>
 					<li><a  href="<?=$prefix?><?=$myrole?>">Perfil</a></li>
 <?php else: ?>
-					<li><a id="lrNav1"  style="color:black" href="<?=$prefix?>login.php">Ingresar</a></li>
-					<li><a id="lrNav2"  style="color:black" href="<?=$prefix?>register.php">Registro</a></li>
+					<li><a href="<?=$prefix?>login.php">Ingresar</a></li>
+					<li><a href="<?=$prefix?>register.php">Registro</a></li>
 <?php endif;?>
 				</ul>
 			</div>
