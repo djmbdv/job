@@ -36,7 +36,6 @@ kbd,
 q,
 s,
 samp,
-small,
 strike,
 strong,
 sub,
@@ -150,12 +149,12 @@ table {
 
 body {
     font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    line-height: 25px;
+    font-size: 12px;
+    line-height: 20px;
     font-weight: 400;
     color: black;
-    /* -webkit-font-smoothing: antialiased!important;
-	font-smoothing: antialiased!important; */
+     -webkit-font-smoothing: antialiased!important;
+	font-smoothing: antialiased!important; 
     background-color: #FFF;
 
     
@@ -353,10 +352,6 @@ p:last-child {
     letter-spacing: 0.5px;
 }
 
-small,
-.small {
-    font-size: 128%;
-}
 
 blockquote,
 .blockquote {
