@@ -187,14 +187,14 @@ include_once 'headerPrincipal.php';
 <?php 
 		else: ?>
 											                           	<center>
-											                           		<img class="autofit3" alt="image" title="'.$compname.'" width="180" height="100" src="app/image-profiles.php?id=<?=$compid?>"/>
+											                           		<img class="autofit3" alt="image" title="<?=$compname?>" width="180" height="100" src="app/image-profiles.php?id=<?=$compid?>"/>
 											                           	</center>
 <?php
 		endif; ?>
 																	</div>
 																	<div class="content">
 																		<h4><?= $row['title']; ?></h4>
-																		<p><?=  $compname ?></p>
+																		<p><?= $compname ?></p>
 																	</div>
 																</div>
 															</div>

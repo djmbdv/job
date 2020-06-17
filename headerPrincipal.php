@@ -206,6 +206,18 @@
   color: #ffffff;
   cursor: pointer;
 }
+.navbar-default > .container > .logo-wrapper > .logo-negro{
+	display: none;
+}
+.navbar-sticky > .container > .logo-wrapper > .logo-blanco{
+	display: none;
+}
+.not-transparent-header .navbar-default > .container > .logo-wrapper > .logo-negro{
+	display: block;
+}
+.not-transparent-header .navbar-default > .container > .logo-wrapper > .logo-blanco{
+	display: none;
+}
 body{
 	padding-top: 3em;
 }
@@ -215,8 +227,11 @@ body{
 	<nav class="navbar navbar-default navbar-fixed-top navbar-sticky-function">
 		<div class="container">
 			<div class="logo-wrapper">
-				<div class="logo">
+				<div class="logo logo-negro">
 					<img class="img img-responsive" id="logo-logo" src="<?=$prefix?>images/logonegro.png"   alt="Logo" />
+				</div>
+				<div class="logo logo-blanco">
+					<img class="img img-responsive" id="logo-logo" src="<?=$prefix?>images/LOGOBLANCo.png"   alt="Logo" />
 				</div>
 			</div>
 			<div id="navbar" class="navbar-nav-wrapper navbar-arrow">
