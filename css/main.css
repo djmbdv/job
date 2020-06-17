@@ -2502,11 +2502,11 @@ label {
 }
 
 .form-control {
-    border-radius: 3px;
-    border-color: #CCC;
+    border-radius: 0px;
+    border-color: #e9ab28;
     font-weight: 300;
     height: 34px;
-    font-size: 13px;
+    font-size: 14px;
 }
 
 .form-control:focus {
@@ -2557,7 +2557,7 @@ label {
 
 .form-lg .form-control {
     height: 42px;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .form-lg i {

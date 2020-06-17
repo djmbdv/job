@@ -58,53 +58,48 @@ if(isset($_GET["p"]))$producto = true;
 				</div>
 			</div>
 			<div class="section sm">
-			
 				<div class="container">
-				
 					<div class="row">
-						
-							<div class="col-sm-5 col-md-4">
-							
-								<div class="company-detail-sidebar">
-									
-									<div class="image">
-										<?php 
-										if ($logo == null) {
-										print '<center>Company Logo Here</center>';
+						<div class="col-sm-5 col-md-4">
+							<div class="company-detail-sidebar">
+								<div class="image">
+<?php 
+	if ($logo == null) {
+			print '<center>Company Logo Here</center>';
 										}else{
 										echo '<center><img alt="image" title="'.$compname.'" width="180" height="100" src="data:image/jpeg;base64,'.base64_encode($logo).'"/></center>';	
 										}
 										?>
-									</div>
-									
-									<h2 class="heading mb-15"><h4><?php echo "$compname"; ?></h4>
+								</div>
 								
-									<p class="location"><i class="fa fa-map-marker"></i> <?php echo "$zip"; ?> <?php echo "$city"; ?>. <?php echo "$street"; ?>, <?php echo "$country"; ?> <span class="block"> <i class="fa fa-phone"></i> <?php echo "$myphone"; ?></span></p>
-									
-									<ul class="meta-list clearfix">
-										<li>
-											<h4 class="heading">Establecida en:</h4>
-											<?php echo "$esta"; ?>
-										</li>
-										<li>
-											<h4 class="heading">Rubro:</h4>
-											<?php echo "$mytitle"; ?>
-										</li>
-										<li>
-											<h4 class="heading">Personas:</h4>
-											<?php echo "$mypeople"; ?>
-										</li>
-										<li>
-											<h4 class="heading">Website: </h4>
-											<a target="_blank" href="https://<?php echo "$myweb"; ?>"><?php echo "$myweb"; ?></a>
-										</li>
-										<li>
-											<h4 class="heading">Correo Electronico: </h4>
-											<?php echo "$mymail"; ?>
-										</li>
+								<h2 class="heading mb-15"><h4><?php echo "$compname"; ?></h4>
+							
+								<p class="location"><i class="fa fa-map-marker"></i> <?php echo "$zip"; ?> <?php echo "$city"; ?>. <?php echo "$street"; ?>, <?php echo "$country"; ?> <span class="block"> <i class="fa fa-phone"></i> <?php echo "$myphone"; ?></span></p>
+								
+								<ul class="meta-list clearfix">
+									<li>
+										<h4 class="heading">Establecida en:</h4>
+										<?php echo "$esta"; ?>
+									</li>
+									<li>
+										<h4 class="heading">Rubro:</h4>
+										<?php echo "$mytitle"; ?>
+									</li>
+									<li>
+										<h4 class="heading">Personas:</h4>
+										<?php echo "$mypeople"; ?>
+									</li>
+									<li>
+										<h4 class="heading">Website: </h4>
+										<a target="_blank" href="https://<?php echo "$myweb"; ?>"><?php echo "$myweb"; ?></a>
+									</li>
+									<li>
+										<h4 class="heading">Correo Electronico: </h4>
+										<?php echo "$mymail"; ?>
+									</li>
 
-									</ul>
-									
+								</ul>
+								
 									
 									<a href="./" class="btn btn-primary mt-5"><i class="fa fa-pencil-square-o mr-5"></i>Editar</a>
 									
@@ -131,7 +126,7 @@ if(isset($_GET["p"]))$producto = true;
 												<div class="col-sm-8 col-md-8">
 												
 													<div class="form-group">
-														<label>titulo de Empleo</label>
+														<label>T&iacute;tulo del Servicio</label>
 														<input name="title" value="<?php echo "$jobtitle"; ?>" required type="text" class="form-control" placeholder="Enter job title">
 													</div>
 													
@@ -142,7 +137,7 @@ if(isset($_GET["p"]))$producto = true;
 												<div class="col-sm-4 col-md-4">
 												
 													<div class="form-group">
-														<label>City</label>
+														<label>Municipio</label>
 														<input name="city" value="<?php echo "$jobcity"; ?>"  required type="text" class="form-control" placeholder="Enter city">
 													</div>
 													
@@ -151,7 +146,7 @@ if(isset($_GET["p"]))$producto = true;
 												<div class="col-sm-4 col-md-4">
 												
 													<div class="form-group">
-														<label>Pais</label>
+														<label>Departamento</label>
 														<select name="country" required class="selectpicker show-tick form-control" data-live-search="true">
 															<option disabled value="">Seleccionar</option>
 						                                   <?php
@@ -168,147 +163,71 @@ if(isset($_GET["p"]))$producto = true;
 														   ?>
 														</select>
 													</div>
-													
 												</div>
-												
 												<div class="clear"></div>
-												
 												<div class="col-sm-4 col-md-4">
-												
 													<div class="form-group">
 														<label>Categoria empleo</label>
-															<select name="category" required class="selectpicker show-tick form-control" data-live-search="true">
+														<select name="category" required class="selectpicker show-tick form-control" data-live-search="true">
 															<option disabled value="">Seleccionar</option>
-						                                   <?php
+<?php
+	$stmt = $conn->prepare("SELECT * FROM tbl_categories ORDER BY category");
+	$stmt->execute();
+	$result = $stmt->fetchAll();
 
-                                                           $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-	
-                                                           $stmt = $conn->prepare("SELECT * FROM tbl_categories ORDER BY category");
-                                                           $stmt->execute();
-                                                           $result = $stmt->fetchAll();
-  
-                                                           foreach($result as $row)
-                                                           {
-		                                                    ?> <option <?php if ($jobcategory == $row['category']) { print ' selected '; } ?> value="<?php echo $row['category']; ?>"><?php echo $row['category']; ?></option> <?php
-	 
-	                                                        }
-														   ?>
+	foreach($result as $row):?> 
+															<option <?= ($jobcategory == $row['category'])?'selected':''?> value="<?=$row['category']?>"><?= $row['category']?></option>
+<?php
+	endforeach;
+?>
 														</select>
-											
-														
 													</div>
-													
 												</div>
 											    <div class="col-sm-4 col-md-4">
-												
 												</div>
-												
 												<div class="clear"></div>
-												
-												<div class="col-xss-12 col-xs-6 col-sm-6 col-md-4">
-												
-													<div class="form-group mb-20">
-														<label>Categoria Empleo:</label>
-														<select name="jobtype" required class="selectpicker show-tick form-control" data-live-search="false" data-selected-text-format="count > 3" data-done-button="true" data-done-button-text="OK" data-none-selected-text="All">
-															<option value="" selected>Seleccionar</option>
-															<option <?php if ($jobtype == "Full-time") { print ' selected '; } ?> value="Full-time" data-content="<span class='label label-warning'>Full-time</span>">Full-time</option>
-															<option <?php if ($jobtype == "Part-time") { print ' selected '; } ?> value="Part-time" data-content="<span class='label label-danger'>Part-time</span>">Part-time</option>
-															<option <?php if ($jobtype == "Freelance") { print ' selected '; } ?> value="Freelance" data-content="<span class='label label-success'>Freelance</span>">Freelance</option>
-														</select>
-													</div>
-													
-												</div>
-												
-												<div class="col-xss-12 col-xs-6 col-sm-6 col-md-4">
-												
-													<div class="form-group mb-20">
-														<label>Experiencia:</label>
-														<select name="experience" required class="selectpicker show-tick form-control" data-live-search="false" data-selected-text-format="count > 3" data-done-button="true" data-done-button-text="OK" data-none-selected-text="All">
-															<option value="" selected >Seleccionar</option>
-															<option <?php if ($experience == "Expert") { print ' selected '; } ?> value="Expert">Experto</option>
-															<option <?php if ($experience == "2 Years") { print ' selected '; } ?> value="2 Years">2 Años</option>
-															<option <?php if ($experience == "3 Years") { print ' selected '; } ?> value="3 Years">3 Años</option>
-															<option <?php if ($experience == "4 Years") { print ' selected '; } ?> value="4 Years">4 Años</option>
-															<option <?php if ($experience == "5 Years") { print ' selected '; } ?> value="5 Years">5 Años</option>
-														</select>
-													</div>
-													
-													
-												</div>
-
 												<div class="clear"></div>
-												
 												<div class="col-sm-12 col-md-12">
-												
 													<div class="form-group bootstrap3-wysihtml5-wrapper">
-														<label>Descripción del empleo</label>
-														<textarea class="form-control bootstrap3-wysihtml5" name="description" required placeholder="Enter description ..." style="height: 200px;"><?php echo "$jobdescription"; ?></textarea>
+														<label>Descripción del Servicio</label>
+														<textarea class="form-control bootstrap3-wysihtml5" name="description" required placeholder="Enter description ..." style="height: 200px;"><?=$jobdescription?></textarea>
 													</div>
-													
 												</div>
-												
-												<div class="clear"></div>
-												
 												<div class="col-sm-12 col-md-12">
-												
-													<div class="form-group bootstrap3-wysihtml5-wrapper">
-														<label>Funciones del empleo</label>
-														<textarea name="responsiblities" required class="form-control bootstrap3-wysihtml5" placeholder="Enter responsiblities..." style="height: 200px;"><?php echo "$jobrespo"; ?></textarea>
-													</div>
-													
+													<div class="form-group group-file">
+												        <label>Ingrese imagenes del servicio:</label>
+											        	<div class="card text-center" id="file-zone">
+											        		<span style="padding-top:auto;">+</span>	
+											        	</div>
+<?php 
+	$smtm3 = $conn->prepare("select * from tbl_image_service where service = :service");
+	$smtm3->bindValue(":service", $jobid);
+	$smtm3->execute();
+	foreach ($smtm3->fetchAll() as $thumb):
+ ?>
+												        <div class="container-image-upload">
+												        	<img class="input-image" src="../app/thumb.php?id=<?=$thumb['id']?>">
+												        	<span class="close-span">X</span>
+												        </div>
+<?php
+	endforeach; ?>
+												    </div>
 												</div>
-												
 												<div class="clear"></div>
-												
-												<div class="col-sm-12 col-md-12">
-												
-													<div class="form-group bootstrap3-wysihtml5-wrapper">
-														<label>Requirimientos</label>
-														<textarea name="requirements" required class="form-control bootstrap3-wysihtml5" placeholder="Enter requirements..." style="height: 200px;"><?php echo "$jobreq"; ?></textarea>
-													</div>
-													<input type="hidden" name="jobid" value="<?php echo "$jobid"; ?>">
-												</div>
-												
-												<div class="clear"></div>
-												
-
-												
-												<div class="clear"></div>
-												
-
-												
 												<div class="clear mb-10"></div>
-
-												
 												<div class="clear mb-15"></div>
-
-												
 												<div class="clear"></div>
-												
 												<div class="col-sm-6 mt-30">
 													<button type="submit"  class="btn btn-primary btn-lg">Guardar Cambios</button>
 												</div>
-
 											</div>
-											
 										</form>
-										
 									</div>
-									
-							
-
-
 								</div>
-
 							</div>
-						
 						</div>
-						
 					</div>
-				
 				</div>
-			
 			</div>
 
 			<?php include_once "../footer.php"; ?>
@@ -318,7 +237,96 @@ if(isset($_GET["p"]))$producto = true;
 <div id="back-to-top">
    <a href="#"><i class="ion-ios-arrow-up"></i></a>
 </div>
+<style type="text/css">
+#file-zone{
+	border:dashed 0.25rem #e9ab28;
+	color:black;
+	padding: 1em;
+	cursor: pointer;
+	font-size: 25px;
+	color: #e9ab28;
+	width: 3em;
+	display:inline-block;
+	vertical-align: top;
+	margin-right: 2px;
+	height: 100px;
+}
+.input-zone{
+	display: none !important;
+}
+.input-image{
+	border:dashed 0.25rem #e9ab28;
+	padding: 0.25rem;
+	
+	color: orange;
+	min-width: 3em;
+	
+	background:#E6E6E6;
+	max-height: 100px;
+	vertical-align: top;
+	
 
+}
+.group-file{
+	width: 100%;
+}
+.close-span{
+	float:right;
+	right: 14px;
+	top:-90px;
+	position: relative;
+	color:#e9ab28;
+	font-weight:bolder;
+	z-index: 100;
+	cursor: pointer;
+}
+.close-span:hover{
+	color:#337ab7
+}
+.container-image-upload{
+	display: inline-block;
+	margin-right: 2px;
+}
+</style>
+
+
+<script type="text/javascript">
+
+$("#file-zone").click(e=>{
+
+	if($(e.srcElement).parents(".group-file").children("input").length >= 4)return;
+	var container = $("<div></div>").addClass("container-image-upload");
+	var deleteSpam = $("<span></span>").text("X").addClass("close-span");
+	var inputFile = $("<input></input>").attr("type","file").addClass("input-zone").addClass("hidden");
+	var inputImage = $("<img></img>").addClass("input-image");
+	inputFile.attr("name","images[]");
+	var erro = false;
+	inputFile.change(e=>{
+		console.log(e);
+		var archivo = e.target.files[0];
+		inputImage.attr("src",URL.createObjectURL(e.target.files[0]));
+		if(archivo.type.split('/')[0] !== "image"){
+			container.remove();
+			inputFile.remove();
+			erro = true;
+		}
+	});
+	if(erro)return;
+	inputFile.click();
+	$(e.srcElement).parents(".group-file").append(inputFile);
+	deleteSpam.click(e=>{
+		inputFile.remove();
+		container.remove();
+	});
+	container.append(inputImage);
+	container.append(deleteSpam);
+	$(e.srcElement).parents(".group-file").append(container);
+
+});
+$("input").change(e=>{
+	//$(e.srcElement)
+});
+</script>
 </body>
 
 </html>

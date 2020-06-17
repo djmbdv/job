@@ -33,7 +33,7 @@
 	<link rel="shortcut icon" href="<?=$prefix?>images/SOLOLOGO.png">
 	<link rel="stylesheet" type="text/css" href="<?=$prefix?>bootstrap/css/bootstrap.min.css" media="screen">	
 	<link href="<?=$prefix?>css/animate.css" rel="stylesheet">
-	<link href="<?=$prefix?>css/main.css?22" rel="stylesheet">
+	<link href="<?=$prefix?>css/main.css?23" rel="stylesheet">
 	<link href="<?=$prefix?>css/component.css?1" rel="stylesheet">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
 	<link rel="stylesheet" href="<?=$prefix?>icons/linearicons/style.css">
