@@ -88,17 +88,17 @@ ul.nav-mini.sign-in li:after {
 ul.nav-mini.sign-in li a {
     border: 1px solid rgba(0, 0, 0, 0.8);
     line-height: 1;
-    border-radius: 2px;
+    border-radius: 0px;
     font-weight: 600;
     padding: 3px 8px 4px;
-    font-size: 12px;
+    font-size: 10px;
     letter-spacing: 0.5px;
 }
 
 ul.nav-mini.sign-in li a:hover {
     color: rgb(0, 0, 0);
-    background: #2991A2;
-    border-color: #2991A2;
+    background: #e9ab28;
+    border-color: #e9ab28;
 }
 
 .nav.navbar-nav {
@@ -142,7 +142,7 @@ ul.nav-mini.sign-in li a:hover {
     display: none;
     background-color: #FFF;
     border: 1px solid #EEE;
-    border-top: 2px solid #2991A2;
+    border-top: 2px solid #e9ab28;
     -webkit-box-shadow: 0px 0px 12px -3px rgba(0, 0, 0, 0.4);
     -moz-box-shadow: 0px 0px 12px -3px rgba(0, 0, 0, 0.4);
     box-shadow: 0px 0px 12px -3px rgba(0, 0, 0, 0.4);
@@ -776,7 +776,7 @@ ul.quick-search-keyword li:last-child a:after {
 }
 
 .featured-icon-png a:hover {
-    border: 2px solid #2991A2;
+    border: 2px solid #e9ab28;
 }
 
 .featured-bg {
@@ -1176,7 +1176,7 @@ ul.quick-search-keyword li:last-child a:after {
 }
 
 .team-item ul.social li a:hover {
-    color: #2991A2;
+    color: #e9ab28;
 }
 
 
@@ -1485,7 +1485,7 @@ ul.quick-search-keyword li:last-child a:after {
 
 .btn-toggle.btn-refine.collapsed:hover,
 .btn-toggle.btn-refine {
-    color: #2991A2;
+    color: #e9ab28;
 }
 
 .sorting-wrappper.alt {
@@ -1732,8 +1732,8 @@ ol.breadcrumb-list li a:after {
 
 .category-group p.sub-category a:hover,
 .sub-category a:hover {
-    color: #2991A2;
-    border-color: #2991A2;
+    color: #e9ab28;
+    border-color: #e9ab28;
 }
 
 .sidebar-module .sub-category a {
@@ -2064,7 +2064,7 @@ ol.breadcrumb-list li a:after {
 }
 
 .sidebar-inner.for-blog a:hover {
-    color: #2991A2;
+    color: #e9ab28;
 }
 
 .sidebar-module {
@@ -2200,7 +2200,7 @@ ul.sidebar-post li h6 {
 }
 
 ul.sidebar-post li a:hover h6 {
-    color: #2991A2;
+    color: #e9ab28;
 }
 
 ul.sidebar-post li .image {
@@ -2253,9 +2253,9 @@ ul.sidebar-post li .recent-post-sm-meta {
 }
 
 .tag-cloud a:hover {
-    background: #2991A2;
+    background: #e9ab28;
     color: #FFF !important;
-    border-color: #2991A2;
+    border-color: #e9ab28;
 }
 
 .tag-cloud-wrapper {
@@ -2499,7 +2499,7 @@ ul.sidebar-menu > li ul li.active:before {
 
 .blog-content h3 a:hover,
 .blog-content h4 a:hover {
-    color: #2991A2;
+    color: #e9ab28;
 }
 
 .blog-entry {
@@ -2708,8 +2708,8 @@ ul.comment-item ul {
 
 .comment-item a.comment-reply:hover {
     color: #FFF;
-    border-color: #2991A2;
-    background: #2991A2;
+    border-color: #e9ab28;
+    background: #e9ab28;
 }
 
 .comment-form .form-control:-moz-placeholder {
@@ -2857,7 +2857,7 @@ ul.social-share-sm li a {
 }
 
 ul.social-share-sm li a:hover {
-    color: #2991A2;
+    color: #e9ab28;
 }
 
 ul.social-share-sm.for-useful {
@@ -2946,8 +2946,8 @@ ul.pager-list li.paging-nav a {
 }
 
 ul.pager-list li.paging-nav a:hover {
-    background: #2991A2;
-    border-color: #2991A2;
+    background: #e9ab28;
+    border-color: #e9ab28;
     color: #FFF;
 }
 
@@ -3716,7 +3716,7 @@ ul.meta-list li span {
 }
 
 .browse-job-inner a:hover {
-    color: #2991A2;
+    color: #e9ab28;
 }
 
 .browse-job-inner a:hover:before {
@@ -3767,7 +3767,7 @@ ul.meta-list li span {
 }
 
 .browse-job-sub-category a:hover {
-    color: #2991A2;
+    color: #e9ab28;
 }
 
 .browse-job-sub-category a:hover:before {
@@ -3849,8 +3849,8 @@ ul.meta-list li span {
 }
 
 .top-company a:hover {
-    color: #2991A2;
-    border-color: #2991A2;
+    color: #e9ab28;
+    border-color: #e9ab28;
 }
 
 .top-company h5 {
@@ -4202,7 +4202,7 @@ ul.company-directory-list.col-5 li {
 }
 
 .employee-grid-item:hover {
-    border-color: #2991A2;
+    border-color: #e9ab28;
     background: #F5F5F5;
 }
 
@@ -4691,7 +4691,7 @@ ul.work-expereince-interest li .icon {
 }
 
 .location-grid-item:hover {
-    border-color: #2991A2;
+    border-color: #e9ab28;
     background: #F5F5F5;
 }
 
@@ -4956,7 +4956,7 @@ ul.work-expereince-interest li .icon {
 }
 
 .main-footer a:hover {
-    color: #2991A2;
+    color: #e9ab28;
 }
 
 h5.footer-title {
@@ -4986,7 +4986,7 @@ h5.footer-title {
 }
 
 .footer-about-us a:hover {
-    border-color: #2991A2;
+    border-color: #e9ab28;
 }
 
 ul.footer-menu li {
@@ -5042,7 +5042,7 @@ ul.footer-menu li {
 }
 
 .bottom-footer a:hover {
-    color: #2991A2;
+    color: #e9ab28;
 }
 
 ul.bottom-footer-menu {
@@ -5201,7 +5201,7 @@ ul.admin-user-menu li a i {
 }
 
 ul.admin-user-menu li a:hover {
-    color: #2991A2;
+    color: #e9ab28;
     padding-left: 25px;
 }
 

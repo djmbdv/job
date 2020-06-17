@@ -200,7 +200,7 @@ a {
 }
 
 a:hover {
-    color: #2991A2;
+    color: #e9ab28;
     text-decoration: none;
 }
 
@@ -3008,8 +3008,8 @@ h6.heading {
 }
 
 .btn-primary:hover {
-    background: #2991A2;
-    border-color: #2991A2;
+    background: #e9ab28;
+    border-color: #e9ab28;
 }
 
 .btn-info {

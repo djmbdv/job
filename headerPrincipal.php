@@ -33,7 +33,7 @@
 	<link rel="shortcut icon" href="<?=$prefix?>images/SOLOLOGO.png">
 	<link rel="stylesheet" type="text/css" href="<?=$prefix?>bootstrap/css/bootstrap.min.css" media="screen">	
 	<link href="<?=$prefix?>css/animate.css" rel="stylesheet">
-	<link href="<?=$prefix?>css/main.css?19" rel="stylesheet">
+	<link href="<?=$prefix?>css/main.css?20" rel="stylesheet">
 	<link href="<?=$prefix?>css/component.css?1" rel="stylesheet">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
 	<link rel="stylesheet" href="<?=$prefix?>icons/linearicons/style.css">
@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="<?=$prefix?>icons/ionicons/css/ionicons.css">
 	<link rel="stylesheet" href="<?=$prefix?>icons/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
 	<link rel="stylesheet" href="<?=$prefix?>icons/rivolicons/style.css">
-	<link rel="stylesheet" href="<?=$prefix?>css/style.css?27" >
+	<link rel="stylesheet" href="<?=$prefix?>css/style.css?28" >
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,100;1,400&display=swap" rel="stylesheet">
 	<script type="text/javascript" src="<?=$prefix?>js/jquery-1.11.3.min.js"></script>
 	<script type="text/javascript" src="<?=$prefix?>js/jquery-migrate-1.2.1.min.js"></script>
@@ -61,7 +61,6 @@
 	<script type="text/javascript" src="<?=$prefix?>js/wow.min.js"></script>
 	<script type="text/javascript" src="<?=$prefix?>js/bootstrap-tokenfield.js"></script>
 	<script type="text/javascript" src="<?=$prefix?>js/bootstrap3-wysihtml5.min.js"></script>
-	<script type="text/javascript" src="<?=$prefix?>js/ion.rangeSlider.min.js"></script>
 	<script type="text/javascript" src="<?=$prefix?>js/handlebars.min.js"></script>
 	<script type="text/javascript" src="<?=$prefix?>js/slick.min.js"></script>
 	<script type="text/javascript" src="<?=$prefix?>js/easy-ticker.js"></script>
@@ -226,7 +225,10 @@
 .navbar-sticky  > .container > .navbar-nav-wrapper > .nav > li > a {
 	color: black;
 }
-
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+    color: #e9ab28 !important;
+    background-color: transparent;
+}
 
 .navbar-default  > .container >  .nav-mini-wrapper > ul.nav-mini.sign-in li a {
 	color: white;
