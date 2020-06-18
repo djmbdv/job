@@ -5,7 +5,7 @@ require_once '../constants/connection.php';
 
 global $conn;
 if(!$user_online || !isset($_GET["jobid"])){
-	header("location: ../../login.php");
+	header("location: ../login.php");
 	die();
 }
 
@@ -60,7 +60,7 @@ if(isset($_GET["p"]))$producto = true;
 			<div class="section sm">
 				<div class="container">
 					<div class="row">
-						<div class="col-sm-5 col-md-4">
+						<div class="col-sm-5 col-md-3">
 							<div class="company-detail-sidebar">
 								<div class="image">
 <?php 
@@ -104,22 +104,16 @@ if(isset($_GET["p"]))$producto = true;
 									<a href="./" class="btn btn-primary mt-5"><i class="fa fa-pencil-square-o mr-5"></i>Editar</a>
 									
 								</div>
-					
-					
 							</div>
-							
 							<div class="col-sm-7 col-md-8">
-							
 								<div class="company-detail-wrapper">
-
-									<div class="company-detail-company-overview  mt-0 clearfix">
-										
+									<div class="company-detail-company-overview  mt-0 clearfix">									
 										<div class="section-title-02">
-											<h3 class="text-left"><?php echo "$jobtitle"; ?></h3>
+											<h3 class="text-left"><?=$jobtitle?></h3>
 										</div>
 
 										<form class="post-form-wrapper" action="app/update-job.php" method="POST" autocomplete="off">
-								
+											<input type="hidden" name="jobid" value="<?=$jobid?>">
 											<div class="row gap-20">
 											<?php include 'constants/check_reply.php'; ?>
 										
@@ -183,10 +177,14 @@ if(isset($_GET["p"]))$producto = true;
 														</select>
 													</div>
 												</div>
+												<div class="col-md-4">
+												<div class="form-group">
+														<label>Telefono para este servicio</label>
+														<input name="telefono" required type="tel" class="form-control" placeholder="Escriba su numero de telefono">
+													</div>
+												</div>
 											    <div class="col-sm-4 col-md-4">
 												</div>
-												<div class="clear"></div>
-												<div class="clear"></div>
 												<div class="col-sm-12 col-md-12">
 													<div class="form-group bootstrap3-wysihtml5-wrapper">
 														<label>Descripción del Servicio</label>
@@ -205,9 +203,9 @@ if(isset($_GET["p"]))$producto = true;
 	$smtm3->execute();
 	foreach ($smtm3->fetchAll() as $thumb):
  ?>
-												        <div class="container-image-upload">
+												        <div class="container-image-upload" id-image="<?=$thumb['id']?>">
 												        	<img class="input-image" src="../app/thumb.php?id=<?=$thumb['id']?>">
-												        	<span class="close-span">X</span>
+												        	<span class="close-span close-span-old">X</span>
 												        </div>
 <?php
 	endforeach; ?>
@@ -323,8 +321,11 @@ $("#file-zone").click(e=>{
 	$(e.srcElement).parents(".group-file").append(container);
 
 });
-$("input").change(e=>{
-	//$(e.srcElement)
+
+$(".close-span-old").click(e=>{
+	var drop_data = $("<input></input>").attr("type","hidden").attr("name","delimg").attr("value",$(e.srcElement).parent().attr("id-image"));
+	$(e.srcElement).parent().parent().append(drop_data);
+	$(e.srcElement).parent().remove();
 });
 </script>
 </body>

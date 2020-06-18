@@ -1,24 +1,29 @@
 <?php
-require '../../constants/db_config.php';
-require '../constants/check-login.php';
+date_default_timezone_set('UTC');
+require_once '../../constants/connection.php';
+require_once '../constants/check-login.php';
+require_once '../../constants/uniques.php';
+require_once '../../constants/settings.php';
+global $conn;
+
+
+
+$protocol = $isHttps ? "https" : "http";
+$local = LOCAL ? "/job" : "";
+
+if(!$user_online){
+	header('location: ../../login.php');
+	die();
+}
 
 $job_id = $_POST['jobid'];
 $title  = ucwords($_POST['title']);
 $city  = ucwords($_POST['city']);
 $country = $_POST['country'];
 $category = $_POST['category'];
-$type = $_POST['jobtype'];
-$exp = $_POST['experience'];
 $desc = ucfirst($_POST['description']);
-$rec = ucfirst($_POST['requirements']);
-$res = ucfirst($_POST['responsiblities']);
-$deadline = $_POST['deadline'];
-
-try {
-$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-	
+$telefono= $_POST['telefono'];
+die();	
 $stmt = $conn->prepare("UPDATE tbl_jobs SET title = :title, city = :city, country = :country, category = :category, type = :type, experience = :experience, description = :description, responsibility = :responsibility, requirements = :requirements WHERE job_id = :jobid AND company = '$myid'");
 $stmt->bindParam(':title', $title);
 $stmt->bindParam(':city', $city);
@@ -33,10 +38,3 @@ $stmt->bindParam(':jobid', $job_id);
 $stmt->execute();
 
 header("location:../edit-job.php?r=0369&jobid=$job_id");
-					  
-}catch(PDOException $e)
-{
-
-}
-	
-?>
