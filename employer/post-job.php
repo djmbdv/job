@@ -29,9 +29,7 @@ if(isset($_GET["p"]))$producto = true;
 				<div class="container">
 					<div class="row">
 						<div class="col-sm-5 col-md-3">
-						
 							<div class="company-detail-sidebar">
-								
 								<div class="image">
 									<?php 
 									if ($logo == null) {
@@ -99,7 +97,7 @@ if(isset($_GET["p"]))$producto = true;
 
 													<div class="form-group">
 														<label>Telefono para este servicio</label>
-														<input name="telefono" required type="text" class="form-control" placeholder="Escriba su numero de telefono">
+														<input name="telefono" required type="tel" class="form-control" placeholder="Escriba su numero de telefono">
 													</div>
 													
 													
