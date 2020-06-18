@@ -63,16 +63,12 @@ if(isset($_GET["p"]))$producto = true;
 						<div class="col-sm-5 col-md-3">
 							<div class="company-detail-sidebar">
 								<div class="image">
-<?php 
-	if ($logo == null) {
-			print '<center>Company Logo Here</center>';
-										}else{
-										echo '<center><img alt="image" title="'.$compname.'" width="180" height="100" src="data:image/jpeg;base64,'.base64_encode($logo).'"/></center>';	
-										}
-										?>
+									<center>
+										<?= ($logo == null)?'Company Logo Here':'<img alt="image" title="'.$compname.'" width="180" height="100" src="data:image/jpeg;base64,'.base64_encode($logo).'"/>'?>
+									</center>
 								</div>
 								
-								<h2 class="heading mb-15"><h4><?php echo "$compname"; ?></h4>
+								<h2 class="heading mb-15"><h4><?=$compname?></h4>
 							
 								<p class="location"><i class="fa fa-map-marker"></i> <?php echo "$zip"; ?> <?php echo "$city"; ?>. <?php echo "$street"; ?>, <?php echo "$country"; ?> <span class="block"> <i class="fa fa-phone"></i> <?php echo "$myphone"; ?></span></p>
 								
@@ -143,18 +139,16 @@ if(isset($_GET["p"]))$producto = true;
 														<label>Departamento</label>
 														<select name="country" required class="selectpicker show-tick form-control" data-live-search="true">
 															<option disabled value="">Seleccionar</option>
-						                                   <?php
-	
-                                                           $stmt = $conn->prepare("SELECT * FROM tbl_countries ORDER BY country_name");
-                                                           $stmt->execute();
-                                                           $result = $stmt->fetchAll();
-  
-                                                           foreach($result as $row)
-                                                           {
-		                                                    ?> <option <?php if ($jobcountry == $row['country_name']) { print ' selected '; } ?> value="<?php echo $row['country_name']; ?>"><?php echo $row['country_name']; ?></option> <?php
-	 
-	                                                        }
-														   ?>
+<?php
+
+	$stmt = $conn->prepare("SELECT * FROM tbl_countries ORDER BY country_name");
+	$stmt->execute();
+	$result = $stmt->fetchAll();
+
+	foreach($result as $row):?>
+															<option <?= ($jobcountry == $row['country_name'])?'selected ':''?> value="<?=$row['country_name']?>"><?=$row['country_name']?></option>
+<?php
+	endforeach;?>
 														</select>
 													</div>
 												</div>
@@ -180,7 +174,7 @@ if(isset($_GET["p"]))$producto = true;
 												<div class="col-md-4">
 												<div class="form-group">
 														<label>Telefono para este servicio</label>
-														<input name="telefono" required type="tel" class="form-control" placeholder="Escriba su numero de telefono">
+														<input name="telefono" required type="tel" class="form-control" placeholder="Escriba su numero de telefono" value="<?=isset($row['telefono'])?$row['telefono']:''?>">
 													</div>
 												</div>
 											    <div class="col-sm-4 col-md-4">
