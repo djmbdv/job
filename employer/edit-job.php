@@ -21,9 +21,8 @@ $stmt->execute();
 
 $rec = $stmt->rowCount();
 $result = $stmt->fetchAll();
-if ($rec == "0") {
+if ($rec == 0) {
 	header("location:./");
-	echo $rec."  ".$myID;
 	die();
 }
 	
@@ -37,7 +36,8 @@ foreach($result as $row){
 	$jobdescription = $row['description'];
 	$jobrespo = $row['responsibility'];
 	$jobreq = $row['requirements'];
-	$closingdate = $row['closing_date'];		
+	$closingdate = $row['closing_date'];
+	$telefono = $row['telefono'];		
 }
 $deep_url = 1;
 include_once "../headerPrincipal.php";
@@ -70,7 +70,7 @@ if(isset($_GET["p"]))$producto = true;
 								
 								<h2 class="heading mb-15"><h4><?=$compname?></h4>
 							
-								<p class="location"><i class="fa fa-map-marker"></i> <?php echo "$zip"; ?> <?php echo "$city"; ?>. <?php echo "$street"; ?>, <?php echo "$country"; ?> <span class="block"> <i class="fa fa-phone"></i> <?php echo "$myphone"; ?></span></p>
+								<p class="location"><i class="fa fa-map-marker"></i> <?php echo "$zip"; ?> <?=$city?>. <?$street?>, <?=$country?> <span class="block"> <i class="fa fa-phone"></i> <?=$myphone?></span></p>
 								
 								<ul class="meta-list clearfix">
 									<li>
@@ -108,7 +108,7 @@ if(isset($_GET["p"]))$producto = true;
 											<h3 class="text-left"><?=$jobtitle?></h3>
 										</div>
 
-										<form class="post-form-wrapper" action="app/update-job.php" method="POST" autocomplete="off">
+										<form class="post-form-wrapper" action="app/update-job.php" method="POST" autocomplete="off" enctype="multipart/form-data">
 											<input type="hidden" name="jobid" value="<?=$jobid?>">
 											<div class="row gap-20">
 											<?php include 'constants/check_reply.php'; ?>
@@ -117,7 +117,7 @@ if(isset($_GET["p"]))$producto = true;
 												
 													<div class="form-group">
 														<label>T&iacute;tulo del Servicio</label>
-														<input name="title" value="<?php echo "$jobtitle"; ?>" required type="text" class="form-control" placeholder="Enter job title">
+														<input name="title" value="<?=$jobtitle?>" required type="text" class="form-control" placeholder="Enter job title">
 													</div>
 													
 												</div>
@@ -145,8 +145,8 @@ if(isset($_GET["p"]))$producto = true;
 	$stmt->execute();
 	$result = $stmt->fetchAll();
 
-	foreach($result as $row):?>
-															<option <?= ($jobcountry == $row['country_name'])?'selected ':''?> value="<?=$row['country_name']?>"><?=$row['country_name']?></option>
+	foreach($result as $row2):?>
+															<option <?= ($jobcountry == $row2['country_name'])?'selected ':''?> value="<?=$row2['country_name']?>"><?=$row2['country_name']?></option>
 <?php
 	endforeach;?>
 														</select>
@@ -163,8 +163,8 @@ if(isset($_GET["p"]))$producto = true;
 	$stmt->execute();
 	$result = $stmt->fetchAll();
 
-	foreach($result as $row):?> 
-															<option <?= ($jobcategory == $row['category'])?'selected':''?> value="<?=$row['category']?>"><?= $row['category']?></option>
+	foreach($result as $row3):?> 
+															<option <?= ($jobcategory == $row3['category'])?'selected':''?> value="<?=$row3['category']?>"><?= $row3['category']?></option>
 <?php
 	endforeach;
 ?>
@@ -173,8 +173,8 @@ if(isset($_GET["p"]))$producto = true;
 												</div>
 												<div class="col-md-4">
 												<div class="form-group">
-														<label>Telefono para este servicio</label>
-														<input name="telefono" required type="tel" class="form-control" placeholder="Escriba su numero de telefono" value="<?=isset($row['telefono'])?$row['telefono']:''?>">
+														<label>Tel&eacute;fono para este servicio</label>
+														<input name="telefono" value ="<?=isset($row['telefono'])?$row['telefono']:'?'?>" required type="tel" class="form-control" placeholder="Escriba su numero de telefono" >
 													</div>
 												</div>
 											    <div class="col-sm-4 col-md-4">
@@ -317,7 +317,7 @@ $("#file-zone").click(e=>{
 });
 
 $(".close-span-old").click(e=>{
-	var drop_data = $("<input></input>").attr("type","hidden").attr("name","delimg").attr("value",$(e.srcElement).parent().attr("id-image"));
+	var drop_data = $("<input></input>").attr("type","hidden").attr("name","delimg[]").attr("value",$(e.srcElement).parent().attr("id-image"));
 	$(e.srcElement).parent().parent().append(drop_data);
 	$(e.srcElement).parent().remove();
 });
