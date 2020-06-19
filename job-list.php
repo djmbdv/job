@@ -119,10 +119,7 @@ foreach($result as $row):
 								<span>Municipio:</span>
 								<?=$row['city']?>
 							</li>
-							<li>
-								<span>Experiencia:</span>
-								<?=$row['experience'] ?>
-							</li>
+					
 							<li>
 								<span>Telefono: </span>
 								<?= $user_online?   $row['telefono']: '<a class="only-logged" href="#">Ver tel&eacute;fono</a>' ?>
