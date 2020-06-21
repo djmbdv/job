@@ -8,10 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
     <title>Document</title>
 </head>
 <style>
@@ -20,23 +17,33 @@
     }
 </style>
 <body >
-    <div class="row">
-
-        <div class="col col-3">
 
 
-        </div>
-        <div class="col col-5">
+        <div style="background: #f1bb13; width: 650px;  height:700px">
 
-            <img  src="images/email-marketing2.png" width="600" height="750" alt="" >
-                <button class="btn btn-light btn-lg" style="margin-left: 396px;
-    margin-top: -317px;"> Verifica tu email</button>
-        </div>
-        <div class="col col-4">
+            <img  src="images/email-check.jpg" style="width:100%;" alt="" >
+                <div style="margin-top: -60px; width: 300px; position: absolute;left: 30px;">
+                    <img src="images/email-check-text.jpg" style="max-width: 100%;">
+                </div>
 
 
-        </div>
+                <div  style="border-radius: 20px;
+    -webkit-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+    padding: 8px;
+    margin-left: auto;
+    margin-top: 30px;
+    margin-right: 40px;
+    font-weight: 400;
+    width: 150px;
+    background: #ffffff;
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-width: 2px;"><a href="#"> <img style="max-width :100%" src="images/email-check-button.jpg">
+        </a>
     </div>
+        </div>
+
 
 </body>
 
