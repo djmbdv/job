@@ -58,7 +58,6 @@ for($i = 0; $i < count($_FILES["images"]["name"]); $i++):
 	$uploadOk = 1;
 	$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 	$pathTotal = strtolower(pathinfo($target_file,PATHINFO_DIRNAME));
-	echo $pathTotal; 
 	$target_file =$target_dir.uniqid("img").".$imageFileType";
 	if ($_FILES["images"]["size"][$i] > 500000) {
 	  $uploadOk = 0;

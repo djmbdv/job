@@ -130,11 +130,11 @@ foreach($result as $row):
 			</div>
 			<div class="job-item-list-bottom">
 				<div class="row">
-					<div class="col-sm-7 col-md-8">
-						<div class="sub-category col-sm-7">
+					<div class="col-md-8">
+						<div class="sub-category col-sm-8">
 							<a><?= $row['category'] ?></a>
 						</div>
-						<div class="thumbails col-sm-5" >
+						<div class="thumbails col-sm-6" >
 <?php 
 	$smtm3 = $conn->prepare("select * from tbl_image_service where service = :service");
 	$smtm3->bindValue(":service", $row['job_id']);
@@ -174,7 +174,7 @@ endforeach;?>
 
 	.thumb{
 	  float: right;
-	  width: 33.33%;
+	  width: 24.2%;
 	  padding: 1px;
 	  background: none;
 	}
