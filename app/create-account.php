@@ -41,7 +41,34 @@ function create_verification_email($email){
     $token = generate_verification_token($email);
     $protocol = $isHttps ? "https" : "http";
     $local = LOCAL ? "/job" : "";
-    $mail->Body    = "Link de Verificacion <b><a href='$protocol://$actual_link$local/app/email-verification.php?t=$token'>$protocol://$actual_link$local/app/email-verification.php?t=$token</a></b>";
+
+    $url ="$protocol://$actual_link$local";
+    $mail->Body    = <<<EOD
+<div style="background: #f1bb13; width: 650px;  height:700px">
+	<img  src="$url/images/email-check.jpg" style="width:100%;" alt="" >
+	<div style="margin-top: -60px; width: 300px; position: absolute;left: 30px;">
+		<img src="$url/images/email-check-text.jpg" style="max-width: 100%;">
+	</div>
+    <div  style="border-radius: 20px;
+    -webkit-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+    padding: 8px;
+    margin-left: auto;
+    margin-top: 30px;
+    margin-right: 40px;
+    font-weight: 400;
+    width: 150px;
+    background: #ffffff;
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-width: 2px;">
+	    <a href="$url/app/email-verification.php?t=$token">
+		    <img style="max-width :100%" src="$url/images/email-check-button.jpg">
+        </a>
+    </div>
+</div>
+EOD;
+
     $mail->send();
     return true;
 }
