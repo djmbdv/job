@@ -111,7 +111,7 @@ if(isset($_GET["p"]))$producto = true;
 										<form class="post-form-wrapper" action="app/update-job.php" method="POST" autocomplete="off" enctype="multipart/form-data">
 											<input type="hidden" name="jobid" value="<?=$jobid?>">
 											<div class="row gap-20">
-											<?php include 'constants/check_reply.php'; ?>
+											<?php include '../constants/check_reply.php'; ?>
 										
 												<div class="col-sm-8 col-md-8">
 												

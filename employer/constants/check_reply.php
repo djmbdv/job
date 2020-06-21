@@ -17,7 +17,7 @@ $error_code = $_GET['r'];
      $description = $rowx['description'];
      $type = $rowx['type'];
      print '
-	 <div class="alert alert-'.$type.'">
+	 <div class="alert text-center alert-'.$type.'">
      '.$description.'
 	 </div>
      ';

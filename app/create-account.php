@@ -46,7 +46,7 @@ function create_verification_email($email){
     $mail->Body    = <<<EOD
 <div style="background: #f1bb13; width: 650px;  height:700px">
 	<img  src="$url/images/email-check.jpg" style="width:100%;" alt="" >
-	<div style="margin-top: -60px; width: 300px; position: absolute;left: 41px;">
+	<div style="margin-top: -60px; width: 300px; position: absolute;left: 42px;">
 		<img src="$url/images/email-check-text.jpg" style="max-width: 100%;">
 	</div>
     <div  style="border-radius: 20px;
