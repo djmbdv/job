@@ -8,7 +8,7 @@ $smtm->execute();
 $path = $smtm->fetchObject()->path;
 $pi = pathinfo($path);
 
-if($pi["extension"] == png):
+if($pi["extension"] == 'png'):
 header('Content-Type: image/png');
 
 
@@ -25,7 +25,7 @@ imagecopyresized($thumb, $origen, 0, 0, 0, 0, $nuevo_ancho, $nuevo_alto, $ancho,
 
 
 imagepng($thumb);
-else if($pi["extension"] == 'jpg' || $pi["extension"] == 'jpeg'):
+elseif($pi["extension"] == 'jpg' || $pi["extension"] == 'jpeg'):
 header('Content-Type: image/jpg');
 
 
