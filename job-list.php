@@ -178,7 +178,6 @@ endforeach;?>
 	  padding: 1px;
 	  background: none;
 	  margin-top: auto;
-	  margin-bottom: auto;
 	}
 	.img-thumb{
 		width: 100%;
