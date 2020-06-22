@@ -3312,7 +3312,7 @@ ul.meta-list li span {
 }
 
 .job-item-grid {
-    background: #EDF2F2;
+    background: #f5f5f5;
     width: 100%;
     position: relative;
 }
@@ -5716,6 +5716,7 @@ ul.static-page-menu li.active a {
 .login-box-wrapper .modal-header,
 .login-box-wrapper .modal-footer {
     background: #EEE;
+
 }
 
 .login-box-wrapper .modal-body {
@@ -5726,6 +5727,7 @@ ul.static-page-menu li.active a {
     line-height: 1;
     margin: 0;
     font-weight: 700;
+
 }
 
 .login-modal-or {
@@ -5794,6 +5796,7 @@ ul.static-page-menu li.active a {
     -webkit-box-shadow: 0px 0px 11px -1px rgba(0, 0, 0, 0.16);
     -moz-box-shadow: 0px 0px 11px -1px rgba(0, 0, 0, 0.16);
     box-shadow: 0px 0px 11px -1px rgba(0, 0, 0, 0.16);
+    padding: 8px;
 }
 
 .modal.login-box-wrapper {

@@ -86,12 +86,8 @@ include_once 'headerPrincipal.php';
 									<h2 class="heading mb-15"><?=$jobtitle?></h2>
 									<div class="meta-div clearfix mb-25">
 <?php
-	$stmt2 = $conn->prepare("select count(value) as num, avg(value) as prom from tbl_votes where job_id = :job_id");
-		$stmt2->bindValue(":job_id",$jobid);
-		$stmt2->execute();
-		$votos = $stmt2->fetchObject();
-	if($user_online):
-
+	
+if($user_online):
 
 	 ?>
 										<div class="line-stars">
@@ -105,6 +101,10 @@ include_once 'headerPrincipal.php';
 										</div>
 <?php
 	else:
+	$stmt2 = $conn->prepare("select count(value) as num, avg(value) as prom from tbl_votes where job_id = :job_id");
+		$stmt2->bindValue(":job_id",$jobid);
+		$stmt2->execute();
+		$votos = $stmt2->fetchObject();
 	
 		?>
 										<span class="stars-outer" data-rating="5">
