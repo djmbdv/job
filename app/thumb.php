@@ -39,4 +39,6 @@ $thumb = imagecreate($nuevo_ancho, $nuevo_alto);
 $origen = imagecreatefromjpeg($path);
 
 imagecopyresized($thumb, $origen, 0, 0, 0, 0, $nuevo_ancho, $nuevo_alto, $ancho, $alto);
+
+imagejpeg($thumb);
 endif;
