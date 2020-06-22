@@ -1,6 +1,6 @@
 <?php
 
-require '../constants/connection.php';
+require 'connection.php';
 
 global $conn;
 
