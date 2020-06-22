@@ -24,11 +24,12 @@ $country = $_POST['country'];
 $category = $_POST['category'];
 $desc = ucfirst($_POST['description']);
 //$deadline = $_POST['deadline'];
+$p = isset($_POST["producto"]);
 $telefono= $_POST['telefono'];
-
+$addQuery = $p? ", :producto, :precio":'';
 
 $stmt = $conn->prepare("INSERT INTO tbl_jobs (job_id, title, city, country, category, description, company, date_posted, telefono)
- VALUES (:jobid, :title, :city, :country, :category,  :description, :company, :dateposted, :telefono)");
+ VALUES (:jobid, :title, :city, :country, :category,  :description, :company, :dateposted, :telefono $addQuery)");
 $stmt->bindParam(':jobid', $job_id);
 $stmt->bindParam(':title', $title);
 $stmt->bindParam(':city', $city);
@@ -38,6 +39,11 @@ $stmt->bindParam(':description', $desc);
 $stmt->bindParam(':company', $myid);
 $stmt->bindParam(':dateposted', $postdate);
 $stmt->bindParam(':telefono', $telefono);
+if($p){
+$precio = $_POST['precio'];
+$stmt->bindParam(':producto', $p);
+$stmt->bindParam(':precio',$precio);
+}
 $stmt->execute();
 
 if(isset($_FILES["images"])):
@@ -61,12 +67,7 @@ for($i = 0; $i < count($_FILES["images"]["name"]); $i++):
 	  $uploadOk = 0;
 	}
 	if($uploadOk == 1){
-		if (move_uploaded_file($_FILES["images"]["tmp_name"][$i], $target_file)) {
-
-
-  } else {
-    echo "Sorry, there was an error uploading your file.";
-  }
+		move_uploaded_file($_FILES["images"]["tmp_name"][$i], $target_file);
 	}
 	$stmt = $conn->prepare("INSERT INTO `tbl_image_service` ( `path`, `service`) VALUES (:path, :service);");
 	$stmt->bindValue(":path","$protocol://$actual_link$local/images/uploads/".basename($target_file));
@@ -74,4 +75,6 @@ for($i = 0; $i < count($_FILES["images"]["name"]); $i++):
 	$stmt->execute();
 endfor;
 endif;
-header("location:../post-job.php?r=9843");		  
+if($p)
+	 header("location:../post-job.php?r=9844");		
+else header("location:../post-job.php?r=9843");		  

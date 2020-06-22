@@ -57,25 +57,25 @@ include_once "../headerPrincipal.php";
 
 									<div class="admin-user-action text-center">
 									
-										<a href="post-job.php" class="btn btn-primary btn-sm "><p style="color:black">Publicar producto</p></a>
+										<a href="post-job.php?p=true" class="btn btn-primary btn-sm "><p style="color:black">Publicar producto</p></a>
 										
 									</div>
 									<ul class="admin-user-menu clearfix">
 										<li  class="active">
-											<a href="./"><i class="fa fa-user"></i> Perfil</a>
+											<a href="./"><i class="fa fa-user"></i>Perfil</a>
 										</li>
 										<li class="">
-										<a href="change-password.php"><i class="fa fa-key"></i> Cambiar Contraseña</a>
+										<a href="change-password.php"><i class="fa fa-key"></i>Cambiar Contraseña</a>
 										</li>
 			
 										<li>
-											<a href="../company.php?ref=<?php echo "$myid"; ?>"><i class="fa fa-briefcase"></i> Descripción Empresa</a>
+											<a href="../company.php?ref=<?=$myid?>"><i class="fa fa-briefcase"></i>Descripción Empresa</a>
 										</li>
 										<li>
-											<a href="my-jobs.php"><i class="fa fa-eye"></i> Ver Servicios y productos publicados</a>
+											<a href="my-jobs.php"><i class="fa fa-eye"></i>Ver Servicios y productos publicados</a>
 										</li>
 										<li>
-											<a href="../logout.php"><i class="fa fa-sign-out"></i> Logout</a>
+											<a href="../logout.php"><i class="fa fa-sign-out"></i>Cerrar Sesi&oacute;n</a>
 										</li>
 									</ul>
 								</div>

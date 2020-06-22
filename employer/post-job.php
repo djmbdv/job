@@ -21,7 +21,7 @@ if(isset($_GET["p"]))$producto = true;
 					<ol class="breadcrumb-list booking-step">
 						<li><a href="../">Inicio</a></li>
 						<li><a ><?=$compname?></a></li>
-						<li><span>Publicar Servicio</span></li>
+						<li><span>Publicar <?=$producto?"Producto":"Servicio" ?> </span></li>
 					</ol>
 				</div>
 			</div>
@@ -40,9 +40,9 @@ if(isset($_GET["p"]))$producto = true;
 									?>
 								</div>
 								
-								<h2 class="heading mb-15"><h4><?php echo "$compname"; ?></h4>
+								<h2 class="heading mb-15"><h4><?= "$compname"?></h4>
 							
-								<p class="location"><i class="fa fa-map-marker"></i> <?php echo "$zip"; ?> <?php echo "$city"; ?>. <?php echo "$street"; ?>, <?php echo "$country"; ?> <span class="block"> <i class="fa fa-phone"></i> <?php echo "$myphone"; ?></span></p>
+								<p class="location"><i class="fa fa-map-marker"></i> <?= "$zip"; ?> <?php echo "$city"; ?>. <?php echo "$street"; ?>, <?= "$country"; ?> <span class="block"> <i class="fa fa-phone"></i> <?php echo "$myphone"; ?></span></p>
 								
 								<ul class="meta-list clearfix">
 
@@ -75,13 +75,13 @@ if(isset($_GET["p"]))$producto = true;
 										<form class="post-form-wrapper" action="app/post-job.php" method="POST" autocomplete="off" enctype="multipart/form-data">
 								
 											<div class="row gap-20">
-											<?php include 'constants/check_reply.php'; ?>
+											<?php include '../constants/check_reply.php'; ?>
 										
 												<div class="col-sm-8 col-md-8">
 												
 													<div class="form-group">
-														<label>T&iacute;tulo del servicio</label>
-														<input name="title" required type="text" class="form-control" placeholder="Escriba un titulo">
+														<label>T&iacute;tulo del <?=$producto?"Producto":"Servicio"?></label>
+														<input name="title" required type="text" class="form-control" placeholder="Escriba un nombre">
 													</div>
 													
 												</div>
@@ -91,12 +91,12 @@ if(isset($_GET["p"]))$producto = true;
 												<div class="col-sm-4 col-md-4">
 												
 													<div class="form-group">
-														<label>municipio</label>
+														<label>Municipio</label>
 														<input name="city" required type="text" class="form-control" placeholder="Escriba el municipio">
 													</div>
 
 													<div class="form-group">
-														<label>Telefono para este servicio</label>
+														<label>Telefono para este <?=$producto?"Producto":"Servicio"?></label>
 														<input name="telefono" required type="tel" class="form-control" placeholder="Escriba su numero de telefono">
 													</div>
 													
@@ -123,7 +123,7 @@ try {
 														</select>
 													</div>
 													<div class="form-group">
-														<label>Categoria del servicio</label>
+														<label>Categoria del <?=$producto?"Producto":"Servicio"?></label>
 														<select name="category" required class="selectpicker show-tick form-control" data-live-search="true">
 															<option disabled value="">Seleccionar</option>
 <?php
@@ -148,15 +148,25 @@ try{
 												<div class="clear"></div>
 												<div class="col-sm-12 col-md-12">
 													<div class="form-group bootstrap3-wysihtml5-wrapper">
-														<label>Describa el servicio</label>
+														<label>Describa el <?=$producto?"Producto":"Servicio"?></label>
 														<textarea class="form-control bootstrap3-wysihtml" name="description" required placeholder="Escriba una descripcion" style="height: 100px;"></textarea>
 													</div>
 												</div>
-												<div class="clear"></div>
-												<div class="clear"></div>
 												
+												
+<?php
+	if($producto): ?>
+												<div class="clear"></div>
+												<div class="col-md-4">
+													<div class="form-group bootstrap3-wysihtml5-wrapper">
+														<label>Precio del Producto</label>
+														<input class="form-control" name="precio" type="number" required placeholder="Ingrese precio" required="" />
+													</div>
+												</div>
+<?php endif;?>
+												<div class="clear"></div>
 												<div class="form-group group-file">
-											        <label>Ingrese imagenes del servicio:</label>
+											        <label>Ingrese imagenes del <?=$producto?"Producto":"Servicio"?>:</label>
 											        <div class="card text-center" id="file-zone">
 											        <span style="padding-top:auto;">+</span>	
 											        </div>
@@ -170,9 +180,9 @@ try{
 
 												
 												<div class="clear"></div>
-												
+												<?=$producto?'<input: type="hidden" name="producto" value="1">':''?>
 												<div class="col-sm-6 mt-30">
-													<button type="submit"  onclick = "validate(this)" class="btn btn-primary btn-lg">Postear el servicio</button>
+													<button type="submit"  onclick = "validate(this)" class="btn btn-primary btn-lg">Publicar <?=$producto?"Producto":"Servicio"?></button>
 												</div>
 
 											</div>
