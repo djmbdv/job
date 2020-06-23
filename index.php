@@ -79,10 +79,10 @@ global $conn;
         <ul class="min-list inline-list locations locations--layout-1">
          
           <li class="location">
-            <a href="register.php" class="c-white"><i class="fa fa-book"></i>Crea tu servicios ahora</a>
+            <a href="register.php" class="c-white"><i class="fa fa-book" style="font-size:20px"></i><b>Crea tu servicios ahora</b></a>
           </li>
           <li class="location">
-            <a href="register.php" class="c-white"><i class="fa fa-user"></i>Promocionate con nosotros</a>
+            <a href="register.php" class="c-white"><i class="fa fa-user" style="font-size:20px"></i><b>Promocionate con nosotros</b></a>
           </li>
          
         </ul>
