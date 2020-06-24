@@ -15,6 +15,9 @@
 	<meta name="keywords" content="trabajo, empleos, cv, curriculum, empresas, carrera,servicios profesionales, tecnicos, bolsa de trabajo, servicios" />
 	<meta name="author" content="remotepcsolutions.com">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+
 	<?php
 		if(!isset($tags_share)):?>
 	    <meta property="og:image:type" content="image/jpeg" />
@@ -68,7 +71,7 @@
 </head>
 <style type="text/css">
 .navbar-sticky > .container > .logo-wrapper > .logo > img {
-	max-height: 6rem;
+	max-height: 5rem;
 
 }
 .navbar-sticky {
@@ -246,6 +249,8 @@
 body{
 	padding-top: 3em;
 }
+
+
 </style>
 <header id="header">
 
@@ -253,10 +258,10 @@ body{
 		<div class="container">
 			<div class="logo-wrapper">
 				<div class="logo logo-negro">
-					<img class="img img-responsive" id="logo-logo" src="<?=$prefix?>images/logonegro.png"   alt="Logo" />
+					<img class="img img-responsive" id="logo-logo" src="<?=$prefix?>images/LOGOFINAL.png"   alt="Logo" />
 				</div>
 				<div class="logo logo-blanco">
-					<img class="img img-responsive" id="logo-logo" src="<?=$prefix?>images/LOGOBLANCo.png"   alt="Logo" />
+					<img class="img img-responsive" id="logo-logo"  src="<?=$prefix?>images/LOGOFINALBLANCO.png"   alt="Logo" />
 				</div>
 			</div>
 			<div id="navbar" class="navbar-nav-wrapper navbar-arrow">
@@ -278,9 +283,13 @@ body{
 <?php if (isset($user_online ) && $user_online == true): ?>
 				    <li><a  href="<?=$prefix?>logout.php">Cerrar Sesión</a></li>
 					<li><a  href="<?=$prefix?><?=$myrole?>">Perfil</a></li>
+				
+					
 <?php else: ?>
 					<li><a href="<?=$prefix?>login.php">Ingresar</a></li>
 					<li><a href="<?=$prefix?>register.php">Registro</a></li>
+
+				
 <?php endif;?>
 				</ul>
 			</div>
