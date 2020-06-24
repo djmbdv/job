@@ -77,7 +77,7 @@
 .navbar-sticky {
 	background-color: white;
 }
-.navbar-default{
+.navbar-sticky{
 	box-shadow: 0px 3px 7.92px 0.08px rgba(0, 0, 0, 0.1);
 }
 .navbar-default > .container > .logo-wrapper > .logo > img {
