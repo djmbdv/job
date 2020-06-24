@@ -10,8 +10,5 @@ $stmt = $conn->prepare("DELETE FROM tbl_jobs WHERE job_id= :jobid AND company = 
 $stmt->bindParam(':jobid', $job_id);
 $stmt->execute();
 
-$stmt = $conn->prepare("DELETE FROM tbl_job_application WHERE job_id= :jobid");
-$stmt->bindParam(':jobid', $job_id);
-$stmt->execute();
 
 header("location:../my-jobs.php?r=0173");					  
