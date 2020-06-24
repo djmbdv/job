@@ -2,7 +2,7 @@
 
 require_once 'constants/settings.php'; 
 require_once 'constants/connection.php'; 
-
+require_once 'constants/check-login.php';
 global $conn;
 global $actual_link;
 $closingdate = "";
@@ -34,6 +34,7 @@ if ($rec == "0") {
 		$opendate = $row['date_posted'];
 		$compid = $row['company'];
 		$producto = $row['producto'];
+		$telefono = $row['telefono'];
 	}
 }
 	
@@ -145,6 +146,10 @@ if($user_online):
 										<li>
 											<h4 class="heading">Publicado el: </h4>
 											<?=$opendate ?>
+										</li>
+										<li>
+											<h4 class="heading">Tel&eacute;fono: </h4>
+											<?= $user_online?  $telefono: '<a class="only-logged" href="#">Ver tel&eacute;fono</a>' ?>
 										</li>
 									</ul>
 								</div>
