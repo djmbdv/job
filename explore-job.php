@@ -33,6 +33,7 @@ if ($rec == "0") {
 		$jobreq = $row['requirements'];
 		$opendate = $row['date_posted'];
 		$compid = $row['company'];
+		$producto = $row['producto'];
 	}
 }
 	
@@ -88,7 +89,10 @@ include_once 'headerPrincipal.php';
 <?php
 	
 if($user_online):
-
+	$stmt2 = $conn->prepare("select count(value) as num, avg(value) as prom from tbl_votes where job_id = :job_id");
+		$stmt2->bindValue(":job_id",$jobid);
+		$stmt2->execute();
+		$votos = $stmt2->fetchObject();
 	 ?>
 										<div class="line-stars">
 											<div class="ec-stars-wrapper">
@@ -116,6 +120,23 @@ if($user_online):
 									
 									</div>
 									
+
+
+
+						<div class="thumbails row" >
+<?php 
+	$smtm3 = $conn->prepare("select * from tbl_image_service where service = :service");
+	$smtm3->bindValue(":service", $jobid);
+	$smtm3->execute();
+	foreach ($smtm3->fetchAll() as $thumb):
+ ?>
+						
+							<center class="col-sm-3 " >
+								<img class="img img-responsive img-thumb" style="padding: 4px; margin-top: auto; max-height: 100px;" otro="<?=$thumb['path']?>" src="app/thumb.php?id=<?=$thumb['id']?>"/>
+							</center>
+<?php
+	endforeach; ?>
+						</div>									
 									<ul class="meta-list clearfix">
 										<li>
 											<h4 class="heading">Ubicaci&oacute;n:</h4>
@@ -151,7 +172,7 @@ if($user_online):
 										</div>
 									</div>
 								<div class="job-detail-content mt-30 clearfix">
-									<h3>Descripcion del servicio</h3>
+									<h3>Descripcion del <?=$producto?"producto":"servicio"?></h3>
 									<p><?= $jobdescription ?></p>
 									<hr>
 								</div>
