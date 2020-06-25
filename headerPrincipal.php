@@ -59,6 +59,7 @@
 	<script type="text/javascript" src="<?=$prefix?>js/jquery.responsivegrid.js"></script-->
 	<script type="text/javascript" src="<?=$prefix?>js/jquery.waypoints.min.js"></script>
 	<script type="text/javascript" src="<?=$prefix?>js/jquery.slicknav.min.js"></script>
+	<script type="text/javascript" src="<?=$prefix?>js/jquery.responsivegrid.js"></script>
 	<script type="text/javascript" src="<?=$prefix?>bootstrap/js/bootstrap.min.js"></script>
 	<!--script type="text/javascript" src="<?=$prefix?>js/bootstrap-modalmanager.js"></script>
 	<script type="text/javascript" src="<?=$prefix?>js/bootstrap-modal.js"></script-->
