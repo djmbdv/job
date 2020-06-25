@@ -2984,9 +2984,21 @@ body.modal-open,
 }
 
 
-/* background color for responsive button */
 
+.slicknav_btn.slicknav_open,
+.slicknav_btn.slicknav_collapsed,
+.slicknav_btn.slicknav_open:before,
+.slicknav_btn.slicknav_collapsed:before {
+    text-decoration: none !important;
+    color: #FFF;
+    border: none;
+}
 
+.slicknav_btn.slicknav_open:before,
+.slicknav_btn.slicknav_collapsed:before {
+    font-size: 20px;
+    color: #FFF;
+}
 
 .slicknav_menutxt {
     line-height: 22px !important;
