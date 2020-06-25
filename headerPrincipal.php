@@ -51,13 +51,14 @@
 	<script type="text/javascript" src="<?=$prefix?>js/jquery-migrate-1.2.1.min.js"></script>
 	<script type="text/javascript" src="<?=$prefix?>js/jquery.easing.1.3.js"></script>
 	<!--script type="text/javascript" src="<?=$prefix?>js/jquery.waypoints.min.js"></script>
-	<script type="text/javascript" src="<?=$prefix?>js/jquery.slicknav.min.js"></script>
+	
 	<script type="text/javascript" src="<?=$prefix?>js/jquery.placeholder.min.js"></script>
 	<script type="text/javascript" src="<?=$prefix?>js/jquery-filestyle.min.js"></script>
 	<script type="text/javascript" src="<?=$prefix?>js/jquery.countimator.js"></script>
 	<script type="text/javascript" src="<?=$prefix?>js/jquery.countimator.wheel.js"></script>
 	<script type="text/javascript" src="<?=$prefix?>js/jquery.responsivegrid.js"></script-->
 	<script type="text/javascript" src="<?=$prefix?>js/jquery.waypoints.min.js"></script>
+	<script type="text/javascript" src="<?=$prefix?>js/jquery.slicknav.min.js"></script>
 	<script type="text/javascript" src="<?=$prefix?>bootstrap/js/bootstrap.min.js"></script>
 	<!--script type="text/javascript" src="<?=$prefix?>js/bootstrap-modalmanager.js"></script>
 	<script type="text/javascript" src="<?=$prefix?>js/bootstrap-modal.js"></script-->
