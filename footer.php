@@ -36,7 +36,7 @@
         </div>
     </div>
 </footer>
-<script type="text/javascript" src="<?=$prefix?>js/customs.js?2"></script>
+<script type="text/javascript" src="<?=$prefix?>js/customs.js?3"></script>
 <script type="text/javascript">
     $(".only-logged").click(e=>{
         e.preventDefault();
