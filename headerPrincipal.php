@@ -37,7 +37,7 @@
 	<link rel="stylesheet" type="text/css" href="<?=$prefix?>bootstrap/css/bootstrap.min.css" media="screen">	
 	<link href="<?=$prefix?>css/animate.css" rel="stylesheet">
 	<link href="<?=$prefix?>css/main.css?24" rel="stylesheet">
-	<link href="<?=$prefix?>css/component.css?1" rel="stylesheet">
+	<link href="<?=$prefix?>css/component.css?2" rel="stylesheet">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
 	<link rel="stylesheet" href="<?=$prefix?>icons/linearicons/style.css">
 	<link rel="stylesheet" href="<?=$prefix?>icons/font-awesome/css/font-awesome.min.css">
@@ -45,13 +45,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,100;1,400&display=swap" rel="stylesheet">
 	<script type="text/javascript" src="<?=$prefix?>js/jquery-1.11.3.min.js"></script>
 	<script type="text/javascript" src="<?=$prefix?>js/jquery-migrate-1.2.1.min.js"></script>
-	<script type="text/javascript" src="<?=$prefix?>js/jquery.easing.1.3.js"></script>
-	<!--script type="text/javascript" src="<?=$prefix?>js/jquery.waypoints.min.js"></script>
-	
-	<script type="text/javascript" src="<?=$prefix?>js/jquery.placeholder.min.js"></script>
-
-	<script type="text/javascript" src="<?=$prefix?>js/jquery.responsivegrid.js"></script-->
-	<script type="text/javascript" src="<?=$prefix?>js/jquery.waypoints.min.js"></script>
+	<script type="text/javascript" src="<?=$prefix?>js/jquery.easing.1.3.js"></script	<script type="text/javascript" src="<?=$prefix?>js/jquery.waypoints.min.js"></script>
 	<script type="text/javascript" src="<?=$prefix?>js/jquery.slicknav.min.js"></script>
 	<script type="text/javascript" src="<?=$prefix?>js/jquery.responsivegrid.js"></script>
 	<script type="text/javascript" src="<?=$prefix?>bootstrap/js/bootstrap.min.js"></script>

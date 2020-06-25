@@ -2986,30 +2986,7 @@ body.modal-open,
 
 /* background color for responsive button */
 
-.slicknav_btn.slicknav_open:before {
-    font-family: 'Ionicons';
-    content: "\f2d7"
-}
 
-.slicknav_btn.slicknav_collapsed:before {
-    font-family: 'Ionicons';
-    content: "\f394"
-}
-
-.slicknav_btn.slicknav_open,
-.slicknav_btn.slicknav_collapsed,
-.slicknav_btn.slicknav_open:before,
-.slicknav_btn.slicknav_collapsed:before {
-    text-decoration: none !important;
-    color: #FFF;
-    border: none;
-}
-
-.slicknav_btn.slicknav_open:before,
-.slicknav_btn.slicknav_collapsed:before {
-    font-size: 20px;
-    color: #FFF;
-}
 
 .slicknav_menutxt {
     line-height: 22px !important;
@@ -3161,9 +3138,6 @@ body.modal-open,
     background: rgba(255, 255, 255, 0.05);
 }
 
-.slicknav_menu .slicknav_icon {
-    display: none;
-}
 
 @media only screen and (max-width: 991px) {
     #responsive-menu {
