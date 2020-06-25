@@ -41,15 +41,19 @@ if(isset($_GET["p"]))$producto = true;
 								</div>
 								
 								<h2 class="heading mb-15"><h4><?= "$compname"?></h4>
-							
-								<p class="location"><i class="fa fa-map-marker"></i> <?= "$zip"; ?> <?php echo "$city"; ?>. <?php echo "$street"; ?>, <?= "$country"; ?> <span class="block"> <i class="fa fa-phone"></i> <?php echo "$myphone"; ?></span></p>
-								
+								<hr>
+
+								<p class="location"><i class="fa fa-map-marker"></i> <?= "$zip"; ?> <?php echo "$city"; ?>. <?php echo "$street"; ?>, <?= "$country"; ?> <span class="block"> <i class="fa fa-phone"></i> <?php echo "$myphone"; ?> </span></p>
+								<hr>
+
 								<ul class="meta-list clearfix">
 
 									<li>
 										<h4 class="heading">Website: </h4>
 										<a target="_blank" href="//<?=$myweb?>"><?=$myweb?></a>
 									</li>
+									<hr>
+
 									<li>
 										<h4 class="heading">Email: </h4>
 										<?=$mymail?>
