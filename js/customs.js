@@ -160,22 +160,7 @@ jQuery(function($) {
 	})
 	
 	
-	
-	/**
-	 * Placeholder
-	 */
-	$("input, textarea").placeholder();
 
-
-	
-	/**
-	 * Latest Job Ticker
-	 */
-	$('.latest-job-ticker').easyTicker({
-		visible: 1,
-		interval: 4000
-	});
-	
 	
 	
 	/**
@@ -214,11 +199,6 @@ jQuery(function($) {
 	});
 	
 	
-	
-	/**
-	 * Counter - Number animation
-	 */
-	$(".counter").countimator();
 	
 	
 	

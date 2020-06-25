@@ -44,6 +44,8 @@ function create_verification_email($email){
 
     $url ="$protocol://$actual_link$local";
     $mail->Body    = <<<EOD
+    <html>
+    <body>
 <div style="background: #f1bb13; width: 650px;  height:700px">
 	<img  src="$url/images/email-check.jpg" style="width:100%;" alt="" >
 	<div style="margin-top: -60px; width: 300px; position: absolute;left: 42px;">
@@ -67,6 +69,8 @@ function create_verification_email($email){
         </a>
     </div>
 </div>
+</body>
+</html>
 EOD;
 
     $mail->send();
