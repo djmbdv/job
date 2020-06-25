@@ -200,11 +200,6 @@ jQuery(function($) {
 	
 	
 	
-	/**
-	 * Counter - Number animation
-	 */
-	$(".counter").countimator();
-	
 	
 	
 	/**
