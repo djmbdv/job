@@ -33,11 +33,11 @@ global $conn;
 							<div class="form-holder">
 								<div class="row gap-0  ">
 									<div  class="autocomplete col-xss-5 col-xs-5 col-sm-5">
-										<small class="text-white">Qu&eacute; Buscas?</small>
+										<small style="font-size:20px" class="text-white">Qu&eacute; Buscas?</small>
 										<input class="form-control" style="display: inline-block;" name="category" id="category-input" placeholder="Producto, Empresa, Servicio..."  name="">
 									</div>
 									<div class="col-xss-5 col-xs-5 col-sm-5">
-										<small class="text-white">D&oacute;nde lo necesitas?</small>
+										<small style="font-size:20px"  class="text-white">D&oacute;nde lo necesitas?</small>
 										<select class="form-control"  name="country"/>
 										<option value="">- Selecciona ciudad -<option>
 										<?php
