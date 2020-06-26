@@ -2984,17 +2984,6 @@ body.modal-open,
 }
 
 
-/* background color for responsive button */
-
-.slicknav_btn.slicknav_open:before {
-    font-family: 'Ionicons';
-    content: "\f2d7"
-}
-
-.slicknav_btn.slicknav_collapsed:before {
-    font-family: 'Ionicons';
-    content: "\f394"
-}
 
 .slicknav_btn.slicknav_open,
 .slicknav_btn.slicknav_collapsed,
@@ -3161,9 +3150,6 @@ body.modal-open,
     background: rgba(255, 255, 255, 0.05);
 }
 
-.slicknav_menu .slicknav_icon {
-    display: none;
-}
 
 @media only screen and (max-width: 991px) {
     #responsive-menu {

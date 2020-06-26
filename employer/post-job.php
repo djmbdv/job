@@ -184,7 +184,7 @@ try{
 
 												
 												<div class="clear"></div>
-												<?=$producto?'<input: type="hidden" name="producto" value="1">':''?>
+												<?=$producto?'<input type="hidden" name="producto" value="1"/>':''?>
 												<div class="col-sm-6 mt-30">
 													<button type="submit"  onclick = "validate(this)" class="btn btn-primary btn-lg">Publicar <?=$producto?"Producto":"Servicio"?></button>
 												</div>

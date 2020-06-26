@@ -15,6 +15,11 @@ global $conn;
 		width:100px;
 		object-fit:cover; 
 	}
+@media (max-width:  600px) {
+	.autocomplete-items{
+		width: 100% !important;
+	}
+}
 </style>
 
  
@@ -32,12 +37,21 @@ global $conn;
 						<form action="list.php" method="GET" autocomplete="off">
 							<div class="form-holder">
 								<div class="row gap-0  ">
+<<<<<<< HEAD
 									<div  class="autocomplete col-xss-5 col-xs-5 col-sm-5">
 										<small style="font-size:20px" class="text-white">Qu&eacute; Buscas?</small>
 										<input class="form-control" style="display: inline-block;" name="category" id="category-input" placeholder="Producto, Empresa, Servicio..."  name="">
 									</div>
 									<div class="col-xss-5 col-xs-5 col-sm-5">
 										<small style="font-size:20px"  class="text-white">D&oacute;nde lo necesitas?</small>
+=======
+									<div  class="autocomplete col-xss-11 col-xs-11 col-sm-5">
+										<small class="text-white">Qu&eacute; Buscas?</small>
+										<input class="form-control" style="display: inline-block;" name="category" id="category-input" placeholder="Producto, Empresa, Servicio..."  name="">
+									</div>
+									<div class="col-xss-11 col-xs-11 col-sm-5">
+										<small class="text-white">D&oacute;nde lo necesitas?</small>
+>>>>>>> 3774431c7df1ae2613270152a92683ee77ef9656
 										<select class="form-control"  name="country"/>
 										<option value="">- Selecciona ciudad -<option>
 										<?php
@@ -60,7 +74,7 @@ global $conn;
                     
                     
                   </div>
-                    <div class="col-lg-2 col-md-2" style="margin-top:30px;"  >
+                    <div class="col-lg-2 col-md-2 col-xs-11" style="margin-top:30px;"  >
                     <button type="submit"  class="btn button--medium  btn-primary"  style="margin-left: 40px;" >
               <i class="fa fa-search"></i> Buscar
             		</button>   
@@ -218,9 +232,9 @@ global $conn;
       t.setAttribute("class","list-item-title");
       t.innerHTML = "Servicios/Productos";
       cola.appendChild(t);
-      cola.setAttribute("class", "col-md-6");
+      cola.setAttribute("class", "col-md-6 col-xs-12");
       colb = document.createElement("div");
-      colb.setAttribute("class", "col-md-6");
+      colb.setAttribute("class", "col-md-6 col-xs-12");
       t = document.createElement("h6");
       t.setAttribute("class","list-item-title");
       t.innerHTML = "Empresas";
