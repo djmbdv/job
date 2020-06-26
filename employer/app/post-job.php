@@ -27,8 +27,8 @@ $desc = ucfirst($_POST['description']);
 $p = isset($_POST["producto"]);
 $telefono= $_POST['telefono'];
 $addQuery = $p? ", :producto, :precio":'';
-
-$stmt = $conn->prepare("INSERT INTO tbl_jobs (job_id, title, city, country, category, description, company, date_posted, telefono)
+$addQueryValue = $p? ", producto, precio":'';
+$stmt = $conn->prepare("INSERT INTO tbl_jobs (job_id, title, city, country, category, description, company, date_posted, telefono $addQueryValue )
  VALUES (:jobid, :title, :city, :country, :category,  :description, :company, :dateposted, :telefono $addQuery)");
 $stmt->bindParam(':jobid', $job_id);
 $stmt->bindParam(':title', $title);
@@ -41,7 +41,7 @@ $stmt->bindParam(':dateposted', $postdate);
 $stmt->bindParam(':telefono', $telefono);
 if($p){
 $precio = $_POST['precio'];
-$stmt->bindParam(':producto', $p);
+$stmt->bindParam(':producto', 1);
 $stmt->bindParam(':precio',$precio);
 }
 $stmt->execute();

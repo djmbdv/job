@@ -11,11 +11,7 @@
 
     <title>Document</title>
 </head>
-<style>
-    body{
-        background:gray;
-    }
-</style>
+
 <body >
 
 

@@ -2,8 +2,6 @@
 
 require_once 'constants/connection.php';?>
 <div id="messageModal" class="modal fade modal-dialog" role="dialog">
-
-    <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>

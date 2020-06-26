@@ -23,44 +23,24 @@ $page = 1;
 $deep_url = 1;
 include_once "../headerPrincipal.php";
 ?>
-
-
-
 <body class="not-transparent-header">
-
 	<div class="container-wrapper">
-
 		<div class="main-wrapper">
-		
 			<div class="breadcrumb-wrapper">
-			
 				<div class="container">
-				
 					<ol class="breadcrumb-list booking-step">
 						<li><a href="../">Inicio</a></li>
 						<li><span>Mis Publicaciones</span></li>
 					</ol>
-					
 				</div>
-				
 			</div>
-
-			
 			<div class="admin-container-wrapper">
-
 				<div class="container">
-				
 					<div class="GridLex-gap-15-wrappper">
-					
 						<div class="GridLex-grid-noGutter-equalHeight">
-						
 							<div class="GridLex-col-3_sm-4_xs-12">
-							
 								<div class="admin-sidebar">
-										
-										
 									<div class="admin-user-item for-employer">
-										
 										<div class="image">
 										<?php 
 										if ($logo == null) {
@@ -70,9 +50,7 @@ include_once "../headerPrincipal.php";
 										}
 										?><br>
 										</div>
-										
 										<h3><?=$compname?></h3>
-										
 									</div>
 									
 									<div class="admin-user-action text-center">
