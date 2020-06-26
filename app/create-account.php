@@ -123,7 +123,8 @@ function register_as_employer() {
 	    $stmt = $conn->prepare("INSERT INTO tbl_users (first_name, title, email, last_login, login, role, member_no,verified) 
 		VALUES (:fname, :title, :email, :lastlogin, :login, :role, :memberno, :verified)");
 	    $stmt->bindParam(':fname', $cname);
-	    $stmt->bindParam(':title', $role);
+	    $vacio = '';
+	    $stmt->bindParam(':title', $vacio);
 	    $stmt->bindParam(':email', $email);
 		$stmt->bindParam(':lastlogin', $last_login);
 	    $stmt->bindParam(':login', $login);
