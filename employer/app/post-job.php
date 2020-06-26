@@ -40,8 +40,8 @@ $stmt->bindParam(':company', $myid);
 $stmt->bindParam(':dateposted', $postdate);
 $stmt->bindParam(':telefono', $telefono);
 if($p){
-$precio = $_POST['precio'];
-$stmt->bindParam(':producto', 1);
+$precio = 1;
+$stmt->bindParam(':producto', $precio);
 $stmt->bindParam(':precio',$precio);
 }
 $stmt->execute();
@@ -59,6 +59,7 @@ for($i = 0; $i < count($_FILES["images"]["name"]); $i++):
 	$target_file =$target_dir.uniqid("img").".$imageFileType";
 	if ($_FILES["images"]["size"][$i] > 500000) {
 	  $uploadOk = 0;
+	  die();
 	}
 
 	if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
