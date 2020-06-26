@@ -122,22 +122,7 @@ if($user_online):
 									</div>
 									
 
-
-
-						<div class="thumbails row" >
-<?php 
-	$smtm3 = $conn->prepare("select * from tbl_image_service where service = :service");
-	$smtm3->bindValue(":service", $jobid);
-	$smtm3->execute();
-	foreach ($smtm3->fetchAll() as $thumb):
- ?>
-						
-							<center class="col-sm-3 " >
-								<img class="img img-responsive img-thumb" style="padding: 4px; margin-top: auto; max-height: 100px;" otro="<?=$thumb['path']?>" src="app/thumb.php?id=<?=$thumb['id']?>"/>
-							</center>
-<?php
-	endforeach; ?>
-						</div>									
+								
 									<ul class="meta-list clearfix">
 										<li>
 											<h4 class="heading">Ubicaci&oacute;n:</h4>
@@ -180,6 +165,25 @@ if($user_online):
 									<h3>Descripcion del <?=$producto?"producto":"servicio"?></h3>
 									<p><?= $jobdescription ?></p>
 									<hr>
+
+
+
+						<div class="thumbails row" >
+<?php 
+	$smtm3 = $conn->prepare("select * from tbl_image_service where service = :service");
+	$smtm3->bindValue(":service", $jobid);
+	$smtm3->execute();
+	foreach ($smtm3->fetchAll() as $thumb):
+ ?>
+						
+							<center class="col-sm-3 " >
+								<img class="img img-responsive img-thumb" style="padding: 4px; margin-top: auto; max-height: 100px;" otro="<?=$thumb['path']?>" src="app/thumb.php?id=<?=$thumb['id']?>"/>
+							</center>
+<?php
+	endforeach; ?>
+						</div>	
+
+						<hr>
 								</div>
 								<div class="tab-style-01">
 									<ul class="nav" role="tablist">
