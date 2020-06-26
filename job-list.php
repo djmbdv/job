@@ -82,7 +82,7 @@ foreach($result as $row):
 					<div class="col-sm-7 col-md-8">
 						<h4 class="heading"><?=$row[1]?></h4>
 						<div class="meta-div clearfix mb-25">
-							<span>por <a href="company.php?ref=<?=$compid?>">  <?= $thecompname ?> - Disponibilidad</a></span>
+							<span>ofrecido por <a href="company.php?ref=<?=$compid?>">  <?= $thecompname ?> </a></span>
 						</div>
 						<p class="texing character_limit">
 							<?=$row['description']?>
@@ -177,7 +177,7 @@ endforeach;?>
 	  width: 24.2%;
 	  padding: 1px;
 	  background: none;
-	  margin-top: auto;
+	  /*margin-top: auto;*/
 	}
 	.img-thumb{
 		width: 100%;
@@ -196,3 +196,7 @@ endforeach;?>
 	$("#modal-galery").modal();
 	});
 </script>
+
+
+
+
