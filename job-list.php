@@ -41,7 +41,7 @@ $stmt->bindParam(':cate', $cate);
 if(isset($_GET['country']))$stmt->bindParam(':country', $country);
 $slc_country = $country;
 $slc_category = $cate;
-$title = "$slc_category empleos en $slc_country";
+$title = "$slc_category en $slc_country";
 $stmt->execute();
 $result = $stmt->fetchAll();?>
 
@@ -58,6 +58,7 @@ foreach($result as $row):
 	$thecompname = $o->first_name;
 	$member_no =$o->member_no;
 	$telefono = isset($o->telefono)? $o->telefono :"";
+	$producto = $row['producto'];
 ?>
 	<div class="job-item-list">
 		<div class="image">
@@ -119,11 +120,17 @@ foreach($result as $row):
 								<span>Municipio:</span>
 								<?=$row['city']?>
 							</li>
-					
 							<li>
 								<span>Telefono: </span>
 								<?= $user_online?   $row['telefono']: '<a class="only-logged" href="#">Ver tel&eacute;fono</a>' ?>
 							</li>
+<?php
+	if($producto): ?>
+							<li>
+								<span>Precio: </span>
+								 <?=$row['precio'] ?>
+							</li>
+<?php endif?>
 						</ul>
 					</div>										
 				</div>
@@ -151,7 +158,7 @@ foreach($result as $row):
 					</div>
 					
 					<div class="col-sm-5 col-md-4">
-						<a target="_blank" href="explore-job.php?jobid=<?= $row['job_id']; ?>" class="btn btn-primary">Ver este Servicio</a>
+						<a target="_blank" href="explore-job.php?jobid=<?= $row['job_id']; ?>" class="btn btn-primary">Ver este <?=$producto?"producto":"servicio" ?></a>
 					</div>
 				</div>
 			</div>
