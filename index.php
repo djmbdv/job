@@ -37,21 +37,12 @@ global $conn;
 						<form action="list.php" method="GET" autocomplete="off">
 							<div class="form-holder">
 								<div class="row gap-0  ">
-<<<<<<< HEAD
-									<div  class="autocomplete col-xss-5 col-xs-5 col-sm-5">
-										<small style="font-size:20px" class="text-white">Qu&eacute; Buscas?</small>
-										<input class="form-control" style="display: inline-block;" name="category" id="category-input" placeholder="Producto, Empresa, Servicio..."  name="">
-									</div>
-									<div class="col-xss-5 col-xs-5 col-sm-5">
-										<small style="font-size:20px"  class="text-white">D&oacute;nde lo necesitas?</small>
-=======
 									<div  class="autocomplete col-xss-11 col-xs-11 col-sm-5">
 										<small class="text-white">Qu&eacute; Buscas?</small>
 										<input class="form-control" style="display: inline-block;" name="category" id="category-input" placeholder="Producto, Empresa, Servicio..."  name="">
 									</div>
 									<div class="col-xss-11 col-xs-11 col-sm-5">
 										<small class="text-white">D&oacute;nde lo necesitas?</small>
->>>>>>> 3774431c7df1ae2613270152a92683ee77ef9656
 										<select class="form-control"  name="country"/>
 										<option value="">- Selecciona ciudad -<option>
 										<?php
