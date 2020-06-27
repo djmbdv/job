@@ -70,6 +70,7 @@ foreach($result as $row):
 <?php
 	else: ?>
 			<center>
+				<!-- <img class="autofit3" alt="image" title="<?= $thecompname ?>" src="app/image-profiles.php?id=<?=$member_no?>"/> -->
 				<img class="autofit3" alt="image" title="<?= $thecompname ?>" width="180" height="100" src="app/image-profiles.php?id=<?=$member_no?>"/>
 			</center>
 <?php

@@ -74,7 +74,7 @@
 	box-shadow: 0px 3px 7.92px 0.08px rgba(0, 0, 0, 0.1);
 }
 .navbar-default > .container > .logo-wrapper > .logo > img {
-	max-height: 3.5rem;
+	max-height: 5rem;
 }
 .img-footer{
 	margin-right: auto;

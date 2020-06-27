@@ -3172,15 +3172,40 @@ a.recent-job-item:hover {
     margin-bottom: 20px;
 }
 
-
-.job-item-list .image {
+/*.job-item-list .image {
     position: absolute;
     top: 20px;
     left: 20px;
     width: 120px;
+}*/
+
+@media only screen and (min-width: 991px) {
+
+    .job-item-list .image img {
+        position: absolute;
+        top: 0;
+        left: 20px;
+        bottom: 0;
+        right: 0;
+        width: 120px;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
 }
 
-.job-item-list .image img {}
+
+/*.job-item-list .image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 120px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin: auto !important;
+}*/
+
+
+/*.job-item-list .image img {}*/
 
 .job-item-list .content {
     border-left: 1px solid #E3E3E3;
@@ -3448,6 +3473,7 @@ ul.meta-list li span {
         border: 0;
         padding: 0;
     }
+
 }
 
 @media only screen and (max-width: 767px) {

@@ -31,7 +31,7 @@ $slc_country =urldecode(isset($_GET['country'])?$_GET['country']:"");
 
 
 
-<body class="not-transparent-header">
+<body class="not-transparent-header mt-40">
 	<div class="container-wrapper">
 		<div class="main-wrapper">
 			<div class="second-search-result-wrapper">
