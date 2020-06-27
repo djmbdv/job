@@ -189,13 +189,13 @@ global $conn;
       console.log("aca estoy");
      var fondo =document.getElementById('fondito');
      console.log(fondo);
-     fondo.style.backgroundImage = 'url(images/fondo-servicios.png)';
+     fondo.style.backgroundImage = 'url(images/background-index.png)';
           }
           function cambiarfondo2(){
       console.log("aca estoy");
      var fondo =document.getElementById('fondito');
      console.log(fondo);
-     fondo.style.backgroundImage = 'url(images/background-index.png)';
+     fondo.style.backgroundImage = 'url(images/fondo-productos.png)';
           }
           function cambiarfondo3(){
       console.log("aca estoy");
