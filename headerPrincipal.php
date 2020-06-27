@@ -79,7 +79,7 @@
 .img-footer{
 	margin-right: auto;
     margin-left: auto;
-    max-height: 3rem;
+    max-height: 7rem;
 }
 .bottom-footer {
     background: black;
