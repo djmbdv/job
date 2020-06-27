@@ -39,17 +39,16 @@ function create_verification_email($email){
     $mail->isHTML(true);
     $mail->Subject = 'Verificacion de Cuenta';
     $token = generate_verification_token($email);
-    $protocol = $isHttps ? "https" : "http";
+    $protocol = $isHttps || !LOCAL ? "https" : "http";
     $local = LOCAL ? "/job" : "";
-
     $url ="$protocol://$actual_link$local";
     $mail->Body    = <<<EOD
     <html>
     <body>
-<div style="background: #f1bb13; width: 650px;  height:700px">
-	<img  src="$url/images/email-check.jpg" style="width:100%;" alt="" >
-	<div style="margin-top: -60px; width: 300px; position: absolute;left: 42px;">
-		<img src="$url/images/email-check-text.jpg" style="max-width: 100%;">
+<div style=3D"background: #f1bb13; width: 650px;  height:700px">
+	<img  src="$url/images/email-check.jpg" style="width:100%; alt=3D"" >
+	<div style=3D"margin-top: -60px; width: 300px; position: absolute;left: 42px;">
+		<img src=3D"$url/images/email-check-text.jpg" style=3D"max-width: 100%;">
 	</div>
     <div  style="border-radius: 20px;
     -webkit-transition: all .3s;
