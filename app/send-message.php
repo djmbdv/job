@@ -32,5 +32,3 @@ header("location:../contact.php?r=2974");
 } else {
 header("location:../contact.php?r=5634");
 }
-
-?>

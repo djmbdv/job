@@ -553,6 +553,7 @@ ul.nav-mini li a {
     border-radius: 0;
     padding: 12px 0;
     height: 50px;
+    text-align: center;
 }
 
 
@@ -729,7 +730,9 @@ ul.quick-search-keyword li:last-child a:after {
 
 @media (max-width: 479px) {
     .main-search-form-wrapper {
+        
         width: 100%;
+        text-align: center;
     }
 }
 
@@ -1525,8 +1528,7 @@ ul.quick-search-keyword li:last-child a:after {
         margin: 0 0 10px;
     }
     .sorting-content .form-group.GridLex-gap-10-wrappper {
-        margin-left: 0;
-        margin-right: 0;
+      
     }
 }
 

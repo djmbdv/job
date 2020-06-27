@@ -33,17 +33,17 @@ global $conn;
 					<h2 class=" text-center text-shadow" style="text-shadow: 3px black;color: whitesmoke;"> <b> <p > Encuentra lo que necesitas en un click</p></b>
 					</h1>
 					
-					<div class="main-search-form-wrapper">
+					<div class="main-search-form-wrapper" class="text-center">
 						<form action="list.php" method="GET" autocomplete="off">
 							<div class="form-holder">
 								<div class="row gap-0  ">
 									<div  class="autocomplete col-xss-11 col-xs-11 col-sm-5">
-										<small class="text-white">Qu&eacute; Buscas?</small>
-										<input class="form-control" style="display: inline-block;" name="category" id="category-input" placeholder="Producto, Empresa, Servicio..."  name="">
+										<small style="font-size:24px" class="text-white">Qu&eacute; Buscas?</small>
+										<input style="font-size:17px" class="form-control" style="display: inline-block;" name="category" id="category-input" placeholder="Producto, Empresa, Servicio..."  name="">
 									</div>
 									<div class="col-xss-11 col-xs-11 col-sm-5">
-										<small class="text-white">D&oacute;nde lo necesitas?</small>
-										<select class="form-control"  name="country"/>
+										<small  style="font-size:24px" class="text-white">D&oacute;nde lo necesitas?</small>
+										<select style="font-size:17px"  class="form-control"  name="country"/>
 										<option value="">- Selecciona ciudad -<option>
 										<?php
 										try{
@@ -189,7 +189,7 @@ global $conn;
       console.log("aca estoy");
      var fondo =document.getElementById('fondito');
      console.log(fondo);
-     fondo.style.backgroundImage = 'url(images/fondo-servicios.png)';
+     fondo.style.backgroundImage = 'url(images/background-index.png)';
           }
           function cambiarfondo2(){
       console.log("aca estoy");
