@@ -1,8 +1,7 @@
 <?php
 $servername = "localhost";
-$username = "remotepc_job";
-$password = "fabianjose";
+$username = "root";
+$password = "root";
 $dbname = "remotepc_bwirejobs_db";
 ///////////////// fork
-$password = "";
-$username = "root";
+
