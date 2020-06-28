@@ -138,11 +138,11 @@ foreach($result as $row):
 			</div>
 			<div class="job-item-list-bottom">
 				<div class="row">
-					<div class="col-md-8">
-						<div class="sub-category col-sm-8">
+					<div class="col-sm-7 col-md-8">
+						<div class="sub-category col-xss-12 col-xs-12 col-sm-8">
 							<a><?= $row['category'] ?></a>
 						</div>
-						<div class="thumbails col-sm-6" >
+						<div class="thumbails-modal col-xss-12 col-xs-8 col-sm-6" >
 <?php 
 	$smtm3 = $conn->prepare("select * from tbl_image_service where service = :service");
 	$smtm3->bindValue(":service", $row['job_id']);
@@ -150,7 +150,7 @@ foreach($result as $row):
 	foreach ($smtm3->fetchAll() as $thumb):
  ?>
 						
-							<div class="thumb" >
+							<div class="thumb">
 								<img class="img img-responsive img-thumb" otro="<?=$thumb['path']?>" src="app/thumb.php?id=<?=$thumb['id']?>"/>
 							</div>
 <?php
@@ -158,7 +158,7 @@ foreach($result as $row):
 						</div>
 					</div>
 					
-					<div class="col-sm-5 col-md-4">
+					<div class="col-xs-12 col-sm-5 col-md-4">
 						<a target="_blank" href="explore-job.php?jobid=<?= $row['job_id']; ?>" class="btn btn-primary">Ver este <?=$producto?"producto":"servicio" ?></a>
 					</div>
 				</div>

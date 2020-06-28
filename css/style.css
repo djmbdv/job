@@ -3483,6 +3483,7 @@ ul.meta-list li span {
     }
     .job-item-list .sub-category {
         margin-bottom: 10px;
+        padding-left: 0;
     }
 }
 
@@ -5876,3 +5877,25 @@ ul.static-page-menu li.active a {
     border: none;
     border-radius: 0px;
 }
+
+.thumbails-modal {
+    right: 0;
+    display: inline-block;
+    position: absolute;
+    margin-top: 10px;
+}
+
+@media (max-width: 767px) {
+
+    .thumbails-modal {
+        position: relative;
+        margin-bottom: 20px;
+        padding-left: 0;
+    }
+    .thumb {
+        float: left !important;
+    }
+
+}
+
+    
