@@ -45,8 +45,12 @@ function create_verification_email($email){
     $url ="$protocol://$actual_link$local";
     $mail->Body    = <<<EOD
     <html>
-  <center>
     <body>
+    <center>
+    <a href=3D"$url/app/email-verification.php?t=3D$token">
+		    $url/app/email-verification.php?t=3D$token
+    </a>
+    <hr/>
 <div style=3D"background: #f1bb13; width: 650px;  height:700px">
 	<img  src=3D"$url/images/email-check.jpg" style=3D"width:100%; alt=3D"" >
 	<div style=3D"margin-top: -60px; width: 300px; position: absolute;left: 42px;">
@@ -65,8 +69,8 @@ function create_verification_email($email){
     background: #ffffff;
      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-width: 2px;">
-	    <a href=3D"$url/app/email-verification.php?t=$token">
-		    <img style="max-width :100%" src=3D"$url/images/email-check-button.jpg">
+	    <a href=3D"$url/app/email-verification.php?t=3D$token">
+		    <img style=3D"max-width :100%" src=3D"$url/images/email-check-button.jpg">
         </a>
     </div>
 </div>
