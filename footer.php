@@ -8,7 +8,7 @@
                 <div class="col-sm-12 ">   
                     <div class="row">
                             <div class="footer-about-us text-center">
-                                <img class="img img-responsive img-footer" src="<?=$prefix?>images/LOGOBLANCo.png"   alt="Logo" />
+                                <img class="img img-responsive img-footer" src="<?=$prefix?>images/LOGOFINALBLANCO.png"   alt="Logo" />
                                 <!--h4 class="footer-title" style="color: white;">Aqu&iacute;<b>Online</b></h4-->
                                 <small>Somos una empresa de servicios de directorios online.</small>
                             </div>
