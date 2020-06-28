@@ -35,8 +35,6 @@ $stmt->bindParam(':telefono', $telefono);
 $target_dir = "../../images/uploads/";
 if(isset($_POST['delimg'])){
 	$sql = "DELETE FROM tbl_image_service WHERE id in (".str_repeat("?,", count($_POST['delimg']) - 1)."?)";
-	echo $sql;
-	//die();
 	$stmt1 = $conn->prepare($sql);
 	foreach ($_POST['delimg'] as $k => $img_id) {
 		$stmt1->bindParam($k + 1,$img_id,PDO::PARAM_INT);
