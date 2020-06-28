@@ -82,19 +82,20 @@ require 'headerPrincipal.php'
 										<address> Bogot&aacute;, <br/>Colombia <br/> </address>
 								</li>
 								<li>
-										<h5>Correo Electrónico</h5><a href="mailto:info@aquionline.co">info@aquionline.co</a>
+										<h5>Correo Electrónico</h5><a href="mailto:info@aquionline.co"><b>info@aquionline.co</b> </a>
 								</li>
 								<li>
-										<h5>Teléfono</h5><a href="tel:+51948445199">+19876542468</a>
+										<h5>Teléfono</h5><a href="tel:+51948445199"> <b>+57 (1) 7868510</b> </a>
 								</li>
 
 								<li>
 									<h5>Redes Sociales</h5>
 									<div class="contact-social">
 									
-										<a href="<?=$fb?>" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a>
-										<a href="<?=$tw?>" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a>
-										<a href="<?=$ig ?>" data-toggle="tooltip" data-placement="top" title="Instagram"><i class="fa fa-instagram"></i></a>
+										<a style="font-size:30px"  href="<?=$fb?>" data-toggle="tooltip" data-placement="top" title="Facebook"> <i class="fa fa-facebook"></i></a>
+										<a  style="font-size:30px" href="<?=$ig ?>" data-toggle="tooltip" data-placement="top" title="Instagram"> <i class="fa fa-instagram"></i></a>
+
+										<a style="font-size:30px"  href="<?=$in?>" data-toggle="tooltip" data-placement="top" title="Twitter"> <i class="fa fa-linkedin"></i></a>
 									</div>
 								</li>
 							</ul>
