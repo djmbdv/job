@@ -189,19 +189,19 @@ global $conn;
       console.log("aca estoy");
      var fondo =document.getElementById('fondito');
      console.log(fondo);
-     fondo.style.backgroundImage = 'url(images/background-index.png)';
+     fondo.style.backgroundImage = 'url(images/background-index.jpg)';
           }
           function cambiarfondo2(){
       console.log("aca estoy");
      var fondo =document.getElementById('fondito');
      console.log(fondo);
-     fondo.style.backgroundImage = 'url(images/fondo-productos.png)';
+     fondo.style.backgroundImage = 'url(images/fondo-productos.jpg)';
           }
           function cambiarfondo3(){
       console.log("aca estoy");
      var fondo =document.getElementById('fondito');
      console.log(fondo);
-     fondo.style.backgroundImage = 'url(images/fondo-empresas.png)';
+     fondo.style.backgroundImage = 'url(images/fondo-empresas.jpg)';
           }
  
 
