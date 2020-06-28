@@ -149,6 +149,12 @@ global $conn;
 
 
                           </div>
+
+
+                          <div class="col col-md-4" style="text-align: -webkit-center;">
+                          </div>
+
+
                           <div class="col col-md-4" style="text-align: -webkit-center;">
                           <img id="foto-blog" src="https://maratum.com/wp-content/uploads/2018/01/tablet-pagina-web-empresarial-contrucci%C3%B3n-1024x683.jpg" alt="">
                          <br> <br>
@@ -158,17 +164,7 @@ global $conn;
                             piensan que es menos efectivo invertir</p>
 
                           </div>
-                          <div class="col col-md-4" style="text-align: -webkit-center;">
-
-                          <img id="foto-blog" src="https://www.teledisca.com/wp-content/uploads/2020/03/1366_2000.jpg" alt="">
-                          <p> <b>Post #3</b>   </p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil 
-                              asperiores earum consequatur minima blanditiis quia ratione? 
-                              Recusandae totam molestiae quaerat porro perspiciatis! Iste,
-                               hic provident esse reiciendis reprehenderit temporibus optio!</p>
-
-
-                          </div>
+                        
                   </div>
 
                       </section>
