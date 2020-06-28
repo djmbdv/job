@@ -139,10 +139,10 @@ global $conn;
                       <div class="row" >
                           <div class="col col-md-4" style="text-align: -webkit-center;">
                           
-                          <img id="foto-blog" src="http://www.aquionline.co/blog/wp-content/uploads/2020/06/photo-1512295767273-ac109ac3acfa-768x1024.jpeg" alt="">
+                          <img id="foto-blog" src="images/a.jpg" alt="">
                           
                           <br>  <br>
-                            <a href="http://www.aquionline.co/blog/2020/06/28/8-consejos-para-atraer-clientes-a-tu-negocio/"> <p> <b>8 Consejos para atraer clientes a tu negocio</b>   </p> </a> 
+                            <a href="https://www.aquionline.co/blog/2020/06/28/8-consejos-para-atraer-clientes-a-tu-negocio/"> <p> <b>8 Consejos para atraer clientes a tu negocio</b>   </p> </a> 
                             <p>Hoy en día existen muchos medios en los que puedes vender 
                             productos. Sin embargo, el principal reto que se presenta, 
                             cuando se empieza un proyecto</p>
@@ -156,9 +156,9 @@ global $conn;
 
 
                           <div class="col col-md-4" style="text-align: -webkit-center;">
-                          <img id="foto-blog" src="https://maratum.com/wp-content/uploads/2018/01/tablet-pagina-web-empresarial-contrucci%C3%B3n-1024x683.jpg" alt="">
+                          <img id="foto-blog" src="images/b.jpg" alt="">
                          <br> <br>
-                            <a href="http://www.aquionline.co/blog/2020/06/28/la-importancia-del-sitio-web-para-una-empresa/"><p> <b>La importancia del sitio web para una empresa </b>  </p> </a>
+                            <a href="https://www.aquionline.co/blog/2020/06/28/la-importancia-del-sitio-web-para-una-empresa/"><p> <b>La importancia del sitio web para una empresa </b>  </p> </a>
                             <p>Hoy en día si una empresa no está en Internet, 
                             es como si no existiera. Algunos directores de empresas 
                             piensan que es menos efectivo invertir</p>

@@ -262,12 +262,13 @@ body{
 					<li>
 						<a  href="<?=$prefix?>./">Inicio</a>
 					</li>
-					<li>
-						<a  href="<?=$prefix?>list.php"> Lista de servicios </a>
-					</li>
 					<li> 
 						<a href="<?=$prefix?>contact.php">Contacto</a>
 					</li>
+					<li>
+						<a  href="https://aquionline.co/blog"> Blog </a>
+					</li>
+					
 				</ul>
 			</div>
 
