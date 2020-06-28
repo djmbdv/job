@@ -53,7 +53,7 @@ function create_verification_email($email){
     <hr/>
 <div style=3D"background: #f1bb13; width: 650px;  height:700px">
 	<img  src=3D"$url/images/email-check.jpg" style=3D"width:100%; alt=3D"" >
-	<div style=3D"margin-top: -60px; width: 300px; position: absolute;left: 42px;">
+	<div style=3D"margin-top: -60px; width: 275px; position: absolute;margin-left: 42px;">
 		<img src=3D"$url/images/email-check-text.jpg" style=3D"max-width: 100%;">
 	</div>
     <div  style=3D"border-radius: 20px;
