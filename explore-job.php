@@ -102,7 +102,8 @@ if($user_online):
 												<a href="#" data-value="3" class="fa fa-star star" title="Votar con 3 estrellas"></a>
 												<a href="#" data-value="4" class="fa fa-star star" title="Votar con 4 estrellas"></a>
 												<a href="#" data-value="5" class="fa fa-star star" title="Votar con 5 estrellas"></a>
-											</div>
+											</div> 
+											<p>(Califique este servicio)</p>
 										</div>
 <?php
 	else:
