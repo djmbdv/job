@@ -945,6 +945,10 @@ input[type='checkbox']:checked + label:before {
     .modal-overflow .modal-footer {
         position: static
     }
+    .modal{
+        left: 10% !important;
+        right: 10% !important;
+    }
 }
 
 .loading-spinner {
