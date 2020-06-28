@@ -35,7 +35,7 @@ function create_verification_email($email){
 
     $mail->setFrom($smtp_user, $title_site);
     $mail->addAddress($email); 
-    $mail->addCustomHeader("");
+    $mail->addCustomHeader("Content-Transfer-Encoding","quoted-printable");
     $mail->addReplyTo($contact_email, $title_site);
     $mail->isHTML(true);
     $mail->Subject = 'Verificacion de Cuenta';
