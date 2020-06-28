@@ -28,7 +28,7 @@ global $conn;
 	<div id="introLoader" class="introLoading"></div>
 	<div class="container-wrapper">
 		<div class="main-wrapper">
-			<div class="hero" id="fondito" style="background-image:url('images/background-index.png');background-size: cover;">
+			<div class="hero" id="fondito" style="background-image:url('images/background-index.jpg');background-size: cover;">
 				<div class="container">
 					<h2 class=" text-center text-shadow" style="text-shadow: 3px black;color: whitesmoke;"> <b> <p > Encuentra lo que necesitas en un click</p></b>
 					</h1>
