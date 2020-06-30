@@ -105,19 +105,21 @@ global $conn;
                       <div class="row" >
                           <div class="col col-md-4" style="text-align: -webkit-center;">
                        <a href="#home"  onclick="cambiarfondo3();">  <img class="logito" src="images/empresas.png?2" alt="" style="max-width: 73%;"> </a> 
-                            <p style="font-size:30px"> <b>Empresas</b>   </p>
-
-
+                            <br>
+                            <p style="font-size:25px"> Empresas   </p>
+                                <br>
                           </div>
                           <div class="col col-md-4" style="text-align: -webkit-center;">
                     <a href="#home" onclick="cambiarfondo();">      <img class="logito" src="images/servicios.png?2" alt=""  style="max-width: 73%;"/> </a>
-                          <p style="font-size:30px"> <b>Servicios</b>   </p>
-
+                          <br>
+                            <p style="font-size:25px"> Servicios   </p>
+<br>
                           </div>
                           <div class="col col-md-4" style="text-align: -webkit-center;">
 
                         <a href="#home" onclick="cambiarfondo2();">    <img class="logito" src="images/productos.png?2" alt="" style="max-width: 73%;">  </a>
-                          <p style="font-size:30px"> <b>Productos</b>   </p>
+                          <br>
+                            <p style="font-size:25px"> Productos   </p>
 
                           </div>
                   </div>
@@ -138,35 +140,35 @@ global $conn;
 
                       <div class="row" >
                           <div class="col col-md-4" style="text-align: -webkit-center;">
-                          <img id="foto-blog" src="https://www.teledisca.com/wp-content/uploads/2020/04/Juan-Camilo-Ruiz-Product-Manager-InterNexa-768x668.jpg" alt="">
-                            <p> <b>Post #1</b>   </p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil 
-                              asperiores earum consequatur minima blanditiis quia ratione? 
-                              Recusandae totam molestiae quaerat porro perspiciatis! Iste,
-                               hic provident esse reiciendis reprehenderit temporibus optio!</p>
+                          
+                          <img id="foto-blog" src="images/a.jpg" alt="">
+                          
+                          <br>  <br>
+                            <a href="https://www.aquionline.co/blog/2020/06/28/8-consejos-para-atraer-clientes-a-tu-negocio/"> <p> <b>8 Consejos para atraer clientes a tu negocio</b>   </p> </a> 
+                            <p>Hoy en día existen muchos medios en los que puedes vender 
+                            productos. Sin embargo, el principal reto que se presenta, 
+                            cuando se empieza un proyecto</p>
 
 
                           </div>
+                          
+                         
+
+
                           <div class="col col-md-4" style="text-align: -webkit-center;">
-                          <img id="foto-blog" src="https://www.teledisca.com/wp-content/uploads/2020/04/5e8c6d9e5f164.jpeg" alt="">
-                          <p> <b>Post #2/b>   </p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil 
-                              asperiores earum consequatur minima blanditiis quia ratione? 
-                              Recusandae totam molestiae quaerat porro perspiciatis! Iste,
-                               hic provident esse reiciendis reprehenderit temporibus optio!</p>
-
                           </div>
+
+
                           <div class="col col-md-4" style="text-align: -webkit-center;">
-
-                          <img id="foto-blog" src="https://www.teledisca.com/wp-content/uploads/2020/03/1366_2000.jpg" alt="">
-                          <p> <b>Post #3</b>   </p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil 
-                              asperiores earum consequatur minima blanditiis quia ratione? 
-                              Recusandae totam molestiae quaerat porro perspiciatis! Iste,
-                               hic provident esse reiciendis reprehenderit temporibus optio!</p>
-
+                          <img id="foto-blog" src="images/b.jpg" alt="">
+                         <br> <br>
+                            <a href="https://www.aquionline.co/blog/2020/06/28/la-importancia-del-sitio-web-para-una-empresa/"><p> <b>La importancia del sitio web para una empresa </b>  </p> </a>
+                            <p>Hoy en día si una empresa no está en Internet, 
+                            es como si no existiera. Algunos directores de empresas 
+                            piensan que es menos efectivo invertir</p>
 
                           </div>
+                        
                   </div>
 
                       </section>

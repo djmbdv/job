@@ -46,33 +46,21 @@ function create_verification_email($email){
     $mail->Body    = <<<EOD
     <html>
     <body>
-    <center>
-    <a href=3D"$url/app/email-verification.php?t=3D$token">
-		    $url/app/email-verification.php?t=3D$token
+	<center>
+	<p>AquiOnline</p>
+    <p>Si no visualiza correctamente la imagens haca click aca </p> <a href=3D"$url/app/email-verification.php?t=3D$token">
+		    Activar Cuenta
     </a>
     <hr/>
-<div style=3D"background: #f1bb13; width: 650px;  height:700px">
-	<img  src=3D"$url/images/email-check.jpg" style=3D"width:100%; alt=3D"" >
-	<div style=3D"margin-top: -60px; width: 275px; position: absolute;margin-left: 42px;">
-		<img src=3D"$url/images/email-check-text.jpg" style=3D"max-width: 100%;">
-	</div>
-    <div  style=3D"border-radius: 20px;
-    -webkit-transition: all .3s;
-    -o-transition: all .3s;
-    transition: all .3s;
-    padding: 8px;
-    margin-left: auto;
-    margin-top: 30px;
-    margin-right: 40px;
-    font-weight: 400;
-    width: 150px;
-    background: #ffffff;
-     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    border-width: 2px;">
-	    <a href=3D"$url/app/email-verification.php?t=3D$token">
-		    <img style=3D"max-width :100%" src=3D"$url/images/email-check-button.jpg">
-        </a>
-    </div>
+<div>
+	
+
+<a href=3D"$url/app/email-verification.php?t=3D$token">
+<img  src=3D"$url/images/email-marketing.png" style=3D"width:700px; height: 800px; alt=3D"" >
+    </a>
+	
+	
+    
 </div>
 </center>
 </body>

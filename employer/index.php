@@ -114,7 +114,7 @@ include_once "../headerPrincipal.php";
 												
 												<div class="form-group">
 													<label>NIT</label>
-													<input class="form-control" placeholder="ingrese su nit" name="type" required type="text" value="<?= $mytitle ?>" required/> 
+													<input class="form-control" placeholder="ingrese su nit" name="type"  type="text" value="<?= $mytitle ?>" /> 
 												</div>
 												
 											</div>

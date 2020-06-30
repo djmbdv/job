@@ -95,7 +95,7 @@ require 'headerPrincipal.php'
 										<a style="font-size:30px"  href="<?=$fb?>" data-toggle="tooltip" data-placement="top" title="Facebook"> <i class="fa fa-facebook"></i></a>
 										<a  style="font-size:30px" href="<?=$ig ?>" data-toggle="tooltip" data-placement="top" title="Instagram"> <i class="fa fa-instagram"></i></a>
 
-										<a style="font-size:30px"  href="<?=$in?>" data-toggle="tooltip" data-placement="top" title="Twitter"> <i class="fa fa-linkedin"></i></a>
+										
 									</div>
 								</li>
 							</ul>

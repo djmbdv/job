@@ -63,7 +63,11 @@ if(isset($_GET["p"]))$producto = true;
 								
 								
 								<a href="./" class="btn btn-primary mt-5"><i class="fa fa-pencil-square-o mr-5" ></i> Editar</a>
+
+							
+									
 								</div>
+								
 							</div>
 							
 							<div class="col-sm-7 col-md-8">
@@ -143,8 +147,15 @@ try{
 }catch(PDOException $e){}?>
 
 														</select>
+														<br>
+														<p style="color:red">Si no encuentras tu categoria, presiona el boton</p>
+														<a class="btn btn-sm btn-warning"  data-toggle="modal" data-target=".bd-example-modal-lg" href="">
+														agregar mi categoria</a>
 													</div>
 												</div>
+
+									
+
 												<div class="clear"></div>
 												<div class="col-sm-4 col-md-4">
 												</div>
@@ -203,6 +214,9 @@ try{
 					</div>
 				</div>
 			</div>
+
+			<div>
+										
 			<?php include_once "../footer.php"; ?>
 		</div>
 <div id="back-to-top">
@@ -300,4 +314,102 @@ $("input").change(e=>{
 </script>
 </body>
 
+
+
+
+<!-- Large modal -->
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" style="text-align: center;">
+  
+<?php 
+
+
+  /*  include '../constants/settings.php'; 
+    include 'constants/check-login.php';
+    
+    if ($user_online == "true") {
+    if ($myrole == "admin") {
+    }else{
+    header("location:../");		
+    }
+    }else{
+    header("location:../");	
+    }
+*/
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+$sql = 'SELECT * from tbl_categories';
+
+if (mysqli_query($conn, $sql)) {
+
+echo "conectado satisfactoriamente";
+
+} else {
+
+echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+
+}
+
+
+    ?>
+  <div class="modal-dialog modal-sm" style="text-align: center;">
+  
+	
+   
+  
+  
+   
+  
+   <h3>Agregar nueva categoia</h3>
+	<form action="post-job.php" method="POST">
+	
+  
+   
+	 <input type="text" required name="categoria" value="" placeholder="Escriba su categoria" aria-label="Example text with button addon" aria-describedby="button-addon1">
+   </div> 
+	
+   <button class="btn btn-warning" type="submit" name="agregar"> agregar categoria</button>  </div>
+  
+	
+	
+	</form>
+	<script>
+<?php 
+            if(isset($_POST['agregar'])){
+                
+                $nuevaCategoria = $_POST['categoria'];
+
+            $insertar = "INSERT INTO tbl_categories (category) VALUES ('$nuevaCategoria')";
+            $ejecutar = mysqli_query($conn,$insertar);
+
+                if($ejecutar){
+                    echo "<h3> insertado correctamente</h3>";
+                }
+
+                if($ejecutar){
+
+                    echo"<script> alert('datos agregados')</script>";
+                    echo"<script>window.open('post-job.php','_self')</script>";
+        
+                      
+                  }
+
+            }
+        
+            ?>
+            
+            <script>
+   
+   </div>
+	
+  
+    </div>
+  </div>
+</div>
+
 </html>
+
+
+<style>
+
+</style>
