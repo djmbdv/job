@@ -151,10 +151,15 @@ global $conn;
 
 
                           </div>
+<<<<<<< HEAD
                           
                          
 
 
+=======
+
+
+>>>>>>> 13169aa255a1270e378117e4551d40af2117787a
                           <div class="col col-md-4" style="text-align: -webkit-center;">
                           </div>
 

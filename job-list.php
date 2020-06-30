@@ -109,7 +109,11 @@ foreach($result as $row):
 								<i class="fa fa-2x fa-whatsapp"></i>
 							</a>
 							<a href="<?='https://www.facebook.com/sharer/sharer.php?u='.$url ?>" id="share-fb" class="sharer button"><i class="fa fa-2x fa-facebook-square"></i></a>
+<<<<<<< HEAD
 							<a href="https://instagram.com/AquiOnline" id="share-li" class="sharer button"><i class="fa fa-2x fa-instagram-square"></i></a>
+=======
+							<a href="https://www.linkedin.com/shareArticle?mini=true&url=<?=$url?>&title=<?= $row['title'] ?>" id="share-li" class="sharer button"><i class="fa fa-2x fa-linkedin-square"></i></a>
+>>>>>>> 13169aa255a1270e378117e4551d40af2117787a
 						</div>
 						<ul class="meta-list">
 							<li>
