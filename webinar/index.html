@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">	
+	
+	<!-- <link href="https://vjs.zencdn.net/7.2/video-js.min.css" rel="stylesheet"> -->
+	<!-- <script src="https://vjs.zencdn.net/7.2/video.min.js"></script> -->
+
+	<link rel="stylesheet" href="css/video-js.css">
+	<script src="js/video.js"></script>
+	
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+	<link rel="stylesheet" href="css/estilos.css">
+	<title>webinar Teledisca</title>
+</head>
+<body>
+	<header>
+		<img src="https://www.aquionline.co/images/LOGOFINAL.png" alt="">
+		<h1 style="color: #f8cf2d;">Webinar para Isp </h1>
+	</header>
+
+	<main>
+		<div class="contenedor">
+			<video class="fm-video video-js vjs-16-9 vjs-big-play-centered" data-setup="{}" controls id="fm-video">
+				<source src="multimedia/reunion.mp4" type="video/mp4">
+			</video>
+	
+			<article >
+				<h2 >EMPRENDIMIENTO EN TIEMPOS DE CAMBIO</h2>
+				<p>En este webinar nos enfocamos en mostrarle la forma correcta de empremder en el mundo digital sin morir en el intento.</p><br />
+	
+				<p>Para consultas e informacion en general.</p>
+				<p>Comunicarse al siguiente correo: <a href="info@aquionline.co">info@aquionline.co</a></p>
+				<p> O Comunicarse a nuestro PBX: <a href="tel:(1) 7868510">+57 (1) 7868510</a></p>
+
+
+			</article>
+		</div>
+	</main>
+
+	<script>
+		var reproductor = videojs('fm-video', {
+			fluid: true
+		});
+	</script>
+
+<script type="text/javascript">
+	var _smartsupp = _smartsupp || {};
+	_smartsupp.key = 'f0832250b549bc639cc1f1f7a6148651460afe4d';
+	window.smartsupp||(function(d) {
+	  var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
+	  s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+	  c.type='text/javascript';c.charset='utf-8';c.async=true;
+	  c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+	})(document);
+</script>
+
+
+<div class="whatsapp">
+	<a target="_blank"href="https://api.whatsapp.com/send?phone=573212120281&text=hola, vengo de la web de repeticion del webinar"> <img src="https://contratainternet.co/images/whatsapp.png" width="67" height="67"> </a>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Form-v5 by Colorlib</title>
+	<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<!-- Font-->
+	<link rel="stylesheet" type="text/css" href="css/roboto-font.css">
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-5/css/fontawesome-all.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
+</script>	
+<!-- Main Style Css -->
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+
+<body class="form-v5">
+
+	<div class="page-content">
+		<div class="form-v5-content">
+			<form class="form-detail" action="" method="">
+
+				<section class="container">
+					<div   class="row"  class="img-fluid" >
+						<img id="imagen2" src="imagenes/banner-aquionline.jpg"  class="img-fluid" alt="">
+				
+					</div>
+					
+				</section>
+				<h2>Registro de Asistencia Webinar
+				</h2>
+				<h3>EMPRENDIMIENTO EN TIEMPOS DE CAMBIO
+				</h3>
+				<p>Domingo 28 de Junio 7:00 PM hora Colombia
+				</p>
+					<div class="row"  class="img-fluid">
+						
+							<img id="imagen" src="imagenes/webinar-01.jpg"  class="img-fluid" alt="">
+
+					
+					</div>
+
+					<br>
+					<br>
+
+				<div class="form-row">
+					<label for="full-name">Indique su Nombre</label>
+					<input type="text" name="nombre" id="nombre" class="input-text" placeholder="Nombre" required>
+					<i class="fas fa-user"></i>
+				</div>
+				<div class="form-row">
+					<label for="your-email">Su correo electrónico</label>
+					<input type="text" name="correo" id="correo" class="input-text" placeholder="Correo electronico" required pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}">
+					  <i class="fas fa-envelope"></i>
+				</div>
+				<div class="form-row">
+					<label for="">Teléfono de contacto</label>
+					<input type="text" name="telefono" id="telefono" class="input-text" placeholder="su telefono" required>
+					<i  class="fas fa-phone"></i>
+				</div>
+				<hr>
+
+				<div class="form-row-last" id="myForm">
+					<label for="">A través de que medio se entero del evento? 
+					</label>
+
+					
+
+					<div class="custom-control custom-radio" >
+						<input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" value="correo" required>
+						<label class="custom-control-label" for="customRadio1">Correo Electrónico</label>
+					  </div>
+					  <div class="custom-control custom-radio">
+						<input type="radio" id="customRadio2" name="customRadio" class="custom-control-input"  value="Amigo" required>
+						<label class="custom-control-label" for="customRadio2">Amigo</label>
+					  </div>
+					  <div class="custom-control custom-radio">
+						<input type="radio" id="customRadio3" name="customRadio" class="custom-control-input"  value="Publicación Facebook" required>
+						<label class="custom-control-label" for="customRadio3">Publicación en Facebook</label>
+					  </div>
+					  <div class="custom-control custom-radio">
+						<input type="radio" id="customRadio4" name="customRadio" class="custom-control-input"  value="Publicación Instagram" required>
+						<label class="custom-control-label" for="customRadio4">Publicación en Instagram</label>
+					  </div>
+					<!--   <div class="custom-control custom-radio">
+						<input type="radio" id="customRadio4" name="customRadio" class="custom-control-input"  value="Ejecutivo Comercial" required>
+						<label class="custom-control-label" for="customRadio4">Ejecutivo Comercial</label>
+					  </div> -->
+				
+				</div>
+			
+					<hr>
+					<!-- 
+				<div class="form-row-last" id="myForm2">
+					<label for="">Si fue a través de un ejecutivo podría seleccionarlo de la siguiente lista
+
+					</label>
+
+					<div class="custom-control custom-radio">
+						<input type="radio" id="customRadio5" value="Sofia Torres"  name="customRadio1" class="custom-control-input">
+						<label class="custom-control-label" for="customRadio5">Sofia Torres</label>
+					  </div>
+					  <div class="custom-control custom-radio">
+						<input type="radio" id="customRadio6" value="Alejandra Martinez" name="customRadio1" class="custom-control-input">
+						<label class="custom-control-label" for="customRadio6">Alejandra Martinez</label>
+					  </div>
+					  <div class="custom-control custom-radio">
+						<input type="radio" id="customRadio7" value="Diana Quintero" name="customRadio1" class="custom-control-input">
+						<label class="custom-control-label" for="customRadio7">Diana Quintero</label>
+					  </div>
+					  <div class="custom-control custom-radio">
+						<input type="radio" id="customRadio8" value="Ricardo Briceño" name="customRadio1" class="custom-control-input">
+						<label class="custom-control-label" for="customRadio8">Ricardo Briceño</label>
+					  </div>
+					  <div class="custom-control custom-radio">
+						<input type="radio" id="customRadio9" value="Cristhian Quilagui" name="customRadio1" class="custom-control-input">
+						<label class="custom-control-label" for="customRadio9">Cristhian Quilagui</label>
+					  </div>
+					  <div class="custom-control custom-radio">
+						<input type="radio" id="customRadio10" value="Camilo Aldana" name="customRadio1" class="custom-control-input">
+						<label class="custom-control-label" for="customRadio10">Camilo Aldana</label>
+					  </div>
+				</div>  -->
+
+					
+
+
+
+				<div class="form-row-last">
+					<input type="submit" onclick="darclick();" name="register" id="boton" class="register" value="Enviar" >
+				</div>
+			</form>
+
+			
+		
+			
+
+
+		</div>
+	</div>
+
+
+
+
+	<!--MODAL-->
+	
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		<div class="text-center">
+			<img id="imagen" src="imagenes/check.png" alt="">
+		</div>
+		<div class="modal-body">
+		  <p>informacion enviada correctamente, en breve sera redirigido a la repeticion del webinar</p>
+		</div>
+		<div class="modal-footer">
+	
+		</div>
+	  </div>
+	</div>
+  </div>
+	<!--  <button type="button" class="btn btn-primary" id=botonModal data-toggle="modal" data-target="#exampleModal">
+		Launch demo modal
+	  </button>-->
+						
+</body>
+
+
+
+
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://smtpjs.com/v3/smtp.js">
+</script>
+<script>
+
+var comercial = 'ninguno';
+$('#myForm input').on('change', function() {
+
+	 enteradopor=$('input[name=customRadio]:checked', '#myForm').val()
+
+	 console.log(enteradopor);
+  });
+
+
+  $('#myForm2 input').on('change', function() {
+
+comercial=$('input[name=customRadio1]:checked', '#myForm2').val()
+	
+
+console.log(comercial);
+});
+        var pagina = " https://www.aquionline.co/webinar";
+function redireccionar(){
+ 
+	location.href=pagina
+} 
+
+
+
+
+
+function darclick(){
+                
+	
+
+         
+
+    
+              var nombre = document.getElementById('nombre').value;
+              var telefono = document.getElementById('telefono').value;
+              var correo = document.getElementById('correo').value;
+			  var comercialMensaje= comercial;
+			  var enteradoporMensaje = enteradopor; 
+			
+
+
+
+
+
+
+
+              var t= telefono.length;
+			  console.log(t)
+                console.log(nombre);
+				console.log(telefono);
+				console.log(correo);
+				console.log(comercialMensaje);
+				console.log(enteradoporMensaje);
+
+		
+
+
+
+			
+          var x;
+
+             if(t == 10 || t == 7){ 
+            
+			
+
+            Email.send({
+            SecureToken : "06009ff8-2c43-499f-865a-b92f62e04395",
+            To : 'info@aquionline.co',
+            From : "info@aquionline.co",
+            Subject : "nuevo usuario al video video" ,
+            Body : "<table> <tr> <th scope='col'> Nombre &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th><th scope='col'>telefono &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th><th scope='col'>correo &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th><th scope='col'>medio&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th></tr><tr><td>"  +nombre + "</td><td>"+telefono +"</td><td>" + correo + "</td><td>"+enteradoporMensaje + "</td></tr></table>" 
+
+
+
+            }).then(
+            
+            
+            );
+
+		
+
+
+
+
+            console.log('sale')
+			setTimeout ("redireccionar()", 2000);
+
+			alert('Datos enviados Correctamente... Sera Redireccionado al video de repeticion')	;
+			redireccionar();
+            }
+            
+           
+            else { alert('numero escrito invalido');}
+            
+                    
+
+                  
+            
+            
+                } 
+        
+   	
+</script>
