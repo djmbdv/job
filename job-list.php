@@ -185,6 +185,7 @@ endforeach;?>
 	  width: 24.2%;
 	  padding: 1px;
 	  background: none;
+	  max-height: 1.234rem;
 	  /*margin-top: auto;*/
 	}
 	.img-thumb{

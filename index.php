@@ -97,9 +97,6 @@ global $conn;
 
 				</div>
       </div>
-      
-
-
                       <section id="cubos" class="container">
 
                       <div class="row" >
@@ -123,21 +120,19 @@ global $conn;
 
                           </div>
                   </div>
-
-
                       </section>
-
-
                         <section class="" id="franja"  style="background-color:#26272a;">
                             <div class="text-center">
                               <p id="blog-texto"> Blog</p>
                             </div>
                         </section>
-
-
-
                       <section id="blog" class="container">
+<?php 
 
+ $url = "https://aquionline.co/blog/wp-json/wp/v2/posts"; $ch = curl_init();  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); curl_setopt($ch, CURLOPT_URL, $url);  $result = curl_exec($ch);  curl_close($ch);  
+ $post = json_decode($result, true); 
+
+ ?>
                       <div class="row" >
                           <div class="col col-md-4" style="text-align: -webkit-center;">
                           
@@ -148,42 +143,25 @@ global $conn;
                             <p>Hoy en día existen muchos medios en los que puedes vender 
                             productos. Sin embargo, el principal reto que se presenta, 
                             cuando se empieza un proyecto</p>
-
-
+                            <p>del host</p>
+                            <?php  print_r($post[1]["excerpt"]["rendered"]);
+?>
                           </div>
-<<<<<<< HEAD
-                          
-                         
-
-
-=======
-
-
->>>>>>> 13169aa255a1270e378117e4551d40af2117787a
                           <div class="col col-md-4" style="text-align: -webkit-center;">
                           </div>
-
+ <?php  print_r($post[2]["excerpt"]["rendered"]);
+?>
 
                           <div class="col col-md-4" style="text-align: -webkit-center;">
                           <img id="foto-blog" src="images/b.jpg" alt="">
-                         <br> <br>
-                            <a href="https://www.aquionline.co/blog/2020/06/28/la-importancia-del-sitio-web-para-una-empresa/"><p> <b>La importancia del sitio web para una empresa </b>  </p> </a>
-                            <p>Hoy en día si una empresa no está en Internet, 
-                            es como si no existiera. Algunos directores de empresas 
-                            piensan que es menos efectivo invertir</p>
-
+                         <br> 
+                          <?php  print_r($post[3]["excerpt"]["rendered"]);
+?>
                           </div>
                         
                   </div>
 
                       </section>
-
-
-
-
-
-
-
 			<?php require 'footer.php';?>
 		</div> 
 	</div>
