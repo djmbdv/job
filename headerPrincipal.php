@@ -271,9 +271,12 @@ body{
 					
 				</ul>
 			</div>
-
-			<div class="nav-mini-wrapper">
-				<ul  class="nav-mini sign-in">
+<div class="dropdown">
+			<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    Dropdown
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
 <?php if (isset($user_online ) && $user_online == true): ?>
 				    <li><a  href="<?=$prefix?>logout.php">Cerrar Sesión</a></li>
 					<li><a  href="<?=$prefix?><?=$myrole?>">Perfil</a></li>
