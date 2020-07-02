@@ -1,5 +1,5 @@
 <?php
 $servername = "localhost";
-$username = "remotepc_job";
-$password = "fabianjose";
+$username = "root";
+$password = "";
 $dbname = "remotepc_bwirejobs_db";
