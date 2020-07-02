@@ -243,10 +243,12 @@ body{
 	padding-top: 3em;
 }
 
-
+.topbar .dropdown .dropdown-menu {
+    width: auto;
+    right: 0;
+}
 </style>
 <header id="header">
-
 	<nav class="navbar navbar-default navbar-fixed-top navbar-sticky-function">
 		<div class="container">
 			<div class="logo-wrapper">
@@ -268,15 +270,14 @@ body{
 					<li>
 						<a  href="https://aquionline.co/blog"> Blog </a>
 					</li>
-					
 				</ul>
 			</div>
-<div class="dropdown">
-			<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-    Dropdown
-    <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+			<!--div class="dropdown">
+				<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+						Dropdown
+					<span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
 <?php if (isset($user_online ) && $user_online == true): ?>
 				    <li><a  href="<?=$prefix?>logout.php">Cerrar Sesión</a></li>
 					<li><a  href="<?=$prefix?><?=$myrole?>">Perfil</a></li>
@@ -285,13 +286,10 @@ body{
 <?php else: ?>
 					<li><a href="<?=$prefix?>login.php">Ingresar</a></li>
 					<li><a href="<?=$prefix?>register.php">Registro</a></li>
-
-				
 <?php endif;?>
 				</ul>
-			</div>
+			</div-->
 		</div>
-				
 		<div id="slicknav-mobile"></div>
 	</nav>
 </header>

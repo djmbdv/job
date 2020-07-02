@@ -138,25 +138,19 @@ global $conn;
                           
                           <img id="foto-blog" src="images/a.jpg" alt="">
                           
-                          <br>  <br>
-                            <a href="https://www.aquionline.co/blog/2020/06/28/8-consejos-para-atraer-clientes-a-tu-negocio/"> <p> <b>8 Consejos para atraer clientes a tu negocio</b>   </p> </a> 
-                            <p>Hoy en día existen muchos medios en los que puedes vender 
-                            productos. Sin embargo, el principal reto que se presenta, 
-                            cuando se empieza un proyecto</p>
-                            <p>del host</p>
-                            <?php  print_r($post[1]["excerpt"]["rendered"]);
+                          <br> 
+                            <?php  print_r($post[0]["excerpt"]["rendered"]);
 ?>
                           </div>
                           <div class="col col-md-4" style="text-align: -webkit-center;">
+                          	 
                           </div>
- <?php  print_r($post[2]["excerpt"]["rendered"]);
-?>
+
 
                           <div class="col col-md-4" style="text-align: -webkit-center;">
                           <img id="foto-blog" src="images/b.jpg" alt="">
                          <br> 
-                          <?php  print_r($post[3]["excerpt"]["rendered"]);
-?>
+                          <?php  print_r($post[1]["excerpt"]["rendered"]);?>
                           </div>
                         
                   </div>
@@ -170,28 +164,22 @@ global $conn;
 </div>
 <script type="text/javascript">
 
-    function cambiarfondo(){
-      console.log("aca estoy");
-     var fondo =document.getElementById('fondito');
-     console.log(fondo);
-     fondo.style.backgroundImage = 'url(images/background-index.jpg)';
-          }
-          function cambiarfondo2(){
-      console.log("aca estoy");
-     var fondo =document.getElementById('fondito');
-     console.log(fondo);
-     fondo.style.backgroundImage = 'url(images/fondo-productos.jpg)';
-          }
-          function cambiarfondo3(){
-      console.log("aca estoy");
-     var fondo =document.getElementById('fondito');
-     console.log(fondo);
-     fondo.style.backgroundImage = 'url(images/fondo-empresas.jpg)';
-          }
+function cambiarfondo(){
+	var fondo =document.getElementById('fondito');
+	console.log(fondo);
+	fondo.style.backgroundImage = 'url(images/background-index.jpg)';
+}
+function cambiarfondo2(){
+	var fondo =document.getElementById('fondito');
+	console.log(fondo);
+	fondo.style.backgroundImage = 'url(images/fondo-productos.jpg)';
+}
+function cambiarfondo3(){
+	var fondo =document.getElementById('fondito');
+	console.log(fondo);
+	fondo.style.backgroundImage = 'url(images/fondo-empresas.jpg)';
+}
  
-
-
-
 	function autocomplete(inp) {
   var currentFocus;
   inp.addEventListener("input", function(e) {
