@@ -4,3 +4,5 @@ error_log
 constansts/settings.php
 .swp
 .DS_Store
+node_modules
+
