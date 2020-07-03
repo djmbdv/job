@@ -173,6 +173,7 @@ endforeach;?>
 	    right: 0;
 	    display: inline-block;
 	    position: absolute;
+
 	}
 	.thumbails::after {
 	  content: "";
@@ -185,11 +186,12 @@ endforeach;?>
 	  width: 24.2%;
 	  padding: 1px;
 	  background: none;
-	  max-height: 1.234rem;
+	  max-height: 1.234rem !important;
 	  /*margin-top: auto;*/
 	}
 	.img-thumb{
 		width: 100%;
+		  max-height: 2.5rem !important;
 	}
 	.thumb:hover{
 		border: 1px solid yellow;
@@ -201,7 +203,7 @@ endforeach;?>
 		console.log(e);
 		console.log($(e.srcElement).attr("otro"));
 	var image = $("<img>").attr("src",$(e.srcElement).attr("otro"));
-	$("#modal-galery > .modal-content").children(".modal-body").html(image);
+	$("#modal-galery > .modal-content").children(".modal-body").html($("<center></center>").append(image));
 	$("#modal-galery").modal();
 	});
 </script>
