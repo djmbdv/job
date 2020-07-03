@@ -246,7 +246,7 @@ for ($b=1;$b<=$records;$b++){?>
 		</div>
 	</div>
 	<div id="back-to-top">
-	   <a href="#"><i class="ion-ios-arrow-up"></i></a>
+		<a href="#"><i class="ion-ios-arrow-up"></i></a>
 	</div>
 </body>
 </html>

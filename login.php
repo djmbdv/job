@@ -122,7 +122,7 @@ function reset_text(){
 		</div>
 	</div> 
 	<div id="back-to-top">
-	   <a href="#"><i class="ion-ios-arrow-up"></i></a>
+   <a href="#"><i class="fa fa-arrow-up"></i></a>
 	</div>
 </body>
 </html>
