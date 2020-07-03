@@ -82,15 +82,9 @@ include_once "../headerPrincipal.php";
 							</div>
 							
 							<div class="GridLex-col-9_sm-8_xs-12">
-							
 								<div class="admin-content-wrapper">
-
 									<div class="admin-section-title">
-									
 										<h2>Perfil de su empresa</h2>
-									<!--	<small>
-											&Uacute;ltimo inicio de sesi&oacute;n: <span class="text-info"><?= $mylogin ?></span>
-										</small> -->
 										
 									</div>
 									
@@ -229,10 +223,6 @@ include_once "../headerPrincipal.php";
 										?>
 										</div>
 										</div>
-
-
-
-										
 									</form>
 								</div>
 							</div>

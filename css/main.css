@@ -7065,36 +7065,21 @@ h6.heading {
     border: 1px solid rgba(255, 255, 255, 0.2);
   }
   
-  @media screen and (min-width: 576px) {
-    .locations--layout-3 {
-      max-width: 380px;
-    }
-    .locations--layout-3 .location {
-      margin-bottom: 10px;
-    }
-    .locations--layout-3 .location:not(:nth-child(3n)) {
-      margin-right: 10px;
-    }
-  }
-  
-  .locations--layout-3 img {
+@media screen and (min-width: 576px) {
+.locations--layout-3 {
+  max-width: 380px;
+}
+.locations--layout-3 .location {
+  margin-bottom: 10px;
+}
+.locations--layout-3 .location:not(:nth-child(3n)) {
+  margin-right: 10px;
+}
+}
+
+.locations--layout-3 img {
     height: 30px;
     margin: 0 auto 20px;
-  }  
-  
+}  
 
-  #logito{
-    height: 200px;
-    width: 200px;
-    padding: 20px;
-  }
-  #blog-texto{
-    color: white;
-    font-size: 25px;
-  }
- #foto-blog{
-     height: 250px;
-     width: 300px;
- }
 
-  

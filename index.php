@@ -100,21 +100,21 @@ global $conn;
                       <section id="cubos" class="container">
 
                       <div class="row" >
-                          <div class="col col-md-4" style="text-align: -webkit-center;">
-                       <a href="#home"  onclick="cambiarfondo3();">  <img class="logito" src="images/empresas.png?2" alt="" style="max-width: 73%;"> </a> 
+                          <div class="col col-md-4 col-xs-12  container" style="text-align: -webkit-center;">
+                       <a href="#home"  onclick="cambiarfondo3();">  <img class="loguito"   src="images/empresas.png?2" alt=""> </a> 
                             <br>
                             <p style="font-size:25px"> Empresas   </p>
                                 <br>
                           </div>
-                          <div class="col col-md-4" style="text-align: -webkit-center;">
-                    <a href="#home" onclick="cambiarfondo();">      <img class="logito" src="images/servicios.png?2" alt=""  style="max-width: 73%;"/> </a>
+                          <div class="col col-md-4 col-xs-12  container" style="text-align: -webkit-center;">
+                    <a href="#home" onclick="cambiarfondo();">      <img  class="loguito"  src="images/servicios.png?2" alt="" /> </a>
                           <br>
                             <p style="font-size:25px"> Servicios   </p>
 <br>
                           </div>
-                          <div class="col col-md-4" style="text-align: -webkit-center;">
+                          <div class="col col-md-4 col-xs-12 container" style="text-align: -webkit-center;">
 
-                        <a href="#home" onclick="cambiarfondo2();">    <img class="logito" src="images/productos.png?2" alt="" style="max-width: 73%;">  </a>
+                        <a href="#home" onclick="cambiarfondo2();">    <img class="loguito"  src="images/productos.png?2" alt="" >  </a>
                           <br>
                             <p style="font-size:25px"> Productos   </p>
 
@@ -129,28 +129,26 @@ global $conn;
                       <section id="blog" class="container">
 <?php 
 
- $url = "https://aquionline.co/blog/wp-json/wp/v2/posts"; $ch = curl_init();  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); curl_setopt($ch, CURLOPT_URL, $url);  $result = curl_exec($ch);  curl_close($ch);  
- $post = json_decode($result, true); 
+ $url = "https://aquionline.co/blog/wp-json/wp/v2/posts"; $ch = curl_init();  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); //curl_setopt($ch, CURLOPT_URL, $url);  $result = curl_exec($ch);  curl_close($ch);  
+ //$post = json_decode($result, true); 
 
  ?>
                       <div class="row" >
                           <div class="col col-md-4" style="text-align: -webkit-center;">
                           
-                          <img id="foto-blog" src="images/a.jpg" alt="">
+                          <img class="thumbnail" style="max-height: 100px; " src="images/a.jpg" alt="">
                           
                           <br> 
-                            <?php  print_r($post[0]["excerpt"]["rendered"]);
+                            <?php // print_r($post[0]["excerpt"]["rendered"]);
 ?>
                           </div>
                           <div class="col col-md-4" style="text-align: -webkit-center;">
                           	 
                           </div>
-
-
                           <div class="col col-md-4" style="text-align: -webkit-center;">
-                          <img id="foto-blog" src="images/b.jpg" alt="">
+                          <img class="thumbnail" src="images/b.jpg" alt="">
                          <br> 
-                          <?php  print_r($post[1]["excerpt"]["rendered"]);?>
+                          <?php  //print_r($post[1]["excerpt"]["rendered"]);?>
                           </div>
                         
                   </div>
@@ -214,14 +212,9 @@ function cambiarfondo3(){
 	      		b.innerHTML = empresa.substr(0, empresa.search(rval));
 				b.innerHTML += "<strong>" + val + "</strong>";
 				b.innerHTML += empresa.substr(empresa.search(rval) + val.length);
-				/*insert a input field that will hold the current array item's value:*/
 				b.innerHTML += "<input type='hidden' value='" +  empresa + "'>";
-				/*execute a function when someone clicks on the item value (DIV element):*/
 				  b.addEventListener("click", function(e) {
-				  /*insert the value for the autocomplete text field:*/
 				  inp.value = this.getElementsByTagName("input")[0].value;
-				  /*close the list of autocompleted values,
-				  (or any other open lists of autocompleted values:*/
 				  closeAllLists();
 				});
 				colb.appendChild(b);
@@ -251,25 +244,18 @@ function cambiarfondo3(){
       flecha.setAttribute("class","suggarrow");
       a.appendChild(flecha);
   });
-  /*execute a function presses a key on the keyboard:*/
   inp.addEventListener("keydown", function(e) {
       var x = document.getElementById(this.id + "autocomplete-list");
       if (x) x = x.getElementsByTagName("div");
       if (e.keyCode == 40) {
         currentFocus++;
-        /*and and make the current item more visible:*/
         addActive(x);
-      } else if (e.keyCode == 38) { //up
-        /*If the arrow UP key is pressed,
-        decrease the currentFocus variable:*/
+      } else if (e.keyCode == 38) {
         currentFocus--;
-        /*and and make the current item more visible:*/
         addActive(x);
       } else if (e.keyCode == 13) {
-        /*If the ENTER key is pressed, prevent the form from being submitted,*/
         e.preventDefault();
         if (currentFocus > -1) {
-          /*and simulate a click on the "active" item:*/
           if (x) x[currentFocus].click();
         }
       }

@@ -34,14 +34,14 @@
 		endif;
 	?>
 	<link rel="shortcut icon" href="<?=$prefix?>images/SOLOLOGO.png">
-	<link rel="stylesheet" type="text/css" href="<?=$prefix?>bootstrap/css/bootstrap.min.css" media="screen">	
+	<link rel="stylesheet" type="text/css" href="<?=$prefix?>bootstrap/css/bootstrap.min.css?1" media="screen">	
 	<link href="<?=$prefix?>css/animate.css" rel="stylesheet">
 	<link href="<?=$prefix?>css/main.css?24" rel="stylesheet">
 	<link href="<?=$prefix?>css/component.css?43" rel="stylesheet">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
 	<link rel="stylesheet" href="<?=$prefix?>icons/linearicons/style.css">
 	<link rel="stylesheet" href="<?=$prefix?>icons/font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" href="<?=$prefix?>css/style.css?36" >
+	<link rel="stylesheet" href="<?=$prefix?>css/style.css?42" >
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,100;1,400&display=swap" rel="stylesheet">
 	<script type="text/javascript" src="<?=$prefix?>js/jquery-1.11.3.min.js"></script>
 	<script type="text/javascript" src="<?=$prefix?>js/jquery-migrate-1.2.1.min.js"></script>
@@ -272,23 +272,25 @@ body{
 					</li>
 				</ul>
 			</div>
-			<!--div class="dropdown">
-				<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-						Dropdown
-					<span class="caret"></span>
-				</button>
-				<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-<?php if (isset($user_online ) && $user_online == true): ?>
-				    <li><a  href="<?=$prefix?>logout.php">Cerrar Sesión</a></li>
-					<li><a  href="<?=$prefix?><?=$myrole?>">Perfil</a></li>
-				
+			<ul class="nav navbar-nav navbar-right">
+				<li class="dropdown">
+					<button class="btn btn-circle dropdown-toggle" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+							Dropdown
+						<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+	<?php if (isset($user_online ) && $user_online == true): ?>
+					    <li><a  href="<?=$prefix?>logout.php">Cerrar Sesión</a></li>
+						<li><a  href="<?=$prefix?><?=$myrole?>">Perfil</a></li>
 					
-<?php else: ?>
-					<li><a href="<?=$prefix?>login.php">Ingresar</a></li>
-					<li><a href="<?=$prefix?>register.php">Registro</a></li>
-<?php endif;?>
-				</ul>
-			</div-->
+						
+	<?php else: ?>
+						<li><a href="<?=$prefix?>login.php">Ingresar</a></li>
+						<li><a href="<?=$prefix?>register.php">Registro</a></li>
+	<?php endif;?>
+					</ul>
+				</li>
+			</ul>
 		</div>
 		<div id="slicknav-mobile"></div>
 	</nav>
