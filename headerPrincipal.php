@@ -274,11 +274,8 @@ body{
 			</div>
 			<ul class="nav navbar-nav navbar-right">
 				<li class="dropdown">
-					<button class="btn btn-circle dropdown-toggle" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-							Dropdown
-						<span class="caret"></span>
-					</button>
-					<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+					<img src="images/images/default.jpg" class="img img-responsive btn-circle dropdown-toggle " type="button" style="border-radius: 50%;max-height: 40px;"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+					<ul class="dropdown-menu" style="margin-top: 20px;" aria-labelledby="dropdownMenu1">
 	<?php if (isset($user_online ) && $user_online == true): ?>
 					    <li><a  href="<?=$prefix?>logout.php">Cerrar Sesión</a></li>
 						<li><a  href="<?=$prefix?><?=$myrole?>">Perfil</a></li>
