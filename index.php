@@ -21,9 +21,6 @@ global $conn;
 	}
 }
 </style>
-
- 
-
 <body class="home" id="home" style="padding-top: 0;">
 	<div id="introLoader" class="introLoading"></div>
 	<div class="container-wrapper">

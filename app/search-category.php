@@ -7,7 +7,7 @@
 	$s = $_GET["s"];
 	$l = $_GET["len"];
 	header("Content-type:application/json");
-	$stmt = $conn->prepare("select distinct category from tbl_categories");
+	$stmt = $conn->prepare("select distinct category from tbl_categories limit 10");
 
 	$stmt->bindValue(":bus","%$s%");
 	$stmt->execute();

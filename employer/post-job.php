@@ -109,10 +109,11 @@ try {
 }catch(PDOException $e){}?>
 														</select>
 													</div>
-													<div class="form-group">
+													<div class="form-group autocomplete">
 														<label>Categor&iacute;a del <?=$producto?"Producto":"Servicio"?></label>
-														<input name="category" required class="selectpicker autocomplete form-control" data-live-search="true">
-														<br>
+														<input name="category" id="category-input" required class="form-control" data-live-search="true">
+													</div>
+													<div>
 														<p style="color:red">Si no encuentras tu categoria, presiona el boton</p>
 														<a class="btn btn-sm btn-warning"  data-toggle="modal" data-target=".bd-example-modal-lg" href="">
 														agregar mi categor&iacute;a</a>
@@ -255,6 +256,104 @@ $("#file-zone").click(e=>{
 $("input").change(e=>{
 	//$(e.srcElement)
 });
+
+
+function cambiarfondo(){
+	var fondo =document.getElementById('fondito');
+	console.log(fondo);
+	fondo.style.backgroundImage = 'url(images/background-index.jpg)';
+}
+function cambiarfondo2(){
+	var fondo =document.getElementById('fondito');
+	console.log(fondo);
+	fondo.style.backgroundImage = 'url(images/fondo-productos.jpg)';
+}
+function cambiarfondo3(){
+	var fondo =document.getElementById('fondito');
+	console.log(fondo);
+	fondo.style.backgroundImage = 'url(images/fondo-empresas.jpg)';
+}
+function autocomplete(inp) {
+  var currentFocus;
+  inp.addEventListener("input", function(e) {
+      var a, b, i, val = this.value;
+      closeAllLists();
+      if (!val) { return false;}
+      currentFocus = -1;
+      a = document.createElement("DIV");
+      a.setAttribute("id", this.id + "autocomplete-list");
+      a.setAttribute("class", "autocomplete-items");
+      this.parentNode.appendChild(a);
+      cola = document.createElement("div");
+      t = document.createElement("h6");
+      t.setAttribute("class","list-item-title");
+      cola.appendChild(t);
+      cola.setAttribute("class", "col-md-12 col-xs-12");
+      t = document.createElement("h6");
+      t.setAttribute("class","list-item-title");
+      a.appendChild(cola);
+      var rval = RegExp(val,'i');
+      $.get("<?=$prefix?>app/search-category.php",{s : val,len:val.length}).done(data=>{      	
+      		if(data.len != document.getElementById("category-input").value.length)return;
+      		data.categories.forEach(servicio=>{
+      			b = document.createElement("DIV");
+      			b.classList.add("text-center");
+      				b.innerHTML = servicio.substr(0,servicio.search(rval));
+		          b.innerHTML += "<strong>" +val+ "</strong>";
+		          b.innerHTML += servicio.substr(servicio.search(rval)+val.length);
+		          b.innerHTML += "<input type='hidden' value='" + servicio + "'>";
+		        b.addEventListener("click", function(e) {
+		              inp.value = this.getElementsByTagName("input")[0].value;
+		              closeAllLists();
+		          });
+		          cola.appendChild(b);
+      		});
+      });
+      flecha = document.createElement("div");
+      flecha.setAttribute("class","suggarrow");
+      a.appendChild(flecha);
+  });
+  inp.addEventListener("keydown", function(e) {
+      var x = document.getElementById(this.id + "autocomplete-list");
+      if (x) x = x.getElementsByTagName("div");
+      if (e.keyCode == 40) {
+        currentFocus++;
+        addActive(x);
+      } else if (e.keyCode == 38) {
+        currentFocus--;
+        addActive(x);
+      } else if (e.keyCode == 13) {
+        e.preventDefault();
+        if (currentFocus > -1) {
+          if (x) x[currentFocus].click();
+        }
+      }
+  });
+  function addActive(x) {
+    if (!x) return false;
+    removeActive(x);
+    if (currentFocus >= x.length) currentFocus = 0;
+    if (currentFocus < 0) currentFocus = (x.length - 1);
+    x[currentFocus].classList.add("autocomplete-active");
+  }
+  function removeActive(x) {
+    for (var i = 0; i < x.length; i++) {
+      x[i].classList.remove("autocomplete-active");
+    }
+  }
+  function closeAllLists(elmnt) {
+    var x = document.getElementsByClassName("autocomplete-items");
+    for (var i = 0; i < x.length; i++) {
+      if (elmnt != x[i] && elmnt != inp) {
+      x[i].parentNode.removeChild(x[i]);
+    }
+  }
+}
+document.addEventListener("click", function (e) {
+    closeAllLists(e.target);
+});
+}
+autocomplete(document.getElementById("category-input"));
 </script>
 </body>
 
