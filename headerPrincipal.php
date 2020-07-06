@@ -295,7 +295,7 @@ body{
 					<?=$_SESSION['compname']?>
 				</li>
 				<li class="dropdown">
-					<img src="<?=isset($myID ) && $_SESSION['avatar'] != null?$prefix."app/image-profiles.php?id=$myID":$prefix.'images/images/default.jpg'?>" class="img img-responsive btn-circle dropdown-toggle " type="button" style="margin-left: 0.3rem;border-radius: 50%;max-height: 40px;"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+					<img src="<?=isset($myID ) && $_SESSION['avatar'] != null?$prefix."app/image-profiles.php?id=$myID":$prefix.'images/images/default.jpg'?>" class="img img-responsive btn-circle dropdown-toggle " type="button" style="margin-left: 0.3rem;border-radius: 50%;height: 40px;max-width: 40px;box-shadow: 0px 0px 1px 2px #f2bb29"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
 					<ul class="dropdown-menu" style="margin-top: 20px;" aria-labelledby="dropdownMenu1">
 						<li><a  href="<?=$prefix?><?=$myrole?>">Perfil</a></li>
 						<li><a  href="<?=$prefix?>logout.php">Cerrar Sesión</a></li>

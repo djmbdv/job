@@ -8,13 +8,10 @@ require 'headerPrincipal.php'
 		<div class="main-wrapper">
 			<div class="breadcrumb-wrapper">
 				<div class="container">
-				
 					<ol class="breadcrumb-list">
 						<li><a href="./">Inicio</a></li>
 						<li><span>Contáctanos</span></li>
-					</ol>
-					
-				</div>
+					</ol>				</div>
 			</div>
 			<div class="section sm">
 				<div class="container">
@@ -28,7 +25,6 @@ require 'headerPrincipal.php'
 					<div class="row">
 						<div class="col-sm-7 col-md-6 col-md-offset-1 mb-30">
 						<?php include 'constants/check_reply.php'; ?>
-						
 							<form class="contact-form-wrapper" data-toggle="validator" action="app/send-message.php" method="POST" autocomplete="off">
 							
 								<div class="row">

@@ -15,6 +15,6 @@ $stmt->execute();
 
 session_start();
 $_SESSION['avatar'] = $image;
-
+session_commit();
 header("location:../");
     

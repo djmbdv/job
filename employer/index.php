@@ -1,9 +1,8 @@
 <?php
 
-require_once '../constants/settings.php';
 require_once '../constants/connection.php';
-require_once 'constants/check-login.php';
-
+require_once '../constants/check-login.php';
+require_once '../constants/settings.php';
 global $conn;
 global $title_site;
 
@@ -12,7 +11,7 @@ if (!$user_online  || $myrole != "employer") {
 	die();
 }
 $deep_url = 1;
-include_once "../headerPrincipal.php";
+include "../headerPrincipal.php";
 ?>
 <body class="not-transparent-header">
 	<div class="container-wrapper">
