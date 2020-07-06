@@ -286,8 +286,6 @@ body{
 				<ul  class="nav-mini sign-in">
 					<li><a href="login.php">Ingresar</a></li>
 					<li><a href="register.php">Registro</a></li>
-
-				
 				</ul>
 			</div>
 <?php else:?>
@@ -297,7 +295,7 @@ body{
 					<?=$_SESSION['compname']?>
 				</li>
 				<li class="dropdown">
-					<img src="<?=isset($myID ) && $_SESSION['avatar'] != null?"app/image-profiles.php?id=$myID":'images/images/default.jpg'?>" class="img img-responsive btn-circle dropdown-toggle " type="button" style="margin-left: 0.3rem;border-radius: 50%;max-height: 40px;"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+					<img src="<?=isset($myID ) && $_SESSION['avatar'] != null?$prefix."app/image-profiles.php?id=$myID":$prefix.'images/images/default.jpg'?>" class="img img-responsive btn-circle dropdown-toggle " type="button" style="margin-left: 0.3rem;border-radius: 50%;max-height: 40px;"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
 					<ul class="dropdown-menu" style="margin-top: 20px;" aria-labelledby="dropdownMenu1">
 						<li><a  href="<?=$prefix?><?=$myrole?>">Perfil</a></li>
 						<li><a  href="<?=$prefix?>logout.php">Cerrar Sesión</a></li>

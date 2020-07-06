@@ -32,11 +32,10 @@ global $conn;
 				<div class="container">
 					<h2 class=" text-center text-shadow" style="text-shadow: 3px black;color: whitesmoke;"> <b> <p > Encuentra lo que necesitas en un click</p></b>
 					</h1>
-					
 					<div class="main-search-form-wrapper" class="text-center">
 						<form action="list.php" method="GET" autocomplete="off">
 							<div class="form-holder">
-								<div class="row gap-0  ">
+								<div class="row gap-0">
 									<div  class="autocomplete col-xss-11 col-xs-11 col-sm-5">
 										<small style="font-size:24px" class="text-white">Qu&eacute; Buscas?</small>
 										<input style="font-size:17px" class="form-control" style="display: inline-block;" name="category" id="category-input" placeholder="Producto, Empresa, Servicio..."  name="">
@@ -44,120 +43,96 @@ global $conn;
 									<div class="col-xss-11 col-xs-11 col-sm-5">
 										<small  style="font-size:24px" class="text-white">D&oacute;nde lo necesitas?</small>
 										<select style="font-size:17px"  class="form-control"  name="country"/>
-										<option value="">- Selecciona ciudad -<option>
-										<?php
-										try{
-	                                        $stmt = $conn->prepare("SELECT * FROM tbl_countries ORDER BY country_name");
-	                                        $stmt->execute();
-	                                        $result = $stmt->fetchAll();
-                                        	foreach($result as $row): ?>
-										<option style="color:black" value="<?= $row['country_name']; ?>">
-											<?=$row['country_name']; ?>
-										</option>
+											<option value="">- Selecciona ciudad -<option>
+<?php
+    $stmt = $conn->prepare("SELECT * FROM tbl_countries ORDER BY country_name");
+    $stmt->execute();
+    $result = $stmt->fetchAll();
+	foreach($result as $row): ?>
+											<option style="color:black" value="<?= $row['country_name']; ?>">
+												<?=$row['country_name']; ?>
+											</option>
 <?php
  	endforeach;
-
-}catch(PDOException $e){
-	print_r($e);
-} ?>
+ ?>
                     					</select>
-                    
-                    
-                    
-                  </div>
-                    <div class="col-lg-2 col-md-2 col-xs-11" style="margin-top:30px;"  >
-                    <button type="submit"  class="btn button--medium  btn-primary"  style="margin-left: 40px;" >
-              <i class="fa fa-search"></i> Buscar
-            		</button>   
-                    </div>
-                </div>
-                
+									</div>
+				                    <div class="col-lg-2 col-md-2 col-xs-11" style="margin-top:30px;"  >
+					                    <button type="submit"  class="btn button--medium  btn-primary"  style="margin-left: 40px;" >
+							              <i class="fa fa-search"></i> Buscar
+					            		</button>   
+				                    </div>
+								</div>
 							</div>
-							
-            </form>
-        
-           
-          </div>
-          <div>
-            <br>
-          <div class="locations-container t-center">
-        <ul class="min-list inline-list locations locations--layout-1">
-         
-          <li class="location">
-            <a href="register.php" class="c-white"><i class="fa fa-book" style="font-size:20px"></i><b>Crea tu servicios ahora</b></a>
-          </li>
-          <li class="location">
-            <a href="register.php" class="c-white"><i class="fa fa-user" style="font-size:20px"></i><b>Promocionate con nosotros</b></a>
-          </li>
-         
-        </ul>
-      </div>
-          </div>
-
-
+						</form>
+					</div>
+					<div>
+						<br>
+						<div class="locations-container t-center">
+					        <ul class="min-list inline-list locations locations--layout-1">
+					        	<li class="location">
+						            <a href="register.php" class="c-white"><i class="fa fa-book" style="font-size:20px"></i><b>Crea tu servicios ahora</b></a>
+								</li>
+								<li class="location">
+									<a href="register.php" class="c-white"><i class="fa fa-user" style="font-size:20px"></i><b>Promocionate con nosotros</b></a>
+								</li>
+	         
+					        </ul>
+					    </div>
+					</div>
 				</div>
-      </div>
-                      <section id="cubos" class="container">
-
-                      <div class="row" >
-                          <div class="col col-md-4 col-xs-12  container" style="text-align: -webkit-center;">
-                       <a href="#home"  onclick="cambiarfondo3();">  <img class="loguito"   src="images/empresas.png?2" alt=""> </a> 
-                            <br>
-                            <p style="font-size:25px"> Empresas   </p>
-                                <br>
-                          </div>
-                          <div class="col col-md-4 col-xs-12  container" style="text-align: -webkit-center;">
-                    <a href="#home" onclick="cambiarfondo();">      <img  class="loguito"  src="images/servicios.png?2" alt="" /> </a>
-                          <br>
-                            <p style="font-size:25px"> Servicios   </p>
-<br>
-                          </div>
-                          <div class="col col-md-4 col-xs-12 container" style="text-align: -webkit-center;">
-
-                        <a href="#home" onclick="cambiarfondo2();">    <img class="loguito"  src="images/productos.png?2" alt="" >  </a>
-                          <br>
-                            <p style="font-size:25px"> Productos   </p>
-
-                          </div>
-                  </div>
-                      </section>
-                        <section class="" id="franja"  style="background-color:#26272a;">
-                            <div class="text-center">
-                              <p id="blog-texto"> Blog</p>
-                            </div>
-                        </section>
-                      <section id="blog" class="container">
-<?php 
- $url = "https://aquionline.co/blog/wp-json/wp/v2/posts"; $ch = curl_init();  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);?>
-                      <div class="row" >
-                          <div class="col col-md-4" style="text-align: -webkit-center;">
-                          
-                          <img class="thumbnail" src="images/a.jpg" alt="">
-                          
-                          <br> 
-                            <?php  print_r($post[0]["excerpt"]["rendered"]);
-?>
-                          </div>
-                          <div class="col col-md-4" style="text-align: -webkit-center;">
-                          	 
-                          </div>
-                          <div class="col col-md-4" style="text-align: -webkit-center;">
-                          <img class="thumbnail" src="images/b.jpg" alt="">
-                         <br> 
-                          <?php  print_r($post[1]["excerpt"]["rendered"]);?>
-                          </div>
-                        
-                  </div>
-
-                      </section>
-			<?php require 'footer.php';?>
+			</div>
+			<section id="cubos" class="container">
+				<div class="row" >
+	                <div class="col col-md-4 col-xs-12  container" style="text-align: -webkit-center;">
+	                    <a href="#home"  onclick="cambiarfondo3();">  <img class="loguito"   src="images/empresas.png?2"></a> 
+	                    <br>
+	                    <p style="font-size:25px">Empresas</p>
+	                    <br>
+	                </div>
+	                <div class="col col-md-4 col-xs-12  container" style="text-align: -webkit-center;">
+	                    <a href="#home" onclick="cambiarfondo();"> <img  class="loguito"  src="images/servicios.png?2"/></a>
+	                    <br>
+	                    <p style="font-size:25px"> Servicios   </p>
+						<br>
+	                </div>
+					<div class="col col-md-4 col-xs-12 container" style="text-align: -webkit-center;">
+						<a href="#home" onclick="cambiarfondo2();">    <img class="loguito"  src="images/productos.png?2" alt="" >  </a>
+						<br>
+						<p style="font-size:25px">Productos</p>
+					</div>
+				</div>
+	        </section>
+			<section class="" id="franja"  style="background-color:#26272a;">
+				<div class="text-center">
+					<p id="blog-texto"> Blog</p>
+	            </div>
+	        </section>
+	        <section id="blog" class="container">
+	<?php 
+	 $url = "https://aquionline.co/blog/wp-json/wp/v2/posts"; $ch = curl_init();  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);?>
+				<div class="row" >
+					<div class="col col-md-4" style="text-align: -webkit-center;">
+						<img class="thumbnail" src="images/a.jpg" alt="">
+						<br> 
+						<?php  print_r($post[0]["excerpt"]["rendered"]);?>
+					</div>
+					<div class="col col-md-4" style="text-align: -webkit-center;">
+					</div>
+					<div class="col col-md-4" style="text-align: -webkit-center;">
+						<img class="thumbnail" src="images/b.jpg" alt="">
+						<br> 
+						<?php  print_r($post[1]["excerpt"]["rendered"]);?>
+					</div>
+				</div>
+			</section>
+		<?php require 'footer.php';?>
 		</div> 
 	</div>
-<div id="back-to-top">
-   <a href="#"><i class="fa fa-arrow-up"></i></a>
-</div>
+	<div id="back-to-top">
+	   <a href="#"><i class="fa fa-arrow-up"></i></a>
+	</div>
 <script type="text/javascript">
-
 function cambiarfondo(){
 	var fondo =document.getElementById('fondito');
 	console.log(fondo);
@@ -173,8 +148,7 @@ function cambiarfondo3(){
 	console.log(fondo);
 	fondo.style.backgroundImage = 'url(images/fondo-empresas.jpg)';
 }
- 
-	function autocomplete(inp) {
+function autocomplete(inp) {
   var currentFocus;
   inp.addEventListener("input", function(e) {
       var a, b, i, val = this.value;
@@ -216,26 +190,19 @@ function cambiarfondo3(){
 				colb.appendChild(b);
       		});
       		data.servicios.forEach(servicio=>{
-
       			b = document.createElement("DIV");
       			b.classList.add("text-center");
       				b.innerHTML = servicio.substr(0,servicio.search(rval));
 		          b.innerHTML += "<strong>" +val+ "</strong>";
 		          b.innerHTML += servicio.substr(servicio.search(rval)+val.length);
-		          /*insert a input field that will hold the current array item's value:*/
 		          b.innerHTML += "<input type='hidden' value='" + servicio + "'>";
-		          /*execute a function when someone clicks on the item value (DIV element):*/
 		        b.addEventListener("click", function(e) {
-		              /*insert the value for the autocomplete text field:*/
 		              inp.value = this.getElementsByTagName("input")[0].value;
-		              /*close the list of autocompleted values,
-		              (or any other open lists of autocompleted values:*/
 		              closeAllLists();
 		          });
 		          cola.appendChild(b);
       		});
       });
-
       flecha = document.createElement("div");
       flecha.setAttribute("class","suggarrow");
       a.appendChild(flecha);
@@ -280,10 +247,7 @@ document.addEventListener("click", function (e) {
     closeAllLists(e.target);
 });
 }
-
-
 autocomplete(document.getElementById("category-input"));
-
 </script>
 </body>
 </html>

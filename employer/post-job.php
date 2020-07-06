@@ -45,53 +45,36 @@ if(isset($_GET["p"]))$producto = true;
 
 								<p class="location"><i class="fa fa-map-marker"></i> <?= "$zip"; ?> <?php echo "$city"; ?>. <?php echo "$street"; ?>, <?= "$country"; ?> <span class="block"> <i class="fa fa-phone"></i> <?php echo "$myphone"; ?> </span></p>
 								<hr>
-
 								<ul class="meta-list clearfix">
-
 									<li>
 										<h4 class="heading">Website: </h4>
 										<a target="_blank" href="//<?=$myweb?>"><?=$myweb?></a>
 									</li>
 									<hr>
-
 									<li>
 										<h4 class="heading">Email: </h4>
 										<?=$mymail?>
 									</li>
-
 								</ul>
-								
-								
 								<a href="./" class="btn btn-primary mt-5"><i class="fa fa-pencil-square-o mr-5" ></i> Editar</a>
-
-							
-									
 								</div>
 								
 							</div>
 							
 							<div class="col-sm-7 col-md-8">
-							
 								<div class="company-detail-wrapper">
-
 									<div class="company-detail-company-overview  mt-0 clearfix">
-										
 										<div class="section-title-02">
 											<h3 class="text-left">Publicar Nuevo <?=$producto?"Producto":"Servicio"?></h3>
 										</div>
-
 										<form class="post-form-wrapper" action="app/post-job.php" method="POST" autocomplete="off" enctype="multipart/form-data">
-								
 											<div class="row gap-20">
 											<?php include '../constants/check_reply.php'; ?>
-										
 												<div class="col-sm-8 col-md-8">
-												
 													<div class="form-group">
 														<label>T&iacute;tulo del <?=$producto?"Producto":"Servicio"?></label>
 														<input name="title" required type="text" class="form-control" placeholder="Escriba un nombre">
 													</div>
-													
 												</div>
 												
 												<div class="clear"></div>
@@ -107,12 +90,8 @@ if(isset($_GET["p"]))$producto = true;
 														<label>Telefono para este <?=$producto?"Producto":"Servicio"?></label>
 														<input name="telefono" required type="tel" class="form-control" placeholder="Escriba su numero de telefono">
 													</div>
-													
-													
 												</div>
-												
 												<div class="col-sm-4 col-md-4">
-												
 													<div class="form-group">
 														<label>Departamento</label>
 														<select name="country" required class="selectpicker show-tick form-control" data-live-search="true">
@@ -131,31 +110,14 @@ try {
 														</select>
 													</div>
 													<div class="form-group">
-														<label>Categoria del <?=$producto?"Producto":"Servicio"?></label>
-														<select name="category" required class="selectpicker show-tick form-control" data-live-search="true">
-															<option disabled value="">Seleccionar</option>
-<?php
-try{
-   $stmt = $conn->prepare("SELECT * FROM tbl_categories ORDER BY category");
-   $stmt->execute();
-   $result = $stmt->fetchAll();
-
-   foreach($result as $row):?>
-															<option value="<?=$row['category']?>"><?=$row['category']?></option>
-<?php
-	endforeach;
-}catch(PDOException $e){}?>
-
-														</select>
+														<label>Categor&iacute;a del <?=$producto?"Producto":"Servicio"?></label>
+														<input name="category" required class="selectpicker autocomplete form-control" data-live-search="true">
 														<br>
 														<p style="color:red">Si no encuentras tu categoria, presiona el boton</p>
 														<a class="btn btn-sm btn-warning"  data-toggle="modal" data-target=".bd-example-modal-lg" href="">
-														agregar mi categoria</a>
+														agregar mi categor&iacute;a</a>
 													</div>
 												</div>
-
-									
-
 												<div class="clear"></div>
 												<div class="col-sm-4 col-md-4">
 												</div>
@@ -167,7 +129,6 @@ try{
 														<textarea class="form-control bootstrap3-wysihtml" name="description" required placeholder="Escriba una descripcion" style="height: 100px;"></textarea>
 													</div>
 												</div>
-												
 												
 <?php
 	if($producto): ?>
@@ -187,36 +148,23 @@ try{
 											        </div>
 											        
 											    </div>
-												
 												<div class="clear mb-10"></div>
-
-												
 												<div class="clear mb-15"></div>
-
-												
 												<div class="clear"></div>
 												<?=$producto?'<input type="hidden" name="producto" value="1"/>':''?>
 												<div class="col-sm-6 mt-30">
 													<button type="submit"  onclick = "validate(this)" class="btn btn-primary btn-lg">Publicar <?=$producto?"Producto":"Servicio"?></button>
 												</div>
-
 											</div>
-											
 										</form>
-										   
-										
 									</div>
 								</div>
 							</div>
-						
 						</div>
-						
 					</div>
 				</div>
 			</div>
-
-			<div>
-										
+			<div>					
 			<?php include_once "../footer.php"; ?>
 		</div>
 <div id="back-to-top">
@@ -249,8 +197,6 @@ try{
 	background:#E6E6E6;
 	max-height: 100px;
 	vertical-align: top;
-	
-
 }
 .group-file{
 	width: 100%;
@@ -276,9 +222,7 @@ try{
 
 
 <script type="text/javascript">
-
 $("#file-zone").click(e=>{
-
 	if($(e.srcElement).parents(".group-file").children("input").length >= 4)return;
 	var container = $("<div></div>").addClass("container-image-upload");
 	var deleteSpam = $("<span></span>").text("X").addClass("close-span");
@@ -323,48 +267,18 @@ $("input").change(e=>{
   
 <?php 
 
-
-  /*  include '../constants/settings.php'; 
-    include 'constants/check-login.php';
-    
-    if ($user_online == "true") {
-    if ($myrole == "admin") {
-    }else{
-    header("location:../");		
-    }
-    }else{
-    header("location:../");	
-    }
-*/
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 $sql = 'SELECT * from tbl_categories';
 
 if (mysqli_query($conn, $sql)) {
-
-echo "conectado satisfactoriamente";
-
+	echo "conectado satisfactoriamente";
 } else {
-
-echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-
-}
-
-
-    ?>
+	echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+} ?>
   <div class="modal-dialog modal-sm" style="text-align: center;">
-  
-	
-   
-  
-  
-   
-  
    <h3>Agregar nueva categoia</h3>
 	<form action="post-job.php" method="POST">
-	
-  
-   
 	 <input type="text" required name="categoria" value="" placeholder="Escriba su categoria" aria-label="Example text with button addon" aria-describedby="button-addon1">
    </div> 
 	
@@ -387,29 +301,20 @@ echo "Error: " . $sql . "<br>" . mysqli_error($conn);
                 }
 
                 if($ejecutar){
-
                     echo"<script> alert('datos agregados')</script>";
                     echo"<script>window.open('post-job.php','_self')</script>";
-        
-                      
                   }
 
             }
         
             ?>
             
-            <script>
+            </script>
    
    </div>
 	
-  
+
     </div>
   </div>
 </div>
-
 </html>
-
-
-<style>
-
-</style>
