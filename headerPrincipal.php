@@ -239,6 +239,10 @@
 	border-color: black;
 }
 
+.navbar .text-profile {
+	color: white;
+}
+
 body{
 	padding-top: 3em;
 }
@@ -272,22 +276,30 @@ body{
 					</li>
 				</ul>
 			</div>
-			<ul class="nav navbar-nav navbar-right">
+<?php if(!$user_online): ?>
+			<div class="nav-mini-wrapper">
+				<ul  class="nav-mini sign-in">
+					<li><a href="login.php">Ingresar</a></li>
+					<li><a href="register.php">Registro</a></li>
+
+				
+				</ul>
+			</div>
+<?php else:?>
+			<ul class="navbar-nav navbar-right">
+				<li class="text-profile" style="display: inline-block;text-align: right;border-right: 1px solid;margin-top: 10px;
+    padding-right: .4rem;vertical-align: middle;">
+					<?=$_SESSION['compname']?>
+				</li>
 				<li class="dropdown">
-					<img src="images/images/default.jpg" class="img img-responsive btn-circle dropdown-toggle " type="button" style="border-radius: 50%;max-height: 40px;"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+					<img src="<?=isset($myID ) && $_SESSION['avatar'] != null?"app/image-profiles.php?id=$myID":'images/images/default.jpg'?>" class="img img-responsive btn-circle dropdown-toggle " type="button" style="margin-left: 0.3rem;border-radius: 50%;max-height: 40px;"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
 					<ul class="dropdown-menu" style="margin-top: 20px;" aria-labelledby="dropdownMenu1">
-	<?php if (isset($user_online ) && $user_online == true): ?>
-					    <li><a  href="<?=$prefix?>logout.php">Cerrar Sesión</a></li>
 						<li><a  href="<?=$prefix?><?=$myrole?>">Perfil</a></li>
-					
-						
-	<?php else: ?>
-						<li><a href="<?=$prefix?>login.php">Ingresar</a></li>
-						<li><a href="<?=$prefix?>register.php">Registro</a></li>
-	<?php endif;?>
+						<li><a  href="<?=$prefix?>logout.php">Cerrar Sesión</a></li>
 					</ul>
 				</li>
 			</ul>
+<?php endif;?>
 		</div>
 		<div id="slicknav-mobile"></div>
 	</nav>

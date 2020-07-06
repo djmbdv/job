@@ -136,10 +136,10 @@ global $conn;
                       <div class="row" >
                           <div class="col col-md-4" style="text-align: -webkit-center;">
                           
-                          <img class="thumbnail" style="max-height: 100px; " src="images/a.jpg" alt="">
+                          <img class="thumbnail" src="images/a.jpg" alt="">
                           
                           <br> 
-                            <?php // print_r($post[0]["excerpt"]["rendered"]);
+                            <?php  print_r($post[0]["excerpt"]["rendered"]);
 ?>
                           </div>
                           <div class="col col-md-4" style="text-align: -webkit-center;">
@@ -148,7 +148,7 @@ global $conn;
                           <div class="col col-md-4" style="text-align: -webkit-center;">
                           <img class="thumbnail" src="images/b.jpg" alt="">
                          <br> 
-                          <?php  //print_r($post[1]["excerpt"]["rendered"]);?>
+                          <?php  print_r($post[1]["excerpt"]["rendered"]);?>
                           </div>
                         
                   </div>
