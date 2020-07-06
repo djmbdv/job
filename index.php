@@ -128,11 +128,7 @@ global $conn;
                         </section>
                       <section id="blog" class="container">
 <?php 
-
- $url = "https://aquionline.co/blog/wp-json/wp/v2/posts"; $ch = curl_init();  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); //curl_setopt($ch, CURLOPT_URL, $url);  $result = curl_exec($ch);  curl_close($ch);  
- //$post = json_decode($result, true); 
-
- ?>
+ $url = "https://aquionline.co/blog/wp-json/wp/v2/posts"; $ch = curl_init();  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);?>
                       <div class="row" >
                           <div class="col col-md-4" style="text-align: -webkit-center;">
                           

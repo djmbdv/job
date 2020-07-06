@@ -242,7 +242,12 @@
 .navbar .text-profile {
 	color: white;
 }
-
+.navbar-sticky .text-profile{
+	color: black;
+}
+.not-transparent-header  .navbar-default  .text-profile{
+	color: black;
+}
 body{
 	padding-top: 3em;
 }
