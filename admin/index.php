@@ -23,128 +23,17 @@
 
 <body id="page-top">
   <div id="wrapper">
-    <ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" style="letter-spacing:inherit;height: 5rem;" href="index.html">
-        <div class="sidebar-brand-icon ">
-          <image src="../images/SOLOLOGO.png" class="img"  style="max-height: 60px"/>
-        </div>
-        <div class="sidebar-brand-text "  style="padding-bottom:2em;padding-top:2em;"><?=$title_site?> - Admin <sup class="text-warning">beta</sup></div>
-      </a>
-
-      <!-- Divider -->
-      <hr class="sidebar-divider my-0">
-
-      <!-- Nav Item - Dashboard -->
-      <li class="nav-item active">
-        <a class="nav-link" href="index.html">
-          <i class="fa fa-fw fa-tachometer-alt"></i>
-          <span>Dashboard</span></a>
-      </li>
-
-      <!-- Divider -->
-      <hr class="sidebar-divider">
-
-      <!-- Heading -->
-      <div class="sidebar-heading">
-        Usuarios
-      </div>
-
-      <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-          <i class="fa fa-fw fa-cog"></i>
-          <span>Empleados</span>
-        </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="#">Lista</a>
-            <a class="collapse-item" href="cards.html">Configuraci&oacute;n</a>
-          </div>
-        </div>
-      </li>
-
-      <!-- Nav Item - Utilities Collapse Menu -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-          <i class="fa fa-fw fa-wrench"></i>
-          <span>Empleadores</span>
-        </a>
-        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="buttons.html">Lista</a>
-            <a class="collapse-item" href="cards.html">Configuraci&oacute;n</a>
-          </div>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-          <i class="fa fa-fw fa-wrench"></i>
-          <span>Servicios</span>
-        </a>
-        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="buttons.html">Lista</a>
-            <a class="collapse-item" href="cards.html">Configuraci&oacute;n</a>
-          </div>
-        </div>
-      </li>
-      <!-- Divider -->
-      <hr class="sidebar-divider">
-
-      <!-- Heading -->
-      <div class="sidebar-heading">
-        Addons
-      </div>
-
-      <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-          <i class="fa fa-fw fa-folder"></i>
-          <span>Pages</span>
-        </a>
-        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Login Screens:</h6>
-            <a class="collapse-item" href="login.html">Login</a>
-            <a class="collapse-item" href="register.html">Register</a>
-            <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-            <div class="collapse-divider"></div>
-            <h6 class="collapse-header">Other Pages:</h6>
-            <a class="collapse-item" href="404.html">404 Page</a>
-            <a class="collapse-item" href="blank.html">Blank Page</a>
-          </div>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="charts.html">
-          <i class="fa fa-fw fa-bar-chart"></i>
-          <span>Gr&aacute;ficos</span></a>
-      </li>
-
-      <hr class="sidebar-divider d-none d-md-block">
-
-      <!-- Sidebar Toggler (Sidebar) -->
-      <div class="text-center d-none d-md-inline">
-        <button class="rounded-circle border-0" id="sidebarToggle"></button>
-      </div>
-
-    </ul>
-    <!-- End of Sidebar -->
-
+    <?php include_once "sidebar_new.php";?>
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
-
       <!-- Main Content -->
       <div id="content">
-
         <!-- Topbar -->
         <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow" style="height: 5rem;">
-
           <!-- Sidebar Toggle (Topbar) -->
           <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
             <i class="fa fa-bars"></i>
           </button>
-
           <ul class="navbar-nav ml-auto">
             <li class="nav-item dropdown no-arrow d-sm-none">
               <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -307,14 +196,11 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+            <h1 class="h3 mb-0 text-gray-800">Principal</h1>
             <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fa fa-download fa-sm text-white-50"></i> Generate Report</a>
           </div>
-
           <!-- Content Row -->
           <div class="row">
-
-
 <?php
   $stmt = $conn->prepare("select count(*) as value from tbl_users where month(created_at) = month(now())");
   $stmt->execute();
@@ -361,7 +247,7 @@
                       <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $usuariosTotal ?></div>
                     </div>
                     <div class="col-auto">
-                      <i class="fa fa-dollar-sign fa-2x text-gray-300"></i>
+                      <i class="fa fa-users fa-2x text-gray-300"></i>
                     </div>
                   </div>
                 </div>
@@ -387,7 +273,7 @@
                       </div>
                     </div>
                     <div class="col-auto">
-                      <i class="fafa-clipboard-list fa-2x text-gray-300"></i>
+                      <i class="fa fa-question fa-2x text-gray-300"></i>
                     </div>
                   </div>
                 </div>
@@ -398,8 +284,8 @@
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Usuarios</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $usuariosTotal ?></div>
+                      <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Publicaciones</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $publicaciones ?></div>
                     </div>
                     <div class="col-auto">
                       <i class="fa fa-comments fa-2x text-gray-300"></i>
@@ -520,7 +406,6 @@
           </div>
 
         </div>
-        <!-- /.container-fluid -->
 
       </div>
       <!-- End of Main Content -->
@@ -543,7 +428,7 @@
 
   <!-- Scroll to Top Button-->
   <a class="scroll-to-top rounded" href="#page-top">
-    <i class="fa fa-angle-up"></i>
+    <i class="fa fa-arrow-up"></i>
   </a>
 
   <!-- Logout Modal-->
@@ -566,12 +451,13 @@
   </div>
 
   <!-- Bootstrap core JavaScript-->
+  <script src="../vendor/jquery/jquery.min.js"></script>
+  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <!-- Core plugin JavaScript-->
+  <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
   <!-- Custom scripts for all pages-->
-  <script type="text/javascript">
+<script type="text/javascript">
     (function($) {
   "use strict"; // Start of use strict
 
@@ -621,14 +507,12 @@
   });
 
 })(jQuery); // End of use strict
+
+
+
+!function(t){"use strict";t("#sidebarToggle, #sidebarToggleTop").on("click",function(o){t("body").toggleClass("sidebar-toggled"),t(".sidebar").toggleClass("toggled"),t(".sidebar").hasClass("toggled")&&t(".sidebar .collapse").collapse("hide")}),t(window).resize(function(){t(window).width()<768&&t(".sidebar .collapse").collapse("hide")}),t("body.fixed-nav .sidebar").on("mousewheel DOMMouseScroll wheel",function(o){if(768<t(window).width()){var e=o.originalEvent,l=e.wheelDelta||-e.detail;this.scrollTop+=30*(l<0?1:-1),o.preventDefault()}}),t(document).on("scroll",function(){100<t(this).scrollTop()?t(".scroll-to-top").fadeIn():t(".scroll-to-top").fadeOut()}),t(document).on("click","a.scroll-to-top",function(o){var e=t(this);t("html, body").stop().animate({scrollTop:t(e.attr("href")).offset().top},1e3,"easeInOutExpo"),o.preventDefault()})}(jQuery);
   </script>
 
-  <!-- Page level plugins -->
-  <!--script src="vendor/chart.js/Chart.min.js"></script>
-
-  <!-- Page level custom scripts >
-  <script src="js/demo/chart-area-demo.js"></script>
-  <script src="js/demo/chart-pie-demo.js"></script-->
 
 </body>
 
