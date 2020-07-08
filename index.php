@@ -102,7 +102,7 @@ global $conn;
 	        </section>
 			<section class="" id="franja"  style="background-color:#26272a;">
 				<div class="text-center">
-					<p id="blog-texto"> Blog</p>
+					<p id="blog-texto" style="color:white; font-size:20px"> Blog</p>
 	            </div>
 	        </section>
 	        <section id="blog" class="container">
