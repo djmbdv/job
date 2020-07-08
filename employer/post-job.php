@@ -111,7 +111,7 @@ try {
 													</div>
 													<div class="form-group autocomplete">
 														<label>Categor&iacute;a del <?=$producto?"Producto":"Servicio"?></label>
-														<input name="category" id="category-input" required class="form-control" data-live-search="true">
+														<input name="category" id="category-input" required class="form-control" data-live-search="true" placeholder="Escribe una categoria">
 													</div>
 													<div>
 														<p style="color:red">Si no encuentras tu categoria, presiona el boton</p>
