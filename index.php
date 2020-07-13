@@ -73,7 +73,6 @@ global $conn;
 								<li class="location">
 									<a href="register.php" class="c-white"><i class="fa fa-user" style="font-size:20px"></i><b>Promocionate con nosotros</b></a>
 								</li>
-	         
 					        </ul>
 					    </div>
 					</div>
@@ -107,7 +106,11 @@ global $conn;
 	        </section>
 	        <section id="blog" class="container">
 	<?php 
-	 $url = "https://aquionline.co/blog/wp-json/wp/v2/posts"; $ch = curl_init();  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);?>
+	 $url = "https://aquionline.co/blog/wp-json/wp/v2/posts"; $ch = curl_init($url);  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+	$post = curl_exec($ch);
+	$post = json_decode($post,true);
+		 ?>
 				<div class="row" >
 					<div class="col col-md-4" style="text-align: -webkit-center;">
 						<img class="thumbnail" src="images/a.jpg" alt="">

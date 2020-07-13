@@ -46,7 +46,7 @@
 
   
 ?>
-                    <tr>
+                    <tr class="cell-user" id-user="<?=$row["member_no"]?>">
                       <td><input type="checkbox" name=""/></td>
                       <td><?=$row["member_no"]?></td>
                       <td><?=$row["first_name"]?></td>
