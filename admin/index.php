@@ -2,6 +2,13 @@
   require_once '../constants/settings.php';
   require_once '../constants/connection.php';
   require_once 'router.php';
+  require_once '../constants/check-login.php';
+
+  if(!$user_online){
+    header("location: ../login.php");
+    die();
+  }
+
   if(isset($_GET['p']))
   $page = $_GET['p'];
   else $page = '';
