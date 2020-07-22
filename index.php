@@ -127,7 +127,6 @@ $fila_servicios = mysqli_fetch_assoc($result);
 					</div>
 					<div>
 
-					<button class="btn btn-danger" type="" onclick='aumentar();' style="position:fixed-top;"> boton</button>
 
 						<br>
 						<div class="locations-container t-center">
