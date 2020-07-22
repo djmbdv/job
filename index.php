@@ -1,9 +1,28 @@
 <?php 
 require_once 'constants/connection.php';
 include 'headerPrincipal.php';
-
+ 
 global $conn;
+
+$x = new mysqli($servername, $username, $password, $dbname);
+$sql = "SELECT COUNT(*) total FROM tbl_users";
+$result = mysqli_query($x, $sql);
+$fila = mysqli_fetch_assoc($result);
+
+$sql = "SELECT COUNT(*) total FROM tbl_jobs";
+$result = mysqli_query($x, $sql);
+$fila_servicios = mysqli_fetch_assoc($result);
+
+
+
 ?>
+
+
+
+
+
+
+
 <style>
 	.autofit2 {
 		height:70px;
@@ -21,12 +40,55 @@ global $conn;
 	}
 }
 </style>
+
 <body class="home" id="home" style="padding-top: 0;">
+
+
 	<div id="introLoader" class="introLoading"></div>
 	<div class="container-wrapper">
 		<div class="main-wrapper">
 			<div class="hero" id="fondito" style="background-image:url('images/background-index.jpg');background-size: cover;">
+				
+			
+				
+			
 				<div class="container">
+
+				<div class="row ">
+						<div class="col-xss-11 col-xs-11 col-sm-4">
+						<div> <p> <b  class="counter">0 + </b> </p> 
+								<p>Clientes</p>
+
+						</div>
+						</div>
+
+						<div class="col-xss-11 col-xs-11 col-sm-4">
+						<div >
+						<p> <b class="counter1">0 +</b> </p> 
+								<p>Servicios</p>
+						</div>
+						</div>
+
+						<div class="col-xss-11 col-xs-11 col-sm-4">
+						<div class="counter2">
+						<p> <b>100+</b> </p> 
+								<p>Busquedas</p>
+						</div>
+						</div>
+					</div>
+
+				</div>
+				
+
+
+
+
+
+
+
+				<div class="container">
+					
+						
 					<h2 class=" text-center text-shadow" style="text-shadow: 3px black;color: whitesmoke;"> <b> <p > Encuentra lo que necesitas en un click</p></b>
 					</h1>
 					<div class="main-search-form-wrapper" class="text-center">
@@ -55,23 +117,25 @@ global $conn;
                     					</select>
 									</div>
 				                    <div class="col-lg-2 col-md-2 col-xs-11" style="margin-top:30px;"  >
-					                    <button type="submit"  class="btn button--medium  btn-primary"  style="margin-left: 40px;" >
+					                    <button type="submit"  class="btn button--medium  btn-primary"  style="margin-left: 40px;"  >
 							              <i class="fa fa-search"></i> Buscar
-					            		</button>   
+					            		</button>  
 				                    </div>
 								</div>
 							</div>
 						</form>
 					</div>
 					<div>
+
+
 						<br>
 						<div class="locations-container t-center">
 					        <ul class="min-list inline-list locations locations--layout-1">
 					        	<li class="location">
-						            <a href="register.php" class="c-white"><i class="fa fa-book" style="font-size:20px"></i><b>Crea tu servicios ahora</b></a>
+						            <a href="register.php" class="c-white"><i class="fa fa-book" style="font-size:30px"></i><b  style="font-size:20px">Crea tu servicios ahora</b></a>
 								</li>
 								<li class="location">
-									<a href="register.php" class="c-white"><i class="fa fa-user" style="font-size:20px"></i><b>Promocionate con nosotros</b></a>
+									<a href="register.php" class="c-white"><i class="fa fa-user" style="font-size:30px"></i><b  style="font-size:20px">Publica tus servicios</b></a>
 								</li>
 					        </ul>
 					    </div>
@@ -249,6 +313,53 @@ document.addEventListener("click", function (e) {
 }
 autocomplete(document.getElementById("category-input"));
 </script>
+
+
+				
+<script>
+//FUNCION CONTADOR
+			function count(){
+  var counter = { var: 0 };
+  TweenMax.to(counter, 3, {
+    var: <?php echo $fila['total']?>, 
+    onUpdate: function () {
+      var number = Math.ceil(counter.var);
+      $('.counter').html(number);
+      if(number === counter.var){ count.kill(); }
+	  
+
+    },
+    onComplete: function(){
+      count();
+    },    
+    ease:Circ.easeOut
+  });
+}
+
+count();
+				</script>	
+
+<script>
+			function count(){
+  var counter = { var: 0 };
+  TweenMax.to(counter, 3, {
+    var: <?php echo $fila_servicios['total']?>, 
+    onUpdate: function () {
+      var number = Math.ceil(counter.var);
+      $('.counter1').html(number);
+      if(number === counter.var){ count.kill(); }
+	  
+
+    },
+    onComplete: function(){
+      count();
+    },    
+    ease:Circ.easeOut
+  });
+}
+
+count();
+				</script>	
 </body>
 </html>
 <?php ob_flush();
