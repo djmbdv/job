@@ -17,7 +17,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
-
+	
 	<?php
 		if(!isset($tags_share)):?>
 	    <meta property="og:image:type" content="image/jpeg" />
@@ -61,6 +61,11 @@
 	<script type="text/javascript" src="<?=$prefix?>js/slick.min.js"></script>
 	<script type="text/javascript" src="<?=$prefix?>js/easy-ticker.js"></script>
 	<script type="text/javascript" src="<?=$prefix?>js/validator.min.js"></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js'></script>
+
+	
+
+
 </head>
 <style type="text/css">
 .navbar-sticky > .container > .logo-wrapper > .logo > img {
