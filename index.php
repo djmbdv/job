@@ -72,7 +72,7 @@ $fila_servicios = mysqli_fetch_assoc($result);
 						<div class="col-xss-11 col-xs-11 col-sm-4">
 						<div class="counter2">
 						<p> <b>100+</b> </p> 
-								<p>Busqueda</p>
+								<p>Busquedas</p>
 						</div>
 						</div>
 					</div>
