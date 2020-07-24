@@ -15,7 +15,7 @@ if(!$user_online){
 	header('location: ../../login.php');
 	die();
 }
-
+//print_r($_POST);die();
 $job_id = $_POST['jobid'];
 $title  = ucwords($_POST['title']);
 $city  = ucwords($_POST['city']);
@@ -23,14 +23,14 @@ $country = $_POST['country'];
 $category = $_POST['category'];
 $desc = ucfirst($_POST['description']);
 $telefono= $_POST['telefono'];
-$stmt = $conn->prepare("UPDATE tbl_jobs SET title = :title, city = :city, country = :country, category = :category,telefono = :telefono, description = :description WHERE job_id = :jobid AND company = :myid");
+$stmt = $conn->prepare("UPDATE tbl_jobs SET title = :title, city = :city, country = :country, category = :category,telefono = :telefono, description = :description WHERE job_id = :jobid ");
 $stmt->bindParam(':title', $title);
 $stmt->bindParam(':city', $city);
 $stmt->bindParam(':country', $country);
 $stmt->bindParam(':category', $category);
 $stmt->bindParam(':description', $desc);
 $stmt->bindParam(':jobid', $job_id);
-$stmt->bindParam(':myid', $myId);
+//$stmt->bindParam(':myid', $myId);
 $stmt->bindParam(':telefono', $telefono);
 $target_dir = "../../images/uploads/";
 if(isset($_POST['delimg'])){
