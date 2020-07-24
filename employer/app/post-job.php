@@ -25,6 +25,7 @@ $category = $_POST['category'];
 $desc = ucfirst($_POST['description']);
 //$deadline = $_POST['deadline'];
 $p = isset($_POST["producto"]);
+$precio = isset($_POST['precio'])?$_POST['precio']:1;
 $telefono= $_POST['telefono'];
 $addQuery = $p? ", :producto, :precio":'';
 $addQueryValue = $p? ", producto, precio":'';
@@ -40,7 +41,6 @@ $stmt->bindParam(':company', $myid);
 $stmt->bindParam(':dateposted', $postdate);
 $stmt->bindParam(':telefono', $telefono);
 if($p){
-$precio = 1;
 $stmt->bindParam(':producto', $precio);
 $stmt->bindParam(':precio',$precio);
 }

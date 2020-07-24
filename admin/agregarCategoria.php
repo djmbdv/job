@@ -85,7 +85,7 @@ echo "Error: " . $sql . "<br>" . mysqli_error($conn);
         
             ?>
             
-            <script></script>
+</script>
 <body>
  
 <div class="row">
