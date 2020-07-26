@@ -23,18 +23,13 @@ $stmt = $conn->prepare("insert into tbl_search(Departamento,busqueda) values (:d
 $stmt->bindParam(":depar", $country);
 $stmt->bindParam(":cate", $cate);
 try{
-$stmt->execute();
-echo $stmt->rowCount();
-
+	$stmt->execute();
 }catch(Exception $e){
 	$stmt = $conn->prepare("update tbl_search set numero = numero + 1 where departamento = :depar  and busqueda = :cate");
 	$stmt->bindParam(":depar", $country);
 	$stmt->bindParam(":cate", $cate);
 	$stmt->execute();
-
-echo $stmt->rowCount();
 }
-die();
 
 $cate= '%'.$cate.'%';
 $country ='%'.$country.'%';	
