@@ -16,13 +16,6 @@ $fila_servicios = mysqli_fetch_assoc($result);
 
 
 ?>
-
-
-
-
-
-
-
 <style>
 	.autofit2 {
 		height:70px;
@@ -42,36 +35,31 @@ $fila_servicios = mysqli_fetch_assoc($result);
 </style>
 
 <body class="home" id="home" style="padding-top: 0;">
-
-
 	<div id="introLoader" class="introLoading"></div>
 	<div class="container-wrapper">
 		<div class="main-wrapper">
 			<div class="hero" id="fondito" style="background-image:url('images/background-index.jpg');background-size: cover;">
-				
-			
-				
-			
 				<div class="container">
-
 				<div class="row ">
 						<div class="col-xss-11 col-xs-11 col-sm-4">
 						<div> <p> <b  class="counter">0 + </b> </p> 
 								<p>Clientes</p>
-
 						</div>
 						</div>
-
 						<div class="col-xss-11 col-xs-11 col-sm-4">
 						<div >
 						<p> <b class="counter1">0 +</b> </p> 
 								<p>Servicios</p>
 						</div>
 						</div>
-
 						<div class="col-xss-11 col-xs-11 col-sm-4">
 						<div class="counter2">
-						<p> <b>100+</b> </p> 
+<?php
+	$st = $conn->prepare("select sum(numero) as busquedas from tbl_search");
+	$st->execute();
+	$o = $st->fetchObject();
+?>
+						<p> <b><?= $o->busquedas ?>+</b> </p> 
 								<p>Busquedas</p>
 						</div>
 						</div>

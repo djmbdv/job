@@ -1,6 +1,5 @@
 <?php
 
-
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 $sql = 'SELECT * from tbl_users';
@@ -14,8 +13,7 @@ echo "conectado satisfactoriamente";
 echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 
 }
-include '../headerPrincipal.php';
-?>
+include '../headerPrincipal.php';?>
 
 
 <form name="frm" action="app/create-account.php" method="POST" autocomplete="off">

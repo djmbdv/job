@@ -19,6 +19,23 @@ $country = "";
 //	echo "Entro aqui";
 $cate = urldecode(isset($_GET['category'])?$_GET['category']:"");
 $country =urldecode(isset($_GET['country'])?$_GET['country']:"");
+$stmt = $conn->prepare("insert into tbl_search(Departamento,busqueda) values (:depar,:cate) ");
+$stmt->bindParam(":depar", $country);
+$stmt->bindParam(":cate", $cate);
+try{
+$stmt->execute();
+echo $stmt->rowCount();
+
+}catch(Exception $e){
+	$stmt = $conn->prepare("update tbl_search set numero = numero + 1 where departamento = :depar  and busqueda = :cate");
+	$stmt->bindParam(":depar", $country);
+	$stmt->bindParam(":cate", $cate);
+	$stmt->execute();
+
+echo $stmt->rowCount();
+}
+die();
+
 $cate= '%'.$cate.'%';
 $country ='%'.$country.'%';	
 $query1 = isset($_GET['category']) ? "SELECT * FROM tbl_jobs join tbl_users on tbl_jobs.company = tbl_users.member_no WHERE category like :cate or tbl_jobs.title like :cate or tbl_users.first_name like :cate ": "SELECT * FROM tbl_jobs  ";
@@ -149,10 +166,18 @@ foreach($result as $row):
 	$smtm3->execute();
 	foreach ($smtm3->fetchAll() as $thumb):
  ?>
-						
-							<div class="thumb">
-								<img class="img img-responsive img-thumb" otro="<?=$thumb['path']?>" src="app/thumb.php?id=<?=$thumb['id']?>"/>
+						<div  class="thumb">
+							<div style="height: 30px;max-width: 100%;position: relative; display: inline-block;" >
+								<img class="img img-responsive img-thumb" style="
+								position: absolute;
+   top: 50%;
+   left: 50%;
+   width: 50px;
+   height: 50px;
+   margin-top: -25px; /* Half the height */
+   margin-left: -25px; /* Half the width */" otro="<?=$thumb['path']?>" src="app/thumb.php?id=<?=$thumb['id']?>"/>
 							</div>
+						</div>
 <?php
 	endforeach; ?>
 						</div>

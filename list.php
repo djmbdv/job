@@ -7,15 +7,12 @@ global $conn;
 global $actual_link;
 global $isHttps;
 
-
 require 'headerPrincipal.php';
 $slc_country =urldecode(isset($_GET['country'])?$_GET['country']:"");
+
 ?>
 <div class="modal fade" id="modal-galery" role="dialog">
-    
-    
-      <!-- Modal content-->
-      <div class="modal-content">
+    <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
@@ -25,12 +22,8 @@ $slc_country =urldecode(isset($_GET['country'])?$_GET['country']:"");
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
         </div>
-      </div>
-      
-  </div>
-
-
-
+    </div>
+</div>
 <body class="not-transparent-header mt-40">
 	<div class="container-wrapper">
 		<div class="main-wrapper">
@@ -45,7 +38,6 @@ $slc_country =urldecode(isset($_GET['country'])?$_GET['country']:"");
 										<input class="form-control" name="category" id="category-input" placeholder="Producto, Empresa, Servicio..."  name="">
 									</div>
 								</div>
-								
 								<div class="col-xss-12 col-xs-6 col-sm-6 col-md-5">
 									<div class="form-group form-lg">
 										<select class="form-control"  name="country" required>
