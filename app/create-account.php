@@ -1,5 +1,4 @@
 <?php
-
 require_once "../constants/settings.php";
 include_once "../constants/connection.php";
 require_once "../mail/PHPMailerAutoload.php";
@@ -53,14 +52,9 @@ function create_verification_email($email){
     </a>
     <hr/>
 <div>
-	
-
 <a href=3D"$url/app/email-verification.php?t=3D$token">
 <img  src=3D"$url/images/email-marketing.png" style=3D"width:700px; height: 800px; alt=3D"" >
-    </a>
-	
-	
-    
+</a>
 </div>
 </center>
 </body>
@@ -111,15 +105,17 @@ function register_as_employer() {
 		$last_login = date('d-m-Y h:m A [T P]');
 	    $comp_no = 'CM'.get_rand_numbers(9).'';
 	    $cname = ucwords($_POST['company']);
+	    $lname = ucwords($_POST['company']);
 	    $email = $_POST['email'];
 	    $login = md5($_POST['password']);
 	    $verified = 0;
-	    $stmt = $conn->prepare("INSERT INTO tbl_users (first_name, title, email, last_login, login, role, member_no,verified) 
-		VALUES (:fname, :title, :email, :lastlogin, :login, :role, :memberno, :verified)");
+	    $stmt = $conn->prepare("INSERT INTO tbl_users (first_name,last_name, title, email, last_login, login, role, member_no,verified) 
+		VALUES (:fname,:lname, :title, :email, :lastlogin, :login, :role, :memberno, :verified)");
 	    $stmt->bindParam(':fname', $cname);
 	    $vacio = '';
 	    $stmt->bindParam(':title', $vacio);
 	    $stmt->bindParam(':email', $email);
+	    $stmt->bindParam(':lname',$lname);
 		$stmt->bindParam(':lastlogin', $last_login);
 	    $stmt->bindParam(':login', $login);
 	    $stmt->bindParam(':role', $role);

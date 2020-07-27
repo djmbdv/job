@@ -24,6 +24,14 @@ require_once 'constants/connection.php';?>
 			<label>Nombre de Empresa</label>
 			<input class="form-control" placeholder="Ingresa tu Nombre de Empresa" name="company" required type="text"> 
 		</div>												
+	</div>
+	<div class="col-sm-12 col-md-12">
+		<div class="form-group has-feedback"> 
+			<label>Nombre de Representante</label>
+			<input class="form-control" type="text" role="register" gly="email-gly" placeholder="Nombre de Representante" name="lname" required> 
+			<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+			<div class="help-block with-errors"></div>
+		</div>											
 	</div>										
 	<div class="col-sm-12 col-md-12">
 		<div class="form-group has-feedback"> 
