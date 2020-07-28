@@ -20,11 +20,12 @@
                   <thead>
                     <tr>
                       <th>Sel</th>
-                      <th>ID</th>
+                     <th>ID</th>
                       <th>Nombre</th>
-                      <th>Email</th>
-                      <th>Fecha de registro</th>
-                      <th>Verificado</th>
+                      <th>Categor&iacute;a</th>
+                      <th>Tel&eacute;fono</th>
+                      <th>Descripci&oacute;n</th>
+                      <th>Creador</th>
                       <th>Actions</th>
                     </tr>
                   </thead>
@@ -33,15 +34,16 @@
                       <th>Sel</th>
                      <th>ID</th>
                       <th>Nombre</th>
-                      <th>Email</th>
-                      <th>Fecha de registro</th>
-                      <th>Verificado</th>
+                      <th>Categor&iacute;a</th>
+                      <th>Tel&eacute;fono</th>
+                      <th>Descripci&oacute;n</th>
+                      <th>Creador</th>
                       <th>Actions</th>
                     </tr>
                   </tfoot>
                   <tbody>
 <?php 
-  $stmt = $conn->prepare("select * from tbl_jobs limit 10 ");
+  $stmt = $conn->prepare("select * from tbl_jobs where producto = 0  limit 10 ");
   $stmt->execute();
   $result = $stmt->fetchAll();
   //print_r($result);
@@ -51,12 +53,13 @@
 ?>
                     <tr class="cell-user" id-user="<?=$row["member_no"]?>">
                       <td><input type="checkbox" name=""/></td>
-                      <td><?=$row["member_no"]?></td>
-                      <td><?=$row["first_name"]?></td>
-                      <td><?=$row["email"]?></td>
+                      <td><?=$row["job_id"]?></td>
+                      <td><?=$row["title"]?></td>
+                      <td><?=$row["category"]?></td>
                       
-                      <td><?=$row["created_at"]?></td>
-                       <td><?=$row["verified"] ? "Si":"No"?></td>
+                      <td><?=$row["telefono"]?></td>
+                       <td><small><code><?=$row["description"]?></code></small></td>
+                       <td><?=$row["company"]?></td>
                       <td>
                         <button class="btn btn-danger btn-sm btn-circle">X</button>
                         <button class="btn btn-warning btn-sm btn-circle"><span class="fa fa-pencil"></span></button>

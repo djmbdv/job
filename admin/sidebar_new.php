@@ -70,7 +70,7 @@
         </a>
         <div id="collapseUtilities3" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="?menu=lista">Lista</a>
+            <a class="collapse-item" href="?p=category_list">Lista</a>
             <a class="collapse-item" href="cards.html">Configuraci&oacute;n</a>
           </div>
         </div>
