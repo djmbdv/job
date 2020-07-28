@@ -2,6 +2,12 @@
 require '../../constants/connection.php';
 require '../constants/check-login.php';
 
+
+
+print_r($_POST);
+die();
+
+
 $companame = ucwords($_POST['company']);
 //$esta = $_POST['year'];
 $type = ucwords($_POST['type']);
@@ -23,8 +29,6 @@ $stmt->bindParam(':email', $myemail);
 $stmt->bindParam(':id',$myid,PDO::PARAM_STR,255);
 $stmt->execute();
 if ($stmt->rowCount() == 0) {
-/*    $stmt = $conn->prepare("UPDATE tbl_users SET first_name = :compname, title = :type, city = :city, street = :street, zip = :zip, country = :country, phone = :phone, about = :about, services = :service, expertise = :expertise, people = :people, website = :website WHERE member_no=:id'");
-    $stmt->bindParam(':compname', $companame);*/
     $stmt = $conn->prepare("UPDATE tbl_users SET first_name = :compname, title = :type, city = :city, street = :street, zip = :zip, country = :country, phone = :phone, about = :about, services = :service, expertise = :expertise, website = :website WHERE member_no=:id");
     $stmt->bindParam(':compname', $companame);
 //    $stmt->bindParam(':esta', $esta);
