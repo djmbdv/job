@@ -3,7 +3,6 @@
   require_once '../constants/connection.php';
   require_once 'router.php';
   require_once '../constants/check-login.php';
-error_reporting(E_ALL);
   if(!$user_online || $_SESSION['myemail'] != ADMIN_EMAIL){
     header("location: ../login.php");
     die();

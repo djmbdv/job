@@ -32,7 +32,7 @@
                     <tr>
                       <th>Sel</th>
                      <th>ID</th>
-                      <th>Nombre</th>
+                      <th>Nombre</th><
                       <th>Email</th>
                       <th>Fecha de registro</th>
                       <th>Verificado</th>
@@ -41,7 +41,7 @@
                   </tfoot>
                   <tbody>
 <?php 
-  $stmt = $conn->prepare("select * from tbl_users limit 10 ");
+  $stmt = $conn->prepare("select * from tbl_users limit 15 ");
   $stmt->execute();
   $result = $stmt->fetchAll();
   //print_r($result);
@@ -70,6 +70,23 @@
                   </tbody>
                 </table>
               </div>
+              <div class="card-footer">
+              <nav aria-label="...">
+  <ul class="pagination">
+    <li class="page-item disabled">
+      <a class="page-link" href="#" tabindex="-1">Previous</a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item active">
+      <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#">Next</a>
+    </li>
+  </ul>
+</nav>
+</div>
             </div>
           </div>
 

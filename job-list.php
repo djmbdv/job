@@ -18,7 +18,7 @@ $country = "";
 
 //	echo "Entro aqui";
 $cate = urldecode(isset($_GET['category'])?$_GET['category']:"");
-$country =urldecode(isset($_GET['country'])?$_GET['country']:"");
+$country = urldecode(isset($_GET['country'])?$_GET['country']:"");
 $stmt = $conn->prepare("insert into tbl_search(Departamento,busqueda) values (:depar,:cate) ");
 $stmt->bindParam(":depar", $country);
 $stmt->bindParam(":cate", $cate);

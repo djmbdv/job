@@ -97,7 +97,12 @@ include "../headerPrincipal.php";
 													</div>
 												</div>
 												<div class="clear"></div>
-												
+												<div class="col-sm-6 col-md-4">
+													<div class="form-group">
+														<label>Responsable</label>
+														<input class="form-control" placeholder="ingrese su nit" name="type"  type="text" value="<?= $mytitle ?>" /> 
+													</div>
+												</div>
 												<div class="col-sm-6 col-md-4">
 													<div class="form-group">
 														<label>Ciudad</label>
@@ -132,7 +137,6 @@ include "../headerPrincipal.php";
 	$stmt = $conn->prepare("SELECT * FROM tbl_countries ORDER BY country_name");
 	$stmt->execute();
 	$result = $stmt->fetchAll();
-
 	foreach($result as $row):?>
                                                            	<option <?= ($country == $row['country_name']) ? 'selected':'' ?> value="<?= $row['country_name']?>"><?=$row['country_name']?></option>
 <?php

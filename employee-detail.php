@@ -18,28 +18,24 @@ try {
 	if ($rec == "0") {
 	header("location:./");	
 	}else{
-
-    foreach($result as $row)
-    {
-	$myfname = $row['first_name'];
-	$mylname = $row['last_name'];
-	$bdate = $row['bdate'];
-	$bmonth = $row['bmonth'];
-	$byear = $row['byear'];
-	$mycountry = $row['country'];
-	$mycity = $row['city'];
-	$myphone = $row['phone'];
-	$about = $row['about'];
-	$empavatar = $row['avatar'];
-	$current_year = date('Y');
-	$myage = $current_year - $byear;
-	$myedu = $row['education'];
-	$mytitle = $row['title'];
-	$mymail = $row['email'];
+	    foreach($result as $row){
+			$myfname = $row['first_name'];
+			$mylname = $row['last_name'];
+			$bdate = $row['bdate'];
+			$bmonth = $row['bmonth'];
+			$byear = $row['byear'];
+			$mycountry = $row['country'];
+			$mycity = $row['city'];
+			$myphone = $row['phone'];
+			$about = $row['about'];
+			$empavatar = $row['avatar'];
+			$current_year = date('Y');
+			$myage = $current_year - $byear;
+			$myedu = $row['education'];
+			$mytitle = $row['title'];
+			$mymail = $row['email'];
+		}
 	}
-	
-	}
-
 					  
 	}catch(PDOException $e)
     {

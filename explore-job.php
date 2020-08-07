@@ -48,7 +48,6 @@ foreach($result as $row){
 	$complogo = $row['avatar'];
 	$compbout = $row['about'];
 }
-
 					
 
 $protocol = $isHttps? 'https://':'http://';
