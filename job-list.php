@@ -227,7 +227,3 @@ endforeach;?>
 	$("#modal-galery").modal();
 	});
 </script>
-
-
-
-
