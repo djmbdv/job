@@ -11,7 +11,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title><?=$title_site?></title>
-	<meta name="description" content="Portal de empleos / Bolsa de trabajo" />
+	<meta name="description" content="Portal de Servicios" />
 	<meta name="keywords" content="trabajo, empleos, cv, curriculum, empresas, carrera,servicios profesionales, tecnicos, bolsa de trabajo, servicios" />
 	<meta name="author" content="remotepcsolutions.com">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -23,7 +23,7 @@
 	    <meta property="og:image:type" content="image/jpeg" />
 	    <meta property="og:image:width" content="500" />
 	    <meta property="og:image:height" content="300" />
-	    <meta property="og:description" content="Portal de empleos / Bolsa de trabajo" />
+	    <meta property="og:description" content="Portal de Servicios profesionales" />
 	<?php
 		else:
 			foreach ($tags_share as $property => $content):
