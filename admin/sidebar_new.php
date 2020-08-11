@@ -86,7 +86,7 @@
       <!-- Nav Item - Pages Collapse Menu -->
 
       <li class="nav-item">
-        <a class="nav-link" href="charts.html">
+        <a class="nav-link" href="?p=statistics">
           <i class="fa fa-fw fa-bar-chart"></i>
           <span>Gr&aacute;ficos</span></a>
       </li>

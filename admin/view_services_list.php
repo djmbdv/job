@@ -1,6 +1,9 @@
 <?php include_once "../constants/connection.php";
   global $conn;
 ?>
+<div class="modal">
+  
+</div>
   <div id="content">
       <?php include_once("topbar.php");?>
       <div class="container-fluid">
