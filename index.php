@@ -158,21 +158,23 @@ $fila_servicios = mysqli_fetch_assoc($result);
 	        </section>
 	        <section id="blog" class="container">
 	<?php 
-	 $url = "https://aquionline.co/blog/wp-json/wp/v2/posts"; $ch = curl_init($url);  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+	 $url = "https://aquionline.co/blog/wp-json/wp/v2/posts?_embed"; $ch = curl_init($url);  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
 	$post = curl_exec($ch);
+	//print_r($post);
 	$post = json_decode($post,true);
 		 ?>
 				<div class="row" >
 					<div class="col col-md-4" style="text-align: -webkit-center;">
-						<img class="thumbnail" src="images/a.jpg" alt="">
+						<img class="thumbnail" src="<?=$post[0]["_embedded"]["wp:featuredmedia"][0]["source_url"] ?>" alt="">
 						<br> 
 						<?php  print_r($post[0]["excerpt"]["rendered"]);?>
 					</div>
 					<div class="col col-md-4" style="text-align: -webkit-center;">
 					</div>
 					<div class="col col-md-4" style="text-align: -webkit-center;">
-						<img class="thumbnail" src="images/b.jpg" alt="">
+						<img class="thumbnail" src="<?=$post[1]["_embedded"]["wp:featuredmedia"][0]["source_url"] ?>" alt="">
 						<br> 
 						<?php  print_r($post[1]["excerpt"]["rendered"]);?>
 					</div>
