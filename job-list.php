@@ -159,19 +159,8 @@ foreach($result as $row):
 	$smtm3 = $conn->prepare("select * from tbl_image_service where service = :service");
 	$smtm3->bindValue(":service", $row['job_id']);
 	$smtm3->execute();
-	foreach ($smtm3->fetchAll() as $thumb):
- ?>
-						<div  class="thumb">
-							<div style="height: 30px;max-width: 100%;position: relative; display: inline-block;" >
-								<img class="img img-responsive img-thumb" style="
-								position: absolute;
-   top: 50%;
-   left: 50%;
-   width: 50px;
-   height: 50px;
-   margin-top: -25px; /* Half the height */
-   margin-left: -25px; /* Half the width */" otro="<?=$thumb['path']?>" src="app/thumb.php?id=<?=$thumb['id']?>"/>
-							</div>
+	foreach ($smtm3->fetchAll() as $thumb): ?>
+						<div  class="thumb"  otro="<?=$thumb['path']?>" style="background-image: url('./app/thumb.php?id=<?=$thumb['id']?>');background-size: cover;background-position: center;">
 						</div>
 <?php
 	endforeach; ?>
@@ -193,25 +182,23 @@ endforeach;?>
 	    right: 0;
 	    display: inline-block;
 	    position: absolute;
-
 	}
 	.thumbails::after {
 	  content: "";
 
 	  display: table;
 	}
-
 	.thumb{
 	  float: right;
-	  width: 24.2%;
-	  padding: 1px;
+	  width: 21%;
+	  padding: 3px;
+	  height: 2.0rem !important;
 	  background: none;
-	  max-height: 1.234rem !important;
-	  /*margin-top: auto;*/
+	  margin: 2px;
 	}
 	.img-thumb{
 		width: 100%;
-		  max-height: 2.5rem !important;
+		  max-height: 2.0rem !important;
 	}
 	.thumb:hover{
 		border: 1px solid yellow;
@@ -220,7 +207,6 @@ endforeach;?>
 </style>
 <script type="text/javascript">
 	$(".thumb").click(e =>{
-		console.log(e);
 		console.log($(e.srcElement).attr("otro"));
 	var image = $("<img>").attr("src",$(e.srcElement).attr("otro"));
 	$("#modal-galery > .modal-content").children(".modal-body").html($("<center></center>").append(image));
