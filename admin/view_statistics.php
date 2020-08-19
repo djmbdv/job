@@ -1,6 +1,6 @@
 <?php
 
-	require_once "core.php";
+	require_once "../app/core.php";
 ?>
 <div class="container">
 <div class="row">

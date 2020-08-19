@@ -1,39 +1,28 @@
 <?php 
 require_once 'constants/connection.php';
+require_once 'app/core.php';
 include 'headerPrincipal.php';
  
 global $conn;
 
-$x = new mysqli($servername, $username, $password, $dbname);
-$sql = "SELECT COUNT(*) total FROM tbl_users";
-$result = mysqli_query($x, $sql);
-$fila = mysqli_fetch_assoc($result);
-
-$sql = "SELECT COUNT(*) total FROM tbl_jobs";
-$result = mysqli_query($x, $sql);
-$fila_servicios = mysqli_fetch_assoc($result);
-
-
-
 ?>
 <style>
-	.autofit2 {
-		height:70px;
-		width:400px;
-		object-fit:cover; 
-	}
-	.autofit3 {
-		height:80px;
-		width:100px;
-		object-fit:cover; 
-	}
+.autofit2 {
+	height:70px;
+	width:400px;
+	object-fit:cover; 
+}
+.autofit3 {
+	height:80px;
+	width:100px;
+	object-fit:cover; 
+}
 @media (max-width:  600px) {
 	.autocomplete-items{
 		width: 100% !important;
 	}
 }
 </style>
-
 <body class="home" id="home" style="padding-top: 0;">
 	<div id="introLoader" class="introLoading"></div>
 	<div class="container-wrapper">
@@ -42,14 +31,15 @@ $fila_servicios = mysqli_fetch_assoc($result);
 				<div class="container">
 				<div class="row ">
 						<div class="col-xss-11 col-xs-11 col-sm-4">
-						<div> <p> <b  class="counter">0 + </b> </p> 
+							<div>
+								<p><b class="counter" total="<?= clientes_cantidad() ?>">0</b>+</p> 
 								<p>Clientes</p>
-						</div>
+							</div>
 						</div>
 						<div class="col-xss-11 col-xs-11 col-sm-4">
-						<div >
-						<p> <b class="counter1">0 +</b> </p> 
-								<p>Servicios</p>
+						<div>
+							<p><b class="counter" total="<?= servicios_cantidad() ?>">0</b>+</p> 
+							<p>Servicios</p>
 						</div>
 						</div>
 						<div class="col-xss-11 col-xs-11 col-sm-4">
@@ -59,7 +49,7 @@ $fila_servicios = mysqli_fetch_assoc($result);
 	$st->execute();
 	$o = $st->fetchObject();
 ?>
-						<p> <b><?= $o->busquedas ?>+</b> </p> 
+						<p> <b class="counter" total="<?= $o->busquedas ?>" ></b>+</p> 
 								<p>Busquedas</p>
 						</div>
 						</div>
@@ -67,16 +57,7 @@ $fila_servicios = mysqli_fetch_assoc($result);
 
 				</div>
 				
-
-
-
-
-
-
-
 				<div class="container">
-					
-						
 					<h2 class=" text-center text-shadow" style="text-shadow: 3px black;color: whitesmoke;"> <b> <p > Encuentra lo que necesitas en un click</p></b>
 					</h1>
 					<div class="main-search-form-wrapper" class="text-center">
@@ -157,24 +138,21 @@ $fila_servicios = mysqli_fetch_assoc($result);
 	            </div>
 	        </section>
 	        <section id="blog" class="container">
-	<?php 
-
-	 $url = "https://aquionline.co/blog/wp-json/wp/v2/posts?_embed"; $ch = curl_init($url);  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
+<?php 
+	$url = "https://aquionline.co/blog/wp-json/wp/v2/posts?_embed"; $ch = curl_init($url);  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 	$post = curl_exec($ch);
-	//print_r($post);
 	$post = json_decode($post,true);
-		 ?>
+?>
 				<div class="row" >
 					<div class="col col-md-4" style="text-align: -webkit-center;">
-						<img class="thumbnail" src="<?=$post[0]["_embedded"]["wp:featuredmedia"][0]["source_url"] ?>" alt="">
+						<div class="thumbnail" style="width: 100%; background-position:center;height: 300px;background-size: cover; background-image: url('<?=$post[0]["_embedded"]["wp:featuredmedia"][0]["source_url"] ?>');" alt=""></div>
 						<br> 
 						<?php  print_r($post[0]["excerpt"]["rendered"]);?>
 					</div>
 					<div class="col col-md-4" style="text-align: -webkit-center;">
 					</div>
 					<div class="col col-md-4" style="text-align: -webkit-center;">
-						<img class="thumbnail" src="<?=$post[1]["_embedded"]["wp:featuredmedia"][0]["source_url"] ?>" alt="">
+						<div class="thumbnail" style="width: 100%;background-position:center;background-size: cover; height: 300px; background-image: url('<?=$post[1]["_embedded"]["wp:featuredmedia"][0]["source_url"] ?>');" alt=""></div>
 						<br> 
 						<?php  print_r($post[1]["excerpt"]["rendered"]);?>
 					</div>
@@ -302,54 +280,26 @@ document.addEventListener("click", function (e) {
 });
 }
 autocomplete(document.getElementById("category-input"));
-</script>
 
-
-				
-<script>
-//FUNCION CONTADOR
-			function count(){
-  var counter = { var: 0 };
-  TweenMax.to(counter, 3, {
-    var: <?php echo $fila['total']?>, 
-    onUpdate: function () {
-      var number = Math.ceil(counter.var);
-      $('.counter').html(number);
-      if(number === counter.var){ count.kill(); }
-	  
-
-    },
-    onComplete: function(){
-      count();
-    },    
-    ease:Circ.easeOut
-  });
-}
-
-count();
-				</script>	
-
-<script>
-			function count(){
-  var counter = { var: 0 };
-  TweenMax.to(counter, 3, {
-    var: <?php echo $fila_servicios['total']?>, 
-    onUpdate: function () {
-      var number = Math.ceil(counter.var);
-      $('.counter1').html(number);
-      if(number === counter.var){ count.kill(); }
-	  
-
-    },
-    onComplete: function(){
-      count();
-    },    
-    ease:Circ.easeOut
-  });
-}
-
-count();
-				</script>	
+$(".counter").each(
+	(index, element)=>{
+		var $this = $(element)
+		var countTo =  $this.attr('total')
+		$({ countNum: $this.text() }).animate({
+			countNum: countTo
+		},{
+          duration: 2000,
+          easing: 'swing',
+          step: function() {
+            $this.text(Math.floor(this.countNum));
+          },
+          complete: function() {
+            $this.text(this.countNum);
+          }
+        });
+	}
+)
+</script>	
 </body>
 </html>
 <?php ob_flush();

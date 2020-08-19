@@ -1,4 +1,5 @@
 <?php include_once "../constants/connection.php";
+  include_once "../app/core.php";
   global $conn;
 ?>
   <div id="content">
@@ -7,7 +8,7 @@
 
           <!-- Page Heading -->
           <h1 class="h3 mb-2 text-gray-800">Usuarios</h1>
-
+<?php print_r(get_users_page(3,10)); ?>
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">

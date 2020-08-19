@@ -185,8 +185,7 @@ endforeach;?>
 	}
 	.thumbails::after {
 	  content: "";
-
-	  display: table;
+	  display: table
 	}
 	.thumb{
 	  float: right;
@@ -195,10 +194,6 @@ endforeach;?>
 	  height: 2.0rem !important;
 	  background: none;
 	  margin: 2px;
-	}
-	.img-thumb{
-		width: 100%;
-		  max-height: 2.0rem !important;
 	}
 	.thumb:hover{
 		border: 1px solid yellow;

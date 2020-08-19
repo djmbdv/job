@@ -61,11 +61,6 @@
 	<script type="text/javascript" src="<?=$prefix?>js/slick.min.js"></script>
 	<script type="text/javascript" src="<?=$prefix?>js/easy-ticker.js"></script>
 	<script type="text/javascript" src="<?=$prefix?>js/validator.min.js"></script>
-	<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js'></script>
-
-	
-
-
 </head>
 <style type="text/css">
 .navbar-sticky > .container > .logo-wrapper > .logo > img {
