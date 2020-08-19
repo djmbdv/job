@@ -256,6 +256,13 @@ body{
     width: auto;
     right: 0;
 }
+.whatsapp{
+	position: fixed;
+	bottom: 24px;
+	left: 12px;
+	width: 60px;
+	z-index:1000;
+}    
 </style>
 <header id="header">
 	<nav class="navbar navbar-default navbar-fixed-top navbar-sticky-function">

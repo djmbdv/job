@@ -159,12 +159,33 @@ global $conn;
 				</div>
 			</section>
 		<?php require 'footer.php';?>
-		</div> 
-	</div>
+	</footer>
+</div> 
+</div>
 	<div id="back-to-top">
 	   <a href="#"><i class="fa fa-arrow-up"></i></a>
 	</div>
+
+
+<!-- Smartsupp Live Chat script -->
 <script type="text/javascript">
+var _smartsupp = _smartsupp || {};
+_smartsupp.key = 'ed7f6dd26db567d478d56e42c2118b72ffd52e19';
+window.smartsupp||(function(d) {
+  var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
+  s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+  c.type='text/javascript';c.charset='utf-8';c.async=true;
+  c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+})(document);
+</script>
+
+<script type="text/javascript" src="js/customs.js?3"></script>
+<script type="text/javascript">
+    $(".only-logged").click(e=>{
+        e.preventDefault();
+        window.location.href = "login.php";
+    });
+
 function cambiarfondo(){
 	var fondo =document.getElementById('fondito');
 	console.log(fondo);
