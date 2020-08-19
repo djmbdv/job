@@ -1,6 +1,7 @@
 images/
 icons/
 blog/
+vendor/
 error_log
 constansts/settings.php
 .swp
