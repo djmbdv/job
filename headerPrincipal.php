@@ -37,7 +37,7 @@
 	<link rel="stylesheet" type="text/css" href="<?=$prefix?>bootstrap/css/bootstrap.min.css?1" media="screen">	
 	<link href="<?=$prefix?>css/animate.css" rel="stylesheet">
 	<link href="<?=$prefix?>css/main.css?24" rel="stylesheet">
-	<link href="<?=$prefix?>css/component.css?43" rel="stylesheet">
+	<link href="<?=$prefix?>css/component.css?44" rel="stylesheet">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
 	<link rel="stylesheet" href="<?=$prefix?>icons/linearicons/style.css">
 	<link rel="stylesheet" href="<?=$prefix?>icons/font-awesome/css/font-awesome.min.css">
