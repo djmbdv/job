@@ -12,12 +12,6 @@ jQuery(function($) {
 				}
 		}
 	});	
-	
-	
-	
-	/**
-	 * Sticky Header
-	 */
 	$(".container-wrapper").waypoint(function() {
 			$(".navbar").toggleClass("navbar-sticky-function");
 			$(".navbar").toggleClass("navbar-default navbar-sticky");

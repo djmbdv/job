@@ -4,7 +4,6 @@ require_once 'app/core.php';
 include 'headerPrincipal.php';
  
 global $conn;
-
 ?>
 <style>
 .autofit2 {
@@ -22,10 +21,14 @@ global $conn;
 		width: 100% !important;
 	}
 }
+.loguito{
+	max-width: 70%;
+}
 </style>
-<body class="home" id="home" style="padding-top: 0;">
-	<div id="introLoader" class="introLoading"></div>
+
+<body  id="home mt-40" style="padding-top: 0;">
 	<div class="container-wrapper">
+		<div id="introLoader" class="introLoading"></div>
 		<div class="main-wrapper">
 			<div class="hero" id="fondito" style="background-image:url('images/background-index.jpg');background-size: cover;">
 				<div class="container">
@@ -54,9 +57,7 @@ global $conn;
 						</div>
 						</div>
 					</div>
-
 				</div>
-				
 				<div class="container">
 					<h2 class=" text-center text-shadow" style="text-shadow: 3px black;color: whitesmoke;"> <b> <p > Encuentra lo que necesitas en un click</p></b>
 					</h1>
@@ -81,8 +82,7 @@ global $conn;
 												<?=$row['country_name']; ?>
 											</option>
 <?php
- 	endforeach;
- ?>
+ 	endforeach;?>
                     					</select>
 									</div>
 				                    <div class="col-lg-2 col-md-2 col-xs-11" style="margin-top:30px;"  >
@@ -95,9 +95,7 @@ global $conn;
 						</form>
 					</div>
 					<div>
-
-
-						<br>
+						<br/>
 						<div class="locations-container t-center">
 					        <ul class="min-list inline-list locations locations--layout-1">
 					        	<li class="location">
@@ -114,19 +112,19 @@ global $conn;
 			<section id="cubos" class="container">
 				<div class="row" >
 	                <div class="col col-md-4 col-xs-12  container" style="text-align: -webkit-center;">
-	                    <a href="#home"  onclick="cambiarfondo3();">  <img class="loguito"   src="images/empresas.png?2"></a> 
+	                    <a href="#"  onclick="cambiarfondo3();">  <img class="loguito"   src="images/empresas.png?2"></a> 
 	                    <br>
 	                    <p style="font-size:25px">Empresas</p>
 	                    <br>
 	                </div>
 	                <div class="col col-md-4 col-xs-12  container" style="text-align: -webkit-center;">
-	                    <a href="#home" onclick="cambiarfondo();"> <img  class="loguito"  src="images/servicios.png?2"/></a>
+	                    <a href="#" onclick="cambiarfondo();"> <img  class="loguito"  src="images/servicios.png?3"/></a>
 	                    <br>
-	                    <p style="font-size:25px"> Servicios   </p>
+	                    <p style="font-size:25px">Servicios</p>
 						<br>
 	                </div>
 					<div class="col col-md-4 col-xs-12 container" style="text-align: -webkit-center;">
-						<a href="#home" onclick="cambiarfondo2();">    <img class="loguito"  src="images/productos.png?2" alt="" >  </a>
+						<a href="#" onclick="cambiarfondo2();">    <img class="loguito"  src="images/productos.png?3" alt="" >  </a>
 						<br>
 						<p style="font-size:25px">Productos</p>
 					</div>
@@ -165,26 +163,11 @@ global $conn;
 	<div id="back-to-top">
 	   <a href="#"><i class="fa fa-arrow-up"></i></a>
 	</div>
-
-
-<!-- Smartsupp Live Chat script -->
 <script type="text/javascript">
-var _smartsupp = _smartsupp || {};
-_smartsupp.key = 'ed7f6dd26db567d478d56e42c2118b72ffd52e19';
-window.smartsupp||(function(d) {
-  var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
-  s=d.getElementsByTagName('script')[0];c=d.createElement('script');
-  c.type='text/javascript';c.charset='utf-8';c.async=true;
-  c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
-})(document);
-</script>
-
-<script type="text/javascript" src="js/customs.js?3"></script>
-<script type="text/javascript">
-    $(".only-logged").click(e=>{
-        e.preventDefault();
-        window.location.href = "login.php";
-    });
+$(".only-logged").click(e=>{
+	e.preventDefault();
+	window.location.href = "login.php";
+});
 
 function cambiarfondo(){
 	var fondo =document.getElementById('fondito');
@@ -301,7 +284,7 @@ document.addEventListener("click", function (e) {
 });
 }
 autocomplete(document.getElementById("category-input"));
-
+$(document).ready((e)=>{
 $(".counter").each(
 	(index, element)=>{
 		var $this = $(element)
@@ -319,7 +302,7 @@ $(".counter").each(
           }
         });
 	}
-)
+)});
 </script>	
 </body>
 </html>

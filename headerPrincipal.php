@@ -265,7 +265,7 @@ body{
 }    
 </style>
 <header id="header">
-	<nav class="navbar navbar-default navbar-fixed-top navbar-sticky-function">
+	<nav class="navbar navbar-fixed-top navbar-sticky-function navbar-default">
 		<div class="container">
 			<div class="logo-wrapper">
 				<div class="logo logo-negro">

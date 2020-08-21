@@ -40,3 +40,8 @@ function get_users_page($page, $num){
 	$stmt->execute();
 	return  $stmt->fetchAll();
 }
+
+/*function get_user_table($page, $num){
+	global $conn;
+	for()
+}*/

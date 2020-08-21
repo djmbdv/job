@@ -39,20 +39,18 @@
 <div class="whatsapp">
     <a target="_blank"href="https://api.whatsapp.com/send?phone=+573114578317&text=Hola, me gustaria informacion sobre *aqui online*"> <img src="https://contratainternet.co/images/whatsapp.png" > </a>
 </div>
-<script type="text/javascript" src="<?=$prefix?>js/customs.js?3"></script>
+<script type="text/javascript" src="<?=$prefix?>js/customs.js?8"></script>
 <script type="text/javascript">
 var _smartsupp = _smartsupp || {};
 _smartsupp.key = 'ed7f6dd26db567d478d56e42c2118b72ffd52e19';
 window.smartsupp||(function(d) {
   var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
-  s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+  s=d.getElementsByTagName('script')[1];c=d.createElement('script');
   c.type='text/javascript';c.charset='utf-8';c.async=true;
   c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
 })(document);
-</script>
-<script type="text/javascript">
-    $(".only-logged").click(e=>{
-        e.preventDefault();
-        window.location.href = "<?=$prefix?>login.php";
-    });
+$(".only-logged").click(e=>{
+    e.preventDefault();
+    window.location.href = "<?=$prefix?>login.php";
+});
 </script>
