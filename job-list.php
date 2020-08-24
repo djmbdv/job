@@ -16,7 +16,6 @@ $offset = ($page - 1) * $numlist;
 $cate = "";
 $country = "";
 
-//	echo "Entro aqui";
 $cate = urldecode(isset($_GET['category'])?$_GET['category']:"");
 $country = urldecode(isset($_GET['country'])?$_GET['country']:"");
 $stmt = $conn->prepare("insert into tbl_search(Departamento,busqueda) values (:depar,:cate) ");
@@ -89,7 +88,6 @@ foreach($result as $row):
 	endif;
 	?>
 		</div>
-
 		<div class="content">
 			<div class="job-item-list-info">
 				<div class="row">
@@ -178,27 +176,27 @@ foreach($result as $row):
 endforeach;?>
 </div>
 <style>
-	.thumbails {
-	    right: 0;
-	    display: inline-block;
-	    position: absolute;
-	}
-	.thumbails::after {
-	  content: "";
-	  display: table
-	}
-	.thumb{
-	  float: right;
-	  width: 21%;
-	  padding: 3px;
-	  height: 2.0rem !important;
-	  background: none;
-	  margin: 2px;
-	}
-	.thumb:hover{
-		border: 1px solid yellow;
-		transition: all 0.3s ease;
-	}
+.thumbails {
+    right: 0;
+    display: inline-block;
+    position: absolute;
+}
+.thumbails::after {
+  content: "";
+  display: table
+}
+.thumb{
+  float: right;
+  width: 21%;
+  padding: 3px;
+  height: 2.0rem !important;
+  background: none;
+  margin: 2px;
+}
+.thumb:hover{
+	border: 1px solid yellow;
+	transition: all 0.3s ease;
+}
 </style>
 <script type="text/javascript">
 	$(".thumb").click(e =>{
