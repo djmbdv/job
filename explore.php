@@ -7,11 +7,11 @@ global $conn;
 global $actual_link;
 $closingdate = "";
 
-if(!isset($_GET['jobid']) || !is_numeric($_GET['jobid'])){
+if(!isset($_GET['id']) || !is_numeric($_GET['id'])){
 	header('location: ./');
 	die();
 }
-$jobid = $_GET['jobid'];
+$jobid = $_GET['id'];
 
 $stmt = $conn->prepare("SELECT * FROM tbl_jobs WHERE job_id = :jobid");
 $stmt->bindParam(':jobid', $jobid);
@@ -53,7 +53,7 @@ foreach($result as $row){
 $protocol = $isHttps? 'https://':'http://';
 $local = LOCAL ? "/job" : "";
 $tags_share  = array(
-	"og:url"    => $protocol.$actual_link."$local/explore-job.php?jobid=".$jobid,
+	"og:url"    => $protocol.$actual_link."$local/explore.php?id=".$jobid,
     "og:type"  => "article",
     "og:title" => $jobtitle,
     "og:description" => $jobdescription, 
@@ -204,7 +204,7 @@ if($user_online):
 		$jobtype = $row['type'];
 
 ?>
-													<a href="explore-job.php?jobid=<?= $row['job_id']?>" class="recent-job-item clearfix">
+													<a href="explore.php?id=<?= $row['job_id']?>" class="recent-job-item clearfix">
 														<div class="GridLex-grid-middle">
 															<div class="GridLex-col-6_sm-12_xs-12">
 																<div class="job-position">

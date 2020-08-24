@@ -153,7 +153,7 @@ global $conn;
 						<?php  print_r($post[1]["excerpt"]["rendered"]);?>
 					</div>
 					<div class="col col-md-4" style="text-align: -webkit-center;">
-						<div class="thumbnail" style="width: 100%; background-position:center;height: 300px;background-size: cover; background-image: url('<?=$post[2]["_embedded"]["wp:featuredmedia"][2]["source_url"] ?>');" alt=""></div>
+						<div class="thumbnail" style="width: 100%; background-position:center;height: 300px;background-size: cover; background-image: url('<?=$post[2]["_embedded"]["wp:featuredmedia"][0]["source_url"] ?>');" alt=""></div>
 						<br> 
 						<?php print_r($post[2]["excerpt"]["rendered"]);?>
 					</div>

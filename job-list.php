@@ -168,7 +168,7 @@ foreach($result as $row):
 					</div>
 					
 					<div class="col-xs-12 col-sm-5 col-md-4">
-						<a target="_blank" href="explore-job.php?jobid=<?= $row['job_id']; ?>" class="btn btn-primary">Ver este <?=$producto?"producto":"servicio" ?></a>
+						<a target="_blank" href="explore.php?id=<?= $row['job_id']; ?>" class="btn btn-primary">Ver este <?=$producto?"producto":"servicio" ?></a>
 					</div>
 				</div>
 			</div>
