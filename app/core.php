@@ -1,4 +1,4 @@
-<?php 
+<?php
 	
 if(!@include_once "../constants/connection.php"){
 	require_once("constants/connection.php");
@@ -41,7 +41,7 @@ function get_users_page($page, $num){
 	return  $stmt->fetchAll();
 }
 
-/*function get_user_table($page, $num){
+function get_user_table($page, $num, $filters, $columns ){
 	global $conn;
-	for()
-}*/
+	//for()
+}
