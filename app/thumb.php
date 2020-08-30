@@ -3,7 +3,7 @@ if(!isset($_GET["id"]))die();
 require_once "../constants/connection.php";
 $smtm = $conn->prepare("select path from tbl_image_service where id = :id");
 $smtm->bindValue(":id",$_GET["id"]);
-$porcentaje = 0.5;
+$porcentaje = 0.7;
 $smtm->execute();
 $path = $smtm->fetchObject()->path;
 $pi = pathinfo($path);

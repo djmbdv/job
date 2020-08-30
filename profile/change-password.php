@@ -1,6 +1,7 @@
 <?php 
-include_once '../constants/settings.php'; 
-include 'constants/check-login.php';
+require_once '../constants/settings.php'; 
+require_once '../constants/check-login.php';
+require_once '../constants/connection.php';
 
 if ($user_online == "true") {
 if ($myrole == "employer") {
@@ -16,36 +17,23 @@ include_once "../headerPrincipal.php";
 <body class="not-transparent-header">
 	<div class="container-wrapper">
 		<div class="main-wrapper">
-		
 			<div class="breadcrumb-wrapper">
-			
 				<div class="container">
-				
 					<ol class="breadcrumb-list booking-step">
-						<li><a href="../">Bwire Jobs</a></li>
+						<li><a href="../">Profile</a></li>
 						<li><span>Change Password</span></li>
 					</ol>
 					
 				</div>
 				
 			</div>
-
-			
 			<div class="admin-container-wrapper">
-
 				<div class="container">
-				
 					<div class="GridLex-gap-15-wrappper">
-					
 						<div class="GridLex-grid-noGutter-equalHeight">
-						
 							<div class="GridLex-col-3_sm-4_xs-12">
-							
 								<div class="admin-sidebar">
-										
-										
 									<div class="admin-user-item for-employer">
-										
 										<div class="image">
 										<?php 
 										if ($logo == null) {
