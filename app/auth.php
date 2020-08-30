@@ -77,4 +77,4 @@ $stmt->bindParam(':lastlogin', $last_login);
 $stmt->bindParam(':email', $myemail);
 $stmt->execute();
 
-header("location: ../$role");
+header("location: ../profile");
