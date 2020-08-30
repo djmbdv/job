@@ -23,9 +23,7 @@ include_once "../headerPrincipal.php";
 						<li><a href="../">Profile</a></li>
 						<li><span>Change Password</span></li>
 					</ol>
-					
 				</div>
-				
 			</div>
 			<div class="admin-container-wrapper">
 				<div class="container">
