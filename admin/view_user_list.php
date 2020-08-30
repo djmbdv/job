@@ -2,8 +2,16 @@
   include_once "../app/core.php";
   global $conn;
 ?>
-  <div class="modal">
-    
+
+
+
+  <div class="modal fade modal-ver-model" role="dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+      <div class="modal-body">X</div>
+    </div>
   </div>
 
   <div id="content">
@@ -15,7 +23,8 @@
         </div>
         <div class="card-body">
           <div class="table-responsive">
-          <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <div id="tabla-usuarios" class="table-dinamics" model="users" num="10"></div> 
+          <!--table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
             <thead>
               <tr>
                 <th>Sel</th>
@@ -59,24 +68,18 @@
             </tr>
 <?php endforeach;?>
           </tbody>
-        </table>
+        </table-->
       </div>
       <div class="card-footer">
         <nav aria-label="...">
-          <ul class="pagination">
-            <li class="page-item disabled">
-              <a class="page-link" href="#" tabindex="-1">Previous</a>
-            </li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item active">
-              <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item">
-              <a class="page-link" href="#">Next</a>
-            </li>
-          </ul>
+          <div class="model-pagination" model="users" tabla="tabla-usuarios"></div>
         </nav>
+        <label>Cantidad</label>
+        <select class="select-num">
+          <option selected="">10</option>
+          <option>50</option>
+          <option>500</option>
+        </select>
       </div>
     </div>
 </div>

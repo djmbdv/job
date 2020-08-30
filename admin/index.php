@@ -226,15 +226,11 @@
       </div>
     </div>
   </div>
-
-  <!-- Bootstrap core JavaScript-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30WpbsGTqbIiAwxTsbe76DErLq5EDQ==" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-
-  <!-- Core plugin JavaScript-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js" integrity="sha512-0QbL0ph8Tc8g5bLhfVzSqxe9GERORsKhIn1IrpxDAgUsbBGz/V7iSav2zzW325XGd1OMLdL4UiqRJj702IeqnQ==" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha512-Ah5hWYPzDsVHf9i2EejFBFrG2ZAPmpu4ZJtW4MfSgpZacn+M9QHDt+Hd/wL1tEkk1UgbzqepJr6KnhZjFKB+0A==" crossorigin="anonymous"></script>
-  <!-- Custom scripts for all pages-->
+<!-- Custom scripts -->
 <script type="text/javascript">
     (function($) {
   "use strict"; // Start of use strict
@@ -284,15 +280,42 @@
     e.preventDefault();
   });
 
-})(jQuery); // End of use strict
+})(jQuery);
 
+function update_table_models(){
+  $('.table-dinamics').each((i,e)=>{
+    $.get("component.php",{"element":"table","model":$(e).attr("model"), page:$(e).attr("page"), num:$(e).attr("num")},data=>{
+      $(e).html(data);
+      $(".button-ver-model").click(e=>{
+        id = $(e.currentTarget).attr("indice");
+     //   $(".modal-ver-model").html(id);
+        $(".modal-ver-model").modal();
+      //  alert(id);
+      })
+    }); 
+  });
+  $('.model-pagination').each((i,e)=>{
+    $.get("component.php", {"element":"pagination",  page:$('#'+$(e).attr("tabla")).attr("page"), num:$('#'+$(e).attr("tabla")).attr("num")},data=>{
+      $(e).html(data);
+      $('.page-link').click(ev=>{
+        ev.preventDefault();
+        $('#'+$(e).attr("tabla")).attr("page",$(ev.currentTarget).attr("page"));
+        update_table_models();
+      })
+    })
+  });
+}
+update_table_models();
+$(".select-num").change(e=>{
+  $(".table-dinamics").attr("num",$(e.currentTarget).val())
+  $(".table-dinamics").attr("page",1);
+  update_table_models();
+});
 
 
 !function(t){"use strict";t("#sidebarToggle, #sidebarToggleTop").on("click",function(o){t("body").toggleClass("sidebar-toggled"),t(".sidebar").toggleClass("toggled"),t(".sidebar").hasClass("toggled")&&t(".sidebar .collapse").collapse("hide")}),t(window).resize(function(){t(window).width()<768&&t(".sidebar .collapse").collapse("hide")}),t("body.fixed-nav .sidebar").on("mousewheel DOMMouseScroll wheel",function(o){if(768<t(window).width()){var e=o.originalEvent,l=e.wheelDelta||-e.detail;this.scrollTop+=30*(l<0?1:-1),o.preventDefault()}}),t(document).on("scroll",function(){100<t(this).scrollTop()?t(".scroll-to-top").fadeIn():t(".scroll-to-top").fadeOut()}),t(document).on("click","a.scroll-to-top",function(o){var e=t(this);t("html, body").stop().animate({scrollTop:t(e.attr("href")).offset().top},1e3,"easeInOutExpo"),o.preventDefault()})}(jQuery);
 
-$("cell-user").click(e=>{
-  alert("hola");
-})
+
   </script>
 
 

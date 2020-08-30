@@ -38,7 +38,7 @@ echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 <div class="container"  style="background:white;  text-align:center;     text-align: -webkit-center;
 " >
 
-<div style="">
+<div >
 <h1>Agregar una nueva categoia</h1>
  <form action="agregarCategoria.php" method="POST">
  <div class="card" style="width: 18rem;">
@@ -195,7 +195,7 @@ while($row = mysqli_fetch_assoc($result)) { ?>
 <?php
 $por_pagina = 5;
 
-        if(iiset($_GET['pagina'])){
+        if(isset($_GET['pagina'])){
             $pagina = $_GET['pagina'];
 
         } else{
