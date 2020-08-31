@@ -47,12 +47,12 @@ include "../headerPrincipal.php";
 										<h4><?= $compname ?></h4>
 									</div>
 									<div class="admin-user-action text-center">
-										<a href="post-job.php" class="btn btn-primary btn-sm "> <p style="color:black">Publicar servicio</p> </a>
+										<a href="post.php" class="btn btn-primary btn-sm "> <p style="color:black">Publicar servicio</p> </a>
 										
 									</div>
 									<div class="admin-user-action text-center">
 									
-										<a href="post-job.php?p=true" class="btn btn-primary btn-sm "><p style="color:black">Publicar producto</p></a>
+										<a href="post.php?p=true" class="btn btn-primary btn-sm "><p style="color:black">Publicar producto</p></a>
 										
 									</div>
 									<ul class="admin-user-menu clearfix">
@@ -66,7 +66,7 @@ include "../headerPrincipal.php";
 											<a href="../company.php?ref=<?=$myid?>"><i class="fa fa-briefcase"></i>Descripción Empresa</a>
 										</li>
 										<li>
-											<a href="my-jobs.php"><i class="fa fa-eye"></i>Ver Servicios y productos publicados</a>
+											<a href="my-posts.php"><i class="fa fa-eye"></i>Ver Servicios y productos publicados</a>
 										</li>
 										<li>
 											<a href="../logout.php"><i class="fa fa-sign-out"></i>Cerrar Sesi&oacute;n</a>

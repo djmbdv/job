@@ -1,6 +1,7 @@
 <?php 
-require '../constants/settings.php'; 
-require 'constants/check-login.php';
+require_once '../constants/settings.php';
+require_once '../constants/connection.php';
+require_once '../constants/check-login.php';
 
 if (!$user_online || $myrole != "employer"){
 	header("location:../");	
@@ -55,8 +56,8 @@ include_once "../headerPrincipal.php";
 									
 									<div class="admin-user-action text-center">
 									
-										<a href="post-job.php" class="btn btn-primary btn-sm btn-inverse">Publicar Servicio</a>
-										<a href="post-job.php?p=1" class="btn btn-primary btn-sm btn-inverse" style="margin:3em; ">Publicar Producto</a>
+										<a href="post.php" class="btn btn-primary btn-sm btn-inverse">Publicar Servicio</a>
+										<a href="post.php?p=1" class="btn btn-primary btn-sm btn-inverse" style="margin:3em; ">Publicar Producto</a>
 										
 									</div>
 									
@@ -150,7 +151,7 @@ include_once "../headerPrincipal.php";
 											<div class="content-bottom">
 											<div class="sub-category">
 											<!-- <a target="_blank" href="view-applicants.php?jobid=<?php echo $row['job_id']; ?>">Applicants</a>-->
-											<a href="edit-job.php?jobid=<?php echo $row['job_id']; ?>">Editar</a>
+											<a href="edit.php?jobid=<?php echo $row['job_id']; ?>">Editar</a>
 											<a onclick = "return confirm(' Estas seguro de eliminar este post?')" href="app/drop-job.php?id=<?php echo $row['job_id']; ?>">Eliminar</a>
 											</div>
 											</div>
@@ -237,9 +238,6 @@ include_once "../headerPrincipal.php";
 			<?php include "../footer.php";?>		
 		</div>
 	</div>
-
- 
- 
 <div id="back-to-top">
    <a href="#"><i class="fa fa-arrow-up"></i></a>
 </div>
