@@ -32,8 +32,8 @@ try{
 
 $cate= '%'.$cate.'%';
 $country ='%'.$country.'%';	
-$query1 = isset($_GET['category']) ? "SELECT * FROM tbl_jobs join tbl_users on tbl_jobs.company = tbl_users.member_no WHERE category like :cate or tbl_jobs.title like :cate or tbl_users.first_name like :cate ": "SELECT * FROM tbl_jobs  ";
-if(isset($_GET['country']))$query1.= "AND country like :country ";
+$query1 = isset($_GET['category']) ? "SELECT * FROM tbl_jobs join tbl_users on tbl_jobs.company = tbl_users.member_no WHERE (category like :cate or tbl_jobs.title like :cate or tbl_users.first_name like :cate )": "SELECT * FROM tbl_jobs  ";
+if(isset($_GET['country']))$query1.= "AND tbl_jobs.country like :country ";
 $query2 = (string)$query1;
 $query1.="ORDER BY enc_id DESC LIMIT $offset,12";
 

@@ -12,14 +12,9 @@ if (!isset($_GET['ref'])){
 	die();
 }
 
-
 $company_id = $_GET['ref'];
 
-
-
 try {
-
-
 	$stmt = $conn->prepare("SELECT * FROM tbl_users WHERE member_no = :memberno AND role = 'employer'");
 	$stmt->bindParam(':memberno', $company_id);
 	$stmt->execute();

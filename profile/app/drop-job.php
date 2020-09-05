@@ -11,4 +11,4 @@ $stmt->bindParam(':jobid', $job_id);
 $stmt->execute();
 
 
-header("location:../my-jobs.php?r=0173");					  
+header("location:../my-posts.php?r=0173");					  

@@ -42,7 +42,7 @@ include_once "../headerPrincipal.php";
 										?><br>
 										</div>
 										
-										<h4><?php echo "$compname"; ?></h4>
+										<h4><?=$compname?></h4>
 										
 									</div>
 									
@@ -80,65 +80,38 @@ include_once "../headerPrincipal.php";
 								<div class="admin-content-wrapper">
 
 									<div class="admin-section-title">
-									
-										<h2>Cambiar Contraseña</h2>
-										
-									</div>
-									
+										<h2>Cambiar Contraseña</h2>									</div>
 									<form name="frm" class="post-form-wrapper" action="app/new-pass.php" method="POST">
-								
-											<div class="row gap-20">
-                                             <?php include 'constants/check_reply.php'; ?>
-												
-												<div class="col-sm-6 col-md-4">
-												
-													<div class="form-group">
-														<label>Nueva Contraseña</label>
-														<input type="password" class="form-control" name="password" required placeholder="Ingresa tu new password">
-													</div>
-													
+										<div class="row gap-20">
+                                        	<?php include 'constants/check_reply.php'; ?>
+											<div class="col-sm-6 col-md-4">
+												<div class="form-group">
+													<label>Nueva Contraseña</label>
+													<input type="password" class="form-control" name="password" required placeholder="Ingresa tu new password">
 												</div>
-												
-												<div class="clear"></div>
-												
-												<div class="col-sm-6 col-md-4">
-												
-													<div class="form-group">
-														<label>Confirmar Contraseña</label>
-														<input type="password" class="form-control"  name="confirmpassword" required placeholder="Confirm your new password">
-													</div>
-													
-												</div>
-												
-												<div class="col-sm-12 mt-10">
-													<button type="submit" onclick="return check_passwords();" class="btn btn-primary">Actualizar</button>
-													<button type="reset" class="btn btn-primary btn-inverse">Cancelar</a>
-												</div>
-
 											</div>
-											
-										</form><br>
-										
-									
+											<div class="clear"></div>
+											<div class="col-sm-6 col-md-4">
+												<div class="form-group">
+													<label>Confirmar Contraseña</label>
+													<input type="password" class="form-control"  name="confirmpassword" required placeholder="Confirm your new password">
+												</div>
+											</div>
+											<div class="col-sm-12 mt-10">
+												<button type="submit" onclick="return check_passwords();" class="btn btn-primary">Actualizar</button>
+												<button type="reset" class="btn btn-primary btn-inverse">Cancelar</a>
+											</div>
+										</div>
+									</form><br>
 								</div>
-
 							</div>
-							
 						</div>
-
 					</div>
-
 				</div>
-			
 			</div>
-
 			<?php include "../footer.php";?>
 		</div>
-
 	</div>
-
- 
- 
 <div id="back-to-top">
     <a href="#"><i class="ion-ios-arrow-up"></i></a>
 </div>
@@ -172,36 +145,6 @@ if(frm.confirmpassword.value != frm.password.value)
 return true;
 }
 </script>
-
-
-<script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
-<script type="text/javascript" src="../js/jquery-migrate-1.2.1.min.js"></script>
-<script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="../js/bootstrap-modalmanager.js"></script>
-<script type="text/javascript" src="../js/bootstrap-modal.js"></script>
-<script type="text/javascript" src="../js/smoothscroll.js"></script>
-<script type="text/javascript" src="../js/jquery.easing.1.3.js"></script>
-<script type="text/javascript" src="../js/jquery.waypoints.min.js"></script>
-<script type="text/javascript" src="../js/wow.min.js"></script>
-<script type="text/javascript" src="../js/jquery.slicknav.min.js"></script>
-<script type="text/javascript" src="../js/jquery.placeholder.min.js"></script>
-<script type="text/javascript" src="../js/bootstrap-tokenfield.js"></script>
-<script type="text/javascript" src="../js/typeahead.bundle.min.js"></script>
-<script type="text/javascript" src="../js/bootstrap3-wysihtml5.min.js"></script>
-<script type="text/javascript" src="../js/bootstrap-select.min.js"></script>
-<script type="text/javascript" src="../js/jquery-filestyle.min.js"></script>
-<script type="text/javascript" src="../js/bootstrap-select.js"></script>
-<script type="text/javascript" src="../js/ion.rangeSlider.min.js"></script>
-<script type="text/javascript" src="../js/handlebars.min.js"></script>
-<script type="text/javascript" src="../js/jquery.countimator.js"></script>
-<script type="text/javascript" src="../js/jquery.countimator.wheel.js"></script>
-<script type="text/javascript" src="../js/slick.min.js"></script>
-<script type="text/javascript" src="../js/easy-ticker.js"></script>
-<script type="text/javascript" src="../js/jquery.introLoader.min.js"></script>
-<script type="text/javascript" src="../js/jquery.responsivegrid.js"></script>
-<script type="text/javascript" src="../js/customs.js"></script>
-
-
 </body>
 
 

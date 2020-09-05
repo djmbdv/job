@@ -121,7 +121,7 @@ endforeach; ?>
 		$.get("job-list.php",{
 			page: 1,
 			category:$("#job-list").attr("category"),
-			country:$("#job-list").attr("coutry")
+			country:$("#job-list").attr("country")
 		}).done((data)=>{
 		//	alert(data);
 			$("#job-list").html(data);

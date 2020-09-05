@@ -83,4 +83,4 @@ for($i = 0; $i < count($_FILES["images"]["name"]); $i++):
 endfor;
 endif;
 
-header("location:../edit-job.php?r=0369&jobid=$job_id");
+header("location:../edit.php?r=0369&jobid=$job_id");

@@ -377,7 +377,7 @@ if (mysqli_query($conn, $sql)) {
 } ?>
   <div class="modal-dialog modal-sm" style="text-align: center;">
    <h3>Agregar nueva categoia</h3>
-	<form action="post-job.php" method="POST">
+	<form action="post.php" method="POST">
 	 <input type="text" required name="categoria" value="" placeholder="Escriba su categoria" aria-label="Example text with button addon" aria-describedby="button-addon1">
    </div> 
 	
@@ -401,14 +401,13 @@ if (mysqli_query($conn, $sql)) {
 
                 if($ejecutar){
                     echo"<script> alert('datos agregados')</script>";
-                    echo"<script>window.open('post-job.php','_self')</script>";
+                    echo"<script>window.open('post.php','_self')</script>";
                   }
 
             }
         
             ?>
-            
-            </script>
+</script>
    
    </div>
 	

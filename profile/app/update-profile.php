@@ -4,9 +4,6 @@ require '../constants/check-login.php';
 
 
 
-print_r($_POST);
-die();
-
 
 $companame = ucwords($_POST['company']);
 //$esta = $_POST['year'];
