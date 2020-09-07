@@ -2,29 +2,23 @@
 require_once '../constants/settings.php'; 
 require_once '../constants/check-login.php';
 require_once '../constants/connection.php';
-
 global $conn;
 if(!$user_online || !isset($_GET["jobid"])){
 	header("location: ../login.php");
 	die();
 }
-
 require '../constants/db_config.php'; 
 $jobid = $_GET['jobid'];
-
-	
 $stmt = $conn->prepare("SELECT * FROM tbl_jobs WHERE job_id = :jobid and company = :myID");
 $stmt->bindParam(':jobid', $jobid);
 $stmt->bindParam(':myID',$myID);
 $stmt->execute();
-
 $rec = $stmt->rowCount();
 $result = $stmt->fetchAll();
 if ($rec == 0) {
 	header("location:./");
 	die();
 }
-	
 foreach($result as $row){
     $jobtitle = $row['title'];
 	$jobcity = $row['city'];
@@ -234,15 +228,11 @@ endforeach;?>
 .input-image{
 	border:dashed 0.25rem #e9ab28;
 	padding: 0.25rem;
-	
 	color: orange;
 	min-width: 3em;
-	
 	background:#E6E6E6;
 	max-height: 100px;
 	vertical-align: top;
-	
-
 }
 .group-file{
 	width: 100%;
@@ -308,5 +298,4 @@ $(".close-span-old").click(e=>{
 });
 </script>
 </body>
-
 </html>

@@ -11,9 +11,8 @@ $pi = pathinfo($path);
 if($pi["extension"] == 'png'):
 header('Content-Type: image/png');
 
-
 list($ancho, $alto) = getimagesize($path);
-//print_r($ancho);
+
 $porcentaje = 200.0/$ancho;
 
 $nuevo_ancho = $ancho * $porcentaje;

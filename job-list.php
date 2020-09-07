@@ -114,7 +114,7 @@ foreach($result as $row):
 						<div class="social meta-list" style="padding-bottom: 1em; ">
 <?php
 	$local = LOCAL ? "/job" : "";
-	$url = urldecode(($isHttps?'https://':'http://' ).$actual_link.$local.'/explore-job.php?jobid='.$row['job_id']);?>
+	$url = urldecode(($isHttps?'https://':'http://' ).$actual_link.$local.'/explore.php?id='.$row['job_id']);?>
 							<a href="whatsapp://send?text=<?=$url?>" id="share-wa" class="sharer button">
 								<i class="fa fa-2x fa-whatsapp"></i>
 							</a>

@@ -1,5 +1,4 @@
 <?php
-date_default_timezone_set('UTC');
 require_once '../../constants/connection.php';
 require_once '../constants/check-login.php';
 require_once '../../constants/uniques.php';
@@ -7,7 +6,10 @@ require_once '../../constants/settings.php';
 global $conn;
 
 
-
+print_r($_POST);
+global $myId;
+echo $myId;
+//die();
 $protocol = $isHttps ? "https" : "http";
 $local = LOCAL ? "/job" : "";
 
@@ -46,7 +48,8 @@ if(isset($_POST['delimg'])){
 	
 
 $stmt->execute();
-
+echo $stmt->rowCount();
+/*
 
 if(isset($_FILES["images"])):
 
@@ -82,5 +85,5 @@ for($i = 0; $i < count($_FILES["images"]["name"]); $i++):
 	$stmt->execute();
 endfor;
 endif;
-
-header("location:../edit.php?r=0369&jobid=$job_id");
+*/
+//header("location:../edit.php?r=0369&jobid=$job_id");

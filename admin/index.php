@@ -2,25 +2,21 @@
   require_once '../constants/settings.php';
   require_once '../constants/connection.php';
   require_once 'router.php';
-  require_once '../constants/check-login.php';
+  include_once '../constants/check-login.php';
   if(!$user_online || $_SESSION['myemail'] != ADMIN_EMAIL){
     header("location: ../login.php");
     die();
   }
-
   if(isset($_GET['p']))
   $page = $_GET['p'];
   else $page = '';
-?>
-<!DOCTYPE html>
-<html lang="es">
+?><!DOCTYPE html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-
   <title><?=$title_site?> -  Admin </title>
   <link href="../icons/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <link href="../css/sb-admin-2.min.css?1" rel="stylesheet">
@@ -223,12 +219,8 @@
       </div>
     </div>
   </div>
-<!--script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30WpbsGTqbIiAwxTsbe76DErLq5EDQ==" crossorigin="anonymous"></script-->
 <script src="../js/jquery.min.js"></script>
-<!--script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script-->
-<!--script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js" integrity="sha512-0QbL0ph8Tc8g5bLhfVzSqxe9GERORsKhIn1IrpxDAgUsbBGz/V7iSav2zzW325XGd1OMLdL4UiqRJj702IeqnQ==" crossorigin="anonymous"></script-->
 <script src="../js/jquery.easing.min.js"></script>
-<!--script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha512-Ah5hWYPzDsVHf9i2EejFBFrG2ZAPmpu4ZJtW4MfSgpZacn+M9QHDt+Hd/wL1tEkk1UgbzqepJr6KnhZjFKB+0A==" crossorigin="anonymous"></script-->
 <script src="../js/bootstrap.bundle.min.js"></script>
 <!-- Custom scripts -->
 <script type="text/javascript">

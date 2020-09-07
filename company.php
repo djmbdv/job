@@ -30,7 +30,7 @@ if ($rec == 0) {
 	$compesta = $row->byear;
 	$compmail  = $row->email;
 	$comptype = $row->title;
-	$compphone = $row->phone;
+	$compphone = $row->phone;   
 	$compcity = $row->city;
 	$compstreet = $row->street;
 	$compzip = $row->zip;
@@ -194,7 +194,7 @@ try {
 															</div>
 														</div>
 														<div class="col-sm-5 col-md-4">
-															<a target="_blank" href="explore-job.php?jobid=<?php echo $row['job_id']; ?>" class="btn btn-primary">Ver Servicio</a>
+															<a target="_blank" href="explore.php?id=<?=$row['job_id']?>" class="btn btn-primary">Ver Servicio</a>
 														</div>
 													</div>
 												</div>

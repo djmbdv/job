@@ -64,7 +64,7 @@ include_once "../headerPrincipal.php";
 											<a href="../company.php?ref=<?php echo "$myid"; ?>"><i class="fa fa-briefcase"></i> Descripción Empresa</a>
 										</li>
 										<li>
-											<a href="my-jobs.php"><i class="fa fa-bookmark"></i> Empleos Publicados</a>
+											<a href="my-posts.php"><i class="fa fa-bookmark"></i> Empleos Publicados</a>
 										</li>
 										<li>
 											<a href="../logout.php"><i class="fa fa-sign-out"></i> Cerrar Sesión</a>

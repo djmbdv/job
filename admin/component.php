@@ -37,7 +37,7 @@ $rows = $stmt->fetchAll();
 <?php foreach ($columns as $col): ?>
         <td><?= $row[$col] ?></td>
 <?php endforeach; ?>
-        <td><button class="btn btn-warning btn-sm btn-circle button-ver-model" indice="<?= $row["member_no"]?>">Ver</button><button>Borrar</button></td>
+        <td><button class="btn btn-warning btn-sm btn-circle button-ver-model" indice="<?= $row["member_no"]?>"><span class="fa fa-eye"></span></button><button class="btn btn-danger btn-sm btn-circle"><span class="fa fa-trash"></span></button></td>
       </tr>
 <?php endforeach; ?>
     </tbody>

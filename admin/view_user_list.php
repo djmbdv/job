@@ -1,4 +1,5 @@
-<?php include_once "../constants/connection.php";
+<?php 
+include_once "../constants/connection.php";
   include_once "../app/core.php";
   global $conn;
 ?>

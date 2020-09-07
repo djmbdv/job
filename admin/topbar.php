@@ -1,3 +1,12 @@
+<?php
+include_once "../constants/settings.php";
+  require_once "../constants/check-login.php";
+  global $tags_share;
+  global $title_site;
+  global $myID;
+  $deep_url = 1;
+  $prefix = isset($deep_url)?str_repeat("../",$deep_url):"";
+ ?>
         <!-- Topbar -->
         <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow" style="height: 5rem;">
           <!-- Sidebar Toggle (Topbar) -->
@@ -132,7 +141,7 @@
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?=$_SESSION['compname'] ?></span>
-                <img class="img-profile rounded-circle" src="https://www.w3schools.com/w3images/avatar2.png">
+                <img class="img-profile rounded-circle" src="<?=isset($myID )?$prefix."app/image-profiles.php?id=$myID":$prefix.'images/images/default.jpg'?>">
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">

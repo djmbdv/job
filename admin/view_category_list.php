@@ -2,7 +2,7 @@
   global $conn;
 ?>
   <div id="content">
-      <?php include_once("topbar.php");?>
+      <?php include_once "topbar.php";?>
       <div class="container-fluid">
 
           <!-- Page Heading -->
