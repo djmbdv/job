@@ -125,8 +125,6 @@ include "../headerPrincipal.php";
 														<input name="zip"  type="text" class="form-control" value="<?=$zip ?>" placeholder="Ingresa tu zip">
 													</div>
 												</div>
-												
-												
 												<div class="col-sm-6 col-md-4">
 													<div class="form-group">
 														<label>Departamento</label>
@@ -161,7 +159,7 @@ include "../headerPrincipal.php";
 												</div>
 												<div class="col-sm-6 mt-4">
 													<label>Página Web</label>
-														<input type="text" class="form-control" value="<?php echo "$myweb"; ?>" name="web" placeholder="Ingresa tu website">
+														<input type="text" class="form-control" value="<?=$myweb?>" name="web" placeholder="Ingresa tu website">
 												</div>
 												<div class="col-sm-12 mt-10">
 													<button type="submit" class="btn btn-primary"><p style="color:black">Guardar</p></button>

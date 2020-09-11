@@ -23,14 +23,12 @@ $origen = imagecreatefrompng($path);
 
 imagecopyresized($thumb, $origen, 0, 0, 0, 0, $nuevo_ancho, $nuevo_alto, $ancho, $alto);
 
-
 imagepng($thumb);
 elseif($pi["extension"] == 'jpg' || $pi["extension"] == 'jpeg'):
 header('Content-Type: image/jpg');
 
 
 list($ancho, $alto) = getimagesize($path);
-//print_r($ancho);
 
 $nuevo_ancho = $ancho * $porcentaje;
 $nuevo_alto = $alto * $porcentaje;
