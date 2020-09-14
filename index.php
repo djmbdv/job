@@ -25,7 +25,6 @@ global $conn;
 	max-width: 70%;
 }
 </style>
-
 <body  id="home mt-40" style="padding-top: 0;">
 	<div class="container-wrapper">
 		<div id="introLoader" class="introLoading"></div>
@@ -52,7 +51,7 @@ global $conn;
 	$st->execute();
 	$o = $st->fetchObject();
 ?>
-						<p> <b class="counter" total="<?= $o->busquedas ?>" ></b>+</p> 
+						<p> <b class="counter" total="<?= $o->busquedas ?>" >0</b>+</p> 
 								<p>Busquedas</p>
 						</div>
 						</div>
