@@ -285,7 +285,7 @@ function update_table_models(){
     }); 
   });
   $('.model-pagination').each((i,e)=>{
-    $.get("component.php", {"element":"pagination",  page:$('#'+$(e).attr("tabla")).attr("page"), num:$('#'+$(e).attr("tabla")).attr("num")},data=>{
+    $.get("component.php", {"element":"pagination",model: $(e).attr("model"), page:$('#'+$(e).attr("tabla")).attr("page"), num:$('#'+$(e).attr("tabla")).attr("num")},data=>{
       $(e).html(data);
       $('.page-link').click(ev=>{
         ev.preventDefault();

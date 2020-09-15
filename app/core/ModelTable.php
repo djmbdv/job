@@ -42,7 +42,13 @@ class ModelTable{
 		}
 		return $headers;
 	}
+
+	function get_number_pages(){
+		return ceil($this->model->len()/$this->num);
+	}
 }
+
+
 /*
 $model = new Model("tbl_users");
 $model->make_alias("created_at","Fecha de Creacion");

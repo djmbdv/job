@@ -46,6 +46,14 @@ class Model
 		return false;
 	}
 
+	public function len(){
+		global $conn;
+		$table_name = $this->table_name;
+		$stmt = $conn->prepare("select count(*) from $table_name");
+		$stmt->execute();
+		return $stmt->fetchColumn();
+	}
+
 	function show_model(){
 		print_r($this->items);
 	}

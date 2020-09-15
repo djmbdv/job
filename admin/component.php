@@ -1,27 +1,16 @@
 <?php include_once "../constants/connection.php";
   include_once "../app/core.php";
   require_once "../app/core/ModelTable.php";
-function get_user_table($page,$columns, $num, $filters,$orders ){
+function get_table($page,$columns, $num, $filters,$orders,$model){
   global $conn;
-  $table = "tbl_users";
-  $cols = '';
-  $fils = '';
-$offset = $num * ($page-1);
-foreach ($columns as  $k => $col) {
-  $cols .=($k == 0)?"`$col`" : ",`$col`";
-}
-if( is_null($filters))$fils = '1'; else
-foreach ($filters as $k => $fil) {
-  $fils .=(($k = 0)?'':' or ' )."`$table`.`$fil->col` = `$fil->value`";
-}
-$sql = "select $cols from $table  where $fils limit $offset,$num";
-$stmt = $conn->prepare($sql);
-$stmt->execute();
 
-$model = new Model("tbl_users");
+
+$model = new Model("tbl_$model");
 $model->make_alias("first_name","Nombre");
 $model->make_alias("member_no","Codigo");
-
+$model->make_alias("category","Categoria");
+$model->make_alias("title", "Titulo");
+$model->make_alias("country", "Departamento");
 $table =  new ModelTable($model,$columns,[],1,$num,$page-1);
 $rows = $table->get_rows();
 //print_r($columns);
@@ -51,20 +40,19 @@ $rows = $table->get_rows();
 <?php 
 }
 
-function get_user_pagination($filters, $num, $current_page = 1, $offset_page = 0){
+function get_pagination($filters, $num, $current_page = 1, $offset_page = 0,$model){
   global $conn;
-  $table = "tbl_users";
-  $cols = '';
-  $fils = '';
-  if( is_null($filters))$fils = '1'; else
-  foreach ($filters as $k => $fil) {
-    $fils .=(($k = 0)?'':' or ' )."`$table`.`$fil->col` = `$fil->value`";
-  }
-  $sql = "select count(*) as cantidad from $table where $fils";
-  $stmt = $conn->prepare($sql);
-  $stmt->execute();
-  $can = $stmt->fetchColumn();
-  $number_pages =  ceil($can/$num);
+
+
+
+$model = new Model("tbl_$model");
+
+$tablemodel =  new ModelTable($model,[],["member_no"],1,$num,$current_page-1);
+ 
+
+
+
+  $number_pages =  $tablemodel->get_number_pages();
 ?>
 <ul class="pagination">
   <li class="page-item <?= $current_page != 1?'':"disabled" ?>">
@@ -172,8 +160,7 @@ function get_user_pagination($filters, $num, $current_page = 1, $offset_page = 0
 */
 //modal_edit_user(1);
 //die();
-//print_r($_GET);
 $num = isset($_GET["num"])?intval($_GET["num"]):10;
 $page = isset($_GET["page"])?intval($_GET["page"]):1;
-if($_GET['element'] == "pagination")get_user_pagination(null,$num, $page);
-else get_user_table($page,$_GET["columns"],$num,null,null);
+if($_GET['element'] == "pagination")get_pagination(null,$num, $page,0,$_GET["model"]);
+else get_table($page,$_GET["columns"],$num,null,null,$_GET["model"]);
