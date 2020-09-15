@@ -25,7 +25,7 @@ include_once "../constants/connection.php";
         </div>
         <div class="card-body">
           <div class="table-responsive">
-            <div id="tabla-usuarios" class="table-dinamics" model="users" num="10"></div> 
+            <div id="tabla-usuarios" class="table-dinamics" model="users" columns="member_no,email" num="10"></div> 
           </div>      
         </div>
         <div class="card-footer">

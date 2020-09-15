@@ -16,7 +16,7 @@ class Model
 		$cc = $stmt->columnCount();
 		for($i = 0; $i < $cc;$i++){
 			$meta = $stmt->getColumnMeta($i);
-			print_r($meta);
+			//print_r($meta);
 			$this->items[] = new Atribute($meta["name"],$meta["native_type"],$meta["len"]);
 		}
 	}

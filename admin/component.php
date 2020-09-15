@@ -17,7 +17,7 @@ $sql = "select $cols from $table  where $fils limit $offset,$num";
 $stmt = $conn->prepare($sql);
 $stmt->execute();
 $rows = $stmt->fetchAll();
-
+print_r($columns);
 ?>
   <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead>
@@ -74,6 +74,7 @@ function get_user_pagination($filters, $num, $current_page = 1, $offset_page = 0
 
 <?php
 }
+
 
 function modal_edit_user($id){
 
