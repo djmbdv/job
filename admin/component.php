@@ -1,10 +1,11 @@
 <?php include_once "../constants/connection.php";
   include_once "../app/core.php";
+  require_once "../app/core/ModelTable.php";
 function get_user_table($page,$columns, $num, $filters,$orders ){
   global $conn;
   $table = "tbl_users";
   $cols = '';
-$fils = '';
+  $fils = '';
 $offset = $num * ($page-1);
 foreach ($columns as  $k => $col) {
   $cols .=($k == 0)?"`$col`" : ",`$col`";
@@ -16,13 +17,19 @@ foreach ($filters as $k => $fil) {
 $sql = "select $cols from $table  where $fils limit $offset,$num";
 $stmt = $conn->prepare($sql);
 $stmt->execute();
-$rows = $stmt->fetchAll();
-print_r($columns);
+
+$model = new Model("tbl_users");
+$model->make_alias("first_name","Nombre");
+$model->make_alias("member_no","Codigo");
+
+$table =  new ModelTable($model,$columns,[],1,$num,$page-1);
+$rows = $table->get_rows();
+//print_r($columns);
 ?>
   <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead>
       <tr>
-<?php foreach ($columns as $col):?>
+<?php foreach ($table->get_headers() as $col):?>
         <th><?=$col?> <span>!</span><span  class="dropdown"><button class="btn-sm">F</button></span></th>       
 <?php endforeach;?>
         <th>
@@ -71,12 +78,11 @@ function get_user_pagination($filters, $num, $current_page = 1, $offset_page = 0
     <a class="page-link" href="#">Next</a>
     </li>
 </ul>
-
 <?php
 }
 
 
-function modal_edit_user($id){
+/*function modal_edit_user($id){
 
 
 ?>
@@ -163,11 +169,11 @@ function modal_edit_user($id){
 
 <?php
 } 
-
+*/
 //modal_edit_user(1);
 //die();
-
+//print_r($_GET);
 $num = isset($_GET["num"])?intval($_GET["num"]):10;
 $page = isset($_GET["page"])?intval($_GET["page"]):1;
 if($_GET['element'] == "pagination")get_user_pagination(null,$num, $page);
-else get_user_table($page,array('member_no','email'),$num,null,null);
+else get_user_table($page,$_GET["columns"],$num,null,null);

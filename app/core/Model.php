@@ -1,5 +1,5 @@
 <?php
-require_once "../../constants/connection.php";
+require_once "../constants/connection.php";
 
 require_once "Atribute.php";
 class Model

@@ -4,7 +4,7 @@
  * 
  */
 
-require_once "../../constants/connection.php";
+require_once "../constants/connection.php";
 require_once "Model.php";
 
 class ModelTable{
@@ -43,10 +43,10 @@ class ModelTable{
 		return $headers;
 	}
 }
-
+/*
 $model = new Model("tbl_users");
 $model->make_alias("created_at","Fecha de Creacion");
 $model->show_model();
-$table =  new ModelTable($model,["email","created_at","bdate", "first_name"],[],1,10,1);
-print_r($table->get_headers());
-print_r($table->get_rows());
+$table =  new ModelTable($model,["email","created_at","bdate", "first_name"],[],1,10,1);*/
+//print_r($table->get_headers());
+//print_r($table->get_rows());

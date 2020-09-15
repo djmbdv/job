@@ -276,13 +276,11 @@
 
 function update_table_models(){
   $('.table-dinamics').each((i,e)=>{
-    $.get("component.php",{"element":"table","model":$(e).attr("model"), page:$(e).attr("page"), num:$(e).attr("num")},data=>{
+    $.get("component.php",{"element":"table","model":$(e).attr("model"), page:$(e).attr("page"), num:$(e).attr("num"),columns:$(e).attr("columns").split(",")},data=>{
       $(e).html(data);
       $(".button-ver-model").click(e=>{
         id = $(e.currentTarget).attr("indice");
-     //   $(".modal-ver-model").html(id);
         $(".modal-ver-model").modal();
-      //  alert(id);
       })
     }); 
   });
