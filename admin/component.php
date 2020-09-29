@@ -19,7 +19,12 @@ $rows = $table->get_rows();
     <thead>
       <tr>
 <?php foreach ($table->get_headers() as $col):?>
-        <th><?=$col?> <span>!</span><span  class="dropdown"><button class="btn-sm">F</button></span></th>       
+        <th><?=$col?>
+          <div style="display:inline-block;margin-left:auto;" >
+           <span class="fa fa-search"></span>
+           <button  class="btn btn-sm dropdown"><span class="fa fa-filter"></span></button>
+          </div>
+        </th>       
 <?php endforeach;?>
         <th>
           Acciones
@@ -69,97 +74,6 @@ $tablemodel =  new ModelTable($model,[],["member_no"],1,$num,$current_page-1);
 <?php
 }
 
-
-/*function modal_edit_user($id){
-
-
-?>
-                      <div class="row gap-20">
-                        <div class="clear"></div>
-                        <div class="col-sm-6 col-md-4">
-                          <div class="form-group">
-                            <label>Nombre de la empresa</label>
-                            <input name="company" placeholder="Enter Nombre de Empresa" type="text" class="form-control" value="<?= $compname ?>" required>
-                          </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4">
-                          <div class="form-group">
-                            <label>NIT</label>
-                            <input class="form-control" placeholder="ingrese su nit" name="type"  type="text" value="<?= $mytitle ?>" /> 
-                          </div>
-                        </div>
-                        <div class="clear"></div>
-                        <div class="col-sm-6 col-md-4">
-                          <div class="form-group">
-                            <label>Responsable</label>
-                            <input class="form-control" placeholder="ingrese su nit" name="type"  type="text" value="<?= $mytitle ?>" /> 
-                          </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4">
-                          <div class="form-group">
-                            <label>Ciudad</label>
-                            <input name="city" required type="text" class="form-control" value="<?php echo "$city"; ?>" placeholder="Ingresa tu city">
-                          </div>
-                        </div>
-                        
-                        <div class="col-sm-6 col-md-4">
-                          <div class="form-group">
-                            <label>Direccion</label>
-                            <input name="street" required type="text" class="form-control" value="<?=$street?>" placeholder="Ingresa tu street"  required>
-                          </div>
-                        </div>
-                        
-                        <div class="clear"></div>
-                        
-                        <div class="col-sm-6 col-md-4">
-                          <div class="form-group">
-                            <label>Código Postal</label>
-                            <input name="zip"  type="text" class="form-control" value="<?=$zip ?>" placeholder="Ingresa tu zip">
-                          </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4">
-                          <div class="form-group">
-                            <label>Departamento</label>
-                            <select name="country" required class="selectpicker show-tick form-control" data-live-search="true">
-                              <option disabled value="">Seleccionar</option>
-<?php
-
-  $stmt = $conn->prepare("SELECT * FROM tbl_countries ORDER BY country_name");
-  $stmt->execute();
-  $result = $stmt->fetchAll();
-  foreach($result as $row):?>
-                                                            <option <?= ($country == $row['country_name']) ? 'selected':'' ?> value="<?= $row['country_name']?>"><?=$row['country_name']?></option>
-<?php
-  endforeach;
-  
-                               ?>
-                            </select>
-                          </div>
-                        </div>
-                        <div class="clear"></div>
-                        <div class="col-sm-6 col-md-4">
-                          <div class="form-group">
-                            <label>Teléfono</label>
-                            <input type="tel" name="phone" required class="form-control" value="<?=$myphone?>" placeholder="Ingresa tu telefono"  required>
-                          </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4">
-                          <div class="form-group">
-                            <label>Correo Electrónico</label>
-                            <input type="email" name="email" required class="form-control" value="<?=$mymail?>" placeholder="Ingresa tu email">
-                          </div>
-                        </div>
-                        <div class="col-sm-6 mt-4">
-                          <label>Página Web</label>
-                            <input type="text" class="form-control" value="<?=$myweb?>" name="web" placeholder="Ingresa tu website">
-                        </div>
-
-
-<?php
-} 
-*/
-//modal_edit_user(1);
-//die();
 $num = isset($_GET["num"])?intval($_GET["num"]):10;
 $page = isset($_GET["page"])?intval($_GET["page"]):1;
 if($_GET['element'] == "pagination")get_pagination(null,$num, $page,0,$_GET["model"]);

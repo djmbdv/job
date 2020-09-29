@@ -1,7 +1,7 @@
 <?php
 
 require_once '../constants/connection.php';
-require_once '../constants/check-login.php';
+require_once 'constants/check-login.php';
 require_once '../constants/settings.php';
 global $conn;
 global $title_site;

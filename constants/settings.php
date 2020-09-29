@@ -1,6 +1,6 @@
 <?php
 define('LOCAL', true);
-define('ADMIN_EMAIL', 'djmbdv@yahoo.com');
+define('ADMIN_EMAIL', 'djmbdv@gmail.com');
 $actual_link = $_SERVER['HTTP_HOST'];
 $title_site = "AquiOnline";
 $default_timezone = 'UTC';
