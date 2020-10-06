@@ -7,10 +7,12 @@ class Model
 	
 	public $items;
 	public $table_name;
-	function __construct($table_name,$column_index = "id"){
+	public $model_name;
+	function __construct($table_name,$column_index = "id", $prefix = "tbl_"){
 		global $conn;
 		$this->items = [];
 		$this->table_name = $table_name;
+		$this->model_name = substr_replace($table_name,"",0, strlen($prefix));
 		$stmt = $conn->prepare("select * from $table_name limit 1");
 		$stmt->execute();
 		$cc = $stmt->columnCount();
