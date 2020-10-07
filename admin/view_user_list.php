@@ -4,18 +4,31 @@ include_once "../constants/connection.php";
   global $conn;
 ?>
   <div class="modal fade modal-ver-model" role="dialog">
-      <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">X</div>
       </div>
-      <div class="modal-body">X</div>
     </div>
   </div>
-</div>
+  <div class="modal fade modal-ver-model" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">X</div>
+      </div>
+    </div>
+  </div>
   <div id="content">
     <?php include_once("topbar.php");?>
     <div class="container-fluid">      <h1 class="h3 mb-2 text-gray-800">Usuarios</h1>

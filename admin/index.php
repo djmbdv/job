@@ -17,13 +17,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
+  <link rel="shortcut icon" href="../images/SOLOLOGO.png">
   <title><?=$title_site?> -  Admin </title>
   <link href="../icons/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <link href="../css/sb-admin-2.min.css?1" rel="stylesheet">
     <link href="../css/main.css" rel="stylesheet">
  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
-
 <body id="page-top">
   <div id="wrapper">
     <?php include_once "sidebar_new.php";?>

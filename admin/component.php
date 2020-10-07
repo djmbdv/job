@@ -9,7 +9,7 @@ function get_table($page,$columns, $num, $filters,$orders,$model){
   global $conn;
   $model = new Model("tbl_$model");
   $model->make_alias("first_name","Nombre");
-  $model->make_alias("member_no","Codigo");
+  $model->make_alias("member_no","Código");
   $model->make_alias("category","Categoria");
   $model->make_alias("title", "Titulo");
   $model->make_alias("country", "Departamento");
