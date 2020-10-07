@@ -8,3 +8,4 @@ constansts/settings.php
 .DS_Store
 node_modules
 
+constants/db_config.php
