@@ -100,7 +100,7 @@ include "../headerPrincipal.php";
 												<div class="col-sm-6 col-md-4">
 													<div class="form-group">
 														<label>Responsable</label>
-														<input class="form-control" placeholder="ingrese su nit" name="type"  type="text" value="<?= $mytitle ?>" /> 
+														<input class="form-control"  name="type"  type="text" value="<?= $mytitle ?>" /> 
 													</div>
 												</div>
 												<div class="col-sm-6 col-md-4">
