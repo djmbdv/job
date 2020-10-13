@@ -1,5 +1,4 @@
 <?php
-date_default_timezone_set('UTC');
 require_once '../../constants/connection.php';
 require_once '../constants/check-login.php';
 require_once '../../constants/uniques.php';

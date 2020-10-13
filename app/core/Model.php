@@ -1,5 +1,5 @@
 <?php
-require_once "../constants/connection.php";
+require_once "../../constants/connection.php";
 
 require_once "Atribute.php";
 class Model
@@ -18,7 +18,7 @@ class Model
 		$cc = $stmt->columnCount();
 		for($i = 0; $i < $cc;$i++){
 			$meta = $stmt->getColumnMeta($i);
-			//print_r($meta);
+			print_r($meta);
 			$this->items[] = new Atribute($meta["name"],$meta["native_type"],$meta["len"]);
 		}
 	}
@@ -63,4 +63,4 @@ class Model
 
 $model = new Model("tbl_jobs");
 $model->make_alias("created_at","Fecha de Creacion");
-//$model->show_model();
+$model->show_model();
