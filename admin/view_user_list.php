@@ -16,11 +16,11 @@ include_once "../constants/connection.php";
       </div>
     </div>
   </div>
-  <div class="modal fade modal-ver-model" role="dialog">
+  <div class="modal fade modal-delete-model" role="dialog">
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Modal title</h5>
+          <h5 class="modal-title">Borrrar</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>

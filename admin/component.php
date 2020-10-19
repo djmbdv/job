@@ -1,9 +1,13 @@
 <?php include_once "../constants/connection.php";
   include_once "../app/core.php";
   require_once "../app/core/ModelTable.php";
+  require_once "../app/core/ModelEditForm.php";
 
 function get_edit_form($id,$model){
- // $model->
+  $model  = new Model("tbl_$model");
+  $modelEditForm = new ModelEditForm([],$model);
+  //$fields = $modelEditForm->getFields();
+  print_r($model->items);
 } 
 function get_table($page,$columns, $num, $filters,$orders,$model){
 
@@ -73,4 +77,5 @@ function get_pagination($filters, $num, $current_page = 1, $offset_page = 0,$mod
 $num = isset($_GET["num"])?intval($_GET["num"]):10;
 $page = isset($_GET["page"])?intval($_GET["page"]):1;
 if($_GET['element'] == "pagination")get_pagination(null,$num, $page,0,$_GET["model"]);
+else if($_GET["element"] == "model_form")get_edit_form($_GET["key"],$_GET["model"]);
 else get_table($page,$_GET["columns"],$num,null,null,$_GET["model"]);

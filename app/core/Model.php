@@ -1,5 +1,5 @@
 <?php
-require_once "../../constants/connection.php";
+require_once "../constants/connection.php";
 
 require_once "Atribute.php";
 class Model
@@ -8,9 +8,11 @@ class Model
 	public $items;
 	public $table_name;
 	public $model_name;
+	public $column_index;
 	function __construct($table_name,$column_index = "id", $prefix = "tbl_"){
 		global $conn;
 		$this->items = [];
+		$this->colummn_index = $column_index;
 		$this->table_name = $table_name;
 		$this->model_name = substr_replace($table_name,"",0, strlen($prefix));
 		$stmt = $conn->prepare("select * from $table_name limit 1");
@@ -18,7 +20,7 @@ class Model
 		$cc = $stmt->columnCount();
 		for($i = 0; $i < $cc;$i++){
 			$meta = $stmt->getColumnMeta($i);
-			print_r($meta);
+		//	print_r($meta);
 			$this->items[] = new Atribute($meta["name"],$meta["native_type"],$meta["len"]);
 		}
 	}
@@ -59,8 +61,22 @@ class Model
 	function show_model(){
 		print_r($this->items);
 	}
+
+	function get_entity($id){
+		global $conn;
+		$ci = $this->column_index;
+		$str = "";
+		$tn = $this->table_name;
+		foreach($this->items  as $k=>$item){
+			if($k == 0)$str.= "$tn.$item->name";
+			else $str .=$this->table_name;
+		}
+		$stmt =  $conn->prepare("select $str from $this->table_name where $ci = :id");
+		$stmt->execute();
+		return $stmt->fetchAll();
+	}
 }
 
-$model = new Model("tbl_jobs");
+/*$model = new Model("tbl_jobs");
 $model->make_alias("created_at","Fecha de Creacion");
-$model->show_model();
+$model->show_model();*/

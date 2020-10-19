@@ -278,8 +278,14 @@ function update_table_models(){
     $.get("component.php",{"element":"table","model":$(e).attr("model"), page:$(e).attr("page"), num:$(e).attr("num"),columns:$(e).attr("columns").split(",")},data=>{
       $(e).html(data);
       $(".button-ver-model").click(e=>{
-        id = $(e.currentTarget).attr("indice");
-        $(".modal-ver-model").modal();
+        var id = $(e.currentTarget).attr("indice");
+        var model = $(e.currentTarget).attr("model");
+        $.get("component.php",{element:"model_form", key:id, model: model},
+          data => {  
+            $(".modal-ver-model .modal-content").html(data);
+            $(".modal-ver-model").modal();
+          }
+        );
       })
     }); 
   });

@@ -42,7 +42,7 @@ include_once "../constants/settings.php";
                 <h6 class="dropdown-header">
                   Alerts Center
                 </h6>
-                <a class="dropdown-item d-flex align-items-center" href="#">
+                <!--a class="dropdown-item d-flex align-items-center" href="#">
                   <div class="mr-3">
                     <div class="icon-circle bg-primary">
                       <i class="fa fa-file-alt text-white"></i>
@@ -63,7 +63,7 @@ include_once "../constants/settings.php";
                     <div class="small text-gray-500">December 7, 2019</div>
                     $290.29 has been deposited into your account!
                   </div>
-                </a>
+                </a-->
                 <a class="dropdown-item d-flex align-items-center" href="#">
                   <div class="mr-3">
                     <div class="icon-circle bg-warning">

@@ -12,8 +12,7 @@ class FieldModelEditForm{
     public $label;
     public $value;
     function __constructor($atribute){
-        $this->atribute = $atribute;
-        
+        $this->atribute = $atribute;        
         switch($atribute->type){
             case 'BLOB':
                 $type = 'textarea';
@@ -24,17 +23,22 @@ class FieldModelEditForm{
             default:
                 $type = 'text';
         }
-        
-        $this->type
     }
+
 }
 
 class ModelEditForm{
     public $model;
     public $atributes;
     
-    function __constructor($fields, $model){
-      //  for
+    function __constructor($fields, $m){
+      $this->model = $m;
     }
-  //  get 
+  function getFields(){
+      return $this->model->items;      
+   }
+   function get_entity_fields($id){
+        $array = $this->model->get_entity();
+        return $array;
+    }    
 }
