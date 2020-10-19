@@ -12,7 +12,7 @@ include_once "../constants/connection.php";
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body">X</div>
+        <div class="modal-body"></div>
       </div>
     </div>
   </div>
@@ -25,7 +25,7 @@ include_once "../constants/connection.php";
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body">X</div>
+        <div class="modal-body"></div>
       </div>
     </div>
   </div>
