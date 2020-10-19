@@ -13,3 +13,4 @@ $fb  = 'https://www.facebook.com/AquiOnline/';
 $tw = 'https://twitter.com/AquiOnline';
 $ig = 'https://www.instagram.com/aquionline.co/';
 date_default_timezone_set('UTC');
+ini_set( "session.gc_maxlifetime", 0);
