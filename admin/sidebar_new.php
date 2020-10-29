@@ -1,5 +1,5 @@
 <ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" style="letter-spacing:inherit;height: 5rem;" href="index.html">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" style="letter-spacing:inherit;height: 5rem;" href=".">
         <div class="sidebar-brand-icon ">
           <image src="../images/SOLOLOGO.png" class="img"  style="max-height: 60px"/>
         </div>

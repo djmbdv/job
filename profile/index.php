@@ -34,7 +34,7 @@ include "../headerPrincipal.php";
 										<div class="image">
 <?php 
 	if ($logo == null): ?>
-											<center>Company Logo Here</center>
+											<center>Image Here</center>
 <?php 
 	else: ?>
 											<center>
@@ -84,20 +84,20 @@ include "../headerPrincipal.php";
 											<div class="row gap-20">
 												<?php include 'constants/check_reply.php'; ?>
 												<div class="clear"></div>
-												<div class="col-sm-6 col-md-4">
+												<div class="col-sm-8 col-md-5">
 													<div class="form-group">
 														<label>Nombre de la empresa</label>
-														<input name="company" placeholder="Enter Nombre de Empresa" type="text" class="form-control" value="<?= $compname ?>" required>
+														<input name="company"  type="text" class="form-control" value="<?= $compname ?>" required>
 													</div>
 												</div>
 												<div class="col-sm-6 col-md-4">
 													<div class="form-group">
 														<label>NIT</label>
-														<input class="form-control" placeholder="ingrese su nit" name="type"  type="text" value="<?= $mytitle ?>" /> 
+														<input class="form-control"  name="type"  type="text" value="<?= $mytitle ?>" /> 
 													</div>
 												</div>
 												<div class="clear"></div>
-												<div class="col-sm-6 col-md-4">
+												<div class="col-sm-8 col-md-5">
 													<div class="form-group">
 														<label>Responsable</label>
 														<input class="form-control"  name="type"  type="text" value="<?= $mytitle ?>" /> 
@@ -106,26 +106,27 @@ include "../headerPrincipal.php";
 												<div class="col-sm-6 col-md-4">
 													<div class="form-group">
 														<label>Ciudad</label>
-														<input name="city" required type="text" class="form-control" value="<?php echo "$city"; ?>" placeholder="Ingresa tu city">
+														<input name="city" required type="text" class="form-control" value="<?=$city?>" >
 													</div>
 												</div>
-												
-												<div class="col-sm-6 col-md-4">
-													<div class="form-group">
-														<label>Direccion</label>
-														<input name="street" required type="text" class="form-control" value="<?=$street?>" placeholder="Ingresa tu street"  required>
-													</div>
-												</div>
-												
 												<div class="clear"></div>
+												<div class="col-sm-9 col-md-6">
+													<div class="form-group">
+														<label>Dirección</label>
+														<input name="street" required type="text" class="form-control" value="<?=$street?>"  required>
+													</div>
+												</div>
 												
-												<div class="col-sm-6 col-md-4">
+												
+												
+												<div class="col-sm-5 col-md-3">
 													<div class="form-group">
 														<label>Código Postal</label>
-														<input name="zip"  type="text" class="form-control" value="<?=$zip ?>" placeholder="Ingresa tu zip">
+														<input name="zip"  type="text" class="form-control" value="<?=$zip ?>" >
 													</div>
 												</div>
-												<div class="col-sm-6 col-md-4">
+												<div class="clear"></div>
+												<div class="col-sm-7 col-md-5">
 													<div class="form-group">
 														<label>Departamento</label>
 														<select name="country" required class="selectpicker show-tick form-control" data-live-search="true">
@@ -144,20 +145,21 @@ include "../headerPrincipal.php";
 														</select>
 													</div>
 												</div>
-												<div class="clear"></div>
+												
 												<div class="col-sm-6 col-md-4">
 													<div class="form-group">
 														<label>Teléfono</label>
 														<input type="tel" name="phone" required class="form-control" value="<?=$myphone?>" placeholder="Ingresa tu telefono"  required>
 													</div>
 												</div>
+												
 												<div class="col-sm-6 col-md-4">
 													<div class="form-group">
 														<label>Correo Electrónico</label>
 														<input type="email" name="email" required class="form-control" value="<?=$mymail?>" placeholder="Ingresa tu email">
 													</div>
 												</div>
-												<div class="col-sm-6 mt-4">
+												<div class="col-sm-6 col-md-5">
 													<label>Página Web</label>
 														<input type="text" class="form-control" value="<?=$myweb?>" name="web" placeholder="Ingresa tu website">
 												</div>

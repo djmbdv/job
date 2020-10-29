@@ -1,5 +1,5 @@
 <?php
-include_once "../constants/settings.php";
+  include_once "../constants/settings.php";
   require_once "../constants/check-login.php";
   global $tags_share;
   global $title_site;

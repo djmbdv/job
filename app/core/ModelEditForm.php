@@ -31,11 +31,12 @@ class ModelEditForm{
     public $model;
     public $atributes;
     
-    function __constructor($fields, $m){
+    function __construct($fields, $m){
       $this->model = $m;
     }
   function getFields(){
-      return $this->model->items;      
+      //  print_r($this->model);
+      return  $this->model->items;      
    }
    function get_entity_fields($id){
         $array = $this->model->get_entity();

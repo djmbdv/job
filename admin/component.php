@@ -6,9 +6,18 @@
 function get_edit_form($id,$model){
   $model  = new Model("tbl_$model");
   $modelEditForm = new ModelEditForm([],$model);
+ // print_r($modelEditForm);
   $fields = $modelEditForm->getFields();
-  //print_r($model->items);
-} 
+  print_r($model->items);
+  foreach ($fields as $key => $field): ?>
+  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 col-form-label"><?= $field->alias ?? $field->name ?></label>
+  <input class="form-control" type="" name="">
+  </div>
+  <?php
+  endforeach;  
+}
+
 function get_table($page,$columns, $num, $filters,$orders,$model){
 
   $model = new Model("tbl_$model");
