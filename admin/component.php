@@ -6,8 +6,8 @@
 function get_edit_form($id,$model){
   $model  = new Model("tbl_$model");
   $modelEditForm = new ModelEditForm([],$model);
-  //$fields = $modelEditForm->getFields();
-  print_r($model->items);
+  $fields = $modelEditForm->getFields();
+  //print_r($model->items);
 } 
 function get_table($page,$columns, $num, $filters,$orders,$model){
 
