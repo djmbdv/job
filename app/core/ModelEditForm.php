@@ -39,7 +39,7 @@ class ModelEditForm{
       return  $this->model->items;      
    }
    function get_entity_fields($id){
-        $array = $this->model->get_entity();
+       $array =  $this->model->get_entity($id);
         return $array;
     }    
 }

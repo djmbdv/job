@@ -48,7 +48,7 @@ require 'headerPrincipal.php';
 						<div class="GridLex-grid-middle">
 							<div class="GridLex-col-3_sm-12_xs-12">
 								<div class="sorting-header">
-									<h3 class="sorting-title">Employers</h3>
+									<h3 class="sorting-title">Empresas</h3>
 								</div>
 							</div>
 						</div>

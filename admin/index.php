@@ -205,15 +205,15 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Confirmar</h5>
           <button class="close" type="button" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">×</span>
           </button>
         </div>
-        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+        <div class="modal-body">¿Desea cerrar la sesión?</div>
         <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="../logout.php">Logout</a>
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+          <a class="btn btn-primary" href="../logout.php">Salir</a>
         </div>
       </div>
     </div>
@@ -275,12 +275,14 @@
 
 function update_table_models(){
   $('.table-dinamics').each((i,e)=>{
-    $.get("component.php",{"element":"table","model":$(e).attr("model"), page:$(e).attr("page"), num:$(e).attr("num"),columns:$(e).attr("columns").split(",")},data=>{
+    $.get("component.php",{"element":"table","model":$(e).attr("model"), page:$(e).attr("page"), main_key: $(e).attr("column-index"), num:$(e).attr("num"),columns:$(e).attr("columns").split(","),main_key:$(e).attr("column-index")},data=>{
+     // console.log(data);
       $(e).html(data);
       $(".button-ver-model").click(e=>{
         var id = $(e.currentTarget).attr("indice");
         var model = $(e.currentTarget).attr("model");
-        $.get("component.php",{element:"model_form", key:id, model: model},
+        var main_key = $(e.currentTarget).attr("column-index");
+        $.get("component.php",{element:"model_form", key:id, model: model,main_key:main_key},
           data => {  
             $(".modal-ver-model .modal-content").html(data);
             $(".modal-ver-model").modal();
@@ -300,13 +302,14 @@ function update_table_models(){
     })
   });
 }
-update_table_models();
 $(".select-num").change(e=>{
   $(".table-dinamics").attr("num",$(e.currentTarget).val())
   $(".table-dinamics").attr("page",1);
   update_table_models();
 });
 !function(t){"use strict";t("#sidebarToggle, #sidebarToggleTop").on("click",function(o){t("body").toggleClass("sidebar-toggled"),t(".sidebar").toggleClass("toggled"),t(".sidebar").hasClass("toggled")&&t(".sidebar .collapse").collapse("hide")}),t(window).resize(function(){t(window).width()<768&&t(".sidebar .collapse").collapse("hide")}),t("body.fixed-nav .sidebar").on("mousewheel DOMMouseScroll wheel",function(o){if(768<t(window).width()){var e=o.originalEvent,l=e.wheelDelta||-e.detail;this.scrollTop+=30*(l<0?1:-1),o.preventDefault()}}),t(document).on("scroll",function(){100<t(this).scrollTop()?t(".scroll-to-top").fadeIn():t(".scroll-to-top").fadeOut()}),t(document).on("click","a.scroll-to-top",function(o){var e=t(this);t("html, body").stop().animate({scrollTop:t(e.attr("href")).offset().top},1e3,"easeInOutExpo"),o.preventDefault()})}(jQuery);
+
+update_table_models();
   </script>
 </body>
 </html>

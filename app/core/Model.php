@@ -12,7 +12,8 @@ class Model
 	function __construct($table_name,$column_index = "id", $prefix = "tbl_"){
 		global $conn;
 		$this->items = [];
-		$this->colummn_index = $column_index;
+
+		$this->column_index = $column_index;
 		$this->table_name = $table_name;
 		$this->model_name = substr_replace($table_name,"",0, strlen($prefix));
 		$stmt = $conn->prepare("select * from $table_name limit 1");
@@ -69,11 +70,13 @@ class Model
 		$tn = $this->table_name;
 		foreach($this->items  as $k=>$item){
 			if($k == 0)$str.= "$tn.$item->name";
-			else $str .=$this->table_name;
+			else $str .= ",$tn.$item->name";
 		}
-		$stmt =  $conn->prepare("select $str from $this->table_name where $ci = :id");
+
+		$stmt =  $conn->prepare("select $str from $tn where $ci = :id");
+		$stmt->bindParam(':id', $id);
 		$stmt->execute();
-		return $stmt->fetchAll();
+		return $stmt->fetch(PDO::FETCH_ASSOC);
 	}
 }
 

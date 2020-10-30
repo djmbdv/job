@@ -38,7 +38,7 @@ include_once "../constants/connection.php";
         </div>
         <div class="card-body">
           <div class="table-responsive">
-            <div id="tabla-usuarios" class="table-dinamics" model="users" columns="member_no,email,first_name" num="10"></div> 
+            <div id="tabla-usuarios" class="table-dinamics" model="users" column-index="member_no" columns="member_no,email,first_name" num="10"></div> 
           </div>      
         </div>
         <div class="card-footer">

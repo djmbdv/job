@@ -145,22 +145,22 @@
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="../profile">
                   <i class="fa fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Profile
+                  Perfil
                 </a>
                 <a class="dropdown-item" href="#">
                   <i class="fa fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Settings
+                  Opciones
                 </a>
                 <a class="dropdown-item" href="#">
                   <i class="fa fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Activity Log
+                  Registro
                 </a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                   <i class="fa fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Logout
+                  Salir
                 </a>
               </div>
             </li>

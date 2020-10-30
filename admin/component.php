@@ -3,29 +3,38 @@
   require_once "../app/core/ModelTable.php";
   require_once "../app/core/ModelEditForm.php";
 
-function get_edit_form($id,$model){
-  $model  = new Model("tbl_$model");
-  $modelEditForm = new ModelEditForm([],$model);
- // print_r($modelEditForm);
-  $fields = $modelEditForm->getFields();
-  print_r($model->items);
-  foreach ($fields as $key => $field): ?>
+function get_edit_form($id,$model,$main_key = "id"){
+//  print_r($main_key."main_key");
+  $model  = new Model("tbl_$model", $main_key);
+    $model->make_alias("first_name","Nombre");
+  $model->make_alias("member_no","Código");
+  $model->make_alias("category","Categoría");
+  $model->make_alias("title", "Título");
+  $model->make_alias("country", "Departamento");
+  $modelEditForm = new ModelEditForm([],$model, $main_key);
+  
+  $fields = $modelEditForm->get_entity_fields($id);
+  foreach ($fields as $key => $field): 
+echo "$key";
+    ?>
+
   <div class="form-group">
-    <label for="inputEmail3" class="col-sm-2 col-form-label"><?= $field->alias ?? $field->name ?></label>
-  <input class="form-control" type="" name="">
+    <label for="inputEmail3" class="col-sm-2 col-form-label"><?= $model->get_atribute($key)->alias ?? $model->get_atribute($key)->name  ?></label>
+  <input class="form-control" type="" name="" value="<?= $field ?>">
   </div>
   <?php
   endforeach;  
 }
 
-function get_table($page,$columns, $num, $filters,$orders,$model){
+function get_table($page,$columns, $num, $filters,$orders,$model, $main_key){
 
-  $model = new Model("tbl_$model");
+  $model = new Model("tbl_$model", $main_key);
   $model->make_alias("first_name","Nombre");
   $model->make_alias("member_no","Código");
   $model->make_alias("category","Categoría");
   $model->make_alias("title", "Título");
   $model->make_alias("country", "Departamento");
+  echo $model->column_index."->>>>>>>>>>>";
   $table =  new ModelTable($model,$columns,[],1,$num,$page-1);
   $rows = $table->get_rows();
 ?>
@@ -51,7 +60,7 @@ function get_table($page,$columns, $num, $filters,$orders,$model){
 <?php foreach ($columns as $col): ?>
         <td><?= $row[$col] ?></td>
 <?php endforeach; ?>
-        <td><button class="btn btn-warning btn-sm btn-circle button-ver-model" indice="<?= $row["member_no"]?>" model="<?= $model->model_name ?>"><span class="fa fa-eye"></span></button><button class="btn btn-danger btn-sm btn-circle"><span class="fa fa-trash"></span></button></td>
+        <td><button class="btn btn-warning btn-sm btn-circle button-ver-model" indice="<?= $row[$model->column_index]?>" model="<?= $model->model_name ?>" column-index="<?= $model->column_index ?>"><span class="fa fa-eye"></span></button><button class="btn btn-danger btn-sm btn-circle"><span class="fa fa-trash"></span></button></td>
       </tr>
 <?php endforeach; ?>
     </tbody>
@@ -82,9 +91,12 @@ function get_pagination($filters, $num, $current_page = 1, $offset_page = 0,$mod
 </ul>
 <?php
 }
-
+print_r($_GET);
 $num = isset($_GET["num"])?intval($_GET["num"]):10;
 $page = isset($_GET["page"])?intval($_GET["page"]):1;
 if($_GET['element'] == "pagination")get_pagination(null,$num, $page,0,$_GET["model"]);
-else if($_GET["element"] == "model_form")get_edit_form($_GET["key"],$_GET["model"]);
-else get_table($page,$_GET["columns"],$num,null,null,$_GET["model"]);
+else if($_GET["element"] == "model_form"){
+  if($_GET["main_key"])get_edit_form($_GET["key"],$_GET["model"],$_GET["main_key"]);
+  else get_edit_form($_GET["key"],$_GET["model"]);
+}
+else get_table($page,$_GET["columns"],$num,null,null,$_GET["model"], $_GET["main_key"]);

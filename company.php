@@ -92,7 +92,7 @@ require 'headerPrincipal.php';
 													<div class="img-circle img-responsive">
 			<?php 
 if ($complogo == null):?>
-														<center>Company Logo Here</center>
+														<center>Image Here</center>
 <?php
 	else:?>
 														<center>
